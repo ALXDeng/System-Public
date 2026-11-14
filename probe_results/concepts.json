@@ -1,0 +1,641 @@
+[
+  {
+    "kind": "drug",
+    "class": "Diuretics",
+    "term": "diuretic",
+    "match": "exact",
+    "id": "A6Dsv1dmTR",
+    "label": "diuretic",
+    "other_hits": [
+      "Diuretic hormone 31 Dmel_CG13094",
+      "diuretic",
+      "potassium-sparing diuretic",
+      "osmotic diuretics"
+    ],
+    "relationships": 348
+  },
+  {
+    "kind": "drug",
+    "class": "Diuretics",
+    "term": "furosemide",
+    "match": "exact",
+    "id": "HacH3Zcl3_",
+    "label": "furosemide",
+    "other_hits": [
+      "furosemide"
+    ],
+    "relationships": 178
+  },
+  {
+    "kind": "drug",
+    "class": "Diuretics",
+    "term": "hydrochlorothiazide",
+    "match": "exact",
+    "id": "eK6Lv3iVM8",
+    "label": "hydrochlorothiazide",
+    "other_hits": [
+      "hydrochlorothiazide"
+    ],
+    "relationships": 122
+  },
+  {
+    "kind": "drug",
+    "class": "Diuretics",
+    "term": "spironolactone",
+    "match": "exact",
+    "id": "k9gffgO8Ae",
+    "label": "spironolactone",
+    "other_hits": [
+      "spironolactone"
+    ],
+    "relationships": 139
+  },
+  {
+    "kind": "drug",
+    "class": "Beta blockers",
+    "term": "beta blocker",
+    "match": "exact",
+    "id": "DVPdh9276g",
+    "label": "beta blocker",
+    "other_hits": [
+      "beta blocker"
+    ],
+    "relationships": 418
+  },
+  {
+    "kind": "drug",
+    "class": "Beta blockers",
+    "term": "metoprolol",
+    "match": "fuzzy",
+    "id": "4EvbN6gazI",
+    "label": "metoprolol succinate",
+    "other_hits": [
+      "metoprolol succinate",
+      "(RS)-metoprolol"
+    ],
+    "relationships": 1
+  },
+  {
+    "kind": "drug",
+    "class": "Beta blockers",
+    "term": "propranolol",
+    "match": "exact",
+    "id": "u3p7wGPvPL",
+    "label": "propranolol",
+    "other_hits": [
+      "propranolol hydrochloride",
+      "propranolol"
+    ],
+    "relationships": 240
+  },
+  {
+    "kind": "drug",
+    "class": "ACE inhibitors / ARBs",
+    "term": "ACE inhibitor",
+    "match": "exact",
+    "id": "Kcf5q8gDX9",
+    "label": "ACE inhibitor",
+    "other_hits": [
+      "ACE inhibitor"
+    ],
+    "relationships": 582
+  },
+  {
+    "kind": "drug",
+    "class": "ACE inhibitors / ARBs",
+    "term": "lisinopril",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "ACE inhibitors / ARBs",
+    "term": "angiotensin receptor blocker",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "ACE inhibitors / ARBs",
+    "term": "losartan",
+    "match": "exact",
+    "id": "IMhgtons9f",
+    "label": "losartan",
+    "other_hits": [
+      "losartan"
+    ],
+    "relationships": 129
+  },
+  {
+    "kind": "drug",
+    "class": "Anticholinergics",
+    "term": "anticholinergic",
+    "match": "exact",
+    "id": "syRWr6L9uu",
+    "label": "anticholinergic",
+    "other_hits": [
+      "anticholinergic",
+      "anticholinergic toxidrome"
+    ],
+    "relationships": 171
+  },
+  {
+    "kind": "drug",
+    "class": "Anticholinergics",
+    "term": "oxybutynin",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Anticholinergics",
+    "term": "diphenhydramine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Anticholinergics",
+    "term": "antihistamine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antipsychotics",
+    "term": "antipsychotic",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antipsychotics",
+    "term": "olanzapine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antipsychotics",
+    "term": "clozapine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antipsychotics",
+    "term": "haloperidol",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antipsychotics",
+    "term": "quetiapine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Lithium",
+    "term": "lithium",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antidepressants",
+    "term": "selective serotonin reuptake inhibitor",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antidepressants",
+    "term": "tricyclic antidepressant",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antidepressants",
+    "term": "amitriptyline",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Antidepressants",
+    "term": "sertraline",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Insulin",
+    "term": "insulin",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "SGLT2 inhibitors",
+    "term": "SGLT2 inhibitor",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "SGLT2 inhibitors",
+    "term": "empagliflozin",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "SGLT2 inhibitors",
+    "term": "dapagliflozin",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Other diabetes",
+    "term": "metformin",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Other diabetes",
+    "term": "sulfonylurea",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "NSAIDs",
+    "term": "nonsteroidal anti-inflammatory drug",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "NSAIDs",
+    "term": "ibuprofen",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Stimulants",
+    "term": "methylphenidate",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Stimulants",
+    "term": "amphetamine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Anticonvulsants",
+    "term": "topiramate",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Opioids",
+    "term": "opioid",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Storage-sensitive",
+    "term": "epinephrine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Storage-sensitive",
+    "term": "salbutamol",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "drug",
+    "class": "Storage-sensitive",
+    "term": "levothyroxine",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat stroke",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat illness",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat exhaustion",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat wave",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat stress",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "hyperthermia",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "extreme heat",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "ambient temperature",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "high temperature",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "temperature",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "heat",
+    "class": "Heat",
+    "term": "heat",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hyponatremia",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "dehydration",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "acute kidney injury",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hypohidrosis",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "orthostatic hypotension",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hypotension",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "syncope",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hypokalemia",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hyperkalemia",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hypoglycemia",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "diabetic ketoacidosis",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "rhabdomyolysis",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "electrolyte imbalance",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "fall",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "hospitalization",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  },
+  {
+    "kind": "mechanism",
+    "class": "Mechanism",
+    "term": "emergency department visit",
+    "match": "none",
+    "id": null,
+    "label": null,
+    "other_hits": []
+  }
+]

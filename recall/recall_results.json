@@ -1,0 +1,845 @@
+[
+ {
+  "pmid": "1011962",
+  "topic": "diuretics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "1018382",
+  "topic": "anticholinergics/antipsychotics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "10910799",
+  "topic": "antipsychotics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "12190212",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "16174785",
+  "topic": "antipsychotics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "16338503",
+  "topic": "storage",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "16924603",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "17326279",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "17513091",
+  "topic": "psychotropics",
+  "status": "ok",
+  "n_assoc": 3,
+  "heat_match": true,
+  "drug_match": true,
+  "pair_match": true,
+  "found": true,
+  "names": [
+   [
+    "use of psychotropic drugs",
+    "admission for heat-related pathologies"
+   ],
+   [
+    "use of psychotropic drugs",
+    "admission for heat-related pathologies"
+   ],
+   [
+    "use of psychotropic drugs",
+    "admission for heat-related pathologies"
+   ]
+  ]
+ },
+ {
+  "pmid": "19124546",
+  "topic": "insulin-storage",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "19453697",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "20104062",
+  "topic": "psychotropics",
+  "status": "ok",
+  "n_assoc": 4,
+  "heat_match": false,
+  "drug_match": true,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "use of antidepressants",
+    "death of older people"
+   ],
+   [
+    "use of psychotropic drugs",
+    "death of older people"
+   ],
+   [
+    "use of anxiolytics/hypnotics",
+    "death of older people"
+   ],
+   [
+    "use of antipsychotics",
+    "death of older people"
+   ]
+  ]
+ },
+ {
+  "pmid": "20219056",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "22162094",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "22538141",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 2,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "meals with skin heating (heated) [vs meals without skin heating (not heated)]",
+    "AUC/t(120)"
+   ],
+   [
+    "Meals with local skin heating [vs Meals without local skin heating]",
+    "AUC/t(120)"
+   ]
+  ]
+ },
+ {
+  "pmid": "26656500",
+  "topic": "antihypertensives",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "27160370",
+  "topic": "anticholinergics",
+  "status": "ok",
+  "n_assoc": 4,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "DACE exposure",
+    "length of stay (among older adults on admission to a metropolitan teaching hospital)"
+   ],
+   [
+    "DACE exposure",
+    "length of stay (among older hospitalized adults)"
+   ],
+   [
+    "DACE exposure",
+    "in-hospital mortality (among older adults admitted to a metropolitan teaching hospital)"
+   ],
+   [
+    "DACE exposure",
+    "in-hospital mortality (among older hospitalized adults)"
+   ]
+  ]
+ },
+ {
+  "pmid": "27992525",
+  "topic": "antihypertensives",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "28645059",
+  "topic": "overdose-cocaine",
+  "status": "ok",
+  "n_assoc": 2,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "maximum outdoor temperature",
+    "death from other drug overdoses"
+   ],
+   [
+    "maximum outdoor temperature",
+    "death from cocaine overdose"
+   ]
+  ]
+ },
+ {
+  "pmid": "28737683",
+  "topic": "hyponatremia-drugs",
+  "status": "ok",
+  "n_assoc": 1,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "outdoor temperature in Sweden",
+    "reporting of drug-induced hyponatremia to the Medical Products Agency (MPA)"
+   ]
+  ]
+ },
+ {
+  "pmid": "29116624",
+  "topic": "diuretics/nsaid/acei",
+  "status": "ok",
+  "n_assoc": 2,
+  "heat_match": false,
+  "drug_match": true,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "concomitant use of diuretics, non-steroidal anti-inflammatory drugs, and angiotensin-converting enzyme inhibitors/angiotensin receptor blockers (triple whammy, TW)",
+    "in-hospital acute kidney injury (AKI)"
+   ],
+   [
+    "concomitant use of diuretics, non-steroidal anti-inflammatory drugs, and angiotensin-converting enzyme inhibitors/angiotensin receptor blockers (triple whammy, TW)",
+    "in-hospital acute kidney injury (AKI)"
+   ]
+  ]
+ },
+ {
+  "pmid": "29939771",
+  "topic": "antihypertensives",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "30311402",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "3073067",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "33301532",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 2,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "heatwaves",
+    "heat-related hospitalization (among older patients with chronic conditions)"
+   ],
+   [
+    "heatwaves",
+    "heat-related hospitalization among older patients with chronic conditions"
+   ]
+  ]
+ },
+ {
+  "pmid": "33442740",
+  "topic": "hypnotics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "33864852",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "35574595",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "35717271",
+  "topic": "storage",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "36041539",
+  "topic": "any-maternal",
+  "status": "ok",
+  "n_assoc": 4,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "maternal exposure to weather-related extreme heat events",
+    "congenital heart defects (CHDs) in offspring"
+   ],
+   [
+    "maternal exposure to weather-related extreme heat events",
+    "congenital heart defects (CHDs) in offspring"
+   ],
+   [
+    "maternal exposure to weather-related extreme heat events",
+    "congenital heart defects (CHDs) in offspring"
+   ],
+   [
+    "maternal exposure to weather-related extreme heat events",
+    "congenital heart defects (CHDs) in offspring"
+   ]
+  ]
+ },
+ {
+  "pmid": "36171116",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 6,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "daily mean temperature at 21\u00b0C",
+    "incidence of self-harm attempts by drug overdose"
+   ],
+   [
+    "daily mean temperature (at 15-34 years old)",
+    "incidence of self-harm attempts by drug overdose"
+   ],
+   [
+    "daily mean temperature for those aged \u226565 years",
+    "incidence of self-harm attempts by drug overdose"
+   ],
+   [
+    "daily mean temperature at which drug overdose risk is 1.07",
+    "incidence of self-harm attempts by drug overdose"
+   ],
+   [
+    "daily mean temperature (short-term association)",
+    "incidence of self-harm attempts by drug overdose"
+   ],
+   [
+    "increase in daily mean temperature (at 21 \u00b0C)",
+    "incidence of self-harm attempts by drug overdose"
+   ]
+  ]
+ },
+ {
+  "pmid": "37328294",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "37369523",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 3,
+  "heat_match": false,
+  "drug_match": true,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "10\u00b0C increase in the 2-day average maximum temperature at the residential location (during warmer months)",
+    "risk of death related to cocaine"
+   ],
+   [
+    "Increase in 2-day average maximum temperature at the residential location by 10\u00b0C (during warmer months)",
+    "risk of death related to amphetamines"
+   ],
+   [
+    "temperature (2-day average maximum)",
+    "risk of death related to opioids"
+   ]
+  ]
+ },
+ {
+  "pmid": "37897873",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 6,
+  "heat_match": true,
+  "drug_match": true,
+  "pair_match": true,
+  "found": true,
+  "names": [
+   [
+    "daily ambient temperature",
+    "overdose of amphetamine"
+   ],
+   [
+    "daily ambient temperature",
+    "emergency department visits for use or overdose of cocaine"
+   ],
+   [
+    "daily ambient temperature",
+    "overdose of opioids"
+   ],
+   [
+    "daily ambient temperature",
+    "emergency department visits for use or overdose of amphetamine"
+   ],
+   [
+    "daily ambient temperature",
+    "overdose of cocaine"
+   ],
+   [
+    "daily ambient temperature",
+    "emergency department visits for use or overdose of opioids"
+   ]
+  ]
+ },
+ {
+  "pmid": "38060348",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 4,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "Ambient heat (measured by heat index percentile)",
+    "hypoglycemia"
+   ],
+   [
+    "ambient heat (measured by heat index percentile)",
+    "hypoglycemia"
+   ],
+   [
+    "ambient heat (measured by heat index percentile categories)",
+    "hypoglycemia"
+   ],
+   [
+    "ambient temperature (measured by heat index)",
+    "hypoglycemia"
+   ]
+  ]
+ },
+ {
+  "pmid": "39433419",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "39648665",
+  "topic": "psychotropics",
+  "status": "ok",
+  "n_assoc": 2,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "heatwave",
+    "heat-related illness"
+   ],
+   [
+    "heatwave",
+    "heat-related illness"
+   ]
+  ]
+ },
+ {
+  "pmid": "40095927",
+  "topic": "antihypertensives",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "40499277",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "41044101",
+  "topic": "antipsychotics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "41048198",
+  "topic": "overdose",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "41662937",
+  "topic": "any-maternal",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "4152488",
+  "topic": "psychotropics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "6349204",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "7010077",
+  "topic": "insulin",
+  "status": "ok",
+  "n_assoc": 1,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "ambient temperature: 35 degrees C [vs ambient temperature: 20 degrees C]",
+    "insulin disappearance rate"
+   ]
+  ]
+ },
+ {
+  "pmid": "6770020",
+  "topic": "lithium",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "7249779",
+  "topic": "psychotropics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "840206",
+  "topic": "anticholinergics",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "8363680",
+  "topic": "storage",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "9100934",
+  "topic": "antidepressants",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "9571303",
+  "topic": "any-review",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "953621",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "487019",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "6128802",
+  "topic": "stimulants",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "661049",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "4728582",
+  "topic": "any",
+  "status": "ok",
+  "n_assoc": 0,
+  "heat_match": false,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": []
+ },
+ {
+  "pmid": "9628710",
+  "topic": "overdose-cocaine",
+  "status": "ok",
+  "n_assoc": 4,
+  "heat_match": true,
+  "drug_match": false,
+  "pair_match": false,
+  "found": false,
+  "names": [
+   [
+    "hot days (temperature >= 31.1 degrees C) [vs other days (temperature < 31.1 degrees C)]",
+    "proportion of homicides with positive cocaine toxicology test result"
+   ],
+   [
+    "hot days (temperature >= 31.1 degrees C) [vs other days (temperature < 31.1 degrees C)]",
+    "proportion of traffic fatalities with positive cocaine toxicology test result"
+   ],
+   [
+    "hot days (temperature >= 31.1 degrees C) [vs other days (temperature < 31.1 degrees C)]",
+    "cocaine overdose deaths"
+   ],
+   [
+    "hot days (temperature >= 31.1 degrees C) [vs other days (temperature < 31.1 degrees C)]",
+    "other drug overdose deaths"
+   ]
+  ]
+ }
+]

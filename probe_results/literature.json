@@ -1,0 +1,2948 @@
+{
+ "built": "2026-11-14",
+ "api_checked": true,
+ "reviews": {
+  "42200961": "Scoping review 2026 (older adults, FDA labels)",
+  "41968235": "Narrative review 2026 (heat-vulnerability drugs)",
+  "39513185": "Systematic review 2024 (drugs and core temperature in heat)",
+  "26073686": "Westaway 2015 review",
+  "9571303": "1998 review (hyperthermia and pharmacokinetics)"
+ },
+ "cited": [
+  "33301532",
+  "27378245",
+  "20104062",
+  "38060348",
+  "37897873",
+  "17698677",
+  "29116624",
+  "31205291",
+  "17513091"
+ ],
+ "studies": [
+  {
+   "pmid": "1011962",
+   "title": "Heat tolerance following diuretic induced dehydration.",
+   "year": "1976",
+   "journal": "Med Sci Sports",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "1018382",
+   "title": "Phenothiazines and anticholinergics in heat stroke.",
+   "year": "1976",
+   "journal": "JACEP",
+   "country": "",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "10910799",
+   "title": "Heat intolerance in patients with chronic schizophrenia maintained with antipsychotic drugs.",
+   "year": "2000",
+   "journal": "Am J Psychiatry",
+   "country": "",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "10926160",
+   "title": "Prolonged exercise following diuretic-induced hypohydration: effects on cardiovascular and thermal strain.",
+   "year": "2000",
+   "journal": "Can J Physiol Pharmacol",
+   "country": "Canada",
+   "classes": [
+    "Diuretics",
+    "Heat-labile emergency products"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "12044126",
+   "title": "Mechanism of cocaine-induced hyperthermia in humans.",
+   "year": "2002",
+   "journal": "Ann Intern Med",
+   "country": "",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "physiology",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "12190212",
+   "title": "Drug-associated heat stroke.",
+   "year": "2002",
+   "journal": "South Med J",
+   "country": "USA",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics",
+    "Antidepressants",
+    "Stimulants"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "12760427",
+   "title": "Oligohydrosis and hyperthermia: pilot study of a novel topiramate adverse effect.",
+   "year": "2003",
+   "journal": "J Child Neurol",
+   "country": "",
+   "classes": [
+    "Topiramate / zonisamide"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "12770670",
+   "title": "Oligohydrosis and fever in pediatric patients treated with zonisamide.",
+   "year": "2003",
+   "journal": "Pediatr Neurol",
+   "country": "USA",
+   "classes": [
+    "Topiramate / zonisamide"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "1335440",
+   "title": "Beta-adrenoreceptor blockade attenuates heat-induced tachycardia,but not the tolerance to the stress.",
+   "year": "1992",
+   "journal": "Indian J Physiol Pharmacol",
+   "country": "Pune",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "14622685",
+   "title": "The pharmacokinetics of transdermal fentanyl delivered with and without controlled heat.",
+   "year": "2003",
+   "journal": "J Pain",
+   "country": "",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "experimental",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "14841388",
+   "title": "Comparative study on the effect of anticholinergic compounds on sweating.",
+   "year": "1951",
+   "journal": "J Invest Dermatol",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "1493844",
+   "title": "Heating and cooling of the nitroglycerin patch application area modify the plasma level of nitroglycerin.",
+   "year": "1992",
+   "journal": "Eur J Clin Pharmacol",
+   "country": "Norway",
+   "classes": [
+    "Heat-labile emergency products"
+   ],
+   "etype": "experimental",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "15235507",
+   "title": "[Hyponatremia in elderly patients treated with thiazide diuretics and incited to drink abundantly during the heat wave].",
+   "year": "2004",
+   "journal": "Presse Med",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "16174785",
+   "title": "Recurrent heat-related illnesses during antipsychotic treatment.",
+   "year": "2005",
+   "journal": "Ann Pharmacother",
+   "country": "Hong Kong",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "16338503",
+   "title": "Can stock rotation effectively mitigate EMS medication exposure to excessive heat and cold?",
+   "year": "2006",
+   "journal": "Am J Emerg Med",
+   "country": "",
+   "classes": [],
+   "etype": "storage",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "16794091",
+   "title": "Risk factors for heat related death during the August 2003 heat wave in Paris, France, in patients evaluated at the emergency department of the H\u00f4pital Europ\u00e9en Georges Pompidou.",
+   "year": "2006",
+   "journal": "Emerg Med J",
+   "country": "",
+   "classes": [
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "16911573",
+   "title": "Influence of climate on the incidence of thiazide-induced hyponatraemia.",
+   "year": "2007",
+   "journal": "Int J Clin Pract",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "seasonal",
+   "graph": "vetted",
+   "dv_findings": 3,
+   "api_findings": 4,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "16924603",
+   "title": "Adverse drug reactions in patients older than 70 years during the heat wave occurred in France in summer 2003: A study from the French PharmacoVigilance Database.",
+   "year": "2006",
+   "journal": "Pharmacoepidemiol Drug Saf",
+   "country": "France",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Antidepressants",
+    "Benzodiazepines / sedatives"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "17326279",
+   "title": "Adverse drug reactions during heatwaves.",
+   "year": "2007",
+   "journal": "Prescrire Int",
+   "country": "",
+   "classes": [
+    "Beta blockers",
+    "Psychotropics (unspecified)",
+    "Stimulants",
+    "Cholinesterase inhibitors"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "17513091",
+   "title": "Psychotropic drugs use and risk of heat-related hospitalisation.",
+   "year": "2007",
+   "journal": "Eur Psychiatry",
+   "country": "",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics",
+    "Psychotropics (unspecified)",
+    "Benzodiazepines / sedatives"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 3,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "17698677",
+   "title": "Short- and long-term outcomes of heatstroke following the 2003 heat wave in Lyon, France.",
+   "year": "2007",
+   "journal": "Arch Intern Med",
+   "country": "",
+   "classes": [
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 4,
+   "api_findings": 5,
+   "drug_extracted": true,
+   "note": "",
+   "via": "key primary study"
+  },
+  {
+   "pmid": "18025545",
+   "title": "Fatal exertional heat stroke in a patient receiving zuclopenthixol, quetiapine and benztropine.",
+   "year": "2007",
+   "journal": "Can J Clin Pharmacol",
+   "country": "Ontario",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "18217788",
+   "title": "Drug-induced hyperhidrosis and hypohidrosis: incidence, prevention and management.",
+   "year": "2008",
+   "journal": "Drug Saf",
+   "country": "USA",
+   "classes": [
+    "Anticholinergics",
+    "Antidepressants",
+    "Opioids",
+    "Cholinesterase inhibitors"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "18408610",
+   "title": "The effects of acute dopamine reuptake inhibition on performance.",
+   "year": "2008",
+   "journal": "Med Sci Sports Exerc",
+   "country": "Belgium",
+   "classes": [
+    "Stimulants",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "19036898",
+   "title": "Chronic low-dose aspirin therapy attenuates reflex cutaneous vasodilation in middle-aged humans.",
+   "year": "2009",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "NSAIDs"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "19124546",
+   "title": "Diabetic ketoacidosis caused by exposure of insulin pump to heat and sunlight.",
+   "year": "2009",
+   "journal": "BMJ",
+   "country": "",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "19453697",
+   "title": "Heat-related side-effects of neurological and non-neurological medication may increase heatwave fatalities.",
+   "year": "2009",
+   "journal": "Eur J Neurol",
+   "country": "Austria",
+   "classes": [],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "20104062",
+   "title": "Risk of death related to psychotropic drug use in older people during the European 2003 heatwave: a population-based case-control study.",
+   "year": "2009",
+   "journal": "Am J Geriatr Psychiatry",
+   "country": "France",
+   "classes": [
+    "Antipsychotics",
+    "Antidepressants",
+    "Psychotropics (unspecified)",
+    "Benzodiazepines / sedatives",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 3,
+   "api_findings": 4,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "20219056",
+   "title": "Ambient temperature and risk of death from accidental drug overdose in New York City, 1990-2006.",
+   "year": "2010",
+   "journal": "Addiction",
+   "country": "",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "20358691",
+   "title": "Drugs and pharmaceuticals: management of intoxication and antidotes.",
+   "year": "2010",
+   "journal": "EXS",
+   "country": "",
+   "classes": [
+    "Anticholinergics",
+    "Benzodiazepines / sedatives",
+    "Opioids",
+    "Insulin",
+    "Topiramate / zonisamide"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 17698677"
+  },
+  {
+   "pmid": "20595543",
+   "title": "Interaction of hyperthermia and heart rate on stroke volume during prolonged exercise.",
+   "year": "2010",
+   "journal": "J Appl Physiol (1985)",
+   "country": "USA",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "20920435",
+   "title": "Diabetes in the desert: what do patients know about the heat?",
+   "year": "2010",
+   "journal": "J Diabetes Sci Technol",
+   "country": "USA",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "21320685",
+   "title": "Heat-related illness risk with methylphenidate use.",
+   "year": "2011",
+   "journal": "J Pediatr Health Care",
+   "country": "",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "21470226",
+   "title": "Urinary incontinence, hyperthermia, and sudden death.",
+   "year": "2011",
+   "journal": "J Forensic Sci",
+   "country": "Australia",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "22162094",
+   "title": "A comparative study of adverse drug reactions during two heat waves that occurred in France in 2003 and 2006.",
+   "year": "2012",
+   "journal": "Pharmacoepidemiol Drug Saf",
+   "country": "",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Beta blockers",
+    "Antidepressants",
+    "Topiramate / zonisamide",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "22169586",
+   "title": "Serum sodium abnormalities during nonexertional heatstroke: incidence and prognostic values.",
+   "year": "2012",
+   "journal": "Am J Emerg Med",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "22538141",
+   "title": "Clinical performance of a device that applies local heat to the insulin infusion site: a crossover study.",
+   "year": "2012",
+   "journal": "J Diabetes Sci Technol",
+   "country": "Germany",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "experimental",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "2262461",
+   "title": "Acetazolamide alters temperature regulation during submaximal exercise.",
+   "year": "1990",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "physiology",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "23497698",
+   "title": "A patient with heatstroke associated with consciousness disturbance secondary to hyponatremia: a case report.",
+   "year": "2013",
+   "journal": "J Med Case Rep",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 17698677"
+  },
+  {
+   "pmid": "2355819",
+   "title": "Thermoregulation in mildly hypertensive men during beta-adrenergic blockade.",
+   "year": "1990",
+   "journal": "Med Sci Sports Exerc",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "23773932",
+   "title": "Hypohidrosis induced by topiramate in an adult patient.",
+   "year": "2013",
+   "journal": "Epileptic Disord",
+   "country": "",
+   "classes": [
+    "Topiramate / zonisamide"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "24613712",
+   "title": "Summer syncope syndrome.",
+   "year": "2014",
+   "journal": "Am J Med",
+   "country": "Tucson",
+   "classes": [
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "24734418",
+   "title": "Heat-related fatalities in Wisconsin during the summer of 2012.",
+   "year": "2013",
+   "journal": "WMJ",
+   "country": "",
+   "classes": [
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "25163443",
+   "title": "Is environmental temperature related to renal symptoms, serum lithium levels, and other laboratory test results in current lithium users?",
+   "year": "2014",
+   "journal": "Hum Psychopharmacol",
+   "country": "Canada",
+   "classes": [
+    "Lithium"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 1,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "2589534",
+   "title": "Atropine-induced cutaneous vasodilation decreases esophageal temperature during exercise.",
+   "year": "1989",
+   "journal": "Am J Physiol",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "26052028",
+   "title": "Summer syncope syndrome redux.",
+   "year": "2015",
+   "journal": "Am J Med",
+   "country": "Tucson",
+   "classes": [
+    "Antihypertensives (unspecified)",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "case",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "26073686",
+   "title": "Medicines can affect thermoregulation and accentuate the risk of dehydration and heat-related illness during hot weather.",
+   "year": "2015",
+   "journal": "J Clin Pharm Ther",
+   "country": "Australia",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Anticholinergics",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "26451994",
+   "title": "Prevalence of risk and protective factors associated with heat-related outcomes in Southern Quebec: A secondary analysis of the NuAge study.",
+   "year": "2015",
+   "journal": "Can J Public Health",
+   "country": "",
+   "classes": [
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "26503496",
+   "title": "Heat stroke during treatment with olanzapine, trihexyphenidyl, and trazodone in a patient with schizophrenia.",
+   "year": "2015",
+   "journal": "Acta Neuropsychiatr",
+   "country": "Taiwan",
+   "classes": [
+    "Antipsychotics",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "26656500",
+   "title": "\"Summer Dizziness\" as a Neglected Phenomenon of Antihypertensive Drug Overuse in Patients With Carotid Disease: A Hypothesis.",
+   "year": "2016",
+   "journal": "Angiology",
+   "country": "Serbia",
+   "classes": [
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "27074342",
+   "title": "Heat stroke during long-term clozapine treatment: should we be concerned about hot weather?",
+   "year": "2016",
+   "journal": "Trends Psychiatry Psychother",
+   "country": "Brazil",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "27160370",
+   "title": "Heat Waves, Drugs with Anticholinergic Effects, and Outcomes in Older Hospitalized Adults.",
+   "year": "2016",
+   "journal": "J Am Geriatr Soc",
+   "country": "Australia",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 4,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "27378245",
+   "title": "Increased risk of hospital admission for dehydration or heat-related illness after initiation of medicines: a sequence symmetry analysis.",
+   "year": "2016",
+   "journal": "J Clin Pharm Ther",
+   "country": "Australia",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Antidepressants",
+    "Benzodiazepines / sedatives",
+    "NSAIDs",
+    "Topiramate / zonisamide",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "27600862",
+   "title": "Efficacy and safety of canagliflozin in patients with type 2 diabetes mellitus living in hot climates.",
+   "year": "2016",
+   "journal": "Int J Clin Pract",
+   "country": "",
+   "classes": [
+    "SGLT2 inhibitors",
+    "Metformin and sulfonylureas"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "27768523",
+   "title": "The Impact of Central and Peripheral Cyclooxygenase Enzyme Inhibition on Exercise-Induced Elevations in Core Body Temperature.",
+   "year": "2017",
+   "journal": "Int J Sports Physiol Perform",
+   "country": "",
+   "classes": [
+    "NSAIDs"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "27859929",
+   "title": "Does attenuated skin blood flow lower sweat rate and the critical environmental limit for heat balance during severe heat exposure?",
+   "year": "2017",
+   "journal": "Exp Physiol",
+   "country": "USA",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "27992525",
+   "title": "The Combined Effect of High Ambient Temperature and Antihypertensive Treatment on Renal Function in Hospitalized Elderly Patients.",
+   "year": "2016",
+   "journal": "PLoS One",
+   "country": "Israel",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "2820920",
+   "title": "Thermoregulation during prolonged exercise in heat: alterations with beta-adrenergic blockade.",
+   "year": "1987",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "2858466",
+   "title": "Effect of beta-adrenoceptor blockade on thermoregulation during prolonged exercise.",
+   "year": "1985",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "28645059",
+   "title": "Association of elevated ambient temperature with death from cocaine overdose.",
+   "year": "2017",
+   "journal": "Drug Alcohol Depend",
+   "country": "Canada",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 2,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "28701216",
+   "title": "The effect of ambient temperature on type-2-diabetes: case-crossover analysis of 4+ million GP consultations across England.",
+   "year": "2017",
+   "journal": "Environ Health",
+   "country": "",
+   "classes": [
+    "Diuretics",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Antidepressants",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 3,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "28737683",
+   "title": "Increased Risk of Drug-Induced Hyponatremia during High Temperatures.",
+   "year": "2017",
+   "journal": "Int J Environ Res Public Health",
+   "country": "",
+   "classes": [],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "2881900",
+   "title": "Effect of beta-adrenoceptor blockade and calcium antagonism, alone and in combination, on thermoregulation during prolonged exercise.",
+   "year": "1987",
+   "journal": "Int J Sports Med",
+   "country": "",
+   "classes": [
+    "Beta blockers",
+    "Calcium channel blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "2885298",
+   "title": "Effect of beta-adrenergic blockade on thermoregulation during exercise.",
+   "year": "1987",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "29116624",
+   "title": "The Concomitant Use of Diuretics, Non-Steroidal Anti-Inflammatory Drugs, and Angiotensin-Converting Enzyme Inhibitors or Angiotensin Receptor Blockers (Triple Whammy), Extreme Heat, and In-Hospital Acute Kidney Injury in Older Medical Patients.",
+   "year": "2017",
+   "journal": "Adv Ther",
+   "country": "",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "NSAIDs"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 2,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "29613996",
+   "title": "Timing and Predictors of Mild and Severe Heat Illness among New Military Enlistees.",
+   "year": "2018",
+   "journal": "Med Sci Sports Exerc",
+   "country": "CA",
+   "classes": [
+    "Opioids",
+    "NSAIDs",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 6,
+   "api_findings": 6,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "29939771",
+   "title": "Antihypertensive drug reduction for treated hypertensive patients during the summer.",
+   "year": "2019",
+   "journal": "Clin Exp Hypertens",
+   "country": "Japan",
+   "classes": [
+    "Diuretics",
+    "Antihypertensives (unspecified)",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "seasonal",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "3023274",
+   "title": "Influence of beta-adrenergic blockade on the control of sweating in humans.",
+   "year": "1986",
+   "journal": "J Appl Physiol (1985)",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "30311402",
+   "title": "Environmental effects of ambient temperature and relative humidity on insulin pharmacodynamics in adults with type 1 diabetes mellitus.",
+   "year": "2019",
+   "journal": "Diabetes Obes Metab",
+   "country": "UK",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "30462243",
+   "title": "Influence of Outdoor Temperature and Relative Humidity on Incidence and Etiology of Hyponatremia.",
+   "year": "2019",
+   "journal": "J Clin Endocrinol Metab",
+   "country": "Switzerland",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "3073067",
+   "title": "Combined effect of exercise and ambient temperature on insulin absorption and postprandial glycemia in type I patients.",
+   "year": "1988",
+   "journal": "Diabetes Care",
+   "country": "Finland",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "30777859",
+   "title": "Outdoor temperature and survival benefit of empiric potassium in users of furosemide in US Medicaid enrollees: a cohort study.",
+   "year": "2019",
+   "journal": "BMJ Open",
+   "country": "USA",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "30897748",
+   "title": "Effects of Drugs and Excipients on Hydration Status.",
+   "year": "2019",
+   "journal": "Nutrients",
+   "country": "",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "3092610",
+   "title": "Increased uptake of transdermal glyceryl trinitrate during physical exercise and during high ambient temperature.",
+   "year": "1986",
+   "journal": "Am Heart J",
+   "country": "",
+   "classes": [
+    "Heat-labile emergency products"
+   ],
+   "etype": "experimental",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "31205291",
+   "title": "Increased Risk of Opioid Overdose Death Following Cold Weather: A Case-Crossover Study.",
+   "year": "2019",
+   "journal": "Epidemiology",
+   "country": "RI",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 2,
+   "drug_extracted": true,
+   "note": "Cold, not heat, raised overdose deaths; graph lost the direction",
+   "via": "key primary study"
+  },
+  {
+   "pmid": "31642960",
+   "title": "Drug-associated non-pyrogenic hyperthermia: a narrative review.",
+   "year": "2020",
+   "journal": "Eur J Clin Pharmacol",
+   "country": "Australia",
+   "classes": [
+    "Diuretics",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Antidepressants",
+    "Psychotropics (unspecified)",
+    "Benzodiazepines / sedatives",
+    "NSAIDs"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 27378245"
+  },
+  {
+   "pmid": "31793011",
+   "title": "Drug-associated hyperthermia: A longitudinal analysis of hospital presentations.",
+   "year": "2020",
+   "journal": "J Clin Pharm Ther",
+   "country": "Australia",
+   "classes": [
+    "Diuretics",
+    "Topiramate / zonisamide",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "32730241",
+   "title": "Notes from the Field: Amphetamine Use Among Workers with Severe Hyperthermia - Eight States, 2010-2019.",
+   "year": "2020",
+   "journal": "MMWR Morb Mortal Wkly Rep",
+   "country": "",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "32740103",
+   "title": "Death in Sauna Associated With a Transdermal Fentanyl Patch.",
+   "year": "2020",
+   "journal": "Am J Forensic Med Pathol",
+   "country": "",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "33301532",
+   "title": "Heatwaves, medications, and heat-related hospitalization in older Medicare beneficiaries with chronic conditions.",
+   "year": "2020",
+   "journal": "PLoS One",
+   "country": "USA",
+   "classes": [
+    "Diuretics",
+    "Beta blockers",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "33442740",
+   "title": "High and low ambient temperature at night and the prescription of hypnotics.",
+   "year": "2021",
+   "journal": "Sleep",
+   "country": "Republic of Korea",
+   "classes": [
+    "Benzodiazepines / sedatives"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "33552178",
+   "title": "Non-steroidal anti-inflammatory drugs on core body temperature during exercise: A systematic review.",
+   "year": "2021",
+   "journal": "J Exerc Sci Fit",
+   "country": "USA",
+   "classes": [
+    "NSAIDs"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "33736437",
+   "title": "An autopsy case of heatstroke under the influence of psychotropic drugs.",
+   "year": "2020",
+   "journal": "Soud Lek",
+   "country": "",
+   "classes": [
+    "Antipsychotics",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "33864852",
+   "title": "Relationship between ambient temperature and severe acute poisoning by alcohol and drugs.",
+   "year": "2021",
+   "journal": "Alcohol",
+   "country": "Germany",
+   "classes": [
+    "Benzodiazepines / sedatives",
+    "Opioids"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "3397041",
+   "title": "Effects of bromocriptine on sweat gland function during heat acclimatization.",
+   "year": "1988",
+   "journal": "Horm Res",
+   "country": "Canada",
+   "classes": [
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "physiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "34119011",
+   "title": "Electric fan use for cooling during hot weather: a biophysical modelling study.",
+   "year": "2021",
+   "journal": "Lancet Planet Health",
+   "country": "Denmark",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "3432054",
+   "title": "Cutaneous blood flow and local sweating after systemic atropine administration.",
+   "year": "1987",
+   "journal": "Pflugers Arch",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "34519460",
+   "title": "Heat-related cardiovascular morbidity and mortality in Switzerland: a clinical perspective.",
+   "year": "2021",
+   "journal": "Swiss Med Wkly",
+   "country": "Switzerland",
+   "classes": [
+    "Diuretics",
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 5,
+   "api_findings": 9,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "34659926",
+   "title": "Antipsychotic Medication-Induced Hyperthermia Leading to Cerebrovascular Accident: A Case Report.",
+   "year": "2021",
+   "journal": "Cureus",
+   "country": "ATG",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "35574595",
+   "title": "Exposures to psycholeptics, psychoanaleptics, and cardiovascular drugs reported to the PIC erfurt during heat waves from 2003 to 2018.",
+   "year": "2022",
+   "journal": "J Environ Sci Health A Tox Hazard Subst Environ Eng",
+   "country": "Germany",
+   "classes": [
+    "Antihypertensives (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "35619981",
+   "title": "An Examination of Seasonal Trends in Delaware Drug Overdoses, 2016-2020.",
+   "year": "2021",
+   "journal": "Dela J Public Health",
+   "country": "University of Delaware",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "seasonal",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 31205291"
+  },
+  {
+   "pmid": "35717271",
+   "title": "Impact of Ambient Temperature on 5 Emergency Drugs Aboard an Emergency Medical Car Over a 1-Year Period.",
+   "year": "2022",
+   "journal": "Ann Emerg Med",
+   "country": "Luxembourg",
+   "classes": [
+    "Opioids",
+    "Heat-labile emergency products"
+   ],
+   "etype": "storage",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "35965941",
+   "title": "An unwell patient with Parkinson's disease: Hyperpyrexia syndrome in a heatwave.",
+   "year": "2022",
+   "journal": "JRSM Open",
+   "country": "UK",
+   "classes": [
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "36041539",
+   "title": "Interaction of maternal medication use with ambient heat exposure on congenital heart defects in the National Birth Defects Prevention Study.",
+   "year": "2022",
+   "journal": "Environ Res",
+   "country": "China",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "physiology",
+   "graph": "vetted",
+   "dv_findings": 3,
+   "api_findings": 4,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "3606515",
+   "title": "Human thermoregulation after atropine and/or pralidoxime administration.",
+   "year": "1987",
+   "journal": "Aviat Space Environ Med",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "36171116",
+   "title": "Association between daily ambient temperature and drug overdose in Tokyo: a time-series study.",
+   "year": "2022",
+   "journal": "Environ Health Prev Med",
+   "country": "The University of Tokyo",
+   "classes": [],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 6,
+   "api_findings": 6,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "36752238",
+   "title": "Global Warming and Prescribing: A Review on Medicines' Effects and Precautions.",
+   "year": "2022",
+   "journal": "Psychiatr Danub",
+   "country": "Croatia",
+   "classes": [
+    "Calcium channel blockers",
+    "Antipsychotics",
+    "Insulin",
+    "Heat-labile emergency products"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "36964771",
+   "title": "Diabetes and climate change: current evidence and implications for people with diabetes, clinicians and policy stakeholders.",
+   "year": "2023",
+   "journal": "Diabetologia",
+   "country": "",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "37328294",
+   "title": "Effects of Medications on Heat Loss Capacity in Chronic Disease Patients: Health Implications Amidst Global Warming.",
+   "year": "2023",
+   "journal": "Pharmacol Rev",
+   "country": "",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "37369523",
+   "title": "Hot weather and death related to acute cocaine, opioid and amphetamine toxicity in British Columbia, Canada: a time-stratified case-crossover study.",
+   "year": "2023",
+   "journal": "CMAJ Open",
+   "country": "",
+   "classes": [
+    "Opioids",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 1,
+   "api_findings": 3,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "37897873",
+   "title": "Associations between short-term ambient temperature exposure and emergency department visits for amphetamine, cocaine, and opioid use in California from 2005 to 2019.",
+   "year": "2023",
+   "journal": "Environ Int",
+   "country": "USA",
+   "classes": [
+    "Opioids",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 3,
+   "api_findings": 6,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "3790023",
+   "title": "Effects of atropine on thermoregulatory responses to exercise in different environments.",
+   "year": "1986",
+   "journal": "Aviat Space Environ Med",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "3790405",
+   "title": "Effect of glycopyrrolate and atropine on thermoregulation after exercise.",
+   "year": "1986",
+   "journal": "Br J Clin Pharmacol",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "38060348",
+   "title": "Ambient Heat and Risk of Serious Hypoglycemia in Older Adults With Diabetes Using Insulin in the U.S. and Taiwan: A Cross-National Case-Crossover Study.",
+   "year": "2024",
+   "journal": "Diabetes Care",
+   "country": "NJ",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 4,
+   "api_findings": 4,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "38337453",
+   "title": "The Impact of Climate Change and Extreme Weather Conditions on Cardiovascular Health and Acute Cardiovascular Diseases.",
+   "year": "2024",
+   "journal": "J Clin Med",
+   "country": "Italy",
+   "classes": [
+    "ACE inhibitors / ARBs"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 33301532"
+  },
+  {
+   "pmid": "38580424",
+   "title": "Ambient heat exposure and kidney function in patients with chronic kidney disease: a post-hoc analysis of the DAPA-CKD trial.",
+   "year": "2024",
+   "journal": "Lancet Planet Health",
+   "country": "UK",
+   "classes": [
+    "SGLT2 inhibitors"
+   ],
+   "etype": "seasonal",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "38831143",
+   "title": "Characteristics and preventability of medication-related admissions for acute kidney injury and dehydration in elderly patients.",
+   "year": "2024",
+   "journal": "Eur J Clin Pharmacol",
+   "country": "The Netherlands",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "39347264",
+   "title": "Heat Stroke in a Young Athlete With Attention Deficit Hyperactivity Disorder on Stimulant Medication.",
+   "year": "2024",
+   "journal": "Cureus",
+   "country": "USA",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "39433419",
+   "title": "Do relationships between ambient temperature and serious adverse health outcomes vary among users of different antidiabetes drugs? A retrospective cohort study of US Medicaid beneficiaries with type 2 diabetes.",
+   "year": "2024",
+   "journal": "BMJ Open",
+   "country": "",
+   "classes": [
+    "Insulin",
+    "Metformin and sulfonylureas"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "39513185",
+   "title": "The effect of prescription and over-the-counter medications on core temperature in adults during heat stress: a systematic review and meta-analysis.",
+   "year": "2024",
+   "journal": "EClinicalMedicine",
+   "country": "Australia",
+   "classes": [
+    "Diuretics",
+    "Beta blockers",
+    "Anticholinergics",
+    "Antidepressants",
+    "Heat-labile emergency products",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "39591627",
+   "title": "Disruption of Opioid Treatment Program Services Due to an Extreme Weather Event: An Example of Climate Change Effects on the Health of Persons Who Use Drugs.",
+   "year": "2025",
+   "journal": "J Addict Med",
+   "country": "",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 31205291"
+  },
+  {
+   "pmid": "39627353",
+   "title": "A retrospective study of seasonal variation in sodium-glucose co-transporter 2 inhibitor-related adverse events using the Japanese adverse drug event report database.",
+   "year": "2024",
+   "journal": "Sci Rep",
+   "country": "Japan",
+   "classes": [
+    "SGLT2 inhibitors"
+   ],
+   "etype": "seasonal",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 42200961"
+  },
+  {
+   "pmid": "39648665",
+   "title": "The role of psychotropics on the associations between extreme temperature and heat-related outcomes among people with mental health conditions: population-based study.",
+   "year": "2024",
+   "journal": "Psychol Med",
+   "country": "UK",
+   "classes": [
+    "Antipsychotics",
+    "Antidepressants",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 2,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "39758443",
+   "title": "Stimulant medications effects in heat-related illness in ADHD patients: a large database study.",
+   "year": "2024",
+   "journal": "Front Psychiatry",
+   "country": "United States",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "3993552",
+   "title": "Effect of selective and nonselective beta-adrenoceptor blockade on thermoregulation during prolonged exercise in heat.",
+   "year": "1985",
+   "journal": "Am J Cardiol",
+   "country": "",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "40018180",
+   "title": "Identification of individual-level clinical factors associated with increased risk of death during heatwaves: a time-stratified case-crossover study using national primary care records in England.",
+   "year": "2024",
+   "journal": "BMJ Public Health",
+   "country": "UK",
+   "classes": [
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "40095927",
+   "title": "No effect of stage 1 hypertension or hypertensive medication on critical environmental limits (PSU HEAT Project).",
+   "year": "2025",
+   "journal": "Am J Physiol Heart Circ Physiol",
+   "country": "United States",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Antihypertensives (unspecified)",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "40134461",
+   "title": "Rapidly Progressive Disseminated Intravascular Coagulation (DIC) in Severe Fatal Heatstroke: A Diagnostic Challenge Despite Normal Initial Coagulation Tests.",
+   "year": "2025",
+   "journal": "Cureus",
+   "country": "JPN",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "40402472",
+   "title": "Heatwaves and Heart Health: A Survey Study and Discussion on the Current Knowledge and Attitudes of Cardiac Rehabilitation Clinicians.",
+   "year": "2025",
+   "journal": "J Cardiopulm Rehabil Prev",
+   "country": "",
+   "classes": [
+    "Diuretics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "40432167",
+   "title": "Medications, epilepsy and climate change: Added layers of complexity.",
+   "year": "2025",
+   "journal": "Br J Clin Pharmacol",
+   "country": "UK",
+   "classes": [
+    "Antipsychotics",
+    "Antidepressants",
+    "Benzodiazepines / sedatives"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "40499277",
+   "title": "Exploring the relationship between medications and heat-related community deaths during the 2021 heat dome: a hybrid approach using machine learning.",
+   "year": "2025",
+   "journal": "EBioMedicine",
+   "country": "Canada",
+   "classes": [
+    "Diuretics",
+    "Calcium channel blockers",
+    "Topiramate / zonisamide",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "40921467",
+   "title": "Psychotropic prescriptions in the context of extreme heat.",
+   "year": "2025",
+   "journal": "CMAJ",
+   "country": "",
+   "classes": [
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 27378245"
+  },
+  {
+   "pmid": "41044101",
+   "title": "Antipsychotics and other risk factors for mortality among people with schizophrenia during an extreme heat event: a population-based case-control study.",
+   "year": "2025",
+   "journal": "Sci Rep",
+   "country": "",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "41048198",
+   "title": "Heat exposure and drug overdose mortality in the USA.",
+   "year": "2026",
+   "journal": "Addiction",
+   "country": "USA",
+   "classes": [
+    "Opioids",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "41346874",
+   "title": "Methamphetamine Overdose and Hyperthermia in a 41-Year-Old Man Found Unresponsive.",
+   "year": "2025",
+   "journal": "Cureus",
+   "country": "USA",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 37897873"
+  },
+  {
+   "pmid": "4152488",
+   "title": "Heat dyscontrol syndrome in patients receiving antipsychotic, antidepressant and antiparkinson drug therapy.",
+   "year": "1974",
+   "journal": "J Fla Med Assoc",
+   "country": "",
+   "classes": [
+    "Antipsychotics",
+    "Antidepressants"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "41662937",
+   "title": "Ambient temperature and preterm birth: Interaction by maternal medical factors and medications.",
+   "year": "2026",
+   "journal": "Environ Res",
+   "country": "Israel",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "41727842",
+   "title": "Alcohol and substance use in extreme environment temperatures exposures, neural mechanisms, coping mechanisms, substance use disorders, and increased hospital visits.",
+   "year": "2026",
+   "journal": "Front Hum Neurosci",
+   "country": "Uganda",
+   "classes": [
+    "Opioids",
+    "Stimulants"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 31205291"
+  },
+  {
+   "pmid": "41735657",
+   "title": "Weather-Related Trends in Drug Use Incidents Aboard Transit Vehicles.",
+   "year": "2026",
+   "journal": "J Urban Health",
+   "country": "",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "seasonal",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 37897873"
+  },
+  {
+   "pmid": "41752246",
+   "title": "Global Warming and the Elderly: A Socio-Ecological Framework.",
+   "year": "2026",
+   "journal": "Int J Environ Res Public Health",
+   "country": "USA",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 33301532"
+  },
+  {
+   "pmid": "41915489",
+   "title": "The Association Between Ambient Temperature and Hypoglycemia in People Living With Type 1 Diabetes: A Case Time Series Analysis Using Real-Time Continuous Glucose Monitoring.",
+   "year": "2026",
+   "journal": "Diabetes Care",
+   "country": "U.K",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 38060348"
+  },
+  {
+   "pmid": "42118586",
+   "title": "Association of short-term ambient environmental exposures with suicide and drug overdose deaths among U.S. veterans.",
+   "year": "2026",
+   "journal": "Am J Epidemiol",
+   "country": "United States",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "seasonal",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 37897873"
+  },
+  {
+   "pmid": "42200111",
+   "title": "Comparing heatwave experiences, behaviors, and risk perceptions across high-risk populations in the Netherlands: A cross-sectional survey study.",
+   "year": "2026",
+   "journal": "J Clim Chang Health",
+   "country": "",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "epidemiology",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 27378245"
+  },
+  {
+   "pmid": "42200961",
+   "title": "Recognizing and Mitigating the Effects of Medication on Heat-Related Illness in Older Adults: A Scoping Review.",
+   "year": "2026",
+   "journal": "Pharmacy (Basel)",
+   "country": "USA",
+   "classes": [
+    "Diuretics",
+    "ACE inhibitors / ARBs",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 33301532"
+  },
+  {
+   "pmid": "42278526",
+   "title": "Subthreshold Thermal Stress Aggravates Methamphetamine-Induced Cardiomyocyte Pyroptosis via the Mitochondrial ROS/BAX/mtDNA/NLRP3 Pathway.",
+   "year": "2026",
+   "journal": "Int J Mol Sci",
+   "country": "China",
+   "classes": [
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 37897873"
+  },
+  {
+   "pmid": "42510711",
+   "title": "Heat, Brain, and Mental Health: Biological Mechanisms Underlying Climate-Related Psychiatric Outcomes.",
+   "year": "2026",
+   "journal": "Biology (Basel)",
+   "country": "Paraguay",
+   "classes": [
+    "Lithium",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "review",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 17513091"
+  },
+  {
+   "pmid": "42782543",
+   "title": "Non optimal temperatures and chronic cardiovascular diseases.",
+   "year": "2026",
+   "journal": "Semin Immunopathol",
+   "country": "",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 17513091"
+  },
+  {
+   "pmid": "42900944",
+   "title": "Climate Change and Heat-related Illness in Older Adults: Implications for Emergency Medicine.",
+   "year": "2026",
+   "journal": "West J Emerg Med",
+   "country": "Ohio",
+   "classes": [
+    "Any medication / polypharmacy"
+   ],
+   "etype": "review",
+   "graph": "absent",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cites 33301532"
+  },
+  {
+   "pmid": "4728582",
+   "title": "Drug-induced heat stroke.",
+   "year": "1973",
+   "journal": "Anesthesiology",
+   "country": "",
+   "classes": [],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "487019",
+   "title": "Heatwave deaths and drugs affecting temperature regulation.",
+   "year": "1979",
+   "journal": "Br Med J",
+   "country": "",
+   "classes": [],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "6128802",
+   "title": "Fatal heat-stroke in a child taking appetite-suppressant drugs.",
+   "year": "1982",
+   "journal": "S Afr Med J",
+   "country": "",
+   "classes": [],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "6259250",
+   "title": "Effect of propranolol on aldosterone response to heat exposure in sodium-restricted men.",
+   "year": "1980",
+   "journal": "J Endocrinol Invest",
+   "country": "",
+   "classes": [
+    "ACE inhibitors / ARBs",
+    "Beta blockers"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "6349204",
+   "title": "Influence of heat on insulin absorption: different effects on amorphous and soluble insulins.",
+   "year": "1983",
+   "journal": "Acta Diabetol Lat",
+   "country": "",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "6517816",
+   "title": "Effects of heat acclimation on atropine-impaired thermoregulation.",
+   "year": "1984",
+   "journal": "Aviat Space Environ Med",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "661049",
+   "title": "Fatal drug-induced heat stroke.",
+   "year": "1978",
+   "journal": "JACEP",
+   "country": "",
+   "classes": [
+    "Anticholinergics",
+    "Antipsychotics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "6725067",
+   "title": "Heat exchange following atropine injection before and after heat acclimation.",
+   "year": "1984",
+   "journal": "J Appl Physiol Respir Environ Exerc Physiol",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "6770020",
+   "title": "Heat injury: a possible association with lithium carbonate therapy.",
+   "year": "1980",
+   "journal": "J Med Assoc Ga",
+   "country": "",
+   "classes": [
+    "Lithium"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "6842224",
+   "title": "Cerebellar syndrome following neuroleptic induced heat stroke.",
+   "year": "1983",
+   "journal": "J Neurol Neurosurg Psychiatry",
+   "country": "",
+   "classes": [
+    "Antipsychotics",
+    "Antidepressants",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "7000239",
+   "title": "Sauna-induced acceleration in insulin absorption from subcutaneous injection site.",
+   "year": "1980",
+   "journal": "Br Med J",
+   "country": "",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "experimental",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": true,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "7010077",
+   "title": "A rise in ambient temperature augments insulin absorption in diabetic patients.",
+   "year": "1981",
+   "journal": "Metabolism",
+   "country": "",
+   "classes": [
+    "Insulin"
+   ],
+   "etype": "epidemiology",
+   "graph": "api_only",
+   "dv_findings": 0,
+   "api_findings": 1,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "7249779",
+   "title": "Heat stroke related to psychotropic medications and prior history of heat stroke.",
+   "year": "1981",
+   "journal": "Chest",
+   "country": "",
+   "classes": [
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "7589027",
+   "title": "Effects of a Finnish sauna on the pharmacokinetics and haemodynamic actions of propranolol and captopril in healthy volunteers.",
+   "year": "1995",
+   "journal": "Eur J Clin Pharmacol",
+   "country": "Finland",
+   "classes": [
+    "Beta blockers"
+   ],
+   "etype": "experimental",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "7617062",
+   "title": "[Psychiatric drugs as risk factor in fatal heat stroke].",
+   "year": "1995",
+   "journal": "Ned Tijdschr Geneeskd",
+   "country": "Utrecht",
+   "classes": [
+    "Beta blockers",
+    "Anticholinergics",
+    "Antipsychotics",
+    "Psychotropics (unspecified)"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "7957149",
+   "title": "Cardiovascular effects of Atenolol, scopolamine and their combination on healthy men in Finnish sauna baths.",
+   "year": "1994",
+   "journal": "Eur J Appl Physiol Occup Physiol",
+   "country": "Finland",
+   "classes": [
+    "Beta blockers",
+    "Anticholinergics",
+    "Heat-labile emergency products"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 9571303"
+  },
+  {
+   "pmid": "8363680",
+   "title": "Effect of extreme temperatures on drugs for prehospital ACLS.",
+   "year": "1993",
+   "journal": "Am J Emerg Med",
+   "country": "Salt Lake City",
+   "classes": [],
+   "etype": "storage",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "840206",
+   "title": "Heat stroke associated with medications having anticholinergic effects.",
+   "year": "1977",
+   "journal": "Minn Med",
+   "country": "",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "8588059",
+   "title": "Suppression of HPA-axis activity by haloperidol after experimentally induced heat stress.",
+   "year": "1995",
+   "journal": "Prog Neuropsychopharmacol Biol Psychiatry",
+   "country": "FRG",
+   "classes": [
+    "Antipsychotics"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "8831332",
+   "title": "Clonidine increases the sweating threshold, but does not reduce the gain of sweating.",
+   "year": "1996",
+   "journal": "Anesth Analg",
+   "country": "France",
+   "classes": [
+    "Benzodiazepines / sedatives",
+    "Opioids"
+   ],
+   "etype": "physiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "8835047",
+   "title": "Oxybutynin-induced heatstroke in an elderly patient.",
+   "year": "1996",
+   "journal": "Ann Pharmacother",
+   "country": "USA",
+   "classes": [
+    "Anticholinergics"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  },
+  {
+   "pmid": "9089669",
+   "title": "Comparison of the effects of high ambient temperature and clonidine on autonomic functions in man.",
+   "year": "1997",
+   "journal": "Naunyn Schmiedebergs Arch Pharmacol",
+   "country": "Queen's Medical Centre",
+   "classes": [
+    "Heat-labile emergency products"
+   ],
+   "etype": "epidemiology",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "9100934",
+   "title": "Heat intolerance induced by antidepressants.",
+   "year": "1997",
+   "journal": "Ann N Y Acad Sci",
+   "country": "Israel",
+   "classes": [
+    "Lithium",
+    "Antidepressants"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "9288412",
+   "title": "Effects of body core temperature and brain dopamine activity on timing processes in humans.",
+   "year": "1997",
+   "journal": "Biol Psychol",
+   "country": "",
+   "classes": [
+    "Antipsychotics",
+    "Parkinson / dopaminergic"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 39513185"
+  },
+  {
+   "pmid": "953621",
+   "title": "Heat wave deaths and drugs affecting temperature regulation.",
+   "year": "1976",
+   "journal": "Br Med J",
+   "country": "",
+   "classes": [],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "9571303",
+   "title": "Heat exposure and drugs. A review of the effects of hyperthermia on pharmacokinetics.",
+   "year": "1998",
+   "journal": "Clin Pharmacokinet",
+   "country": "Finland",
+   "classes": [
+    "Beta blockers",
+    "Insulin",
+    "Heat-labile emergency products"
+   ],
+   "etype": "review",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "9628710",
+   "title": "Ambient temperature and mortality from unintentional cocaine overdose.",
+   "year": "1998",
+   "journal": "JAMA",
+   "country": "",
+   "classes": [
+    "Opioids",
+    "Stimulants"
+   ],
+   "etype": "epidemiology",
+   "graph": "vetted",
+   "dv_findings": 3,
+   "api_findings": 4,
+   "drug_extracted": true,
+   "note": "",
+   "via": "hand-screened recall set"
+  },
+  {
+   "pmid": "9846020",
+   "title": "Heat-related toxicity with the fentanyl transdermal patch.",
+   "year": "1998",
+   "journal": "J Pain Symptom Manage",
+   "country": "",
+   "classes": [
+    "Opioids"
+   ],
+   "etype": "case",
+   "graph": "record_only",
+   "dv_findings": 0,
+   "api_findings": 0,
+   "drug_extracted": false,
+   "note": "",
+   "via": "cited by review 41968235"
+  }
+ ]
+}

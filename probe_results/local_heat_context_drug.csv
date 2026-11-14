@@ -1,0 +1,2 @@
+classes,pubmed_id,doi,study_type,var1,var2,statistic_type,value,ci_lower,ci_upper,p_value,population,association_id,study_id
+Medication (unspecified),28796021,10.1097/jcp.0000000000000768,,use of psychotropics,hospital length of stay (among older medical patients),subdistribution hazard ratio,0.82,0.72,0.94,0.003,"382 medical patients aged 65 and older admitted to a metropolitan teaching hospital during 5 consecutive heat waves between 2007 and 2009, and 1339 matched controls admitted before or after each heat wave.",IDFAIbaeQ3,fVJTCTLeBs

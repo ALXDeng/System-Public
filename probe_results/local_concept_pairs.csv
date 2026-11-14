@@ -1,0 +1,369 @@
+kind,class,partner_class,pair,studies,findings
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,ACE inhibitor - mortality rate,142,191
+drug,ACE inhibitors / ARBs,Acute kidney injury,ACE inhibitor - acute kidney injury,30,41
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,ACE inhibitor - death,29,31
+drug,ACE inhibitors / ARBs,Acute kidney injury,ACE inhibitor - kidney failure,18,22
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,ACE inhibitor - hospitalization,18,26
+drug,ACE inhibitors / ARBs,Hyponatremia / electrolytes,ACE inhibitor - hyperkalemia,17,17
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,enalapril - mortality rate,14,23
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,losartan - mortality rate,10,16
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,valsartan - mortality rate,10,13
+drug,ACE inhibitors / ARBs,Hypotension / falls,ACE inhibitor - hypotension,9,11
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,angiotensin II receptor antagonist - mortality rate,5,5
+drug,ACE inhibitors / ARBs,Glucose,ACE inhibitor - hypoglycemia,5,10
+drug,ACE inhibitors / ARBs,Acute kidney injury,losartan - kidney failure,4,4
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,losartan - death,4,5
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,valsartan - death,4,4
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,ramipril - death,4,4
+drug,ACE inhibitors / ARBs,Hypotension / falls,valsartan - hypotension,4,5
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,lisinopril - mortality rate,4,6
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,enalapril - death,3,3
+drug,ACE inhibitors / ARBs,Hypotension / falls,enalapril - hypotension,3,3
+drug,ACE inhibitors / ARBs,Hyponatremia / electrolytes,enalapril - hyperkalemia,3,3
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,valsartan - hospitalization,2,2
+drug,ACE inhibitors / ARBs,Hypotension / falls,ACE inhibitor - falling,2,2
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,angiotensin II receptor antagonist - hospitalization,2,2
+drug,ACE inhibitors / ARBs,Acute kidney injury,ramipril - kidney failure,2,4
+drug,ACE inhibitors / ARBs,Acute kidney injury,enalapril - kidney failure,1,1
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,losartan - hospitalization,1,1
+drug,ACE inhibitors / ARBs,Heat,ACE inhibitor - hot,1,1
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,lisinopril - death,1,1
+drug,ACE inhibitors / ARBs,Hospitalisation / ED / death,ramipril - mortality rate,1,1
+drug,ACE inhibitors / ARBs,Hyponatremia / electrolytes,losartan - hypokalemia,1,1
+drug,ACE inhibitors / ARBs,Hyponatremia / electrolytes,losartan - hyperkalemia,1,1
+drug,ACE inhibitors / ARBs,Acute kidney injury,angiotensin II receptor antagonist - acute kidney injury,1,1
+drug,Anticholinergics,Hospitalisation / ED / death,anticholinergic - mortality rate,16,26
+drug,Anticholinergics,Hospitalisation / ED / death,anticholinergic - hospitalization,4,6
+drug,Anticholinergics,Hypotension / falls,anticholinergic - falling,4,8
+drug,Anticholinergics,Hospitalisation / ED / death,diphenhydramine - mortality rate,1,1
+drug,Anticholinergics,Hypotension / falls,anticholinergic - hypotension,1,1
+drug,Anticholinergics,Acute kidney injury,anticholinergic - kidney failure,1,1
+drug,Anticonvulsants,Hospitalisation / ED / death,topiramate - hospitalization,1,1
+drug,Anticonvulsants,Impaired sweating / thermoregulation,topiramate - sweat,1,1
+drug,Antidepressants,Hospitalisation / ED / death,antidepressant - mortality rate,51,82
+drug,Antidepressants,Hospitalisation / ED / death,antidepressant - hospitalization,17,30
+drug,Antidepressants,Hospitalisation / ED / death,selective serotonin reuptake inhibitor - mortality rate,14,16
+drug,Antidepressants,Hospitalisation / ED / death,tricyclic antidepressant - mortality rate,7,8
+drug,Antidepressants,Hospitalisation / ED / death,antidepressant - death,5,6
+drug,Antidepressants,Hypotension / falls,selective serotonin reuptake inhibitor - orthostatic hypotension,5,5
+drug,Antidepressants,Hyponatremia / electrolytes,selective serotonin reuptake inhibitor - hyponatremia,5,8
+drug,Antidepressants,Hypotension / falls,antidepressant - falling,4,4
+drug,Antidepressants,Glucose,antidepressant - hypoglycemia,3,4
+drug,Antidepressants,Glucose,antidepressant - hyperglycemia,3,3
+drug,Antidepressants,Hypotension / falls,antidepressant - hypotension,2,2
+drug,Antidepressants,Hospitalisation / ED / death,selective serotonin reuptake inhibitor - hospitalization,2,2
+drug,Antidepressants,Hospitalisation / ED / death,fluoxetine - mortality rate,2,2
+drug,Antidepressants,Hyponatremia / electrolytes,fluoxetine - hyponatremia,2,3
+drug,Antidepressants,Hospitalisation / ED / death,selective serotonin reuptake inhibitor - death,1,1
+drug,Antidepressants,Hypotension / falls,tricyclic antidepressant - syncope,1,2
+drug,Antidepressants,Hypotension / falls,fluoxetine - syncope,1,1
+drug,Antidepressants,Hypotension / falls,sertraline - hypotension,1,1
+drug,Antidepressants,Hospitalisation / ED / death,sertraline - mortality rate,1,1
+drug,Antidepressants,Hypotension / falls,selective serotonin reuptake inhibitor - falling,1,1
+drug,Antidepressants,Hypotension / falls,antidepressant - orthostatic hypotension,1,1
+drug,Antidepressants,Hypotension / falls,tricyclic antidepressant - orthostatic hypotension,1,1
+drug,Antidepressants,Hyponatremia / electrolytes,tricyclic antidepressant - hyponatremia,1,1
+drug,Antidepressants,Hyponatremia / electrolytes,sertraline - hyponatremia,1,1
+drug,Antidepressants,Hospitalisation / ED / death,fluoxetine - hospitalization,1,1
+drug,Antidepressants,Hospitalisation / ED / death,sertraline - hospitalization,1,1
+drug,Antidepressants,Rhabdomyolysis,selective serotonin reuptake inhibitor - rhabdomyolysis,1,1
+drug,Antidepressants,Hypotension / falls,selective serotonin reuptake inhibitor - syncope,1,1
+drug,Antihypertensives (any),Hospitalisation / ED / death,antihypertensive drug - mortality rate,43,68
+drug,Antihypertensives (any),Hospitalisation / ED / death,antihypertensive drug - death,12,14
+drug,Antihypertensives (any),Hypotension / falls,antihypertensive drug - orthostatic hypotension,7,8
+drug,Antihypertensives (any),Acute kidney injury,antihypertensive drug - acute kidney injury,6,6
+drug,Antihypertensives (any),Hypotension / falls,antihypertensive drug - falling,5,6
+drug,Antihypertensives (any),Hypotension / falls,antihypertensive drug - hypotension,4,4
+drug,Antihypertensives (any),Hospitalisation / ED / death,antihypertensive drug - hospitalization,3,5
+drug,Antihypertensives (any),Hypotension / falls,antihypertensive drug - syncope,2,2
+drug,Antihypertensives (any),Acute kidney injury,antihypertensive drug - kidney failure,1,1
+drug,Antihypertensives (any),Glucose,antihypertensive drug - hyperglycemia,1,3
+drug,Antihypertensives (any),Glucose,antihypertensive drug - hypoglycemia,1,1
+drug,Antipsychotics,Hospitalisation / ED / death,antipsychotics - mortality rate,77,132
+drug,Antipsychotics,Hospitalisation / ED / death,antipsychotics - hospitalization,38,53
+drug,Antipsychotics,Hospitalisation / ED / death,haloperidol - mortality rate,19,25
+drug,Antipsychotics,Hospitalisation / ED / death,risperidone - hospitalization,8,10
+drug,Antipsychotics,Hospitalisation / ED / death,risperidone - mortality rate,7,7
+drug,Antipsychotics,Hospitalisation / ED / death,olanzapine - hospitalization,6,6
+drug,Antipsychotics,Hospitalisation / ED / death,antipsychotics - death,6,7
+drug,Antipsychotics,Hospitalisation / ED / death,olanzapine - mortality rate,6,6
+drug,Antipsychotics,Hospitalisation / ED / death,clozapine - mortality rate,6,8
+drug,Antipsychotics,Hyponatremia / electrolytes,antipsychotics - hyponatremia,5,7
+drug,Antipsychotics,Hospitalisation / ED / death,clozapine - hospitalization,5,7
+drug,Antipsychotics,Acute kidney injury,antipsychotics - acute kidney injury,4,8
+drug,Antipsychotics,Hypotension / falls,antipsychotics - orthostatic hypotension,3,3
+drug,Antipsychotics,Hypotension / falls,antipsychotics - falling,3,3
+drug,Antipsychotics,Hospitalisation / ED / death,quetiapine - mortality rate,3,4
+drug,Antipsychotics,Hospitalisation / ED / death,haloperidol - hospitalization,3,5
+drug,Antipsychotics,Acute kidney injury,risperidone - acute kidney injury,2,3
+drug,Antipsychotics,Hypotension / falls,antipsychotics - hypotension,2,2
+drug,Antipsychotics,Glucose,antipsychotics - diabetic ketoacidosis,2,2
+drug,Antipsychotics,Glucose,clozapine - hyperglycemia,2,2
+drug,Antipsychotics,Acute kidney injury,olanzapine - acute kidney injury,2,3
+drug,Antipsychotics,Glucose,antipsychotics - hyperglycemia,2,4
+drug,Antipsychotics,Glucose,antipsychotics - hypoglycemia,2,4
+drug,Antipsychotics,Hypotension / falls,risperidone - falling,1,1
+drug,Antipsychotics,Hospitalisation / ED / death,clozapine - death,1,1
+drug,Antipsychotics,Acute kidney injury,haloperidol - acute kidney injury,1,1
+drug,Antipsychotics,Glucose,olanzapine - diabetic ketoacidosis,1,1
+drug,Antipsychotics,Hypotension / falls,haloperidol - syncope,1,1
+drug,Antipsychotics,Hypotension / falls,olanzapine - falling,1,1
+drug,Antipsychotics,Hospitalisation / ED / death,quetiapine - hospitalization,1,1
+drug,Antipsychotics,Rhabdomyolysis,antipsychotics - rhabdomyolysis,1,1
+drug,Antipsychotics,Acute kidney injury,quetiapine - acute kidney injury,1,1
+drug,Antipsychotics,Hypotension / falls,olanzapine - hypotension,1,1
+drug,Antipsychotics,Glucose,olanzapine - hyperglycemia,1,1
+drug,Antipsychotics,Hypotension / falls,antipsychotics - syncope,1,1
+drug,Benzodiazepines / sedatives,Hospitalisation / ED / death,benzodiazepine - mortality rate,44,82
+drug,Benzodiazepines / sedatives,Hypotension / falls,benzodiazepine - falling,15,20
+drug,Benzodiazepines / sedatives,Hospitalisation / ED / death,benzodiazepine - hospitalization,12,28
+drug,Benzodiazepines / sedatives,Hospitalisation / ED / death,benzodiazepine - death,6,7
+drug,Benzodiazepines / sedatives,Acute kidney injury,benzodiazepine - kidney failure,1,1
+drug,Benzodiazepines / sedatives,Hypotension / falls,benzodiazepine - hypotension,1,1
+drug,Benzodiazepines / sedatives,Hyponatremia / electrolytes,benzodiazepine - hyponatremia,1,1
+drug,Beta blockers,Hospitalisation / ED / death,beta blocker - mortality rate,131,187
+drug,Beta blockers,Hospitalisation / ED / death,carvedilol - mortality rate,29,36
+drug,Beta blockers,Hospitalisation / ED / death,beta blocker - death,23,26
+drug,Beta blockers,Hospitalisation / ED / death,beta blocker - hospitalization,12,17
+drug,Beta blockers,Hospitalisation / ED / death,propranolol - mortality rate,12,20
+drug,Beta blockers,Hospitalisation / ED / death,Bisoprolol - mortality rate,10,15
+drug,Beta blockers,Hospitalisation / ED / death,atenolol - mortality rate,6,9
+drug,Beta blockers,Hospitalisation / ED / death,carvedilol - hospitalization,5,6
+drug,Beta blockers,Acute kidney injury,beta blocker - acute kidney injury,4,5
+drug,Beta blockers,Hypotension / falls,beta blocker - hypotension,4,4
+drug,Beta blockers,Hospitalisation / ED / death,Bisoprolol - hospitalization,3,3
+drug,Beta blockers,Hospitalisation / ED / death,Bisoprolol - death,3,3
+drug,Beta blockers,Hypotension / falls,beta blocker - syncope,3,3
+drug,Beta blockers,Hospitalisation / ED / death,carvedilol - death,2,2
+drug,Beta blockers,Acute kidney injury,propranolol - acute kidney injury,2,2
+drug,Beta blockers,Hyponatremia / electrolytes,beta blocker - hypokalemia,2,2
+drug,Beta blockers,Glucose,carvedilol - hypoglycemia,2,2
+drug,Beta blockers,Rhabdomyolysis,propranolol - rhabdomyolysis,1,1
+drug,Beta blockers,Impaired sweating / thermoregulation,propranolol - sweat,1,1
+drug,Beta blockers,Acute kidney injury,carvedilol - kidney failure,1,1
+drug,Beta blockers,Glucose,carvedilol - hyperglycemia,1,1
+drug,Beta blockers,Hypotension / falls,carvedilol - hypotension,1,1
+drug,Beta blockers,Acute kidney injury,carvedilol - acute kidney injury,1,1
+drug,Beta blockers,Hypotension / falls,Bisoprolol - hypotension,1,1
+drug,Beta blockers,Glucose,beta blocker - hypoglycemia,1,3
+drug,Calcium channel blockers,Hospitalisation / ED / death,calcium channel blocker - mortality rate,41,65
+drug,Calcium channel blockers,Hospitalisation / ED / death,amlodipine - mortality rate,6,6
+drug,Calcium channel blockers,Hospitalisation / ED / death,calcium channel blocker - death,6,7
+drug,Calcium channel blockers,Hospitalisation / ED / death,verapamil - mortality rate,5,7
+drug,Calcium channel blockers,Hypotension / falls,diltiazem - hypotension,5,6
+drug,Calcium channel blockers,Hypotension / falls,calcium channel blocker - hypotension,4,4
+drug,Calcium channel blockers,Hospitalisation / ED / death,verapamil - death,3,3
+drug,Calcium channel blockers,Acute kidney injury,calcium channel blocker - acute kidney injury,3,3
+drug,Calcium channel blockers,Hypotension / falls,calcium channel blocker - orthostatic hypotension,3,3
+drug,Calcium channel blockers,Hospitalisation / ED / death,amlodipine - death,3,3
+drug,Calcium channel blockers,Hospitalisation / ED / death,diltiazem - mortality rate,2,2
+drug,Calcium channel blockers,Hospitalisation / ED / death,calcium channel blocker - hospitalization,2,2
+drug,Calcium channel blockers,Acute kidney injury,amlodipine - acute kidney injury,2,2
+drug,Calcium channel blockers,Glucose,verapamil - hypoglycemia,1,1
+drug,Calcium channel blockers,Hypotension / falls,diltiazem - falling,1,1
+drug,Calcium channel blockers,Acute kidney injury,diltiazem - kidney failure,1,1
+drug,Calcium channel blockers,Hospitalisation / ED / death,amlodipine - hospitalization,1,2
+drug,Calcium channel blockers,Hypotension / falls,verapamil - hypotension,1,1
+drug,Calcium channel blockers,Hyponatremia / electrolytes,calcium channel blocker - hyponatremia,1,2
+drug,Cholinesterase inhibitors,Hospitalisation / ED / death,galantamine - mortality rate,4,4
+drug,Cholinesterase inhibitors,Hospitalisation / ED / death,donepezil - mortality rate,3,5
+drug,Cholinesterase inhibitors,Hospitalisation / ED / death,rivastigmine - mortality rate,1,1
+drug,Cholinesterase inhibitors,Hospitalisation / ED / death,donepezil - death,1,1
+drug,Cholinesterase inhibitors,Hypotension / falls,rivastigmine - orthostatic hypotension,1,1
+drug,Diuretics,Hospitalisation / ED / death,diuretic - mortality rate,39,51
+drug,Diuretics,Acute kidney injury,diuretic - acute kidney injury,34,39
+drug,Diuretics,Hospitalisation / ED / death,spironolactone - mortality rate,21,24
+drug,Diuretics,Hyponatremia / electrolytes,spironolactone - hyperkalemia,18,27
+drug,Diuretics,Acute kidney injury,furosemide - acute kidney injury,15,15
+drug,Diuretics,Hospitalisation / ED / death,furosemide - mortality rate,14,19
+drug,Diuretics,Hospitalisation / ED / death,spironolactone - death,8,9
+drug,Diuretics,Hospitalisation / ED / death,diuretic - death,8,9
+drug,Diuretics,Hospitalisation / ED / death,furosemide - hospitalization,6,7
+drug,Diuretics,Hyponatremia / electrolytes,diuretic - hyponatremia,5,7
+drug,Diuretics,Hyponatremia / electrolytes,thiazide - hyponatremia,5,5
+drug,Diuretics,Acute kidney injury,diuretic - kidney failure,5,5
+drug,Diuretics,Hyponatremia / electrolytes,thiazide - hypokalemia,5,7
+drug,Diuretics,Hospitalisation / ED / death,torasemide - mortality rate,4,5
+drug,Diuretics,Hospitalisation / ED / death,diuretic - hospitalization,4,4
+drug,Diuretics,Hyponatremia / electrolytes,chlorthalidone - hyponatremia,4,5
+drug,Diuretics,Hyponatremia / electrolytes,chlorthalidone - hypokalemia,4,4
+drug,Diuretics,Hospitalisation / ED / death,chlorthalidone - mortality rate,3,3
+drug,Diuretics,Hyponatremia / electrolytes,diuretic - hyperkalemia,3,3
+drug,Diuretics,Acute kidney injury,furosemide - kidney failure,3,4
+drug,Diuretics,Hyponatremia / electrolytes,spironolactone - hypokalemia,2,2
+drug,Diuretics,Hyponatremia / electrolytes,hydrochlorothiazide - hypokalemia,2,2
+drug,Diuretics,Acute kidney injury,torasemide - acute kidney injury,2,2
+drug,Diuretics,Hypotension / falls,diuretic - falling,2,2
+drug,Diuretics,Hospitalisation / ED / death,spironolactone - hospitalization,2,3
+drug,Diuretics,Hyponatremia / electrolytes,spironolactone - hyponatremia,2,4
+drug,Diuretics,Hypotension / falls,furosemide - hypotension,1,1
+drug,Diuretics,Glucose,diuretic - diabetic ketoacidosis,1,1
+drug,Diuretics,Acute kidney injury,spironolactone - acute kidney injury,1,1
+drug,Diuretics,Hospitalisation / ED / death,furosemide - death,1,1
+drug,Diuretics,Acute kidney injury,hydrochlorothiazide - acute kidney injury,1,1
+drug,Diuretics,Hyponatremia / electrolytes,chlorthalidone - hyperkalemia,1,1
+drug,Diuretics,Hypotension / falls,hydrochlorothiazide - hypotension,1,1
+drug,Diuretics,Hospitalisation / ED / death,chlorthalidone - death,1,1
+drug,Diuretics,Hyponatremia / electrolytes,furosemide - hyperkalemia,1,1
+drug,Diuretics,Hypotension / falls,diuretic - hypotension,1,1
+drug,Diuretics,Hyponatremia / electrolytes,thiazide - hyperkalemia,1,1
+drug,Diuretics,Hospitalisation / ED / death,thiazide - death,1,1
+drug,Diuretics,Hypotension / falls,diuretic - orthostatic hypotension,1,1
+drug,Diuretics,Acute kidney injury,chlorthalidone - acute kidney injury,1,1
+drug,Diuretics,Hyponatremia / electrolytes,diuretic - hypokalemia,1,1
+drug,Diuretics,Hyponatremia / electrolytes,furosemide - hypokalemia,1,1
+drug,Diuretics,Hospitalisation / ED / death,indapamide - hospitalization,1,1
+drug,Diuretics,Glucose,thiazide - hyperglycemia,1,1
+drug,Diuretics,Hyponatremia / electrolytes,hydrochlorothiazide - hyponatremia,1,1
+drug,Diuretics,Hypotension / falls,spironolactone - hypotension,1,1
+drug,Diuretics,Rhabdomyolysis,indapamide - rhabdomyolysis,1,3
+drug,Diuretics,Hyponatremia / electrolytes,furosemide - hyponatremia,1,3
+drug,Diuretics,Hypotension / falls,diuretic - syncope,1,3
+drug,GLP-1 agonists,Glucose,liraglutide - hypoglycemia,13,16
+drug,GLP-1 agonists,Glucose,exenatide - hypoglycemia,10,12
+drug,GLP-1 agonists,Hospitalisation / ED / death,liraglutide - death,4,6
+drug,GLP-1 agonists,Glucose,dulaglutide - hypoglycemia,3,6
+drug,GLP-1 agonists,Hospitalisation / ED / death,exenatide - hospitalization,3,3
+drug,GLP-1 agonists,Glucose,liraglutide - hyperglycemia,3,4
+drug,GLP-1 agonists,Hospitalisation / ED / death,liraglutide - hospitalization,2,2
+drug,GLP-1 agonists,Hospitalisation / ED / death,exenatide - mortality rate,2,4
+drug,GLP-1 agonists,Hospitalisation / ED / death,liraglutide - mortality rate,2,2
+drug,GLP-1 agonists,Hospitalisation / ED / death,dulaglutide - mortality rate,1,2
+drug,GLP-1 agonists,Glucose,exenatide - hyperglycemia,1,1
+drug,GLP-1 agonists,Hospitalisation / ED / death,dulaglutide - death,1,1
+drug,GLP-1 agonists,Acute kidney injury,semaglutide - kidney failure,1,1
+drug,Lithium,Hospitalisation / ED / death,lithium - mortality rate,11,17
+drug,Lithium,Hospitalisation / ED / death,lithium - hospitalization,4,4
+drug,Lithium,Impaired sweating / thermoregulation,lithium carbonate - sweat,1,1
+drug,Lithium,Acute kidney injury,lithium - kidney failure,1,1
+drug,Lithium,Acute kidney injury,lithium - acute kidney injury,1,2
+drug,Lithium,Hyponatremia / electrolytes,lithium - hyponatremia,1,4
+drug,NSAIDs,Acute kidney injury,non-steroidal anti-inflammatory drug - acute kidney injury,27,36
+drug,NSAIDs,Hospitalisation / ED / death,non-steroidal anti-inflammatory drug - mortality rate,14,17
+drug,NSAIDs,Hyponatremia / electrolytes,non-steroidal anti-inflammatory drug - hyperkalemia,6,6
+drug,NSAIDs,Hospitalisation / ED / death,non-steroidal anti-inflammatory drug - hospitalization,6,6
+drug,NSAIDs,Acute kidney injury,ibuprofen - acute kidney injury,6,15
+drug,NSAIDs,Hospitalisation / ED / death,diclofenac - death,5,5
+drug,NSAIDs,Acute kidney injury,non-steroidal anti-inflammatory drug - kidney failure,4,4
+drug,NSAIDs,Hospitalisation / ED / death,ibuprofen - death,4,4
+drug,NSAIDs,Hospitalisation / ED / death,ibuprofen - mortality rate,4,6
+drug,NSAIDs,Hospitalisation / ED / death,non-steroidal anti-inflammatory drug - death,3,3
+drug,NSAIDs,Acute kidney injury,ibuprofen - kidney failure,2,2
+drug,NSAIDs,Hospitalisation / ED / death,diclofenac - mortality rate,2,3
+drug,NSAIDs,Hospitalisation / ED / death,naproxen - hospitalization,1,1
+drug,NSAIDs,Hyponatremia / electrolytes,non-steroidal anti-inflammatory drug - hyponatremia,1,1
+drug,NSAIDs,Acute kidney injury,diclofenac - kidney failure,1,1
+drug,NSAIDs,Hospitalisation / ED / death,ibuprofen - hospitalization,1,1
+drug,NSAIDs,Acute kidney injury,naproxen - acute kidney injury,1,1
+drug,NSAIDs,Hospitalisation / ED / death,naproxen - death,1,1
+drug,NSAIDs,Acute kidney injury,diclofenac - acute kidney injury,1,1
+drug,NSAIDs,Hospitalisation / ED / death,naproxen - mortality rate,1,2
+drug,Opioids,Hospitalisation / ED / death,opioid - mortality rate,59,81
+drug,Opioids,Hospitalisation / ED / death,opioid - hospitalization,35,62
+drug,Opioids,Hospitalisation / ED / death,opioid - death,17,19
+drug,Opioids,Hypotension / falls,opioid - hypotension,4,5
+drug,Opioids,Acute kidney injury,opioid - kidney failure,3,3
+drug,Opioids,Hypotension / falls,opioid - falling,2,2
+drug,Opioids,Glucose,opioid - hypoglycemia,2,2
+drug,Opioids,Hyponatremia / electrolytes,opioid - hyponatremia,1,1
+drug,Opioids,Heat,opioid - hot,1,1
+drug,Opioids,Dehydration / volume,opioid - dehydration,1,1
+drug,Opioids,Acute kidney injury,opioid - acute kidney injury,1,1
+drug,Other diabetes drugs,Hospitalisation / ED / death,metformin - mortality rate,123,182
+drug,Other diabetes drugs,Glucose,sulfonylurea - hypoglycemia,35,54
+drug,Other diabetes drugs,Hospitalisation / ED / death,sulfonylurea - mortality rate,31,44
+drug,Other diabetes drugs,Glucose,metformin - hypoglycemia,27,35
+drug,Other diabetes drugs,Hospitalisation / ED / death,metformin - hospitalization,14,14
+drug,Other diabetes drugs,Hospitalisation / ED / death,metformin - death,14,14
+drug,Other diabetes drugs,Glucose,glyburide - hypoglycemia,8,14
+drug,Other diabetes drugs,Acute kidney injury,metformin - acute kidney injury,6,8
+drug,Other diabetes drugs,Hospitalisation / ED / death,sulfonylurea - death,5,5
+drug,Other diabetes drugs,Hospitalisation / ED / death,glyburide - mortality rate,5,5
+drug,Other diabetes drugs,Glucose,metformin - hyperglycemia,4,5
+drug,Other diabetes drugs,Acute kidney injury,metformin - kidney failure,3,3
+drug,Other diabetes drugs,Hospitalisation / ED / death,sulfonylurea - hospitalization,3,5
+drug,Other diabetes drugs,Glucose,sulfonylurea - hyperglycemia,2,2
+drug,Other diabetes drugs,Acute kidney injury,sulfonylurea - acute kidney injury,1,1
+drug,Other diabetes drugs,Hospitalisation / ED / death,glyburide - death,1,1
+drug,Other diabetes drugs,Hyponatremia / electrolytes,metformin - hyponatremia,1,2
+drug,Other diabetes drugs,Hyponatremia / electrolytes,sulfonylurea - hyponatremia,1,2
+drug,Parkinson / dopaminergic,Hospitalisation / ED / death,dopamine agonists - mortality rate,3,3
+drug,Parkinson / dopaminergic,Hospitalisation / ED / death,levodopa - mortality rate,2,2
+drug,Parkinson / dopaminergic,Hypotension / falls,levodopa - falling,1,1
+drug,Parkinson / dopaminergic,Hypotension / falls,levodopa - syncope,1,1
+drug,Parkinson / dopaminergic,Hypotension / falls,levodopa - orthostatic hypotension,1,1
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,gliflozins - mortality rate,94,124
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,gliflozins - death,40,50
+drug,SGLT2 inhibitors,Acute kidney injury,gliflozins - acute kidney injury,31,49
+drug,SGLT2 inhibitors,Glucose,gliflozins - diabetic ketoacidosis,24,27
+drug,SGLT2 inhibitors,Glucose,gliflozins - hypoglycemia,17,20
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,gliflozins - hospitalization,16,20
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,dapagliflozin - death,11,11
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,empagliflozin - mortality rate,10,14
+drug,SGLT2 inhibitors,Acute kidney injury,gliflozins - kidney failure,9,12
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,empagliflozin - death,8,9
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,empagliflozin - hospitalization,7,8
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,gliflozins - hyperkalemia,7,10
+drug,SGLT2 inhibitors,Acute kidney injury,empagliflozin - acute kidney injury,6,7
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,dapagliflozin - mortality rate,5,5
+drug,SGLT2 inhibitors,Glucose,empagliflozin - hypoglycemia,5,6
+drug,SGLT2 inhibitors,Acute kidney injury,dapagliflozin - acute kidney injury,4,7
+drug,SGLT2 inhibitors,Glucose,canagliflozin - hypoglycemia,4,6
+drug,SGLT2 inhibitors,Glucose,dapagliflozin - hypoglycemia,3,3
+drug,SGLT2 inhibitors,Glucose,empagliflozin - diabetic ketoacidosis,3,3
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,dapagliflozin - hospitalization,3,6
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,canagliflozin - death,2,2
+drug,SGLT2 inhibitors,Glucose,dapagliflozin - diabetic ketoacidosis,2,2
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,gliflozins - hypokalemia,2,2
+drug,SGLT2 inhibitors,Acute kidney injury,canagliflozin - acute kidney injury,2,2
+drug,SGLT2 inhibitors,Acute kidney injury,canagliflozin - kidney failure,2,3
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,canagliflozin - hospitalization,2,2
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,empagliflozin - hyperkalemia,2,3
+drug,SGLT2 inhibitors,Glucose,canagliflozin - hyperglycemia,1,1
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,canagliflozin - hyperkalemia,1,1
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,canagliflozin - hypokalemia,1,1
+drug,SGLT2 inhibitors,Hyponatremia / electrolytes,dapagliflozin - hyperkalemia,1,1
+drug,SGLT2 inhibitors,Dehydration / volume,gliflozins - hypovolemia,1,1
+drug,SGLT2 inhibitors,Hypotension / falls,empagliflozin - syncope,1,1
+drug,SGLT2 inhibitors,Glucose,canagliflozin - diabetic ketoacidosis,1,1
+drug,SGLT2 inhibitors,Acute kidney injury,empagliflozin - kidney failure,1,1
+drug,SGLT2 inhibitors,Rhabdomyolysis,gliflozins - rhabdomyolysis,1,1
+drug,SGLT2 inhibitors,Hypotension / falls,gliflozins - hypotension,1,1
+drug,SGLT2 inhibitors,Hypotension / falls,gliflozins - syncope,1,1
+drug,SGLT2 inhibitors,Hypotension / falls,canagliflozin - syncope,1,1
+drug,SGLT2 inhibitors,Hypotension / falls,dapagliflozin - syncope,1,1
+drug,SGLT2 inhibitors,Hospitalisation / ED / death,canagliflozin - mortality rate,1,2
+drug,Stimulants,Hospitalisation / ED / death,DL-amphetamine - mortality rate,4,5
+drug,Stimulants,Hospitalisation / ED / death,DL-amphetamine - death,3,3
+drug,Stimulants,Hospitalisation / ED / death,methylphenidate - hospitalization,2,2
+drug,Stimulants,Hospitalisation / ED / death,methylphenidate - mortality rate,2,4
+drug,Stimulants,Hospitalisation / ED / death,stimulant - mortality rate,1,2
+drug,Stimulants,Glucose,methylphenidate - hypoglycemia,1,1
+heat,Heat,Hospitalisation / ED / death,hot - mortality rate,36,73
+heat,Heat,Hospitalisation / ED / death,heat stroke - mortality rate,12,16
+heat,Heat,Hospitalisation / ED / death,hot - hospitalization,11,13
+heat,Heat,Hospitalisation / ED / death,extreme heat - mortality rate,11,19
+heat,Heat,Hospitalisation / ED / death,hyperthermia - mortality rate,5,6
+heat,Heat,Impaired sweating / thermoregulation,hot - sweat,5,8
+heat,Heat,Hospitalisation / ED / death,extreme heat - hospitalization,4,6
+heat,Heat,Acute kidney injury,hyperthermia - acute kidney injury,3,3
+heat,Heat,Acute kidney injury,hot - acute kidney injury,3,6
+heat,Heat,Acute kidney injury,heat stroke - acute kidney injury,2,2
+heat,Heat,Hospitalisation / ED / death,hot - death,2,3
+heat,Heat,Hospitalisation / ED / death,heat stroke - hospitalization,2,4
+heat,Heat,Glucose,hot - hypoglycemia,2,5
+heat,Heat,Hospitalisation / ED / death,heat illness - mortality rate,1,2
+heat,Heat,Acute kidney injury,extreme heat - acute kidney injury,1,1
+heat,Heat,Dehydration / volume,hot - dehydration,1,1
+heat,Heat,Hospitalisation / ED / death,hyperthermia - hospitalization,1,1
+heat,Heat,Rhabdomyolysis,heat stroke - rhabdomyolysis,1,1
+heat,Heat,Hospitalisation / ED / death,hyperthermia - death,1,1
+heat,Heat,Impaired sweating / thermoregulation,hot - sweating,1,1
+heat,Heat,Impaired sweating / thermoregulation,heat stroke - sweating,1,1
+heat,Heat,Acute kidney injury,extreme heat - kidney failure,1,1
+heat,Heat,Glucose,extreme heat - hypoglycemia,1,1
+heat,Heat,Hospitalisation / ED / death,heat illness - hospitalization,1,1
+heat,Heat,Impaired sweating / thermoregulation,heat illness - thermoregulation,1,1
+mechanism,Acute kidney injury,Heat,kidney failure - hyperthermia,1,1
+mechanism,Acute kidney injury,Heat,acute kidney injury - hyperthermia,1,1
+mechanism,Rhabdomyolysis,Heat,rhabdomyolysis - heat stroke,1,1

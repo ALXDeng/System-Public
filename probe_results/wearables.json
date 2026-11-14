@@ -1,0 +1,1140 @@
+{
+ "built": "2026-11-14",
+ "signals": [
+  "Heart rate",
+  "HR variability",
+  "Skin temperature",
+  "Sweat / EDA",
+  "Core temperature",
+  "Weight / hydration",
+  "Glucose (CGM)",
+  "Blood pressure"
+ ],
+ "classes": [
+  "Beta blockers",
+  "Anticholinergics",
+  "Diuretics",
+  "ACE inhibitors / ARBs",
+  "Calcium channel blockers",
+  "Antipsychotics",
+  "Antidepressants",
+  "Stimulants",
+  "Insulin and sulfonylureas",
+  "Topiramate / zonisamide"
+ ],
+ "cells": [
+  {
+   "class": "Beta blockers",
+   "signal": "Heart rate",
+   "graph": 149,
+   "graph_heat": 0,
+   "pubmed_any": 11353,
+   "pubmed_heat": 28,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42635998",
+    "38857500",
+    "28661984"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "HR variability",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 663,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Skin temperature",
+   "graph": 2,
+   "graph_heat": 0,
+   "pubmed_any": 102,
+   "pubmed_heat": 8,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "9277525",
+    "12151368",
+    "28071840"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 269,
+   "pubmed_heat": 13,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "5685286",
+    "39513185",
+    "2820920"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Core temperature",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 312,
+   "pubmed_heat": 28,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "38857500",
+    "41691782",
+    "28661984"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Weight / hydration",
+   "graph": 5,
+   "graph_heat": 0,
+   "pubmed_any": 268,
+   "pubmed_heat": 5,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42635998",
+    "31090380",
+    "17326279"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Glucose (CGM)",
+   "graph": 13,
+   "graph_heat": 0,
+   "pubmed_any": 667,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Beta blockers",
+   "signal": "Blood pressure",
+   "graph": 80,
+   "graph_heat": 0,
+   "pubmed_any": 14917,
+   "pubmed_heat": 26,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "21452395",
+    "42635998",
+    "38857500"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Heart rate",
+   "graph": 28,
+   "graph_heat": 0,
+   "pubmed_any": 4150,
+   "pubmed_heat": 21,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "14938272",
+    "8437889",
+    "6724211"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "HR variability",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 307,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Skin temperature",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 51,
+   "pubmed_heat": 10,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "2120621",
+    "12847205",
+    "17600158"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 509,
+   "pubmed_heat": 28,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "18217788",
+    "39513185",
+    "2575256"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Core temperature",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 344,
+   "pubmed_heat": 31,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "2120621",
+    "519522",
+    "3790023"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Weight / hydration",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 164,
+   "pubmed_heat": 5,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "26073686",
+    "7519462",
+    "26528941"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Glucose (CGM)",
+   "graph": 2,
+   "graph_heat": 0,
+   "pubmed_any": 144,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "5347721"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Anticholinergics",
+   "signal": "Blood pressure",
+   "graph": 6,
+   "graph_heat": 0,
+   "pubmed_any": 3743,
+   "pubmed_heat": 13,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "17600158",
+    "26073686",
+    "7136773"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Heart rate",
+   "graph": 5,
+   "graph_heat": 0,
+   "pubmed_any": 2216,
+   "pubmed_heat": 16,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42635998",
+    "11098160",
+    "10198142"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "HR variability",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 80,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 13,
+   "pubmed_heat": 6,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "11098160",
+    "1011962",
+    "40095927"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Sweat / EDA",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 142,
+   "pubmed_heat": 19,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "20301356",
+    "11993617",
+    "10444564"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 116,
+   "pubmed_heat": 21,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "11098160",
+    "10640589",
+    "3298193"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Weight / hydration",
+   "graph": 16,
+   "graph_heat": 0,
+   "pubmed_any": 1953,
+   "pubmed_heat": 46,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42635998",
+    "20301356",
+    "10444564"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Glucose (CGM)",
+   "graph": 7,
+   "graph_heat": 0,
+   "pubmed_any": 208,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Diuretics",
+   "signal": "Blood pressure",
+   "graph": 99,
+   "graph_heat": 0,
+   "pubmed_any": 14617,
+   "pubmed_heat": 12,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42635998",
+    "31090380",
+    "7605292"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Heart rate",
+   "graph": 17,
+   "graph_heat": 0,
+   "pubmed_any": 1950,
+   "pubmed_heat": 3,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "27839546",
+    "10854080",
+    "8024055"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "HR variability",
+   "graph": 3,
+   "graph_heat": 0,
+   "pubmed_any": 159,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "27839546"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 16,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "27839546"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 17,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "28931548"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 24,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "27839546"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Weight / hydration",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 199,
+   "pubmed_heat": 5,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "10409257",
+    "31090380",
+    "15051521"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Glucose (CGM)",
+   "graph": 24,
+   "graph_heat": 0,
+   "pubmed_any": 89,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "signal": "Blood pressure",
+   "graph": 302,
+   "graph_heat": 0,
+   "pubmed_any": 15369,
+   "pubmed_heat": 12,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "36000238",
+    "37979812",
+    "31090380"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Heart rate",
+   "graph": 59,
+   "graph_heat": 0,
+   "pubmed_any": 2866,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "3978670"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "HR variability",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 90,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Skin temperature",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 42,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Sweat / EDA",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 48,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "32966123"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 75,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "32966123"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Weight / hydration",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 131,
+   "pubmed_heat": 2,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "36752238",
+    "31090380"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Glucose (CGM)",
+   "graph": 13,
+   "graph_heat": 0,
+   "pubmed_any": 124,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "36752238"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Calcium channel blockers",
+   "signal": "Blood pressure",
+   "graph": 206,
+   "graph_heat": 0,
+   "pubmed_any": 9825,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "21172037",
+    "36752238",
+    "31090380"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Heart rate",
+   "graph": 6,
+   "graph_heat": 0,
+   "pubmed_any": 449,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "HR variability",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 93,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 2,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 127,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "19960564",
+    "16174785",
+    "8588059"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Core temperature",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 213,
+   "pubmed_heat": 7,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "11124394",
+    "27074342",
+    "17513091"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Weight / hydration",
+   "graph": 5,
+   "graph_heat": 0,
+   "pubmed_any": 185,
+   "pubmed_heat": 5,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "8588059",
+    "9219078",
+    "36752238"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Glucose (CGM)",
+   "graph": 17,
+   "graph_heat": 0,
+   "pubmed_any": 69,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "36752238"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antipsychotics",
+   "signal": "Blood pressure",
+   "graph": 13,
+   "graph_heat": 0,
+   "pubmed_any": 1428,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "36752238"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Heart rate",
+   "graph": 4,
+   "graph_heat": 0,
+   "pubmed_any": 898,
+   "pubmed_heat": 1,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "21505269"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "HR variability",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 231,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 18,
+   "pubmed_heat": 3,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42090275",
+    "2528708",
+    "20603183"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 307,
+   "pubmed_heat": 6,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "18217788",
+    "19074539",
+    "14715036"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 262,
+   "pubmed_heat": 7,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "41146956",
+    "14715036",
+    "21505269"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Weight / hydration",
+   "graph": 4,
+   "graph_heat": 0,
+   "pubmed_any": 116,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "17099559",
+    "14715036",
+    "26073686"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Glucose (CGM)",
+   "graph": 15,
+   "graph_heat": 0,
+   "pubmed_any": 140,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Antidepressants",
+   "signal": "Blood pressure",
+   "graph": 17,
+   "graph_heat": 0,
+   "pubmed_any": 1702,
+   "pubmed_heat": 2,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "9678656",
+    "26073686"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Heart rate",
+   "graph": 15,
+   "graph_heat": 0,
+   "pubmed_any": 715,
+   "pubmed_heat": 5,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "40440529",
+    "33044440",
+    "32364995"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "HR variability",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 38,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 16,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "19092693",
+    "10373050",
+    "28420550"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Sweat / EDA",
+   "graph": 2,
+   "graph_heat": 0,
+   "pubmed_any": 143,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "40440529",
+    "19092693",
+    "32364995"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 470,
+   "pubmed_heat": 20,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "18408610",
+    "40440529",
+    "19092693"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Weight / hydration",
+   "graph": 2,
+   "graph_heat": 0,
+   "pubmed_any": 72,
+   "pubmed_heat": 3,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "23891504",
+    "17326279",
+    "19092693"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Glucose (CGM)",
+   "graph": 4,
+   "graph_heat": 0,
+   "pubmed_any": 59,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Stimulants",
+   "signal": "Blood pressure",
+   "graph": 16,
+   "graph_heat": 0,
+   "pubmed_any": 1087,
+   "pubmed_heat": 2,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "32364995",
+    "11576153"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Heart rate",
+   "graph": 29,
+   "graph_heat": 0,
+   "pubmed_any": 4091,
+   "pubmed_heat": 23,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "38595219",
+    "9248670",
+    "38998034"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "HR variability",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 626,
+   "pubmed_heat": 3,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "42637191",
+    "17705694",
+    "8781764"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 172,
+   "pubmed_heat": 31,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "28696547",
+    "38512776",
+    "36420675"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Sweat / EDA",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 391,
+   "pubmed_heat": 17,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "13197081",
+    "42496250",
+    "36964771"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 967,
+   "pubmed_heat": 141,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "13197081",
+    "29552700",
+    "28696547"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Weight / hydration",
+   "graph": 44,
+   "graph_heat": 0,
+   "pubmed_any": 1178,
+   "pubmed_heat": 27,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "20150024",
+    "37318992",
+    "28067740"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Glucose (CGM)",
+   "graph": 1409,
+   "graph_heat": 0,
+   "pubmed_any": 30538,
+   "pubmed_heat": 24,
+   "pubmed_heat_wearable": 1,
+   "heat_examples": [
+    "13197081",
+    "41464483",
+    "36752238"
+   ],
+   "wearable_examples": [
+    "41464483"
+   ]
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "signal": "Blood pressure",
+   "graph": 138,
+   "graph_heat": 0,
+   "pubmed_any": 24311,
+   "pubmed_heat": 20,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "28294173",
+    "41347373",
+    "36752238"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Heart rate",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 30,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "HR variability",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 2,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Skin temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 1,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Sweat / EDA",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 36,
+   "pubmed_heat": 4,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [
+    "8579857",
+    "20236344",
+    "11737174"
+   ],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Core temperature",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 13,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Weight / hydration",
+   "graph": 11,
+   "graph_heat": 0,
+   "pubmed_any": 42,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Glucose (CGM)",
+   "graph": 0,
+   "graph_heat": 0,
+   "pubmed_any": 8,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "signal": "Blood pressure",
+   "graph": 1,
+   "graph_heat": 0,
+   "pubmed_any": 108,
+   "pubmed_heat": 0,
+   "pubmed_heat_wearable": 0,
+   "heat_examples": [],
+   "wearable_examples": []
+  }
+ ],
+ "queries": {
+  "heat": "(\"Hot Temperature\"[MeSH] OR \"heat stress\"[tiab] OR \"hot environment\"[tiab] OR \"heat exposure\"[tiab] OR heatwave*[tiab] OR \"heat wave\"[tiab] OR \"exercise in the heat\"[tiab] OR sauna[tiab])",
+  "wearable": "(\"Wearable Electronic Devices\"[MeSH] OR wearable*[tiab] OR smartwatch*[tiab] OR \"wrist-worn\"[tiab] OR photoplethysmograph*[tiab] OR \"continuous glucose monitor*\"[tiab])",
+  "classes": {
+   "Beta blockers": "(\"Adrenergic beta-Antagonists\"[MeSH] OR \"beta blocker*\"[tiab] OR propranolol[tiab] OR metoprolol[tiab] OR atenolol[tiab])",
+   "Anticholinergics": "(\"Cholinergic Antagonists\"[MeSH] OR anticholinergic*[tiab] OR atropine[tiab] OR oxybutynin[tiab] OR glycopyrr*[tiab])",
+   "Diuretics": "(\"Diuretics\"[MeSH] OR diuretic*[tiab] OR furosemide[tiab] OR hydrochlorothiazide[tiab])",
+   "ACE inhibitors / ARBs": "(\"Angiotensin-Converting Enzyme Inhibitors\"[MeSH] OR \"Angiotensin Receptor Antagonists\"[MeSH] OR lisinopril[tiab] OR losartan[tiab])",
+   "Calcium channel blockers": "(\"Calcium Channel Blockers\"[MeSH] OR amlodipine[tiab] OR nifedipine[tiab])",
+   "Antipsychotics": "(\"Antipsychotic Agents\"[MeSH] OR antipsychotic*[tiab] OR olanzapine[tiab] OR clozapine[tiab])",
+   "Antidepressants": "(\"Antidepressive Agents\"[MeSH] OR antidepressant*[tiab] OR SSRI*[tiab])",
+   "Stimulants": "(\"Central Nervous System Stimulants\"[MeSH] OR amphetamine*[tiab] OR methylphenidate[tiab])",
+   "Insulin and sulfonylureas": "(insulin[tiab] OR sulfonylurea*[tiab])",
+   "Topiramate / zonisamide": "(topiramate[tiab] OR zonisamide[tiab])"
+  },
+  "signals": {
+   "Heart rate": "\"heart rate\"[tiab]",
+   "HR variability": "\"heart rate variability\"[tiab]",
+   "Skin temperature": "(\"skin temperature\"[tiab] OR \"skin blood flow\"[tiab])",
+   "Sweat / EDA": "(sweat*[tiab] OR electrodermal[tiab] OR \"skin conductance\"[tiab] OR hypohidrosis[tiab] OR anhidrosis[tiab])",
+   "Core temperature": "(\"core temperature\"[tiab] OR \"rectal temperature\"[tiab] OR \"body temperature\"[tiab])",
+   "Weight / hydration": "(hydration[tiab] OR dehydration[tiab] OR hypohydration[tiab] OR \"plasma volume\"[tiab])",
+   "Glucose (CGM)": "(hypoglycemia[tiab] OR hypoglycaemia[tiab] OR \"continuous glucose\"[tiab])",
+   "Blood pressure": "(\"blood pressure\"[tiab] OR hypotension[tiab])"
+  }
+ }
+}

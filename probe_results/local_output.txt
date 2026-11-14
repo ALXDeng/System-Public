@@ -1,0 +1,228 @@
+=== 1. CONCEPTS (exact label or alias match in Dataverse concepts) ===
+  drug      Diuretics                              diuretic, thiazide, furosemide, hydrochlorothiazide, spironolactone, bumetanide, torasemide, chlorthalidone, indapamide
+  drug      Beta blockers                          beta blocker, propranolol, atenolol, Bisoprolol, carvedilol
+  drug      ACE inhibitors / ARBs                  ACE inhibitor, lisinopril, enalapril, ramipril, angiotensin II receptor antagonist, losartan, valsartan
+  drug      Calcium channel blockers               calcium channel blocker, amlodipine, diltiazem, verapamil
+  drug      Antihypertensives (any)                antihypertensive drug
+  drug      Anticholinergics                       anticholinergic, diphenhydramine, histamine antagonist*, benzatropine*
+  drug      Antipsychotics                         antipsychotics*, olanzapine, clozapine, haloperidol, quetiapine, risperidone
+  drug      Lithium                                lithium carbonate, lithium
+  drug      Antidepressants                        antidepressant, selective serotonin reuptake inhibitor, tricyclic antidepressant, amitriptyline, sertraline, fluoxetine
+  drug      Benzodiazepines / sedatives            benzodiazepine
+  drug      Anticonvulsants                        topiramate, zonisamide
+  drug      Stimulants                             methylphenidate, DL-amphetamine*, stimulant
+  drug      Opioids                                opioid
+  drug      Insulin                                NONE
+  drug      SGLT2 inhibitors                       gliflozins*, empagliflozin, dapagliflozin, canagliflozin
+  drug      Other diabetes drugs                   metformin, sulfonylurea, glyburide*
+  drug      NSAIDs                                 non-steroidal anti-inflammatory drug*, ibuprofen, naproxen, diclofenac
+  drug      GLP-1 agonists                         semaglutide, liraglutide, dulaglutide, exenatide
+  drug      Parkinson / dopaminergic               levodopa, pramipexole, ropinirol*, dopamine agonists*
+  drug      Cholinesterase inhibitors              donepezil, rivastigmine, galantamine
+  drug      Medication (unspecified)               NONE
+  heat      Heat                                   heat stroke, heat illness, heat exhaustion, heat wave, hyperthermia, extreme heat, hot*
+  mechanism Hyponatremia / electrolytes            hyponatremia, hypokalemia, hyperkalemia, electrolyte imbalance, hypernatremia
+  mechanism Dehydration / volume                   dehydration, hypovolemia
+  mechanism Acute kidney injury                    acute kidney injury, kidney failure*, kidney failure
+  mechanism Impaired sweating / thermoregulation   hypohidrosis, thermoregulation, sweating, sweat*
+  mechanism Hypotension / falls                    orthostatic hypotension, hypotension, syncope, falling, fall
+  mechanism Glucose                                hypoglycemia, diabetic ketoacidosis, hyperglycemia
+  mechanism Rhabdomyolysis                         rhabdomyolysis
+  mechanism Lithium toxicity / drug levels         NONE
+  mechanism Hospitalisation / ED / death           hospitalization, mortality rate*, death
+  (* = matched via alias)
+
+=== 2. VARIABLES === heat: 1907; drug: 40101; mechanism: 78892; heat AND drug in one name: 1
+  [Diuretics] Season of Irbesartan/Hydrochlorothiazide Treatment Commencement (Cold vs. Warm Seasons)
+
+=== 2b. CONCEPT RELATIONSHIPS: drug x heat, drug x mechanism, heat x mechanism (studies/findings) ===
+  ACE inhibitor - hot                                                    1/1
+  opioid - hot                                                           1/1
+  hot - mortality rate                                                   36/73
+  heat stroke - mortality rate                                           12/16
+  hot - hospitalization                                                  11/13
+  extreme heat - mortality rate                                          11/19
+  hyperthermia - mortality rate                                          5/6
+  hot - sweat                                                            5/8
+  extreme heat - hospitalization                                         4/6
+  hyperthermia - acute kidney injury                                     3/3
+  hot - acute kidney injury                                              3/6
+  heat stroke - acute kidney injury                                      2/2
+  hot - death                                                            2/3
+  heat stroke - hospitalization                                          2/4
+  hot - hypoglycemia                                                     2/5
+  heat illness - mortality rate                                          1/2
+  extreme heat - acute kidney injury                                     1/1
+  hot - dehydration                                                      1/1
+  hyperthermia - hospitalization                                         1/1
+  heat stroke - rhabdomyolysis                                           1/1
+  hyperthermia - death                                                   1/1
+  hot - sweating                                                         1/1
+  heat stroke - sweating                                                 1/1
+  extreme heat - kidney failure                                          1/1
+  extreme heat - hypoglycemia                                            1/1
+  heat illness - hospitalization                                         1/1
+  heat illness - thermoregulation                                        1/1
+  kidney failure - hyperthermia                                          1/1
+  acute kidney injury - hyperthermia                                     1/1
+  rhabdomyolysis - heat stroke                                           1/1
+
+=== 2c. STUDIES === heat-context populations: 95; off-topic populations: 33758
+
+=== 3. HEAT x MECHANISM (studies) ===
+  Hyponatremia / electrolytes              6
+  Dehydration / volume                     4
+  Acute kidney injury                      17
+  Impaired sweating / thermoregulation     19
+  Hypotension / falls                      6
+  Glucose                                  3
+  Rhabdomyolysis                           2
+  Lithium toxicity / drug levels           0
+  Hospitalisation / ED / death             115
+
+=== 4. SUMMARY BY DRUG CLASS (distinct studies / findings) ===
+  class                                direct     modifier bridged studies (via mechanisms)
+  Diuretics                               1/1          1/1 Acute kidney injury 82, Hyponatremia 60, Hypotension 17, Glucose 2, Rhabdomyolysis 1, Dehydration 1
+  Beta blockers                           0/0          0/0 Hypotension 18, Glucose 10, Acute kidney injury 10, Hyponatremia 3, Impaired sweating 1, Rhabdomyolysis 1
+  ACE inhibitors / ARBs                   0/0          0/0 Acute kidney injury 86, Hyponatremia 33, Hypotension 27, Glucose 4, Rhabdomyolysis 1, Impaired sweating 1
+  Calcium channel blockers                0/0          0/0 Hypotension 17, Acute kidney injury 10, Hyponatremia 3, Glucose 1
+  Antihypertensives (any)                 2/2          0/0 Hypotension 24, Acute kidney injury 9, Hyponatremia 4, Glucose 2
+  Anticholinergics                        0/0          0/0 Hypotension 11, Hyponatremia 1, Acute kidney injury 1
+  Antipsychotics                          0/0          0/0 Hypotension 13, Glucose 9, Hyponatremia 6, Acute kidney injury 4, Rhabdomyolysis 1
+  Lithium                                 1/1          0/0 Acute kidney injury 3, Impaired sweating 1, Hyponatremia 1
+  Antidepressants                         0/0          0/0 Hypotension 28, Hyponatremia 13, Glucose 4, Impaired sweating 2, Rhabdomyolysis 1
+  Benzodiazepines / sedatives             0/0          0/0 Hypotension 28, Glucose 1, Hyponatremia 1
+  Anticonvulsants                         0/0          0/0 Hypotension 3, Hyponatremia 1, Impaired sweating 1
+  Stimulants                              0/0          0/0 Hyponatremia 1, Glucose 1
+  Opioids                                 3/4          0/0 Hypotension 35, Acute kidney injury 12, Glucose 3, Dehydration 1, Hyponatremia 1
+  Insulin                                 0/0          0/0 Glucose 135, Hypotension 3, Acute kidney injury 3, Hyponatremia 2
+  SGLT2 inhibitors                        0/0          0/0 Glucose 55, Acute kidney injury 53, Hyponatremia 13, Dehydration 3, Hypotension 2, Rhabdomyolysis 1
+  Other diabetes drugs                    0/0          0/0 Glucose 130, Acute kidney injury 9, Hypotension 1, Hyponatremia 1, Dehydration 1
+  NSAIDs                                  1/1          0/0 Acute kidney injury 50, Hyponatremia 8, Dehydration 1, Hypotension 1
+  GLP-1 agonists                          0/0          0/0 Glucose 44, Acute kidney injury 7, Hyponatremia 1
+  Parkinson / dopaminergic                0/0          0/0 Hypotension 6
+  Cholinesterase inhibitors               0/0          0/0 Hypotension 4
+  Medication (unspecified)                3/3          0/0 Hypotension 56, Acute kidney injury 38, Glucose 24, Hyponatremia 12, Impaired sweating 3, Rhabdomyolysis 3, Dehydration 1
+
+=== 4b. BRIDGE CLEAN-UP === rows dropped: {'reversed': 195, 'population clause': 0, 'off-topic population': 31}
+  class                          mechanism                                old   new
+  ACE inhibitors / ARBs          Acute kidney injury                       96    86
+  ACE inhibitors / ARBs          Glucose                                    4     4
+  ACE inhibitors / ARBs          Hyponatremia / electrolytes               36    33
+  ACE inhibitors / ARBs          Hypotension / falls                       30    27
+  ACE inhibitors / ARBs          Impaired sweating / thermoregulation       1     1
+  ACE inhibitors / ARBs          Lithium toxicity / drug levels             1     0
+  ACE inhibitors / ARBs          Rhabdomyolysis                             1     1
+  Anticholinergics               Acute kidney injury                        1     1
+  Anticholinergics               Hyponatremia / electrolytes                1     1
+  Anticholinergics               Hypotension / falls                       12    11
+  Anticonvulsants                Hyponatremia / electrolytes                1     1
+  Anticonvulsants                Hypotension / falls                        3     3
+  Anticonvulsants                Impaired sweating / thermoregulation       1     1
+  Antidepressants                Acute kidney injury                        1     0
+  Antidepressants                Glucose                                    6     4
+  Antidepressants                Hyponatremia / electrolytes               14    13
+  Antidepressants                Hypotension / falls                       30    28
+  Antidepressants                Impaired sweating / thermoregulation       2     2
+  Antidepressants                Rhabdomyolysis                             1     1
+  Antihypertensives (any)        Acute kidney injury                        9     9
+  Antihypertensives (any)        Glucose                                    2     2
+  Antihypertensives (any)        Hyponatremia / electrolytes                4     4
+  Antihypertensives (any)        Hypotension / falls                       26    24
+  Antipsychotics                 Acute kidney injury                        4     4
+  Antipsychotics                 Dehydration / volume                       1     0
+  Antipsychotics                 Glucose                                   10     9
+  Antipsychotics                 Hyponatremia / electrolytes                7     6
+  Antipsychotics                 Hypotension / falls                       17    13
+  Antipsychotics                 Impaired sweating / thermoregulation       1     0
+  Antipsychotics                 Rhabdomyolysis                             1     1
+  Benzodiazepines / sedatives    Acute kidney injury                        2     0
+  Benzodiazepines / sedatives    Glucose                                    1     1
+  Benzodiazepines / sedatives    Hyponatremia / electrolytes                1     1
+  Benzodiazepines / sedatives    Hypotension / falls                       33    28
+  Benzodiazepines / sedatives    Lithium toxicity / drug levels             1     1
+  Beta blockers                  Acute kidney injury                       13    10
+  Beta blockers                  Glucose                                   10    10
+  Beta blockers                  Hyponatremia / electrolytes                3     3
+  Beta blockers                  Hypotension / falls                       22    18
+  Beta blockers                  Impaired sweating / thermoregulation       1     1
+  Beta blockers                  Rhabdomyolysis                             1     1
+  Calcium channel blockers       Acute kidney injury                       10    10
+  Calcium channel blockers       Glucose                                    1     1
+  Calcium channel blockers       Hyponatremia / electrolytes                3     3
+  Calcium channel blockers       Hypotension / falls                       18    17
+  Cholinesterase inhibitors      Hypotension / falls                        4     4
+  Diuretics                      Acute kidney injury                       86    82
+  Diuretics                      Dehydration / volume                       1     1
+  Diuretics                      Glucose                                    2     2
+  Diuretics                      Hyponatremia / electrolytes               74    60
+  Diuretics                      Hypotension / falls                       18    17
+  Diuretics                      Lithium toxicity / drug levels             1     0
+  Diuretics                      Rhabdomyolysis                             1     1
+  GLP-1 agonists                 Acute kidney injury                        7     7
+  GLP-1 agonists                 Glucose                                   44    44
+  GLP-1 agonists                 Hyponatremia / electrolytes                1     1
+  Insulin                        Acute kidney injury                        3     3
+  Insulin                        Glucose                                  161   135
+  Insulin                        Hyponatremia / electrolytes                2     2
+  Insulin                        Hypotension / falls                        3     3
+  Lithium                        Acute kidney injury                        3     3
+  Lithium                        Hyponatremia / electrolytes                1     1
+  Lithium                        Impaired sweating / thermoregulation       1     1
+  Lithium                        Lithium toxicity / drug levels             9    11
+  Medication (unspecified)       Acute kidney injury                       65    38
+  Medication (unspecified)       Dehydration / volume                       3     1
+  Medication (unspecified)       Glucose                                   33    24
+  Medication (unspecified)       Hyponatremia / electrolytes               13    12
+  Medication (unspecified)       Hypotension / falls                       69    56
+  Medication (unspecified)       Impaired sweating / thermoregulation       3     3
+  Medication (unspecified)       Rhabdomyolysis                             3     3
+  NSAIDs                         Acute kidney injury                       50    50
+  NSAIDs                         Dehydration / volume                       1     1
+  NSAIDs                         Hyponatremia / electrolytes                8     8
+  NSAIDs                         Hypotension / falls                        1     1
+  Opioids                        Acute kidney injury                       17    12
+  Opioids                        Dehydration / volume                       1     1
+  Opioids                        Glucose                                    3     3
+  Opioids                        Hyponatremia / electrolytes                1     1
+  Opioids                        Hypotension / falls                       38    35
+  Opioids                        Rhabdomyolysis                             1     0
+  Other diabetes drugs           Acute kidney injury                       11     9
+  Other diabetes drugs           Dehydration / volume                       1     1
+  Other diabetes drugs           Glucose                                  143   130
+  Other diabetes drugs           Hyponatremia / electrolytes                1     1
+  Other diabetes drugs           Hypotension / falls                        1     1
+  Parkinson / dopaminergic       Hypotension / falls                        6     6
+  SGLT2 inhibitors               Acute kidney injury                       54    53
+  SGLT2 inhibitors               Dehydration / volume                       3     3
+  SGLT2 inhibitors               Glucose                                   57    55
+  SGLT2 inhibitors               Hyponatremia / electrolytes               13    13
+  SGLT2 inhibitors               Hypotension / falls                        2     2
+  SGLT2 inhibitors               Rhabdomyolysis                             1     1
+  Stimulants                     Glucose                                    1     1
+  Stimulants                     Hyponatremia / electrolytes                1     1
+  Stimulants                     Lithium toxicity / drug levels             1     1
+
+=== 4d. HEAT FINDINGS IN DRUG-DEFINED POPULATIONS === 4 rows, 1 studies
+  [38060348] (Insulin) ambient heat (measured by heat index percentile)  x  hypoglycemia  (odds ratio 1.14 [1.08, 1.2]) | Adults aged 65 and older who use insulin in the U.S. and Taiwan.
+  [38060348] (Insulin) ambient heat (measured by heat index percentile categories)  x  hypoglycemia  (odds ratio 1.38 [1.28, 1.48]) | Adults aged 65 and older who use insulin in the U.S. and Taiwan.
+  [38060348] (Insulin) ambient temperature (measured by heat index)  x  hypoglycemia  (odds ratio 1.09 [1.04, 1.13]) | Adults aged 65 and older who use insulin in the U.S. and Taiwan.
+  [38060348] (Insulin) Ambient heat (measured by heat index percentile)  x  hypoglycemia  (odds ratio 1.12 [1.08, 1.17]) | Adults aged 65 and older who use insulin in the U.S. and Taiwan.
+
+=== 4c. HEAT-CONTEXT DRUG FINDINGS === 1 rows, 1 studies
+  [28796021] (Medication (unspecified)) use of psychotropics  x  hospital length of stay (among older medical patients)  (subdistribution ha 0.82 [0.72, 0.94]) | 382 medical patients aged 65 and older admitted to a metropolitan teac
+
+=== 5. DIRECT + MODIFIER FINDINGS (first 120) ===
+  [36418530] (Diuretics) Season of Irbesartan/Hydrochlorothiazide Treatment Commencement (Cold vs. Warm S  x  change in systolic/diastolic blood pressure at 8 and 12 weeks of follow-up  (difference 7.0 [4.7, 9.3])
+  [25163443] (Lithium) Mean daily temperature  x  Lithium dose-level ratio  (Beta -0.17 [, ])
+  [37897873] (Opioids) daily ambient temperature  x  emergency department visits for use or overdose of opioids  (OR 1.041 [1.025, 1.057])
+  [31842287] (Medication (unspecified)) persons under medication  x  heat illness  (adjusted odds ratio (aOR) 3.09 [1.15, 8.29])
+  [16911573] (Diuretics) monthly number of cases of thiazide-induced hyponatraemia (number of cases of th  x  average air temperature  (r -0.056 [, ])
+  [15101888] (Opioids) heat application [vs no heat application]  x  area under the curve (of fentanyl plasma concentration over time)  (mean_difference_unstandardized 30.0 [, ])
+  [37897873] (Opioids) daily ambient temperature  x  overdose of opioids  (OR 1.079 [1.054, 1.106])
+  [36418530] (Antihypertensives (any) | Medication (unspecified)) season of treatment commencement (cold vs. warm seasons)  x  change in systolic blood pressure in patients who used antihypertensive medicati  (difference 5.4 [, ])
+  [17698677] (Antihypertensives (any) | Medication (unspecified)) using long-term antihypertensive medication  x  mortality (among patients with heatstroke)  (hazard ratio 2.17 [1.17, 4.05])
+  [31205291] (Opioids) Average temperature in the 7 days before death (in degrees Celsius)  x  fatal opioid overdose  (odds ratio 1.3 [1.1, 1.5])
+  [25236310] (NSAIDs) administering combined paracetamol and ibuprofen  x  mean temperature at 1 hour after treatment (of febrile children)  (mean difference -0.27 [-0.45, -0.08])
+
+Rows: direct 10, modifier 1, heat-mechanism 287. Saved in /Users/stellalee/Downloads/system-public-challenge/probe_results

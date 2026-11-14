@@ -1,0 +1,442 @@
+<title>Heat-Sensitive Medications Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one white page, one scroll. Sticky bar links to Findings, Map, Mechanisms, Methods. The map is the main view with a detail panel beside it.
+   Single light theme by choice: white ground, near-black text, one accent that only ever means "heat raised the risk". */
+:root{
+  --bg:#ffffff; --ink:#12161b; --muted:#667080; --line:#e5e7ea; --soft:#f4f5f7; --mid:#c9cdd3;
+  --risk:#d4400f;            /* the only colour: a study found heat raised the risk */
+  --f:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--f);font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:28px;line-height:1.2;letter-spacing:-.02em}
+h2{font-size:20px}
+h3{font-size:14px}
+p{margin:0}
+a{color:var(--ink);text-underline-offset:2px}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.cap{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.link{border:0;background:none;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;font-size:13px}
+.tag{display:inline-block;font-size:11px;font-weight:500;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--muted);white-space:nowrap;line-height:1.6}
+.tag.dash{border-style:dashed;border-color:var(--ink);color:var(--ink)}
+
+/* sticky bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:10px 24px;align-items:center;justify-content:space-between;min-height:52px;flex-wrap:wrap;padding-block:8px}
+.bar b{font-weight:600}
+.bar nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.bar nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:13.5px}
+.bar nav a:hover{color:var(--ink)}
+
+section{padding-block:44px;border-bottom:1px solid var(--line)}
+section.hero{padding-block:44px 36px}
+.lede{font-size:16px;color:var(--muted);max-width:62ch;margin-top:10px}
+.sechead{display:grid;gap:6px;margin-bottom:20px;max-width:70ch}
+
+/* findings */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 28px;margin-top:30px}
+.fi{display:grid;gap:6px;align-content:start;padding:16px 0;border-top:1px solid var(--ink)}
+.fi b{font-size:15px;line-height:1.35;font-weight:600}
+.fi p{color:var(--muted);font-size:13.5px}
+.fi .link{justify-self:start;margin-top:2px}
+
+/* map controls + legend */
+.ctrl{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.ctrl label{display:inline-flex;gap:8px;align-items:center;font-size:13.5px}
+.ctrl select{border:1px solid var(--mid);background:var(--bg);border-radius:6px;padding:6px 8px}
+.ctrl input[type=checkbox]{width:16px;height:16px;accent-color:var(--ink)}
+.legend{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:12px;align-items:center}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.sw{display:inline-block;width:22px;height:14px;border-radius:3px;flex:none}
+.hlbar{font-size:13px;margin-bottom:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+.main{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:28px;align-items:start}
+.tw{overflow-x:auto}
+table.m{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;table-layout:fixed}
+.m col.c0{width:190px}
+.m thead th{text-align:left;font-size:12.5px;font-weight:600;padding:0 4px 10px;vertical-align:bottom;border-bottom:1px solid var(--ink)}
+.m tbody th{text-align:left;font-weight:400;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.m tbody th b{display:block;font-weight:600;font-size:13.5px}
+.m tbody th small{display:block;color:var(--muted);font-size:11.5px;line-height:1.35}
+.m td{padding:4px;border-bottom:1px solid var(--line);vertical-align:middle}
+.m tr.on th b{text-decoration:underline;text-underline-offset:3px}
+.cell{all:unset;box-sizing:border-box;display:grid;gap:1px;align-content:center;width:100%;height:54px;padding:5px 9px;border-radius:5px;cursor:pointer;font-size:12px;line-height:1.3;border:1.5px solid transparent;transition:opacity .15s}
+.cell b{font-weight:600;font-size:12.5px}
+.cell small{font-size:11px;opacity:.85}
+.cell:hover{box-shadow:0 0 0 2px var(--mid)}
+.cell:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cell[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
+.cell.dim{opacity:.18}
+.t-risk{background:var(--risk);color:#fff}
+.t-null{background:var(--bg);border-color:var(--ink)}
+.t-bridged{background:var(--soft);border-color:var(--soft)}
+.t-partial,.t-gap{background:repeating-linear-gradient(135deg,var(--bg) 0 5px,var(--line) 5px 6.5px);border-color:var(--line)}
+.cell.unv{border-style:dashed;border-color:var(--ink)}
+.t-risk.unv{border-color:#fff;box-shadow:0 0 0 1.5px var(--risk)}
+.t-risk.unv:hover{box-shadow:0 0 0 1.5px var(--risk),0 0 0 3.5px var(--mid)}
+.t-risk.unv[aria-pressed="true"]{box-shadow:0 0 0 2px var(--risk),0 0 0 4px var(--ink)}
+.bars{display:inline-flex;gap:2px;vertical-align:1px;margin-right:5px}
+.bars i{width:4px;height:9px;border-radius:1px;background:var(--mid)}
+.bars i.f{background:var(--ink)}
+.none{display:flex;align-items:center;justify-content:center;height:54px;color:var(--mid)}
+.mapnote{margin-top:12px;max-width:72ch}
+
+/* panel */
+.panel{position:sticky;top:calc(64px + env(safe-area-inset-top,0px));max-height:calc(100vh - 80px);overflow-y:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.pbody{padding:18px 20px 22px;display:grid;gap:18px}
+.px{display:none}
+.ph{display:grid;gap:6px}
+.ph .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-flex;gap:6px;align-items:center;font-size:12px;font-weight:600;border-radius:4px;padding:2px 8px}
+.badge.risk{background:var(--risk);color:#fff}
+.badge.null{border:1.5px solid var(--ink)}
+.badge.br{background:var(--soft)}
+.badge.gap{border:1px solid var(--mid);color:var(--muted)}
+.ps{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+.act{font-size:15.5px;line-height:1.45;font-weight:500}
+.st{display:grid;gap:5px;padding:10px 0;border-top:1px solid var(--line)}
+.st:first-of-type{border-top:0;padding-top:2px}
+.st .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.eff{font-size:12px;font-weight:600;white-space:nowrap}
+.eff.risk{color:var(--risk)}
+.chain{display:grid;grid-template-columns:auto minmax(40px,1fr) auto minmax(40px,1fr) auto;align-items:center;font-size:12px}
+.node{border:1px solid var(--line);border-radius:5px;padding:3px 8px;max-width:9em;text-align:center;line-height:1.25;background:var(--bg)}
+.edge{display:grid;justify-items:center;gap:2px;font-size:11px;color:var(--muted);text-align:center;padding:0 3px}
+.edge::after{content:"";width:100%;border-top:1.5px solid var(--ink)}
+.edge.zero{color:var(--ink);font-weight:600}
+.edge.zero::after{border-top:1.5px dashed var(--mid)}
+details{font-size:12.5px}
+details summary{cursor:pointer;color:var(--muted)}
+.exr{padding:7px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.empty{color:var(--muted)}
+
+/* bridge graphic */
+.bw{overflow-x:auto}
+.bw svg{display:block;width:100%;max-width:1040px;min-width:760px;height:auto}
+.bw text{font-family:var(--f);fill:var(--ink)}
+.bl{fill:none;stroke:var(--mid);stroke-opacity:.55;transition:stroke .2s,stroke-opacity .2s}
+.bh{fill:none;stroke:var(--mid);stroke-opacity:.8;transition:stroke .2s,stroke-opacity .2s}
+.bn{cursor:pointer}
+.bn:focus{outline:none}
+.bn:focus-visible rect.hit{stroke:var(--ink);stroke-width:1.5}
+.bn text{font-size:12.5px;transition:opacity .2s}
+.bn .sub{font-size:11px;fill:var(--muted)}
+svg.act .bl,svg.act .bh{stroke-opacity:.14}
+svg.act .bl.on,svg.act .bh.on{stroke:var(--risk);stroke-opacity:.85}
+svg.act .bn:not(.on) text{opacity:.35}
+svg.act .bn.on .name{font-weight:600}
+.readout{min-height:66px;border-left:2px solid var(--ink);padding:2px 0 2px 14px;margin-bottom:18px;max-width:80ch;display:grid;gap:4px;align-content:start}
+.readout b{font-weight:600}
+
+/* methods */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 36px}
+.cols ul{margin:8px 0 0;padding-left:18px;display:grid;gap:6px;color:var(--muted);font-size:13.5px}
+.cols li b{color:var(--ink);font-weight:600}
+.funnel{display:grid;gap:7px;margin-top:10px;font-size:13px}
+.funnel div{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center}
+.funnel i{display:block;height:10px;background:var(--ink);border-radius:2px}
+.funnel span{color:var(--muted)}
+footer{padding-block:24px 48px;color:var(--muted);font-size:12.5px;display:grid;gap:4px;max-width:90ch}
+
+@media (max-width:1099px){
+  .main{grid-template-columns:minmax(0,1fr)}
+  .panel{position:fixed;inset:0 0 0 auto;width:min(440px,100%);max-height:none;border-radius:0;border-width:0 0 0 1px;z-index:50;display:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .panel.open{display:block}
+  .px{display:block;position:sticky;top:0;margin-left:auto;border:1px solid var(--line);background:var(--bg);border-radius:6px;width:34px;height:34px;font-size:18px;cursor:pointer;float:right;margin:10px 12px 0 0}
+  .scrim.open{position:fixed;inset:0;background:rgba(18,22,27,.35);z-index:49}
+}
+</style>
+
+<div class="bar"><div class="wrap">
+  <b>Heat-Sensitive Medications Map</b>
+  <nav aria-label="Sections"><a href="#findings">Findings</a><a href="#map">Map</a><a href="#mechanisms">Mechanisms</a><a href="#methods">Methods</a></nav>
+</div></div>
+
+<div class="wrap">
+  <section class="hero" id="findings">
+    <span class="cap">Evidence map · System Public Graph</span>
+    <h1 style="margin-top:8px">Which common medications make heat more dangerous?</h1>
+    <p class="lede">17 drug classes against the four things a prescriber can do before a heat wave. Each cell shows what kind of evidence stands behind the action.</p>
+    <div class="findings" id="fi"></div>
+  </section>
+
+  <section id="map">
+    <div class="sechead"><h2>The map</h2><p class="muted">Select a cell to see the draft action and the studies behind it. Orange is the only colour: a study measured the drug with heat and found a higher risk.</p></div>
+    <div class="ctrl">
+      <label for="spec">Prescriber <select id="spec"></select></label>
+      <label for="vet"><input type="checkbox" id="vet"> Vetted evidence only</label>
+    </div>
+    <div class="legend" aria-label="Legend">
+      <span><i class="sw" style="background:var(--risk)"></i>Measured with heat: raises risk</span>
+      <span><i class="sw" style="border:1.5px solid var(--ink)"></i>Measured with heat: no clear effect</span>
+      <span><i class="sw" style="background:var(--soft)"></i>Mechanism support only (weak to strong)</span>
+      <span><i class="sw" style="background:repeating-linear-gradient(135deg,var(--bg) 0 5px,var(--line) 5px 6.5px);border:1px solid var(--line)"></i>Gap: guidance or label only</span>
+      <span><i class="sw" style="border:1.5px dashed var(--ink)"></i>† relies on unvetted rows</span>
+    </div>
+    <div class="hlbar" id="hlbar" hidden></div>
+    <div class="main">
+      <div>
+        <div class="tw"><table class="m" id="grid"></table></div>
+        <p class="small muted mapnote">A dot means no heat-specific action is expected. A gap or "no clear effect" cell is not a green light: absence of evidence is not evidence of safety. Action wording is a draft for clinician and pharmacist review.</p>
+      </div>
+      <aside class="panel" id="panel" aria-label="Cell detail"><button class="px" id="px" aria-label="Close">×</button><div class="pbody" id="pbody"></div></aside>
+    </div>
+  </section>
+
+  <section id="mechanisms">
+    <div class="sechead"><h2>Where the indirect evidence runs, and where it stops</h2>
+      <p class="muted">Each ribbon is a set of studies. Left: a drug class linked to a mechanism, in any setting. Right: heat linked to the same mechanism. A class is supported by mechanism only where both sides meet. Hover or select a class or a mechanism.</p></div>
+    <div class="readout" id="readout" aria-live="polite"></div>
+    <div class="bw" id="bridge"></div>
+    <p class="small muted" style="margin-top:10px;max-width:80ch">Ribbon width grows with the number of studies (square-root scale). A count shows how much was published, not how strong the link is. This is mechanism support: plausible, not measured.</p>
+  </section>
+
+  <section id="methods">
+    <div class="sechead"><h2>Methods and limits</h2></div>
+    <div class="cols">
+      <div><h3>Before using this</h3>
+        <ul>
+          <li><b>Draft actions.</b> The wording is for clinician and pharmacist review. It is not a protocol.</li>
+          <li><b>Mechanism support is not risk.</b> It means the pathway is plausible, in separate studies. Nobody measured it in heat.</li>
+          <li><b>Unvetted rows are marked †.</b> They come from the live API, where System estimates about 20% are mis-extracted.</li>
+          <li><b>Nothing is hand-checked yet.</b> No study has been compared with its abstract.</li>
+          <li><b>Storage advice comes from drug labels.</b> The graph has almost nothing on drug stability.</li>
+          <li><b>No evidence is not safety.</b> A gap or a null result is not a green light.</li>
+        </ul></div>
+      <div><h3>How a cell is graded</h3>
+        <ul>
+          <li><b>Measured with heat.</b> At least one finding pairs the drug, or its class, with heat. The cell shows whether it found a higher risk or no clear effect.</li>
+          <li><b>Mechanism support.</b> Graded on the cell's main mechanism only. Strong: 30 or more drug studies and 10 or more heat studies. Moderate: at least 10 and 3. Weak: both present, below that.</li>
+          <li><b>Partial.</b> The drug side exists; no study links heat to the mechanism.</li>
+          <li><b>Gap.</b> The action is in labels or guidance. The graph has nothing for its mechanism.</li>
+          <li>Drug-side counts keep only findings in people where the drug is the exposure. Mechanisms are matched on variable names, so counts are indicative.</li>
+        </ul></div>
+      <div><h3>How much of the literature is in the graph</h3>
+        <div class="funnel">
+          <div><b>57</b><span>heat and medication papers found in PubMed</span></div><div><span></span><i style="width:100%"></i></div>
+          <div><b>18</b><span>have any finding extracted in the graph</span></div><div><span></span><i style="width:31.6%"></i></div>
+          <div><b>13</b><span>of those are in scope</span></div><div><span></span><i style="width:22.8%"></i></div>
+          <div><b>10</b><span>are found by this map's search</span></div><div><span></span><i style="width:17.5%"></i></div>
+        </div>
+        <p class="small muted" style="margin-top:10px">The rest, mostly older case reports of drug-related heat stroke, exist in the graph only as titles.</p>
+        <h3 style="margin-top:20px">Studies not tied to one class</h3>
+        <div id="general"></div></div>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<script>
+const DATA = /*DATA*/null;
+const B = DATA.buckets;
+const BN = {"Dose adjustment":"Adjust dose","Substitute or hold":"Hold or switch","Closer monitoring":"Monitor closely","Storage and stability":"Storage and handling"};
+const MN = {"Acute kidney injury":"Kidney injury","Hyponatremia / electrolytes":"Low sodium","Hypotension / falls":"Low blood pressure, falls","Glucose":"Glucose","Dehydration / volume":"Dehydration","Impaired sweating / thermoregulation":"Reduced sweating","Rhabdomyolysis":"Muscle breakdown","Lithium toxicity / drug levels":"Lithium levels"};
+const TN = {H:"heat exposure",S:"seasonal",X:"lab heat",C:"class-wide"};
+const TL = {H:"Heat-exposure study",S:"Seasonal comparison",X:"Experimental local heat",C:"Class-wide (any antihypertensive)"};
+const SW = "Impaired sweating / thermoregulation";
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pm = id => `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(id)}/" target="_blank" rel="noopener">PMID ${esc(id)}</a>`;
+const rowOf = Object.fromEntries(DATA.rows.map(r => [r.class, r]));
+const S = {spec:"", vetted:false, sel:"Antipsychotics|Closer monitoring", hl:null, hlText:"", pin:{m:SW}, hover:null};
+
+/* ---------- grading (recomputed when "vetted only" is on, same rubric as the build) ---------- */
+function grade(c){
+  if (!c || c.tier === "none") return {tier:"none"};
+  const direct = (c.direct || []).filter(d => !S.vetted || d.vetted);
+  if (!S.vetted) return {tier:c.tier, strength:c.strength, signal:c.signal, unv:!c.vetted, direct};
+  if (direct.length){ const e = new Set(direct.map(d => d.effect)); return {tier:"direct", signal:e.has("risk")?"risk":e.has("lower")?"lower":"null", direct}; }
+  const p = (c.mechanisms || []).find(m => m.primary);
+  if (p && p.drug_studies && p.heat_studies) return {tier:"bridged", strength:p.drug_studies>=30&&p.heat_studies>=10?3:p.drug_studies>=10&&p.heat_studies>=3?2:1, direct};
+  if (p && p.drug_studies) return {tier:"partial", direct};
+  return {tier:"gap", direct};
+}
+const kind = g => g.tier === "direct" ? (g.signal === "risk" ? "risk" : "null") : g.tier;
+const SN = ["","weak","moderate","strong"];
+function label(g){
+  if (g.tier === "direct") return g.signal === "risk" ? "↑ Raises risk" : g.signal === "lower" ? "↓ Lower risk" : "No clear effect";
+  if (g.tier === "bridged") return "Mechanism support";
+  if (g.tier === "partial") return "Partial";
+  return "Gap";
+}
+function sub(g){
+  if (g.tier === "direct") return [...new Set(g.direct.map(d => TN[d.type || "H"]))].join(" · ");
+  if (g.tier === "bridged") return SN[g.strength];
+  if (g.tier === "partial") return "no heat studies";
+  return "guidance or label only";
+}
+const bars = n => `<span class="bars" aria-hidden="true">${[1,2,3].map(i => `<i class="${i<=n?"f":""}"></i>`).join("")}</span>`;
+const badge = g => { const k = kind(g); return `<span class="badge ${k==="risk"?"risk":k==="null"?"null":k==="bridged"?"br":"gap"}">${g.tier==="bridged"?bars(g.strength):""}${label(g)}${g.tier==="bridged"?", "+SN[g.strength]:""}</span>`; };
+
+/* ---------- findings ---------- */
+const FIND = [
+  {t:"The strongest signal is in psychiatric drugs.", d:"In the 2003 French heat wave, older people on antipsychotics had about twice the odds of dying (OR 2.09). Antidepressants: OR 1.71.", go:"map", hl:["Antipsychotics|Closer monitoring","Antidepressants|Closer monitoring"], sel:"Antipsychotics|Closer monitoring"},
+  {t:"The classes guidance stresses most are the least proven.", d:"Lithium was studied twice with no clear heat effect. Anticholinergics have one unvetted study, with no clear effect on death.", go:"map", hl:["Lithium|Dose adjustment","Lithium|Substitute or hold","Lithium|Closer monitoring","Anticholinergics|Substitute or hold","Anticholinergics|Closer monitoring"], sel:"Lithium|Closer monitoring"},
+  {t:"Overdose and hypoglycaemia are under-recognised heat risks.", d:"Opioid overdose rises with daily temperature. Older insulin users have more serious hypoglycaemia in heat. Guidance rarely names opioids.", go:"map", hl:["Opioids|Closer monitoring","Stimulants|Closer monitoring","Insulin|Dose adjustment","Insulin|Closer monitoring"], sel:"Opioids|Closer monitoring"},
+  {t:"The evidence is about kidneys and sodium. Guidance worries about sweating.", d:"Dozens of studies link common drugs to kidney injury or low sodium. Almost none link any drug to reduced sweating.", go:"mechanisms"},
+  {t:"Direct evidence is rare.", d:"Of 57 known heat and medication papers, only 18 have any finding in the graph.", go:"methods"}
+];
+function renderFindings(){
+  $("#fi").innerHTML = FIND.map((f,i) => `<div class="fi"><b>${esc(f.t)}</b><p>${esc(f.d)}</p><button class="link" data-i="${i}">${f.go==="map"?"Show on the map":f.go==="mechanisms"?"See the mechanisms":"See the coverage"} →</button></div>`).join("");
+  $("#fi").querySelectorAll("button").forEach(b => b.onclick = () => { const f = FIND[+b.dataset.i];
+    if (f.go === "map"){ S.hl = new Set(f.hl); S.hlText = f.t; S.sel = f.sel; S.spec = ""; $("#spec").value = ""; renderMap(); renderPanel(); }
+    if (f.go === "mechanisms"){ S.pin = {m:SW}; paintBridge(); }
+    document.getElementById(f.go).scrollIntoView(); });
+}
+
+/* ---------- map ---------- */
+function renderMap(){
+  let h = `<colgroup><col class="c0"><col><col><col><col></colgroup><thead><tr><th scope="col">Drug class</th>${B.map(b => `<th scope="col">${BN[b]}</th>`).join("")}</tr></thead><tbody>`;
+  let ri = 0;
+  DATA.rows.forEach(r => {
+    if (S.spec && !r.specialties.includes(S.spec)) return;
+    h += `<tr class="${S.pin && S.pin.c === r.class ? "on" : ""}"><th scope="row"><b>${esc(r.class)}</b><small>${esc(r.examples)}</small></th>`;
+    B.forEach((b,ci) => { const id = r.class+"|"+b, g = grade(r.cells[b]);
+      if (g.tier === "none"){ h += `<td><div class="none"><span aria-hidden="true">·</span><span class="sr">No heat-specific action expected</span></div></td>`; return; }
+      const dim = S.hl && !S.hl.has(id);
+      h += `<td><button class="cell t-${kind(g)}${g.unv?" unv":""}${dim?" dim":""}" data-id="${esc(id)}" data-r="${ri}" data-c="${ci}" aria-pressed="${S.sel===id}" aria-label="${esc(r.class)}, ${BN[b]}: ${label(g).replace(/[↑↓] /,"")}, ${sub(g)}${g.unv?", relies on unvetted rows":""}">
+        <b>${g.tier==="bridged"?bars(g.strength):""}${label(g)}${g.unv?" †":""}</b><small>${esc(sub(g))}</small></button></td>`; });
+    h += "</tr>"; ri++;
+  });
+  $("#grid").innerHTML = h + "</tbody>";
+  $("#grid").querySelectorAll(".cell").forEach(b => b.onclick = () => { S.sel = b.dataset.id; openPanel(); renderMap(); renderPanel(); const n = document.querySelector(`.cell[data-id="${CSS.escape(S.sel)}"]`); if (n && wide()) n.focus(); });
+  const hb = $("#hlbar"); hb.hidden = !S.hl;
+  if (S.hl){ hb.innerHTML = `<span><b>Highlighted:</b> ${esc(S.hlText)}</span><button class="link" id="hlx">Show all cells</button>`; $("#hlx").onclick = () => { S.hl = null; renderMap(); }; }
+}
+$("#grid").addEventListener("keydown", e => { const t = e.target.closest(".cell"); if (!t || !e.key.startsWith("Arrow")) return;
+  const r = +t.dataset.r, c = +t.dataset.c; let best = null, bd = 1e9;
+  document.querySelectorAll(".cell").forEach(n => { const nr = +n.dataset.r, nc = +n.dataset.c; let d = -1;
+    if (e.key==="ArrowRight" && nr===r && nc>c) d = nc-c; if (e.key==="ArrowLeft" && nr===r && nc<c) d = c-nc;
+    if (e.key==="ArrowDown" && nr>r) d = (nr-r)*10+Math.abs(nc-c); if (e.key==="ArrowUp" && nr<r) d = (r-nr)*10+Math.abs(nc-c);
+    if (d>=0 && d<bd){ bd = d; best = n; } });
+  if (best){ e.preventDefault(); best.focus(); } });
+
+/* ---------- panel ---------- */
+const wide = () => window.matchMedia("(min-width:1100px)").matches;
+function openPanel(){ $("#panel").classList.add("open"); $("#scrim").classList.add("open"); }
+function closePanel(){ $("#panel").classList.remove("open"); $("#scrim").classList.remove("open"); }
+$("#px").onclick = closePanel; $("#scrim").onclick = closePanel;
+document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+const cnt = (v,u) => S.vetted || !u ? `${v}` : `${v} + ${u}†`;
+function exRow(s){
+  const ci = s.ci && s.ci[0] ? ` (${esc(s.ci[0])} to ${esc(s.ci[1])})` : "";
+  return `<div class="exr"><span>${esc(s.a)} → ${esc(s.b)}</span><span class="muted">${esc((s.stat||"").trim())} ${esc(s.value)}${ci}${s.p?`, p ${esc(s.p)}`:""} · ${pm(s.pmid)}</span>
+    <span class="row" style="display:flex;gap:5px;flex-wrap:wrap">${s.trial?`<span class="tag">trial</span>`:""}${s.sig?`<span class="tag">interval excludes no effect</span>`:""}${s.vetted===false?`<span class="tag dash">† unvetted</span>`:""}<span class="tag">unchecked</span></span>
+    ${s.pop?`<span class="muted">${esc(s.pop)}</span>`:""}</div>`;
+}
+function renderPanel(){
+  const el = $("#pbody"); const [cls,b] = (S.sel||"").split("|"); const r = rowOf[cls], c = r && r.cells[b];
+  if (!c || c.tier === "none"){ el.innerHTML = `<p class="empty">Select a cell in the map.</p>`; return; }
+  const g = grade(c);
+  let h = `<div class="ph"><span class="cap">${esc(BN[b])}</span><h2>${esc(cls)}</h2><span class="muted small">${esc(r.examples)}</span>
+    <div class="row">${badge(g)}${g.unv?`<span class="tag dash">† relies on unvetted rows</span>`:""}</div>
+    <span class="muted small">Prescribers: ${esc(r.specialties.join(", "))}</span></div>`;
+  h += `<div class="ps"><span class="cap">Draft action · for clinician review</span><p class="act">${esc(c.action)}</p>${c.note?`<p class="small muted">Source outside the graph: ${esc(c.note)}</p>`:""}</div>`;
+  const dl = (c.direct||[]).filter(d => !S.vetted || d.vetted);
+  h += `<div class="ps"><span class="cap">Measured with heat${dl.length?` · ${dl.length} ${dl.length>1?"findings":"finding"}`:""}</span>`;
+  if (!dl.length) h += `<p class="muted small">No ${S.vetted?"vetted ":""}study in the graph measured this drug class together with heat.</p>`;
+  dl.forEach(d => { h += `<div class="st"><div class="row"><span class="eff ${d.effect==="risk"?"risk":""}">${d.effect==="risk"?"↑ Raises risk":d.effect==="lower"?"↓ Lower risk":"No clear effect"}</span><span class="tag">${TL[d.type||"H"]}</span>${d.vetted?`<span class="tag">vetted</span>`:`<span class="tag dash">† unvetted</span>`}<span class="tag">unchecked</span></div><p>${esc(d.summary)}</p><span class="small">${pm(d.pmid)}</span></div>`; });
+  h += `</div>`;
+  const ms = c.mechanisms || [];
+  if (ms.length){
+    h += `<div class="ps"><span class="cap">Mechanism support · plausible, not measured</span>`;
+    ms.forEach(m => { const dn = m.drug_studies + (S.vetted?0:m.drug_unvetted), hn = m.heat_studies + (S.vetted?0:m.heat_unvetted);
+      const dex = m.drug_examples.filter(x => !S.vetted || x.vetted !== false), hex = m.heat_examples.filter(x => !S.vetted || x.vetted !== false);
+      h += `<div class="chain"><span class="node">${esc(cls)}</span><span class="edge${dn?"":" zero"}">${dn?cnt(m.drug_studies,m.drug_unvetted)+" studies":"no studies"}</span><span class="node">${esc(MN[m.mechanism]||m.mechanism)}${m.primary?`<br><span class="muted" style="font-size:10.5px">main mechanism</span>`:""}</span><span class="edge${hn?"":" zero"}">${hn?cnt(m.heat_studies,m.heat_unvetted)+" studies":"no studies"}</span><span class="node">Heat</span></div>`;
+      if (dex.length || hex.length) h += `<details><summary>Example findings</summary>${dex.length?`<p class="cap" style="margin-top:8px">Drug and ${esc((MN[m.mechanism]||m.mechanism).toLowerCase())}, any setting</p>${dex.slice(0,4).map(exRow).join("")}`:""}${hex.length?`<p class="cap" style="margin-top:10px">Heat and ${esc((MN[m.mechanism]||m.mechanism).toLowerCase())}</p>${hex.slice(0,4).map(exRow).join("")}`:""}</details>`; });
+    h += `</div>`;
+  }
+  if (kind(g) !== "risk") h += `<p class="small muted">Not a green light. ${g.tier==="direct"?"A null result in one or two studies does not show the drug is safe in heat.":g.tier==="bridged"?"The pathway is plausible, but no study measured it in heat.":"The graph has no evidence here; the action rests on labels or guidance."}</p>`;
+  el.innerHTML = h; $("#panel").scrollTop = 0;
+}
+
+/* ---------- bridge graphic ---------- */
+let BR = null;
+function buildBridge(){
+  const useU = !S.vetted, br = DATA.bridge;
+  const lv = l => l.drug + (useU ? l.drug_unvetted : 0), hv = m => m.heat + (useU ? m.heat_unvetted : 0);
+  const w = n => n ? Math.max(1.5, 1.7*Math.sqrt(n)) : 0;
+  const classes = DATA.rows.map(r => r.class).filter(c => br.links.some(l => l.class === c));
+  const links = br.links.filter(l => lv(l) > 0);
+  const W = 1000, XL = 222, XM = 560, XR = 850, NW = 9, top = 26;
+  // left nodes
+  let y = top; const L = {};
+  classes.forEach(c => { const ls = links.filter(l => l.class === c); const hgt = ls.reduce((a,l) => a + w(lv(l)), 0); const slot = Math.max(hgt, 15);
+    L[c] = {y: y + (slot-hgt)/2, h: hgt, mid: y + slot/2, off: 0, total: ls.reduce((a,l) => a + lv(l), 0)}; y += slot + 7; });
+  const HL = y;
+  // middle nodes
+  const M = {}; let my = top; const gap = 22;
+  br.mechanisms.forEach(m => { const inn = links.filter(l => l.mechanism === m.name).reduce((a,l) => a + w(lv(l)), 0); const out = w(hv(m)); const hgt = Math.max(inn, out, 2);
+    M[m.name] = {y: my + 16, h: hgt, inn, out, off: 0, heat: hv(m), m}; my += hgt + 16 + gap; });
+  const HM = my - gap + 8; const H = Math.max(HL, HM) + 10;
+  // spread middle nodes over the full height
+  const extra = (H - 10 - HM) / Math.max(1, br.mechanisms.length - 1);
+  if (extra > 0) br.mechanisms.forEach((m,i) => M[m.name].y += extra * i);
+  const heatH = br.mechanisms.reduce((a,m) => a + M[m.name].out, 0); let hy = (H - heatH)/2;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="group" aria-label="Drug classes linked to mechanisms, and mechanisms linked to heat">`;
+  s += `<text x="${XL}" y="12" text-anchor="end" class="sub" style="font-size:11px;fill:var(--muted);font-weight:600;letter-spacing:.06em">DRUG CLASS</text><text x="${XM+NW/2}" y="12" text-anchor="middle" style="font-size:11px;fill:var(--muted);font-weight:600;letter-spacing:.06em">MECHANISM</text><text x="${XR}" y="12" style="font-size:11px;fill:var(--muted);font-weight:600;letter-spacing:.06em">HEAT</text>`;
+  const curve = (x0,y0,x1,y1) => { const mx = (x0+x1)/2; return `M${x0},${y0.toFixed(1)}C${mx},${y0.toFixed(1)} ${mx},${y1.toFixed(1)} ${x1},${y1.toFixed(1)}`; };
+  classes.forEach(c => links.filter(l => l.class === c).sort((a,b) => br.mechanisms.findIndex(m => m.name===a.mechanism) - br.mechanisms.findIndex(m => m.name===b.mechanism)).forEach(l => {
+    const ww = w(lv(l)), a = L[c], b = M[l.mechanism]; const y0 = a.y + a.off + ww/2, y1 = b.y + (b.h-b.inn)/2 + b.off + ww/2; a.off += ww; b.off += ww;
+    s += `<path class="bl" data-c="${esc(c)}" data-m="${esc(l.mechanism)}" d="${curve(XL+NW, y0, XM, y1)}" stroke-width="${ww.toFixed(1)}"/>`; }));
+  br.mechanisms.forEach(m => { const b = M[m.name]; if (!b.out) return; const y0 = b.y + b.h/2, y1 = hy + b.out/2; hy += b.out;
+    s += `<path class="bh" data-m="${esc(m.name)}" d="${curve(XM+NW, y0, XR, y1)}" stroke-width="${b.out.toFixed(1)}"/>`; });
+  classes.forEach(c => { const a = L[c];
+    s += `<g class="bn" tabindex="0" role="button" data-c="${esc(c)}" aria-label="${esc(c)}"><rect class="hit" x="0" y="${a.mid-10}" width="${XL+NW+2}" height="20" fill="transparent" rx="3"/><rect x="${XL}" y="${a.y}" width="${NW}" height="${Math.max(a.h,2)}" fill="var(--ink)" rx="1.5"/><text class="name" x="${XL-10}" y="${a.mid+4}" text-anchor="end">${esc(c)}</text></g>`; });
+  br.mechanisms.forEach(m => { const b = M[m.name];
+    s += `<g class="bn" tabindex="0" role="button" data-m="${esc(m.name)}" aria-label="${esc(MN[m.name])}"><rect class="hit" x="${XM-70}" y="${b.y-17}" width="${NW+140}" height="${b.h+19}" fill="transparent" rx="3"/><rect x="${XM}" y="${b.y}" width="${NW}" height="${b.h}" fill="var(--ink)" rx="1.5"/><text class="name" x="${XM+NW/2}" y="${b.y-5}" text-anchor="middle">${esc(MN[m.name])}</text></g>`; });
+  s += `<rect x="${XR}" y="${(H-heatH)/2}" width="${NW+3}" height="${Math.max(heatH,2)}" fill="var(--risk)" rx="1.5"/><text x="${XR+22}" y="${H/2-2}" style="font-size:14px;font-weight:600">Heat</text><text x="${XR+22}" y="${H/2+15}" class="sub" style="font-size:11px;fill:var(--muted)">heat waves, temperature</text>`;
+  s += `</svg>`;
+  $("#bridge").innerHTML = s; BR = {links, lv, hv, classes};
+  const svg = $("#bridge svg");
+  svg.querySelectorAll(".bn").forEach(n => { const k = n.dataset.c ? {c:n.dataset.c} : {m:n.dataset.m};
+    n.addEventListener("mouseenter", () => { S.hover = k; paintBridge(); });
+    n.addEventListener("mouseleave", () => { S.hover = null; paintBridge(); });
+    n.addEventListener("focus", () => { S.hover = k; paintBridge(); });
+    n.addEventListener("blur", () => { S.hover = null; paintBridge(); });
+    const pin = () => { const same = S.pin && S.pin.c === k.c && S.pin.m === k.m; S.pin = same ? null : k; paintBridge(); renderMap(); };
+    n.addEventListener("click", pin); n.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); pin(); } }); });
+  paintBridge();
+}
+function paintBridge(){
+  const svg = $("#bridge svg"); if (!svg) return; const a = S.hover || S.pin; svg.classList.toggle("act", !!a);
+  const onC = new Set(), onM = new Set();
+  if (a){ BR.links.forEach(l => { if ((a.c && l.class === a.c) || (a.m && l.mechanism === a.m)){ onC.add(l.class); onM.add(l.mechanism); } }); if (a.c) onC.add(a.c); if (a.m) onM.add(a.m); }
+  svg.querySelectorAll(".bl").forEach(p => p.classList.toggle("on", !!a && ((a.c && p.dataset.c === a.c) || (a.m && p.dataset.m === a.m))));
+  svg.querySelectorAll(".bh").forEach(p => p.classList.toggle("on", !!a && onM.has(p.dataset.m)));
+  svg.querySelectorAll(".bn").forEach(n => n.classList.toggle("on", n.dataset.c ? onC.has(n.dataset.c) : onM.has(n.dataset.m)));
+  const ro = $("#readout"), u = !S.vetted, hm = m => { const x = DATA.bridge.mechanisms.find(y => y.name === m); return cnt(x.heat, x.heat_unvetted); };
+  if (!a){ ro.innerHTML = `<b>Select a class or a mechanism.</b><span class="muted">For example, reduced sweating: the mechanism guidance cites most.</span>`; return; }
+  if (a.m){ const ls = BR.links.filter(l => l.mechanism === a.m).sort((x,y) => BR.lv(y) - BR.lv(x));
+    const cited = DATA.rows.filter(r => Object.values(r.cells).some(c => (c.mechanisms||[]).some(m => m.mechanism === a.m)) && !ls.some(l => l.class === r.class)).map(r => r.class);
+    ro.innerHTML = `<span><b>${esc(MN[a.m])}.</b> Heat side: ${hm(a.m)} studies link heat to it. Drug side: ${ls.length ? ls.map(l => `${esc(l.class)} ${cnt(l.drug,l.drug_unvetted)}`).join(", ") : "no class has a study"}.</span>${cited.length ? `<span><b>No ${u?"":"vetted "}drug-side study</b> for ${cited.map(esc).join(", ")}, though the map's actions for ${cited.length>1?"them":"it"} rest on this mechanism.</span>` : ""}`; }
+  else { const ls = BR.links.filter(l => l.class === a.c).sort((x,y) => BR.lv(y) - BR.lv(x));
+    ro.innerHTML = `<span><b>${esc(a.c)}.</b> ${ls.length ? ls.map(l => `${esc(MN[l.mechanism])} ${cnt(l.drug,l.drug_unvetted)} (heat side ${hm(l.mechanism)})`).join(", ") : "No drug-side studies."}.</span><span><button class="link" id="toMap">See ${esc(a.c)} in the map</button></span>`;
+    const t = $("#toMap"); if (t) t.onclick = () => { S.pin = {c:a.c}; const r = rowOf[a.c], b = B.find(x => r.cells[x].tier !== "none"); if (b) S.sel = a.c+"|"+b; S.spec = ""; $("#spec").value = ""; S.hl = null; renderMap(); renderPanel(); document.getElementById("map").scrollIntoView(); }; }
+}
+
+/* ---------- methods, footer, controls ---------- */
+function renderStatic(){
+  $("#general").innerHTML = DATA.general.map(d => `<div class="st"><div class="row"><span class="eff ${d.effect==="risk"?"risk":""}">${d.effect==="risk"?"↑ Raises risk":"No clear effect"}</span>${d.vetted?`<span class="tag">vetted</span>`:`<span class="tag dash">† unvetted</span>`}</div><p class="small">${esc(d.summary)} · ${pm(d.pmid)}</p></div>`).join("");
+  $("#foot").innerHTML = `<span>Evidence: ${esc(DATA.source)}. Built ${esc(DATA.built)}.</span><span>Graph data © System, licensed CC BY-NC 4.0 (doi:10.7910/DVN/7V6JDO). Non-commercial use only. Actions are drafts and not medical advice.</span>`;
+  const specs = [...new Set(DATA.rows.flatMap(r => r.specialties))].sort();
+  $("#spec").innerHTML = `<option value="">All prescribers</option>` + specs.map(s => `<option>${esc(s)}</option>`).join("");
+  $("#spec").onchange = e => { S.spec = e.target.value; S.hl = null; renderMap(); };
+  $("#vet").onchange = e => { S.vetted = e.target.checked; renderMap(); renderPanel(); buildBridge(); };
+}
+renderStatic(); renderFindings(); renderMap(); renderPanel(); buildBridge();
+</script>

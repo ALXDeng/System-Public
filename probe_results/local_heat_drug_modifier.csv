@@ -1,0 +1,2 @@
+classes,pubmed_id,doi,study_type,var1,var2,statistic_type,value,ci_lower,ci_upper,p_value,population,association_id,study_id
+Diuretics,36418530,10.1038/s41440-022-01084-y,,Season of Irbesartan/Hydrochlorothiazide Treatment Commencement (Cold vs. Warm Seasons),change in systolic/diastolic blood pressure at 8 and 12 weeks of follow-up,difference,7.0,4.7,9.3,0.0001,501 hypertensive patients enrolled in a 12-week therapeutic study.,gETjlkH1dC,Sxpvs06Z-3

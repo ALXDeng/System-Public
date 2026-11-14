@@ -1,0 +1,88 @@
+=== VARIABLE SEARCH (all matches per term) ===
+  heat  heat wave                 109 returned,    109 kept
+  heat  heatwave                   80 returned,     80 kept
+  heat  heat stroke                58 returned,     58 kept
+  heat  heatstroke                 31 returned,     31 kept
+  heat  heat-related              101 returned,    101 kept
+  heat  heat related              144 returned,    129 kept
+  heat  heat illness               84 returned,     84 kept
+  heat  heat exhaustion            11 returned,     10 kept
+  heat  extreme heat              102 returned,    101 kept
+  heat  heat stress               251 returned,    247 kept
+  heat  heat exposure             231 returned,    204 kept
+  heat  exposure to heat          231 returned,    204 kept
+  heat  heat index                 79 returned,     77 kept
+  heat  hot day                    53 returned,     35 kept
+  heat  hot weather                19 returned,     14 kept
+  heat  hot season                 47 returned,     31 kept
+  heat  hot night                  24 returned,      2 kept
+  heat  hot temperature           127 returned,     83 kept
+  heat  ambient temperature       623 returned,    582 kept
+  heat  high temperature          475 returned,    340 kept
+  heat  warm season               119 returned,    100 kept
+  heat  warm weather               12 returned,      7 kept
+  heat  summer temperature        167 returned,    111 kept
+  heat  apparent temperature       84 returned,     79 kept
+  heat  wet bulb                   49 returned,     48 kept
+  heat  WBGT                       19 returned,     10 kept
+  heat  hyperthermia              293 returned,    202 kept
+  heat  temperature increase      600 returned,    391 kept
+  heat  temperature rise           80 returned,     55 kept
+  heat  heat                     3456 returned,   1782 kept
+  heat  outdoor temperature        72 returned,     58 kept
+  heat  daily temperature         641 returned,    563 kept
+  heat  mean temperature         1049 returned,    711 kept
+  heat  maximum temperature       618 returned,    497 kept
+  heat  average temperature       710 returned,    496 kept
+  heat  ambient heat               38 returned,     34 kept
+  heat  skin heating               31 returned,     22 kept
+  heat  local heat                 44 returned,     34 kept
+  heat  heat application           12 returned,     10 kept
+  heat  heat dome                   1 returned,      1 kept
+  heat  summer heat                10 returned,      9 kept
+  heat  hot climate                10 returned,      4 kept
+  heat  hot environment            39 returned,     32 kept
+  heat  thermal stress             25 returned,     22 kept
+  heat  heat warning                3 returned,      3 kept
+  heat  heat alert                  6 returned,      6 kept
+  heat  heat event                 26 returned,     25 kept
+  heat  excessive heat             12 returned,     12 kept
+  heat  temperature-related         6 returned,      6 kept
+  heat  hot spell                   1 returned,      0 kept
+  heat  warm spell                  0 returned,      0 kept
+  mech  sweat                     645 returned,    640 kept
+  mech  sweating                  645 returned,    640 kept
+  mech  hypohidrosis                4 returned,      4 kept
+  mech  anhidrosis                  9 returned,      9 kept
+  mech  oligohidrosis               0 returned,      0 kept
+  mech  thermoregulation           16 returned,     16 kept
+  mech  core temperature          303 returned,    269 kept
+  mech  body temperature          629 returned,     82 kept
+  mech  heat dissipation            1 returned,      0 kept
+  mech  heat tolerance             25 returned,      0 kept
+  mech  lithium level              49 returned,     37 kept
+  mech  serum lithium              35 returned,     11 kept
+  mech  lithium concentration      50 returned,      0 kept
+  mech  lithium toxicity            3 returned,      3 kept
+  mech  lithium intoxication        4 returned,      3 kept
+  mech  dehydration               496 returned,    489 kept
+  mech  volume depletion           52 returned,     37 kept
+  mech  hyponatremia              454 returned,    454 kept
+  mech  hyponatraemia             117 returned,    117 kept
+
+  heat variables: 4828 (3038 not in Dataverse)
+  mechanism variables: 2068 (1184 not in Dataverse)
+  associations touching them: 10986
+  PubMed seed: 1934 papers, 1760 in the API, 148 with extracted findings; 206 new associations
+  of which in Dataverse: 4324; API only: 6868
+  studies: 6021 (2914 looked up in API)
+
+=== ROWS BY KIND (vetted in Dataverse / API only) ===
+  heat-drug                  10 /     35
+  heat-drug-population        4 /     14
+  heat-context-drug          11 /     16
+  heat-mechanism             67 /     87
+  drug-mechanism            140 /     87
+  heat-other               2309 /   4283
+
+Requests: 684 new, 107 from cache, 0 failed

@@ -1,0 +1,263 @@
+{
+ "_about": "Hand-curated 2026-11-14. Each cell: what the drug does to a signal a wearable reads, what that means for a heat alert, and the evidence behind it. level: heat = measured in people in heat; lab = controlled heat/exercise study, usually healthy young volunteers; pharm = known pharmacology, not tested in heat; none = nothing found. effect: blunts | raises | suppresses | lowers | confounds | useful",
+ "signals": [
+  "Heart rate",
+  "Skin temperature",
+  "Sweat / EDA",
+  "Core temperature",
+  "Weight / hydration",
+  "Glucose (CGM)"
+ ],
+ "rows": [
+  {
+   "class": "Beta blockers",
+   "cells": {
+    "Heart rate": {
+     "effect": "blunts",
+     "level": "lab",
+     "pmids": [
+      "1335440",
+      "2820920"
+     ],
+     "text": "Propranolol blunted the heart-rate rise in heat. HR-based strain alerts and HR-derived core-temperature estimates will under-read strain."
+    },
+    "Skin temperature": {
+     "effect": "lowers",
+     "level": "lab",
+     "pmids": [
+      "2820920",
+      "2355819"
+     ],
+     "text": "Less skin blood flow during exercise in heat; skin stays cooler while core heat builds."
+    },
+    "Sweat / EDA": {
+     "effect": "confounds",
+     "level": "lab",
+     "pmids": [
+      "3023274",
+      "2858466",
+      "2881900"
+     ],
+     "text": "Studies disagree: less sweat at a given core temperature in one, transiently more with propranolol in others."
+    },
+    "Core temperature": {
+     "effect": "confounds",
+     "level": "lab",
+     "pmids": [
+      "1335440",
+      "3993552"
+     ],
+     "text": "Heat tolerance unchanged in one study, but propranolol raised fluid needs; core measurement is the safer signal."
+    },
+    "Weight / hydration": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "3993552"
+     ],
+     "text": "Non-selective beta blockade increased fluid needs during prolonged exercise."
+    }
+   }
+  },
+  {
+   "class": "Anticholinergics",
+   "cells": {
+    "Heart rate": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "3790023"
+     ],
+     "text": "Atropine raised heart rate in heat; HR alerts may fire early or from a shifted baseline."
+    },
+    "Skin temperature": {
+     "effect": "confounds",
+     "level": "lab",
+     "pmids": [
+      "2589534",
+      "3432054",
+      "3790023"
+     ],
+     "text": "Atropine both suppresses sweat and widens skin vessels; skin temperature rose in hot-dry conditions. Skin-temperature cooling models do not hold."
+    },
+    "Sweat / EDA": {
+     "effect": "suppresses",
+     "level": "lab",
+     "pmids": [
+      "3606515",
+      "3790405",
+      "6517816"
+     ],
+     "text": "Sweating is inhibited. An electrodermal or sweat sensor stays flat even as heat strain builds."
+    },
+    "Core temperature": {
+     "effect": "confounds",
+     "level": "lab",
+     "pmids": [
+      "3790405",
+      "3790023",
+      "6725067"
+     ],
+     "text": "Clinical doses did not raise core temperature at rest after exercise, but shortened tolerance in hot-dry heat."
+    }
+   }
+  },
+  {
+   "class": "Diuretics",
+   "cells": {
+    "Heart rate": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "2262461",
+      "10926160"
+     ],
+     "text": "Lower plasma volume raises heart rate and noradrenaline during exercise."
+    },
+    "Core temperature": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "1011962",
+      "2262461"
+     ],
+     "text": "Diuretic-induced dehydration reduced heat tolerance; some volunteers developed heat exhaustion."
+    },
+    "Weight / hydration": {
+     "effect": "confounds",
+     "level": "pharm",
+     "pmids": [],
+     "text": "The drug itself lowers body weight. UKHSA suggests weight to track fluid intake; on a diuretic, daily weight cannot separate the drug's effect from heat dehydration without a baseline."
+    }
+   }
+  },
+  {
+   "class": "ACE inhibitors / ARBs",
+   "cells": {
+    "Weight / hydration": {
+     "effect": "confounds",
+     "level": "heat",
+     "pmids": [
+      "27378245"
+     ],
+     "text": "Starting with a diuretic raised dehydration admissions 2.79-fold; hydration tracking matters most here, but no wearable study exists."
+    }
+   }
+  },
+  {
+   "class": "Calcium channel blockers",
+   "cells": {
+    "Heart rate": {
+     "effect": "confounds",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Dihydropyridines (nifedipine) can raise HR; verapamil and diltiazem lower it. Direction depends on the agent; not tested in heat."
+    }
+   }
+  },
+  {
+   "class": "Antipsychotics",
+   "cells": {
+    "Core temperature": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "10910799"
+     ],
+     "text": "Patients on antipsychotics showed a hyperthermic response to a heat tolerance test. Core temperature is the signal that matters."
+    },
+    "Sweat / EDA": {
+     "effect": "suppresses",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Agents with anticholinergic load (clozapine, olanzapine) reduce sweating; not measured with a wearable."
+    },
+    "Heart rate": {
+     "effect": "raises",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Clozapine commonly causes resting tachycardia, shifting the HR baseline."
+    }
+   }
+  },
+  {
+   "class": "Antidepressants",
+   "cells": {
+    "Sweat / EDA": {
+     "effect": "confounds",
+     "level": "pharm",
+     "pmids": [],
+     "text": "SSRIs/SNRIs often increase sweating; tricyclics reduce it. Opposite errors for a sweat sensor."
+    },
+    "Core temperature": {
+     "effect": "raises",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Serotonin syndrome causes hyperthermia unrelated to ambient heat; a core-temperature alert cannot tell the two apart."
+    }
+   }
+  },
+  {
+   "class": "Stimulants",
+   "cells": {
+    "Core temperature": {
+     "effect": "raises",
+     "level": "lab",
+     "pmids": [
+      "18408610"
+     ],
+     "text": "A dopamine reuptake inhibitor in heat raised core temperature without changing perceived effort or thermal stress. Symptom-based warnings fail; objective core temperature helps."
+    },
+    "Heart rate": {
+     "effect": "raises",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Raised resting heart rate shifts the HR baseline."
+    }
+   }
+  },
+  {
+   "class": "Insulin and sulfonylureas",
+   "cells": {
+    "Glucose (CGM)": {
+     "effect": "useful",
+     "level": "heat",
+     "pmids": [
+      "38060348",
+      "41464483",
+      "30311402"
+     ],
+     "text": "The one medicated-wearable pairing studied in heat. Heat raises serious hypoglycaemia; a 2023 heat wave stressed closed-loop pump performance (CGM data)."
+    },
+    "Skin temperature": {
+     "effect": "confounds",
+     "level": "lab",
+     "pmids": [
+      "22538141",
+      "3073067"
+     ],
+     "text": "Warm skin at the injection or infusion site speeds insulin absorption (27% higher peak). Site temperature, not body temperature, drives the dose."
+    }
+   }
+  },
+  {
+   "class": "Topiramate / zonisamide",
+   "cells": {
+    "Sweat / EDA": {
+     "effect": "suppresses",
+     "level": "lab",
+     "pmids": [
+      "12760427"
+     ],
+     "text": "Reduced sweating (oligohidrosis), mostly in children; pilot study of the adverse effect."
+    },
+    "Core temperature": {
+     "effect": "raises",
+     "level": "pharm",
+     "pmids": [],
+     "text": "Labels warn of hyperthermia and heat stroke with reduced sweating; no wearable study."
+    }
+   }
+  }
+ ]
+}

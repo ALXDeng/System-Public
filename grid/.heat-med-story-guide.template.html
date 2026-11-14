@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heat Medication Guide</title>
+<meta name="description" content="Clinical guidance app: heat-sensitive medications by action, evidence strength, prescribers and gaps in global heat-health guidance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+/* Colour has three jobs: heat (higher risk found / guidance misses it), slate ramp (evidence strength), ink/greys (everything else). */
+:root{
+  --app:#f3f2ef; --bg:#ffffff; --ink:#121212; --ink2:#333; --muted:#5e5e5e; --faint:#8a8a8a; --rule:#e3e2de; --rule2:#c9c9c9; --soft:#f6f5f2; --hov:#f1f0ec;
+  --heat:#cf4a1c; --heat-ink:#b53c12; --heat-soft:#fcebe3;
+  --s1:#a3b6ca; --s2:#5f7ea0; --s3:#1f3d5c; --on-s:#ffffff;
+  --serif:"Source Serif 4",Georgia,serif; --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --top:56px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --app:#0c0c0c; --bg:#161616; --ink:#ececec; --ink2:#d0d0d0; --muted:#a6a6a6; --faint:#7c7c7c; --rule:#2a2a2a; --rule2:#3c3c3c; --soft:#1d1d1d; --hov:#212121;
+  --heat:#ff7a45; --heat-ink:#ff9a70; --heat-soft:#3a1d12; --s1:#4a6684; --s2:#7d9fc4; --s3:#bcd5ef; --on-s:#0c0c0c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --app:#0c0c0c; --bg:#161616; --ink:#ececec; --ink2:#d0d0d0; --muted:#a6a6a6; --faint:#7c7c7c; --rule:#2a2a2a; --rule2:#3c3c3c; --soft:#1d1d1d; --hov:#212121;
+  --heat:#ff7a45; --heat-ink:#ff9a70; --heat-soft:#3a1d12; --s1:#4a6684; --s2:#7d9fc4; --s3:#bcd5ef; --on-s:#0c0c0c; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--app);color:var(--ink);font:14px/1.45 var(--sans)}
+h1,h2,h3,h4,h5,p{margin:0}
+a{color:inherit;text-underline-offset:2px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--rule)}
+.top .in{max-width:1480px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:8px 18px;min-height:56px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:8px;white-space:nowrap;text-decoration:none;line-height:52px}
+.brand b{font:800 14px/1 var(--sans);letter-spacing:.01em}
+.brand b span{color:var(--heat)}
+.brand small{font:500 12px/1 var(--sans);color:var(--muted)}
+.tabs{display:flex;gap:2px;height:52px}
+.tabs button{border:0;background:none;padding:0 12px;font:600 13.5px/1 var(--sans);color:var(--muted);cursor:pointer;box-shadow:inset 0 -2px 0 transparent;white-space:nowrap}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--heat)}
+.tabs kbd{font:500 10px/1 var(--sans);color:var(--faint);margin-left:5px;border:1px solid var(--rule2);border-radius:3px;padding:1px 4px}
+.ctrls{display:flex;align-items:center;gap:10px;margin-left:auto;flex-wrap:wrap;padding:8px 0}
+.lbl{font:700 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.seg{display:inline-flex;border:1px solid var(--rule2);border-radius:5px;overflow:hidden;background:var(--bg)}
+.seg button{border:0;background:none;padding:6px 10px;font:600 12.5px/1.1 var(--sans);color:var(--muted);cursor:pointer;white-space:nowrap}
+.seg button+button{border-left:1px solid var(--rule2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button.hot[aria-pressed="true"]{background:var(--heat);color:#fff}
+.sel{appearance:none;-webkit-appearance:none;border:1px solid var(--rule2);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 8px center;border-radius:5px;padding:6px 24px 6px 9px;font:600 12.5px/1.1 var(--sans);cursor:pointer}
+.tgl{display:inline-flex;align-items:center;gap:7px;font:600 12.5px/1 var(--sans);color:var(--muted);cursor:pointer;user-select:none}
+.tgl input{appearance:none;-webkit-appearance:none;width:30px;height:17px;border-radius:999px;background:var(--rule2);position:relative;cursor:pointer;margin:0;transition:background .15s}
+.tgl input::after{content:"";position:absolute;left:2px;top:2px;width:13px;height:13px;border-radius:50%;background:var(--bg);transition:transform .15s}
+.tgl input:checked{background:var(--ink)}
+.tgl input:checked::after{transform:translateX(13px)}
+.iconbtn{border:1px solid var(--rule2);background:var(--bg);border-radius:5px;height:29px;padding:0 9px;display:inline-flex;align-items:center;gap:6px;font:600 12.5px/1 var(--sans);color:var(--muted);cursor:pointer}
+.iconbtn:hover{color:var(--ink);border-color:var(--ink)}
+.iconbtn kbd{font:500 10.5px/1 var(--sans);color:var(--faint)}
+@media (max-width:1180px){.ctrls{margin-left:0;width:100%;border-top:1px solid var(--rule)}}
+@media (max-width:700px){.tabs{overflow-x:auto;scrollbar-width:none;width:100%;order:3;height:42px}.tabs::-webkit-scrollbar{display:none}.tabs kbd,.brand small,.hide-s{display:none}.ctrls{gap:8px}.top{position:static}}
+
+/* ---------- layout ---------- */
+main{max-width:1480px;margin:0 auto;padding:14px 16px 60px}
+.view{display:none}.view.on{display:block}
+.grid3{display:grid;grid-template-columns:290px minmax(0,1fr) 380px;gap:12px;align-items:start}
+.pane{background:var(--bg);border:1px solid var(--rule);border-radius:6px;min-width:0}
+.stick{position:sticky;top:calc(var(--top) + 12px);max-height:calc(100vh - var(--top) - 24px);overflow:auto}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-bottom:1px solid var(--rule);min-height:44px;flex-wrap:wrap}
+.ph h2{font:700 11px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.ph h2 b{color:var(--ink)}
+.pb{padding:12px 14px}
+.pb+.pb{border-top:1px solid var(--rule)}
+.pb h3{font:700 11px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+@media (max-width:1180px){.grid3{grid-template-columns:270px minmax(0,1fr)}.grid3>.pane:last-child{grid-column:1/-1}.grid3>.pane:last-child.stick{position:static;max-height:none}}
+@media (max-width:760px){.grid3{grid-template-columns:1fr}.stick{position:static;max-height:none}}
+.btn{border:1px solid var(--rule2);background:var(--bg);border-radius:5px;padding:6px 10px;font:600 12.5px/1 var(--sans);cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--ink)}
+.btn.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:disabled{opacity:.4;cursor:default}
+.hint{font:400 13px/1.45 var(--sans);color:var(--muted)}
+.empty{padding:28px 18px;text-align:center;color:var(--muted);font:400 13.5px/1.5 var(--sans)}
+.empty b{display:block;color:var(--ink);font:700 15px/1.3 var(--sans);margin-bottom:4px}
+
+/* marks */
+.mk{display:inline-block;width:11px;height:11px;border-radius:2px;flex:none;vertical-align:-1px}
+.mk.l3{background:var(--s3)}.mk.l2{background:var(--s2)}.mk.l1{background:var(--s1)}
+.mk.l0{border:1.5px dashed var(--faint)}
+.mk.lN{border:1.5px solid var(--ink2);border-radius:50%;position:relative}
+.mk.lN::after{content:"";position:absolute;left:50%;top:-1px;bottom:-1px;width:1.5px;background:var(--ink2);transform:translateX(-50%) rotate(45deg)}
+.gr{display:inline-flex;align-items:center;gap:5px;font:600 11.5px/1 var(--sans);color:var(--muted);white-space:nowrap}
+.tag{display:inline-block;font:700 10px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;padding:4px 5px 3px;border-radius:3px;white-space:nowrap}
+.tag.missed{background:var(--heat);color:#fff}
+.tag.label_silent{background:var(--soft);color:var(--ink2);box-shadow:inset 0 0 0 1px var(--rule2)}
+.tag.overwarned{box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink)}
+.tag.agree{background:var(--ink);color:var(--bg)}
+.tag.storage{background:var(--soft);color:var(--muted)}
+.vt{font:600 10px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:2px 4px;border-radius:3px;border:1px dashed var(--rule2);color:var(--faint);white-space:nowrap}
+.gg{display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink2);vertical-align:-2px;flex:none}
+.gg.action{background:var(--ink2)}
+.gg.mention{background:linear-gradient(90deg,var(--ink2) 50%,transparent 50%)}
+.gg.storage{border-style:dotted}
+.gg.absent{border-color:var(--rule2);background:none}
+.pips{display:inline-flex;gap:2px;vertical-align:-1px}
+.pips i{width:7px;height:11px;border-radius:2px;box-shadow:inset 0 0 0 1.2px var(--ink2)}
+.pips i.heat{background:var(--ink2)}
+.pips i.part{background:linear-gradient(0deg,var(--ink2) 45%,transparent 45%)}
+
+/* ---------- patient: left ---------- */
+.addf{display:flex;gap:6px}
+.addf input{flex:1;min-width:0;border:1px solid var(--rule2);border-radius:5px;background:var(--bg);padding:8px 10px;font:400 14px/1.2 var(--sans)}
+.addf input:focus{outline:none;border-color:var(--ink)}
+.meds{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.med{display:inline-flex;align-items:center;gap:5px;border-radius:999px;background:var(--ink);color:var(--bg);font:600 12.5px/1 var(--sans);padding:4px 4px 4px 10px}
+.med small{font-weight:400;opacity:.7}
+.med button{border:0;background:color-mix(in srgb,var(--bg) 22%,transparent);color:inherit;border-radius:50%;width:18px;height:18px;cursor:pointer;font-size:12px;line-height:1}
+.cases{display:grid;gap:6px}
+.case{all:unset;cursor:pointer;display:block;border:1px solid var(--rule);border-radius:5px;padding:8px 10px}
+.case:hover{border-color:var(--ink)}
+.case b{display:block;font:700 13px/1.3 var(--sans)}
+.case span{display:block;font:400 12px/1.35 var(--sans);color:var(--muted);margin-top:2px}
+.facts{display:flex;flex-wrap:wrap;gap:5px}
+.fact{border:1px solid var(--rule2);background:var(--bg);border-radius:999px;padding:5px 10px;font:600 12.5px/1 var(--sans);cursor:pointer;color:var(--muted)}
+.fact[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.msg{font:500 12.5px/1.4 var(--sans);color:var(--heat-ink);margin-top:8px}
+.msg:empty{display:none}
+
+/* ---------- patient: checklist ---------- */
+.prog{height:4px;background:var(--rule);border-radius:2px;overflow:hidden;width:120px}
+.prog i{display:block;height:100%;background:var(--ink);transition:width .2s}
+.alerts{display:grid;gap:6px;padding:12px 14px 0}
+.alert{border-left:3px solid var(--heat);background:var(--heat-soft);padding:8px 12px;font:400 13px/1.45 var(--sans);border-radius:0 4px 4px 0}
+.alert b{font-weight:700}
+.alert a{color:var(--muted);font-size:12px}
+.fnote{border-left:3px solid var(--s2);background:var(--soft);padding:8px 12px;font:400 12.5px/1.5 var(--sans);border-radius:0 4px 4px 0;display:grid;gap:2px}
+.cg{padding:4px 0}
+.cg+.cg{border-top:1px solid var(--rule)}
+.cgh{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:12px 14px 6px}
+.cgh h4{font:700 14.5px/1.2 var(--sans)}
+.cgh small{font:400 12px/1.3 var(--sans);color:var(--muted)}
+.cgh .gn{margin-left:auto;font:500 11.5px/1 var(--sans);color:var(--faint);white-space:nowrap}
+.ai{display:grid;grid-template-columns:22px minmax(0,1fr);gap:2px 10px;padding:8px 14px 8px 12px;border-left:2px solid transparent;cursor:pointer}
+.ai:hover{background:var(--hov)}
+.ai.sel{background:var(--hov);border-left-color:var(--heat)}
+.ai input{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1.5px solid var(--rule2);border-radius:3px;margin:2px 0 0;cursor:pointer;display:grid;place-items:center;background:var(--bg)}
+.ai input:checked{background:var(--ink);border-color:var(--ink)}
+.ai input:checked::after{content:"";width:8px;height:4px;border:2px solid var(--bg);border-top:0;border-right:0;transform:translateY(-1px) rotate(-45deg)}
+.ai .t{font:500 13.5px/1.4 var(--sans)}
+.ai.done .t{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--rule2)}
+.ai .m{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:3px 14px;margin-top:2px;font:400 12px/1.35 var(--sans);color:var(--faint)}
+.ai .m b{font-weight:600;color:var(--muted)}
+.ai .you{font:700 10px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--heat-ink)}
+.ai .bk{font:700 10px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);align-self:start;margin-top:4px;white-space:nowrap}
+.ai .ph-t{font:600 10.5px/1 var(--sans);padding:2px 5px;border-radius:3px;background:var(--soft);color:var(--muted)}
+.more{padding:10px 14px;border-top:1px solid var(--rule);font:500 12.5px/1.4 var(--sans);color:var(--muted)}
+.more button{all:unset;cursor:pointer;text-decoration:underline;color:var(--ink)}
+
+/* ---------- evidence drawer ---------- */
+.dh{padding:14px}
+.dh small{font:700 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.dh h3{font:700 17px/1.25 var(--sans);margin-top:5px}
+.dh p{font:500 14px/1.45 var(--sans);margin-top:6px}
+.grade{display:flex;gap:10px;align-items:center;padding:10px 14px;background:var(--soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.grade .mk{width:16px;height:16px}
+.grade b{font:700 14px/1.2 var(--sans)}
+.grade span{display:block;font:400 12.5px/1.35 var(--sans);color:var(--muted)}
+dl.kv{display:grid;grid-template-columns:62px 1fr;gap:5px 10px;margin:0;font:400 13px/1.4 var(--sans)}
+dl.kv dt{color:var(--faint);font-weight:600;font-size:12px}
+dl.kv dd{margin:0}
+.studies{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.studies li{display:grid;grid-template-columns:10px 1fr;gap:8px;font:400 12.5px/1.42 var(--sans);color:var(--ink2)}
+.studies .e{width:8px;height:8px;border-radius:50%;margin-top:5px}
+.studies .e.risk{background:var(--heat)}.studies .e.null{border:1.5px solid var(--muted)}.studies .e.lower{background:var(--s2)}.studies .e.bridge{border-radius:1px;background:var(--s1)}
+.studies a{color:var(--muted);white-space:nowrap}
+.gt{width:100%;border-collapse:collapse;font:400 12.5px/1.35 var(--sans)}
+.gt td{padding:5px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.gt td:first-child{width:96px;font-weight:600;white-space:nowrap}
+.gt td:nth-child(2){width:20px}
+.gt td:last-child{color:var(--muted)}
+.labs{display:grid;gap:5px;font:400 12.5px/1.4 var(--sans)}
+
+/* ---------- population ---------- */
+.radios{display:grid;gap:2px}
+.radios button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:8px;padding:6px 8px;border-radius:4px;font:500 13px/1.2 var(--sans)}
+.radios button:hover{background:var(--hov)}
+.radios button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.radios button em{font-style:normal;opacity:.6;font-variant-numeric:tabular-nums}
+.presets{display:grid;gap:5px}
+.presets .btn{text-align:left}
+.bks{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.bkt{padding:12px 14px;min-width:0}
+.bkt+.bkt{border-left:1px solid var(--rule)}
+.bkt h4{font:700 13px/1.2 var(--sans)}
+.bkt .n{font:800 24px/1 var(--sans);margin:6px 0 7px;letter-spacing:-.02em}
+.bkt .n small{font:500 12px/1 var(--sans);color:var(--muted);margin-left:4px;letter-spacing:0}
+.sb{display:flex;gap:2px;height:8px}
+.sb i{display:block;border-radius:2px;min-width:3px}
+.sb i.l3{background:var(--s3)}.sb i.l2{background:var(--s2)}.sb i.l1{background:var(--s1)}
+.sb i.l0{background:repeating-linear-gradient(135deg,var(--rule2) 0 1.5px,transparent 1.5px 5px);box-shadow:inset 0 0 0 1px var(--rule2)}
+.sb i.lN{box-shadow:inset 0 0 0 1.5px var(--ink2)}
+.bkt p{font:400 11.5px/1.4 var(--sans);color:var(--muted);margin-top:7px}
+@media (max-width:900px){.bks{grid-template-columns:1fr 1fr}.bkt:nth-child(3){border-left:0}.bkt:nth-child(n+3){border-top:1px solid var(--rule)}}
+.hm{width:100%;border-collapse:separate;border-spacing:0;font:400 12.5px/1.3 var(--sans)}
+.hm th,.hm td{padding:0}
+.hm thead th{font:700 11px/1.2 var(--sans);letter-spacing:.03em;text-align:left;color:var(--muted);padding:10px 6px 8px;border-bottom:1px solid var(--ink);background:var(--bg);position:sticky;top:var(--top);z-index:2}
+.hm thead th button{all:unset;cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule2);text-underline-offset:3px}
+.hm .gh th{font:700 10.5px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--heat-ink);text-align:left;padding:14px 8px 6px}
+.hm tbody tr.r>*{border-bottom:1px solid var(--rule)}
+.hm tbody tr.r.dim{opacity:.25}
+.hm .cn{padding:7px 8px;min-width:150px}
+.hm .cn button{all:unset;cursor:pointer;display:block}
+.hm .cn b{font:700 13px/1.25 var(--sans)}
+.hm .cn small{display:block;font:400 11.5px/1.3 var(--sans);color:var(--faint)}
+.hm td.c{padding:3px}
+.hc{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;min-height:42px;border-radius:4px;padding:6px 8px;font:600 12px/1.25 var(--sans);position:relative}
+.hc.l3{background:var(--s3);color:var(--on-s)}.hc.l2{background:var(--s2);color:var(--on-s)}.hc.l1{background:var(--s1);color:var(--ink)}
+.hc.l0{box-shadow:inset 0 0 0 1.5px var(--rule2);color:var(--muted);background:repeating-linear-gradient(135deg,transparent 0 6px,var(--soft) 6px 8px)}
+.hc.lN{box-shadow:inset 0 0 0 1.5px var(--ink2);color:var(--ink2)}
+.hc.risk::after{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--heat);box-shadow:0 0 0 1.5px var(--bg)}
+.hc.on{outline:3px solid var(--heat);outline-offset:-1px}
+.hc.on::before{content:"✓";position:absolute;bottom:3px;right:6px;font:800 12px/1 var(--sans)}
+.hc:hover{filter:brightness(1.08)}
+.hc.none{cursor:default;min-height:42px;color:var(--rule2);font-weight:400;text-align:center;padding-top:13px}
+.hm td.gn{padding:6px 8px;white-space:nowrap}
+.gbar{display:inline-block;width:42px;height:6px;background:var(--rule);border-radius:2px;vertical-align:1px;margin-right:6px;overflow:hidden}
+.gbar i{display:block;height:100%;background:var(--ink2)}
+.hm-wrap{overflow:visible}
+@media (max-width:900px){.hm-wrap{overflow-x:auto}.hm thead th,.gm thead th{position:static}}
+@media (max-width:760px){.hm .cn{min-width:110px}.hm td.gn,.hm th.gnh,.hm td.lb,.hm th.lbh{display:none}.hc{font-size:11px;padding:5px}}
+.proto h4{font:700 11px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:14px 0 7px}
+.proto h4.hot{color:var(--heat-ink)}
+.proto h4:first-child{margin-top:0}
+.proto ul{margin:0;padding-left:16px;display:grid;gap:4px;font:400 12.5px/1.4 var(--sans)}
+.proto ul small{color:var(--faint)}
+.tally{display:flex;flex-wrap:wrap;gap:4px}
+.tally span{font:600 11.5px/1 var(--sans);padding:4px 7px;border-radius:3px;background:var(--soft)}
+
+/* ---------- evidence ---------- */
+.subtabs{display:flex;gap:4px;padding:10px 14px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.chipb{border:1px solid var(--rule2);background:var(--bg);border-radius:999px;padding:5px 10px;font:600 12px/1 var(--sans);cursor:pointer;color:var(--muted)}
+.chipb[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chart{padding:14px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--sans)}
+.fr{cursor:pointer}
+.fr:hover .hit,.fr.sel .hit{fill:var(--hov)}
+.fr.sel .hit{stroke:var(--heat);stroke-width:1.5}
+.fr .ci{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .8s cubic-bezier(.2,.7,.2,1)}
+.fr .pt{opacity:0;transition:opacity .4s}
+.go .fr .ci{stroke-dashoffset:0}.go .fr .pt{opacity:1}
+.src{font:400 11.5px/1.5 var(--sans);color:var(--faint);padding:0 14px 14px}
+.src b{color:var(--muted);font-weight:600}
+.key{display:flex;flex-wrap:wrap;gap:4px 14px;font:500 12px/1.3 var(--sans);color:var(--muted);align-items:center}
+.key span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;flex:none}
+.wc{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule)}
+.wc div{padding:12px 14px}
+.wc div+div{border-left:1px solid var(--rule)}
+.wc b{display:block;font:700 13px/1.3 var(--sans)}
+.wc p{font:400 12.5px/1.4 var(--sans);color:var(--muted);margin-top:3px}
+.wc em{display:block;font:700 10px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--faint);font-style:normal;margin-top:7px}
+@media (max-width:900px){.wc{grid-template-columns:1fr 1fr}.wc div:nth-child(3){border-left:0}.wc div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+/* ---------- gaps ---------- */
+.score{width:100%;border-collapse:collapse;font:400 12.5px/1.3 var(--sans)}
+.score th,.score td{padding:7px 6px;border-bottom:1px solid var(--rule);text-align:center}
+.score thead th{font:600 11px/1.25 var(--sans);color:var(--muted);vertical-align:bottom;border-bottom:1px solid var(--ink)}
+.score thead th span{display:block;max-width:92px;margin:0 auto}
+.score th:first-child,.score td:first-child{text-align:left;white-space:nowrap}
+.score td.y{color:var(--ink);font-weight:800}
+.score td.n{color:var(--heat);font-weight:700}
+.score td.tot{font:800 14px/1 var(--sans)}
+.score tr:hover td{background:var(--hov)}
+.score .yr{font-weight:400;color:var(--faint);font-size:11px;margin-left:4px}
+.gm{width:100%;border-collapse:collapse;font:400 12.5px/1.3 var(--sans)}
+.gm th,.gm td{padding:6px 5px;border-bottom:1px solid var(--rule);text-align:center}
+.gm thead th{font:700 11px/1.2 var(--sans);color:var(--muted);border-bottom:1px solid var(--ink);vertical-align:bottom;position:sticky;top:var(--top);background:var(--bg);z-index:2}
+.gm td:first-child,.gm th:first-child{text-align:left}
+.gm tbody tr{cursor:pointer}
+.gm tbody tr:hover td{background:var(--hov)}
+.gm tbody tr.sel td{background:var(--heat-soft)}
+.gm tbody tr.dim{opacity:.3}
+.gm .cn b{font:700 13px/1.2 var(--sans);display:block}
+.gm td.ev{text-align:left;white-space:nowrap}
+.gm .cnt{font:700 12.5px/1 var(--sans)}
+.gm .cnt.lo{color:var(--heat-ink)}
+@media (max-width:760px){.gm .hide-s,.score .hide-s{display:none}}
+.cmp{display:grid;gap:0}
+.cmp>div{padding:11px 14px;border-top:1px solid var(--rule)}
+.cmp h4{font:700 10.5px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.cmp p{font:400 13px/1.45 var(--sans)}
+#quad svg{display:block;width:100%;height:auto;overflow:visible}
+.qd{cursor:pointer}.qd.dim{opacity:.18}
+
+/* ---------- dialogs ---------- */
+dialog{border:1px solid var(--rule2);border-radius:8px;padding:0;background:var(--bg);color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.25);max-width:min(640px,calc(100% - 24px));width:100%}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+.pal input{width:100%;border:0;border-bottom:1px solid var(--rule);padding:16px 18px;font:500 16px/1.2 var(--sans);background:none;outline:none}
+.pal ul{list-style:none;margin:0;padding:6px;max-height:360px;overflow:auto}
+.pal li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:5px;cursor:pointer;font:500 14px/1.2 var(--sans)}
+.pal li small{color:var(--faint);font-weight:400}
+.pal li.on{background:var(--ink);color:var(--bg)}
+.pal li.on small{color:inherit;opacity:.7}
+.pal .ft{padding:9px 14px;border-top:1px solid var(--rule);font:400 12px/1.3 var(--sans);color:var(--faint)}
+.about{padding:20px 22px;max-height:80vh;overflow:auto;font:400 13.5px/1.55 var(--sans)}
+.about h2{font:700 22px/1.2 var(--serif);margin-bottom:8px}
+.about h3{font:700 13.5px/1.3 var(--sans);margin:18px 0 6px}
+.about table{width:100%;border-collapse:collapse}
+.about td,.about th{text-align:left;padding:6px 8px 6px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.about th{white-space:nowrap}
+.about ul{padding-left:18px;margin:0}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);z-index:60;background:var(--ink);color:var(--bg);font:600 13px/1.3 var(--sans);padding:10px 16px;border-radius:6px;opacity:0;pointer-events:none;transition:all .2s}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.tip{position:fixed;z-index:70;pointer-events:none;background:var(--bg);border:1px solid var(--rule2);box-shadow:0 6px 24px rgba(0,0,0,.12);border-radius:4px;padding:8px 10px;font:400 12.5px/1.4 var(--sans);max-width:300px;opacity:0;transition:opacity .12s}
+.tip.show{opacity:1}
+
+/* population v2 */
+.grid2{display:grid;grid-template-columns:250px minmax(0,1fr);gap:12px;align-items:start}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}.grid2 .stick{position:static;max-height:none}}
+.fh{display:flex;align-items:center;gap:6px}
+.info{all:unset;cursor:help;width:15px;height:15px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--rule2);font:700 9.5px/15px var(--sans);text-align:center;color:var(--muted);text-transform:none;letter-spacing:0}
+.info:hover,.info:focus-visible{box-shadow:inset 0 0 0 1px var(--ink);color:var(--ink)}
+.legend2{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 14px;border-bottom:1px solid var(--rule);font:500 12px/1.3 var(--sans);color:var(--muted);align-items:center}
+.legend2 b{color:var(--ink);font-weight:700}
+.legend2 .hc{box-sizing:border-box}
+.legend2 .sw{margin-right:6px}
+.pr-h{display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:flex-start;padding:14px 16px;border-bottom:1px solid var(--rule)}
+.kpis{display:flex;gap:26px;flex-wrap:wrap;margin-top:10px}
+.kpi b{display:block;font:800 24px/1 var(--sans);letter-spacing:-.02em}
+.kpi span{display:block;font:500 11.5px/1.3 var(--sans);color:var(--muted);margin-top:3px}
+.reg{padding:12px 16px;border-bottom:1px solid var(--rule)}
+.regs{display:flex;flex-wrap:wrap;gap:6px}
+.rc{display:inline-flex;flex-direction:column;gap:2px;border:1px solid var(--rule2);border-radius:4px;padding:6px 9px;font:700 12.5px/1.2 var(--sans);max-width:280px}
+.rc small{font:400 11px/1.3 var(--sans);color:var(--faint)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.step{padding:14px 16px 16px;min-width:0}
+.step+.step{border-left:1px solid var(--rule)}
+.step h4{font:700 15px/1.2 var(--sans);display:flex;align-items:center;flex-wrap:wrap;gap:0 4px}
+.step h4 small{font:500 12.5px/1.2 var(--sans);color:var(--muted)}
+.step h4 .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--bg);font:800 11px/1 var(--sans);margin-right:4px}
+.step.hot h4 .n{background:var(--heat);color:#fff}
+.step.hot{background:linear-gradient(var(--heat-soft),transparent 120px)}
+.step .sub{font:400 12px/1.4 var(--sans);color:var(--muted);margin:5px 0 4px}
+.role{margin-top:12px}
+.role h5{margin:0 0 4px;font:700 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);display:flex;justify-content:space-between}
+.pi{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:2px 8px;align-items:start;padding:6px 0;border-top:1px solid var(--rule);font:400 12.5px/1.35 var(--sans);cursor:default}
+.pi .mk{margin-top:2px}
+.pi b{font-weight:700}
+.cv{font:700 9.5px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:3px 5px;border-radius:3px;white-space:nowrap}
+.cv.act{box-shadow:inset 0 0 0 1px var(--ink2);color:var(--ink2)}
+.cv.named{background:var(--soft);color:var(--muted)}
+.cv.none{background:var(--heat-soft);color:var(--heat-ink)}
+.every{padding:12px 16px 14px;border-top:1px solid var(--rule);background:var(--soft)}
+.every ul{columns:2;column-gap:32px;margin:8px 0 0;padding-left:16px;font:400 12.5px/1.5 var(--sans)}
+.selbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:45;background:var(--ink);color:var(--bg);border-radius:8px;padding:7px 7px 7px 16px;display:flex;gap:10px;align-items:center;font:600 13px/1.2 var(--sans);box-shadow:0 10px 30px rgba(0,0,0,.25);white-space:nowrap}
+.selbar[hidden]{display:none}
+.selbar button{border:0;border-radius:5px;padding:8px 12px;font:700 12.5px/1 var(--sans);cursor:pointer}
+.selbar .a{background:var(--heat);color:#fff}
+.selbar .b{background:transparent;color:inherit;opacity:.75}
+@media (max-width:900px){.steps{grid-template-columns:1fr}.step+.step{border-left:0;border-top:1px solid var(--rule)}.every ul{columns:1}}
+
+/* split columns + counselling */
+.hm th.narrow,.hm td.narrow{width:92px}
+.hm td.narrow .hc{font-size:11px;min-height:34px;padding:5px 6px}
+.colsb{height:5px;margin-top:6px;max-width:120px}
+.colct{display:block;font:500 10.5px/1 var(--sans);color:var(--faint);margin-top:4px;letter-spacing:0}
+.ai.co{cursor:default;background:color-mix(in srgb,var(--s1) 12%,transparent)}
+.ai.co .t b{font-weight:700}
+details.cev{margin:12px 14px 0;border:1px solid var(--rule);border-radius:5px;padding:9px 12px;background:var(--soft)}
+details.cev summary{cursor:pointer;font:700 13px/1.3 var(--sans);list-style:none}
+details.cev summary::-webkit-details-marker{display:none}
+details.cev summary small{font-weight:400;color:var(--muted);margin-left:6px}
+details.cev ul{margin:8px 0 2px;padding-left:18px;font:400 13px/1.5 var(--sans)}
+.co-i{font-size:12px}
+.cscript{border-top:1px solid var(--rule);padding:12px 16px 14px}
+.cs-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-cols{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;margin-top:8px}
+.cs-cols h5{margin:0 0 4px;font:700 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.cs-cols ul{margin:0;padding-left:16px;font:400 12.5px/1.5 var(--sans);display:grid;gap:3px}
+@media (max-width:900px){.cs-cols{grid-template-columns:1fr}}
+
+/* ---------- evidence map + patient lens ---------- */
+.mapbar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:12px;min-height:34px}
+.mapfilters{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.mapfilters[hidden],.ptbar[hidden],.mapgrid>[hidden]{display:none}
+.chipsf{display:flex;flex-wrap:wrap;gap:4px}
+.ptbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-left:auto}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:12px;align-items:start}
+.mapgrid.pt{grid-template-columns:300px minmax(0,1fr) 360px}
+@media (max-width:1320px){.mapgrid.pt{grid-template-columns:290px minmax(0,1fr)}.mapgrid.pt>#mdrawer{grid-column:1/-1;position:static;max-height:none}}
+@media (max-width:1000px){.mapgrid,.mapgrid.pt{grid-template-columns:1fr}.mapgrid .stick{position:static;max-height:none}}
+.em thead .grow th{border-bottom:0;padding:8px 6px 4px;position:static;font:700 10px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+.em thead .grow th.grp2{text-align:center;box-shadow:inset 0 -1.5px 0 var(--rule2)}
+.em .mh{cursor:help;font:700 12.5px/1.2 var(--sans);color:var(--ink)}
+.em .mcn{vertical-align:bottom}
+.rx2{display:grid;gap:2px;margin-top:6px;cursor:help}.rx2 span{font:500 10.5px/1.25 var(--sans);color:var(--muted);letter-spacing:0;text-transform:none;white-space:nowrap}.rx2 b{color:var(--ink2)}.rx2 span.on{color:var(--heat-ink);font-weight:700}
+.rx span{display:flex;align-items:center;gap:3px;font:600 9.5px/1 var(--sans);color:var(--faint);letter-spacing:0;text-transform:none}
+.rx span i{display:inline-block;width:calc(3px + var(--w) * 14px);height:5px;border-radius:1px;background:var(--ink2);opacity:calc(.18 + var(--w) * .82)}
+.rx span.on{color:var(--heat-ink)}.rx span.on i{background:var(--heat);opacity:1}
+.gapb{display:inline-block;margin-top:5px;font:700 9.5px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:3px 5px;border-radius:3px;cursor:help}
+.gapb.missed{background:var(--heat);color:#fff}
+.gapb.overwarned{box-shadow:inset 0 0 0 1.2px var(--ink);color:var(--ink)}
+.em th.narrow,.em td.narrow{width:96px}
+.em td.narrow .hc,.em td.narrow .tc{font-size:11px}
+.tc{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;min-height:46px;border-radius:4px;padding:6px 18px 7px 8px;position:relative}
+.tc .tl{display:block;font:800 9.5px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.tc .ta{display:block;font:600 12px/1.25 var(--sans)}
+.tc .mk{position:absolute;top:6px;right:6px;width:9px;height:9px}
+.tc.act{background:var(--heat);color:#fff}.tc.act .mk{box-shadow:0 0 0 1.5px #fff}
+.tc.consider{box-shadow:inset 0 0 0 2px var(--heat);color:var(--heat-ink)}.tc.consider .ta{color:var(--ink)}
+.tc.monitor{background:var(--soft);box-shadow:inset 0 0 0 1px var(--rule2);color:var(--ink2)}
+.tc.counsel{box-shadow:inset 0 0 0 1px var(--rule);color:var(--muted)}
+.tc.na{color:var(--faint);background:repeating-linear-gradient(135deg,transparent 0 6px,var(--soft) 6px 8px);box-shadow:inset 0 0 0 1px var(--rule)}
+.tc:hover{filter:brightness(1.05)}
+.tc.sel,.hc.on{outline:3px solid var(--ink);outline-offset:1px}
+.tp{display:inline-block;font:800 10px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:4px 6px;border-radius:3px;white-space:nowrap}
+.tp.act{background:var(--heat);color:#fff}.tp.consider{box-shadow:inset 0 0 0 1.5px var(--heat);color:var(--heat-ink)}.tp.monitor{background:var(--soft);box-shadow:inset 0 0 0 1px var(--rule2);color:var(--ink2)}.tp.counsel{box-shadow:inset 0 0 0 1px var(--rule2);color:var(--muted)}.tp.na{color:var(--faint);box-shadow:inset 0 0 0 1px var(--rule)}
+.sw2{width:16px;height:11px;padding:0;margin-right:6px;vertical-align:-1px}
+.tiercount{display:flex;gap:4px;flex-wrap:wrap}
+.expo-pill{font:800 10.5px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;padding:6px 9px;border-radius:999px;white-space:nowrap}
+.expo-pill.lv2{background:var(--heat-ink);color:#fff}.expo-pill.lv1{background:var(--heat-soft);color:var(--heat-ink)}.expo-pill.lv0{background:var(--soft);color:var(--muted)}
+.why{padding:12px 14px;border-bottom:1px solid var(--rule)}.why.tier-act{background:var(--heat-soft)}
+.why ul{margin:8px 0 0;padding-left:16px;font:400 12.5px/1.45 var(--sans);display:grid;gap:3px}
+#intake textarea{width:100%;border:1px solid var(--rule2);border-radius:5px;background:var(--bg);color:var(--ink);padding:8px 10px;font:400 12px/1.45 var(--sans);resize:vertical}
+#intake textarea:focus{outline:none;border-color:var(--ink)}
+.row6{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.agef{display:inline-flex;align-items:center;gap:8px;font:600 12.5px/1 var(--sans)}
+.agef input{width:86px;border:1px solid var(--rule2);border-radius:5px;padding:6px 8px;background:var(--bg);color:var(--ink);font:500 13px/1 var(--sans)}
+.fromnote{font:700 9px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--s2);box-shadow:inset 0 0 0 1px var(--s1);border-radius:3px;padding:2px 4px;margin-left:6px;vertical-align:1px}
+.envq{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--rule);font:400 12.5px/1.3 var(--sans)}
+.envq:first-of-type{border-top:0}
+.seg.sm button{padding:4px 8px;font-size:11.5px}
+.seg button.risk[aria-pressed="true"]{background:var(--heat);color:#fff}
+.lblnote{font-weight:500;text-transform:none;letter-spacing:0;color:var(--faint);margin-left:4px}
+.hvi{display:flex;align-items:center;gap:8px;margin-top:8px;font:400 12.5px/1.35 var(--sans)}
+.hvibar{display:flex;gap:2px;flex:none}.hvibar i{width:10px;height:14px;border-radius:2px;background:var(--rule)}
+.hvibar i.on{background:color-mix(in srgb,var(--heat) calc(var(--i) * 20%),var(--bg))}
+.expo-s.lv2{background:var(--heat-soft)}.expo-s p{font:400 12.5px/1.45 var(--sans)}.expo-s b{font:800 14px/1 var(--sans);color:var(--heat-ink)}
+.xs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.x{padding:12px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.x b{font:700 12.5px/1.2 var(--sans)}.x p{font:400 12.5px/1.45 var(--sans);margin-top:4px}
+.x small{display:block;font:600 10px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-top:7px}
+.guide p{font:400 13px/1.5 var(--sans);margin-bottom:9px}
+.ra{display:flex;justify-content:space-between;gap:8px;padding:3px 0}
+.lnk{all:unset;cursor:pointer;font:500 13px/1.35 var(--sans);text-decoration:underline;text-decoration-color:var(--rule2);text-underline-offset:3px}
+.sp-tags{display:flex;flex-wrap:wrap;gap:4px}.sp-tags span{font:500 12px/1 var(--sans);padding:5px 7px;border-radius:3px;box-shadow:inset 0 0 0 1px var(--rule2)}
+#print{display:none}
+details.dd summary{cursor:pointer;list-style:none;font:700 11px/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+details.dd summary::-webkit-details-marker{display:none}
+details.dd summary::after{content:" +";color:var(--faint)}
+details.dd[open] summary{margin-bottom:9px}
+details.dd[open] summary::after{content:" −"}
+@media print{
+  body.printing>*:not(#print){display:none!important}
+  body.printing #print{display:block;font:12pt/1.45 var(--sans);color:#000}
+  #print h1{font:700 20pt/1.2 var(--serif);margin-bottom:6pt}
+  #print h2{font:700 13pt/1.3 var(--sans);margin:14pt 0 4pt;border-top:1px solid #999;padding-top:8pt}
+  #print h3{font:700 10pt/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin:8pt 0 3pt;color:#444}
+  #print ul{margin:0;padding-left:16pt}
+  #print .why{font-style:italic}
+}
+</style>
+</head>
+<body>
+<script>
+/*__DATA__*/
+</script>
+
+<header class="top"><div class="in">
+  <a class="brand" href="#" id="home"><b>HEAT <span>+</span> MEDS</b><small>Heat-sensitive medication map</small></a>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" data-tab="map">Evidence map<kbd>1</kbd></button>
+    <button role="tab" data-tab="gaps">Guidance gaps<kbd>2</kbd></button>
+    <button role="tab" data-tab="pop">Plan outreach<kbd>3</kbd></button>
+    <button role="tab" data-tab="ev">Evidence explorer<kbd>4</kbd></button>
+  </nav>
+  <div class="ctrls">
+    <button class="iconbtn" id="openabout" aria-label="About and method">?</button>
+  </div>
+</div></header>
+
+<main>
+<!-- MAP -->
+<section class="view" id="v-map" aria-label="Evidence map">
+  <div class="mapbar">
+    <div class="seg" id="lens" role="group" aria-label="View">
+      <button data-lens="all">All medicines</button><button data-lens="pt" class="hot">For a patient</button>
+    </div>
+    <div id="mapfilters" class="mapfilters"></div>
+    <div id="ptbar" class="ptbar"></div>
+  </div>
+  <div class="mapgrid" id="mapgrid">
+    <aside class="pane stick" id="intake" aria-label="Patient intake"></aside>
+    <div style="display:grid;gap:12px;min-width:0">
+      <div id="alertsbox"></div>
+      <div class="pane">
+        <div class="legend2" id="mlegend"></div>
+        <div class="hm-wrap"><table class="hm em" id="em"></table></div>
+      </div>
+      <div id="expo"></div>
+    </div>
+    <aside class="pane stick" id="mdrawer" aria-label="Details"></aside>
+  </div>
+</section>
+
+<!-- POPULATION -->
+<section class="view" id="v-pop" aria-label="Plan for a population">
+  <div class="grid2">
+    <div class="pane stick">
+      <div class="ph"><h2>Filter</h2><button class="btn" id="popreset">Reset</button></div>
+      <div class="pb"><h3 class="fh">Prescriber <button class="info" data-tip="Show drug classes usually prescribed in this specialty. “Pharmacists” shows every class where a pharmacist carries out at least one action.">i</button></h3><div class="radios" id="fspec"></div></div>
+      <div class="pb"><h3 class="fh">Minimum evidence <button class="info" data-tip="Hide actions whose evidence is weaker than this. Hover each level for its definition. Setting any minimum also hides “studied, no clear effect” actions.">i</button></h3><div class="radios" id="fmin"></div></div>
+      <div class="pb"><h3 class="fh">Guidance pattern <button class="info" data-tip="How the research compares with guidelines (CDC, NYC, Arizona, UKHSA, Health Canada, ANSM, WHO Europe) and FDA labels. Hover each pattern for the rule.">i</button></h3><div class="radios" id="fpat"></div></div>
+    </div>
+    <div style="display:grid;gap:12px;min-width:0">
+      <div class="pane">
+        <div class="ph"><h2><b>1 · Choose actions</b> for the protocol</h2><div style="display:flex;gap:6px;flex-wrap:wrap" id="presets"></div></div>
+        <div class="legend2" id="legend2"></div>
+        <div class="hm-wrap"><table class="hm" id="hm"></table></div>
+      </div>
+      <section class="pane" id="proto" aria-label="Outreach protocol"></section>
+    </div>
+  </div>
+  <div class="selbar" id="selbar" hidden></div>
+</section>
+
+<!-- EVIDENCE -->
+<section class="view" id="v-ev" aria-label="Evidence">
+  <div class="grid3" style="grid-template-columns:minmax(0,1fr) 360px">
+    <div class="pane">
+      <div class="subtabs" id="evsub"></div>
+      <div id="evbody"></div>
+    </div>
+    <div class="pane stick" id="evside"></div>
+  </div>
+</section>
+
+<!-- GAPS -->
+<section class="view" id="v-gaps" aria-label="Guidance gaps">
+  <div class="grid3" style="grid-template-columns:minmax(0,1fr) 360px">
+    <div style="display:grid;gap:12px;min-width:0">
+      <div class="pane">
+        <div class="ph"><h2>Guideline scorecard <b>· does each source cover what the evidence shows?</b></h2></div>
+        <div style="overflow-x:auto"><table class="score" id="score"></table></div>
+      </div>
+      <div class="pane">
+        <div class="ph"><h2>Drug class × guideline</h2><div class="seg" id="gview"><button data-g="matrix" aria-pressed="true">Matrix</button><button data-g="chart" aria-pressed="false">Chart</button></div></div>
+        <div id="gbody"></div>
+        <div class="pb key">
+          <span><i class="gg action"></i>Class-specific action</span><span><i class="gg mention"></i>Named</span><span><i class="gg storage"></i>Storage only</span><span><i class="gg absent"></i>Absent</span>
+        </div>
+      </div>
+    </div>
+    <div class="pane stick" id="gside"></div>
+  </div>
+</section>
+</main>
+
+<datalist id="drugs"></datalist>
+<dialog id="about"><div class="about" id="aboutb"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="tip" id="tip"></div>
+<div id="print"></div>
+
+<script>
+const {DATA, EXTRA, LENS} = D, PUB = D.PUBMED || {};
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pmu = id => `https://pubmed.ncbi.nlm.nih.gov/${esc(id)}/`;
+const pmA = id => `<a href="${pmu(id)}" target="_blank" rel="noopener">PMID ${esc(id)}</a>`;
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, a = {}, p){ const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+function txt(p, x, y, s, a = {}){ const t = el("text", {x, y, ...a}, p); t.textContent = s; return t; }
+const toast = m => { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2600); };
+async function copy(t, m){ try { await navigator.clipboard.writeText(t); } catch(e){ const a = document.createElement("textarea"); a.value = t; document.body.appendChild(a); a.select(); try{document.execCommand("copy")}catch(_){} a.remove(); } toast(m || "Copied to clipboard"); }
+const tip = $("#tip");
+function tipOn(g, html){ g.addEventListener("mouseenter", e => { tip.innerHTML = html; tip.classList.add("show"); tipMove(e); }); g.addEventListener("mousemove", tipMove); g.addEventListener("mouseleave", () => tip.classList.remove("show")); }
+function tipMove(e){ const r = tip.getBoundingClientRect(); let x = e.clientX + 14, y = e.clientY + 14; if (x + r.width > innerWidth - 8) x = e.clientX - r.width - 14; if (y + r.height > innerHeight - 8) y = e.clientY - r.height - 14; tip.style.left = x + "px"; tip.style.top = y + "px"; }
+
+/* ---------- vocabulary ---------- */
+const B = DATA.buckets;
+const bn = (c,b) => b === "Substitute or hold" ? (phase(c,b) === "unwell" ? "Sick-day hold" : "Switch / deprescribe") : BN[b];
+const VCOL = [
+  {b:"Dose adjustment", n:"Adjust dose", d:"Change the dose before or during heat, e.g. insulin, diuretics, antihypertensives."},
+  {b:"Substitute or hold", ph:"unwell", n:"Sick-day hold", d:"Pause temporarily while vomiting, having diarrhoea or unable to drink; restart when eating and drinking normally."},
+  {b:"Substitute or hold", ph:"before", n:"Switch / deprescribe", d:"Before summer: switch to a heat-safer drug, taper, or review the need. Includes 'don't stop abruptly' cautions."},
+  {b:"Closer monitoring", n:"Monitor", d:"Extra labs, glucose or symptom checks during heat."},
+  {b:"Storage and stability", n:"Storage", d:"Keep the product below its labelled temperature. Applies to 3 classes; evidence comes mostly from labels.", narrow:true}];
+const inCol = (v,c) => has(c, v.b) && (!v.ph || phase(c, v.b) === v.ph);
+const BN = {"Dose adjustment":"Adjust dose","Substitute or hold":"Hold / switch","Closer monitoring":"Monitor","Storage and stability":"Storage"};
+const ROW = {"ACE inhibitors / ARBs":"ACE inhibitors, ARBs","Benzodiazepines / sedatives":"Benzodiazepines, Z-drugs","Topiramate / zonisamide":"Topiramate, zonisamide","Metformin and sulfonylureas":"Metformin, sulfonylureas","Heat-labile emergency products":"Epinephrine, inhalers, GTN","Calcium channel blockers":"Calcium-channel blockers"};
+const rn = c => ROW[c] || c;
+const LV = {3:"Moderate",2:"Low",1:"Very low",0:"None",N:"No clear effect"};
+const PHN = {before:"Before summer", alert:"Heat advisory", unwell:"Sick day", all:"All phases"};
+const PAT = {missed:"Under-warned", label_silent:"Labels silent", overwarned:"Over-warned", agree:"Aligned", storage:"Storage gap"};
+const GLV = {action:"Action", mention:"Named", storage:"Storage only", absent:"Absent"};
+const GROUPS = [
+ {t:"Volume and kidney", cls:["Diuretics","ACE inhibitors / ARBs","NSAIDs","SGLT2 inhibitors","Lithium"]},
+ {t:"Blood pressure", cls:["Beta blockers","Calcium channel blockers"]},
+ {t:"Thermoregulation and CNS", cls:["Antipsychotics","Antidepressants","Benzodiazepines / sedatives","Anticholinergics","Topiramate / zonisamide"]},
+ {t:"Glucose", cls:["Insulin","Metformin and sulfonylureas"]},
+ {t:"Overdose", cls:["Opioids","Stimulants"]},
+ {t:"Product stability", cls:["Heat-labile emergency products"]}];
+const SHORT = {
+ "Diuretics|Dose adjustment":"Review dose","Diuretics|Substitute or hold":"Sick-day hold","Diuretics|Closer monitoring":"Na, K, creatinine",
+ "ACE inhibitors / ARBs|Dose adjustment":"Lower if BP low","ACE inhibitors / ARBs|Substitute or hold":"Sick-day hold","ACE inhibitors / ARBs|Closer monitoring":"Creatinine, K",
+ "Beta blockers|Substitute or hold":"Don't stop abruptly","Beta blockers|Closer monitoring":"Dizziness",
+ "Calcium channel blockers|Dose adjustment":"Review if hypotensive","Calcium channel blockers|Closer monitoring":"Falls, oedema",
+ "Anticholinergics|Substitute or hold":"Deprescribe / switch","Anticholinergics|Closer monitoring":"Sweating, confusion",
+ "Antipsychotics|Substitute or hold":"Don't stop abruptly","Antipsychotics|Closer monitoring":"Temp, NMS signs",
+ "Lithium|Dose adjustment":"Dose by level","Lithium|Substitute or hold":"Sick-day hold","Lithium|Closer monitoring":"Lithium level",
+ "Antidepressants|Substitute or hold":"SSRI over TCA","Antidepressants|Closer monitoring":"Na, overheating",
+ "Benzodiazepines / sedatives|Substitute or hold":"Taper, review","Benzodiazepines / sedatives|Closer monitoring":"Falls, fluids",
+ "Opioids|Closer monitoring":"Naloxone, check-ins","Opioids|Storage and stability":"Shield patch",
+ "Insulin|Dose adjustment":"May need less","Insulin|Closer monitoring":"Glucose more often","Insulin|Storage and stability":"Keep < 30 °C",
+ "SGLT2 inhibitors|Substitute or hold":"Sick-day hold","SGLT2 inhibitors|Closer monitoring":"Fluids, ketones",
+ "Metformin and sulfonylureas|Dose adjustment":"Lower SU if lows","Metformin and sulfonylureas|Substitute or hold":"Hold metformin if sick","Metformin and sulfonylureas|Closer monitoring":"Glucose, eGFR",
+ "NSAIDs|Substitute or hold":"Avoid if dehydrated","NSAIDs|Closer monitoring":"Creatinine",
+ "Topiramate / zonisamide|Closer monitoring":"Oligohidrosis (peds)","Stimulants|Closer monitoring":"Overheating, misuse",
+ "Heat-labile emergency products|Storage and stability":"Keep cool; replace"};
+const PLAIN = {
+ "Diuretics|Dose adjustment":"Your dose may need changing in a heat wave, especially if you're drinking less or losing weight.",
+ "Diuretics|Substitute or hold":"If vomiting, having diarrhoea or unable to drink: pause it, then restart when eating and drinking normally.",
+ "Diuretics|Closer monitoring":"You may need blood tests. Weigh yourself daily and report dizziness.",
+ "ACE inhibitors / ARBs|Dose adjustment":"Your dose may be lowered if your blood pressure runs low in summer.",
+ "ACE inhibitors / ARBs|Substitute or hold":"If vomiting, having diarrhoea or unable to drink: pause it. Avoid ibuprofen-type painkillers.",
+ "ACE inhibitors / ARBs|Closer monitoring":"You may need a kidney blood test. Report dizziness when standing up.",
+ "Beta blockers|Substitute or hold":"Don't stop this medicine suddenly.",
+ "Beta blockers|Closer monitoring":"Report dizziness or tiring easily in the heat.",
+ "Calcium channel blockers|Dose adjustment":"Report feeling faint; your dose may be reviewed.",
+ "Calcium channel blockers|Closer monitoring":"Report light-headedness, falls or swollen ankles.",
+ "Anticholinergics|Substitute or hold":"Ask whether a different medicine could replace this one.",
+ "Anticholinergics|Closer monitoring":"You may sweat less. Watch for hot, dry skin or confusion.",
+ "Antipsychotics|Substitute or hold":"Don't stop this medicine suddenly.",
+ "Antipsychotics|Closer monitoring":"Keep cool and drink regularly. Get help for confusion, stiff muscles or feeling very hot.",
+ "Lithium|Dose adjustment":"Your dose is set by blood tests; levels can change if you get dehydrated.",
+ "Lithium|Substitute or hold":"If vomiting or having diarrhoea: pause it and get a lithium blood test.",
+ "Lithium|Closer monitoring":"You may need a lithium blood test in a long heat wave. Know the signs of too much lithium.",
+ "Antidepressants|Substitute or hold":"Your prescriber may suggest a different antidepressant.",
+ "Antidepressants|Closer monitoring":"You may need a sodium blood test. Watch for overheating.",
+ "Benzodiazepines / sedatives|Substitute or hold":"Don't stop suddenly; ask about reducing slowly.",
+ "Benzodiazepines / sedatives|Closer monitoring":"Drink regularly even if not thirsty. Take care to avoid falls.",
+ "Opioids|Closer monitoring":"Keep naloxone at home. Someone should check on you on hot days.",
+ "Opioids|Storage and stability":"Keep heat and sun off a fentanyl patch (no heating pads, hot baths).",
+ "Insulin|Dose adjustment":"Insulin works faster in heat. Your dose may need lowering if you have lows.",
+ "Insulin|Closer monitoring":"Check your blood sugar more often in hot weather.",
+ "Insulin|Storage and stability":"Keep insulin below 30 °C (86 °F), out of hot cars; use a cooling pouch.",
+ "SGLT2 inhibitors|Substitute or hold":"If dehydrated or not eating: pause it until eating and drinking normally.",
+ "SGLT2 inhibitors|Closer monitoring":"Drink regularly. If unwell, check ketones.",
+ "Metformin and sulfonylureas|Dose adjustment":"If eating less and having lows, your dose may be lowered.",
+ "Metformin and sulfonylureas|Substitute or hold":"If dehydrated: pause metformin until drinking normally.",
+ "Metformin and sulfonylureas|Closer monitoring":"Check your blood sugar more often.",
+ "NSAIDs|Substitute or hold":"Avoid ibuprofen-type painkillers when dehydrated.",
+ "NSAIDs|Closer monitoring":"You may need a kidney blood test if you keep taking them.",
+ "Topiramate / zonisamide|Closer monitoring":"May reduce sweating, mainly in children: limit hard exercise in heat; watch for fever.",
+ "Stimulants|Closer monitoring":"Watch for overheating, especially during sport.",
+ "Heat-labile emergency products|Storage and stability":"Keep out of hot cars and sun. Replace if it got hot or looks discoloured."};
+const COUNSEL = {
+ "Diuretics":"You lose water and salt faster. Weigh yourself daily; if vomiting or unable to drink, pause it and call us.",
+ "ACE inhibitors / ARBs":"Blood pressure can drop when you're dry. Stand up slowly, avoid ibuprofen-type painkillers, and pause it if vomiting or unable to drink.",
+ "NSAIDs":"Can harm the kidneys when you're dehydrated. Avoid them on very hot days or when unwell; ask a pharmacist about alternatives.",
+ "SGLT2 inhibitors":"You pass more water. Drink regularly; if not eating or drinking, pause it and check ketones if you feel unwell.",
+ "Lithium":"Dehydration can raise your level. Drink regularly; if vomiting or diarrhoea, pause it and get a blood test. Shaking, unsteadiness or confusion mean call us.",
+ "Beta blockers":"Your heart rate may not rise to warn you. Rest if dizzy or tired. Don't stop the tablet.",
+ "Calcium channel blockers":"May cause dizziness or swollen ankles in heat. Stand up slowly and report falls.",
+ "Antipsychotics":"You may not feel thirsty or sweat well. Drink on a schedule, stay cool, and get help for confusion or stiff muscles. Don't stop it.",
+ "Antidepressants":"Some can lower sodium or cause overheating. Report confusion, headache or feeling very hot.",
+ "Benzodiazepines / sedatives":"Drowsiness can hide overheating. Drink regularly and get up slowly.",
+ "Anticholinergics":"You'll sweat less. Stay cool and watch for hot, dry skin or confusion.",
+ "Topiramate / zonisamide":"Can stop sweating, mainly in children. Limit hard exercise in heat; watch for fever.",
+ "Insulin":"Heat speeds absorption: check sugar more often and carry fast sugar. Keep insulin below 30 °C (86 °F), out of cars.",
+ "Metformin and sulfonylureas":"Eating less can cause lows: check your sugar. Pause metformin if you can't keep fluids down.",
+ "Opioids":"Overdose risk rises on hot days. Keep naloxone at home, don't use alone, and keep patches away from heat.",
+ "Stimulants":"They raise body temperature. Rest and drink during sport; don't take extra doses.",
+ "Heat-labile emergency products":"Keep EpiPens and inhalers out of hot cars and direct sun; replace them if they got hot."};
+const COUNSEL_ALL = [
+ "Drink regularly, even without thirst. If you have a fluid limit, ask what to do on hot days.",
+ "Stay somewhere cool: air conditioning at 78 °F, or a cooling centre (NYC: call 311).",
+ "Warning signs of heat illness: confusion, dizziness, hot dry skin, fast heartbeat, fainting. Get help early.",
+ "Name someone who will check on you during a heat advisory.",
+ "Don't stop any medicine without asking us first.",
+ "Plan for refrigerated medicines and powered devices in a power cut."];
+const WHY = {"Diuretics":"Makes you lose water and salt faster.","ACE inhibitors / ARBs":"Can drop blood pressure and strain kidneys when you're low on fluids.","NSAIDs":"Can harm kidneys when dehydrated.","SGLT2 inhibitors":"Makes you pass more water.","Lithium":"Levels can rise if dehydrated.","Beta blockers":"Slows the heart's response to heat.","Calcium channel blockers":"Lowers blood pressure; dizziness in heat.","Antipsychotics":"Dulls thirst and sweating.","Antidepressants":"Can lower salt levels or affect sweating.","Benzodiazepines / sedatives":"Drowsiness makes it easy to miss overheating.","Anticholinergics":"Reduces sweating.","Topiramate / zonisamide":"Can stop sweating, especially in children.","Insulin":"Absorbs faster from warm skin; damaged by heat in storage.","Metformin and sulfonylureas":"Lows if eating less; metformin risky when dehydrated.","Opioids":"Overdoses rise on hot days.","Stimulants":"Raises body temperature.","Heat-labile emergency products":"Can fail or burst if too hot."};
+const SPEC = ["Primary care","Psychiatry","Cardiology","Endocrinology","Nephrology","Pediatrics","Geriatrics","Pharmacy","Neurology","Pain and palliative","Addiction medicine","Urology","Rheumatology"];
+const FACT = {
+  "65":{t:"Age 65+", cls:["Antipsychotics","Antidepressants","Insulin","Anticholinergics","Benzodiazepines / sedatives","Diuretics","ACE inhibitors / ARBs","Calcium channel blockers"], n:"Most heat-drug evidence is in adults 65+ (2003 France cohort; insulin cohort). Beers-listed agents deserve a pre-season review.", s:"Most heat-drug evidence is from adults 65+."},
+  "ckd":{t:"CKD", cls:["Diuretics","ACE inhibitors / ARBs","NSAIDs","SGLT2 inhibitors","Metformin and sulfonylureas","Lithium"], n:"Baseline creatinine and K before summer; recheck in prolonged heat. Strongest bridge in the graph is drug → AKI.", s:"Creatinine and K before summer and in prolonged heat."},
+  "hf":{t:"Heart failure", cls:["Diuretics","ACE inhibitors / ARBs","SGLT2 inhibitors","Beta blockers","Calcium channel blockers"], n:"Keep the existing fluid and weight plan; agree heat-day fluid limits with the treating team (CDC general step).", s:"Keep the fluid and weight plan; agree heat-day fluid limits."},
+  "child":{t:"Child / adolescent", cls:["Topiramate / zonisamide","Stimulants","Heat-labile emergency products"], n:"Oligohidrosis (topiramate, zonisamide) and stimulant hyperthermia are paediatric issues: brief parents, school and coaches.", s:"Brief parents and school on overheating risk."},
+  "outdoor":{t:"Outdoor work / sport", cls:["Stimulants","Topiramate / zonisamide","Antipsychotics","Insulin","Anticholinergics","Beta blockers"], n:"Plan exertion limits and hydration on hot days. Antipsychotic users had more heat injury in a military cohort (HR 3.25, unvetted).", s:"Set exertion limits and fluids for hot days."},
+  "alone":{t:"Lives alone", cls:["Opioids","Benzodiazepines / sedatives","Antipsychotics","Insulin"], n:"Name a check-in contact for heat advisories (CDC, NYC, Arizona).", s:"Name a check-in contact for heat advisories."},
+  "noac":{t:"No AC", cls:["Insulin","Heat-labile emergency products","Opioids"], n:"Cooling access: AC, cooling centres (NYC 311), HEAP cooling assistance; plan insulin storage for outages.", s:"Arrange cooling access and insulin storage."}};
+const CASES = [
+  {t:"Older adult with heart failure", d:"furosemide, lisinopril, metformin · 65+, HF, CKD", m:["furosemide","lisinopril","metformin"], f:["65","hf","ckd"]},
+  {t:"Bipolar disorder on lithium", d:"lithium, quetiapine, ibuprofen", m:["lithium","quetiapine","ibuprofen"], f:[]},
+  {t:"Teen with T1D and ADHD", d:"insulin glargine, methylphenidate · child, sport", m:["insulin glargine","methylphenidate"], f:["child","outdoor"]},
+  {t:"Opioid treatment, lives alone", d:"methadone, diazepam · alone, no AC", m:["methadone","diazepam"], f:["alone","noac"]}];
+
+/* ---------- data prep ---------- */
+const rows = DATA.rows, rowOf = Object.fromEntries(rows.map(r => [r.class, r]));
+(() => { const ins = rowOf["Insulin"]; if (!ins) return; const st = ins.cells["Storage and stability"], dz = ins.cells["Dose adjustment"];
+  if (st && dz && st.direct){ const mv = st.direct.filter(d => d.pmid === "22538141"); st.direct = st.direct.filter(d => d.pmid !== "22538141"); if (!st.direct.length) st.tier = "gap"; dz.direct = [...(dz.direct||[]), ...mv]; } })();
+const UNCLEAR = new Set(["24334574"]);
+const cellOf = (c,b) => rowOf[c] && rowOf[c].cells[b];
+const has = (c,b) => { const x = cellOf(c,b); return !!x && x.tier !== "none"; };
+const ORDER = GROUPS.flatMap(g => g.cls).filter(c => rowOf[c]);
+const ALL = ORDER.flatMap(c => B.filter(b => has(c,b)).map(b => c+"|"+b));
+const rv = (c,b) => (EXTRA.review[c]||{})[b] || ["","",""];
+const L = c => LENS.rows[c] || {};
+const SRC = (LENS.sources || []).filter(s => (LENS.coded || []).includes(s.id));
+
+const S = Object.assign({tab:"map", lens:"all", spec:"", min:0, ph:"alert", role:"rx", vet:false, meds:[], f:[], sel:null,
+  pop:{spec:"", min:0, pat:"", picked:[]}, ev:{sub:"studies", out:"all", sel:null}, g:{view:"matrix", sel:"Insulin"}}, {});
+const GC = {};
+function grade(c,b){
+  const id = c+"|"+b+"|"+S.vet; if (GC[id]) return GC[id];
+  const x = cellOf(c,b); if (!x || x.tier === "none") return null;
+  let d = x.direct || []; if (S.vet) d = d.filter(s => s.vetted);
+  const why = new Set(), score = s => (s.type === "S" || s.type === "C" || UNCLEAR.has(s.pmid)) ? 1 : (s.vetted ? 2 : 1);
+  const risk = d.filter(s => s.effect === "risk"), nul = d.filter(s => s.effect !== "risk");
+  let lv;
+  if (risk.length){ const h = risk.filter(s => (s.type||"H") === "H"), mx = Math.max(...risk.map(score)); lv = (h.length >= 2 && h.some(s => s.vetted)) ? 3 : mx;
+    const top = risk.filter(s => score(s) === mx);
+    if (lv < 3){ if (top.every(s => s.type === "S")) why.add("seasonal proxy"); if (top.some(s => s.type === "C")) why.add("class-wide"); if (top.some(s => s.type === "X")) why.add("lab heat"); if (top.some(s => !s.vetted)) why.add("unvetted"); if (top.some(s => UNCLEAR.has(s.pmid))) why.add("direction unclear"); }
+    if (nul.length) why.add("mixed results"); }
+  else if (nul.length){ lv = "N"; if (nul.every(s => !s.vetted)) why.add("unvetted"); }
+  else if (x.tier === "bridged"){ if (S.vet && !x.vetted){ lv = 0; why.add("bridge rests on unvetted rows"); } else { lv = 1; why.add("mechanism bridge only"); } }
+  else { lv = 0; why.add(x.tier === "partial" ? "no heat studies" : "label or pharmacology only"); if (S.vet && (x.direct||[]).length) why.add("unvetted studies hidden"); }
+  return GC[id] = {lv, why:[...why], risk, nul, direct:d};
+}
+const gline = g => g.lv === 3 ? "≥2 heat-exposure studies, higher risk; ≥1 vetted." : g.lv === 2 ? (g.risk.some(s => (s.type||"H") === "H" && s.vetted) ? "One vetted heat-exposure study, higher risk." : "Lab heat raised drug exposure.") : g.lv === 1 ? (g.risk.length ? "Indirect or unvetted studies only." : "Drug → harm and heat → same harm, separate studies.") : g.lv === "N" ? "Studied in heat: no clear effect. Not proof of safety." : "No studies in the graph.";
+const mk = lv => `<i class="mk l${lv}" aria-hidden="true"></i>`;
+const grc = lv => `<span class="gr">${mk(lv)}${LV[lv]}</span>`;
+const lvRank = lv => lv === "N" ? 0.5 : lv;
+const classLv = c => { let best = null; B.forEach(b => { const g = grade(c,b); if (g && (best === null || lvRank(g.lv) > lvRank(best))) best = g.lv; }); return best; };
+function phase(c,b){ const a = (cellOf(c,b).action || "").toLowerCase();
+  if (b === "Storage and stability") return "before";
+  if (b === "Substitute or hold") return /sick-day|vomit|diarrh|dehydrat|not eating|temporarily|avoid during/.test(a) ? "unwell" : "before";
+  return "alert"; }
+const ownerShort = w => (w||"").split(/[;(]/)[0].trim().replace(/^Prescriber orders$/,"Prescriber").replace(/ and community mental health team/,"");
+const RX = /prescriber|psychiatry|primary care|diabetes team|neurology|pediatrics|cardiology|nephrology|addiction|endocrin/i;
+const involves = (c, s) => { if (!s) return true; const r = rowOf[c]; if (s === "Pharmacy") return r.specialties.includes("Pharmacy") || B.some(b => has(c,b) && /pharmacist/i.test(rv(c,b)[1])); return r.specialties.includes(s); };
+const LST = s => s === "heat" || s === "heat_patient" ? "heat" : (s === "silent" ? "" : "part");
+const LSW = {heat:"heat warning", heat_patient:"heat (patient info)", hyperthermia:"hyperthermia (serotonin syndrome/NMS) only", dehydration:"dehydration only", handling:"storage/handling only", silent:"silent"};
+const gN = c => L(c).guidance_n ?? Object.values(L(c).guidance||{}).filter(g => g.level === "action" || g.level === "mention").length;
+
+/* ---------- drug index ---------- */
+const BRAND = {lasix:"furosemide",microzide:"hydrochlorothiazide",aldactone:"spironolactone",bumex:"bumetanide",demadex:"torsemide",zestril:"lisinopril",prinivil:"lisinopril",altace:"ramipril",vasotec:"enalapril",cozaar:"losartan",diovan:"valsartan",avapro:"irbesartan",atacand:"candesartan",
+ lopressor:"metoprolol",toprol:"metoprolol",tenormin:"atenolol",inderal:"propranolol",coreg:"carvedilol",zebeta:"bisoprolol",norvasc:"amlodipine",cardizem:"diltiazem",calan:"verapamil",procardia:"nifedipine",
+ ditropan:"oxybutynin",benadryl:"diphenhydramine",cogentin:"benztropine",detrol:"tolterodine",vesicare:"solifenacin",atarax:"hydroxyzine",vistaril:"hydroxyzine",
+ zyprexa:"olanzapine",clozaril:"clozapine",haldol:"haloperidol",seroquel:"quetiapine",risperdal:"risperidone",abilify:"aripiprazole",
+ zoloft:"sertraline",prozac:"fluoxetine",celexa:"citalopram",lexapro:"escitalopram",paxil:"paroxetine",effexor:"venlafaxine",elavil:"amitriptyline",cymbalta:"duloxetine",
+ ativan:"lorazepam",valium:"diazepam",xanax:"alprazolam",klonopin:"clonazepam",ambien:"zolpidem",
+ oxycontin:"oxycodone",percocet:"oxycodone",duragesic:"fentanyl patch",dolophine:"methadone",
+ lantus:"insulin glargine",basaglar:"insulin glargine",humalog:"insulin lispro",novolog:"insulin aspart",
+ jardiance:"empagliflozin",farxiga:"dapagliflozin",invokana:"canagliflozin",glucophage:"metformin",glucotrol:"glipizide",
+ advil:"ibuprofen",motrin:"ibuprofen",aleve:"naproxen",naprosyn:"naproxen",voltaren:"diclofenac",
+ topamax:"topiramate",zonegran:"zonisamide",ritalin:"methylphenidate",concerta:"methylphenidate",adderall:"amphetamine",vyvanse:"lisdexamfetamine",
+ epipen:"epinephrine auto-injector",ventolin:"albuterol inhaler",proair:"albuterol inhaler",nitrostat:"nitroglycerin",eskalith:"lithium",lithobid:"lithium"};
+const GEN = {alprazolam:"Benzodiazepines / sedatives",clonazepam:"Benzodiazepines / sedatives",paroxetine:"Antidepressants",duloxetine:"Antidepressants",escitalopram:"Antidepressants",venlafaxine:"Antidepressants",
+ canagliflozin:"SGLT2 inhibitors",lisdexamfetamine:"Stimulants","fentanyl patch":"Opioids",fentanyl:"Opioids","insulin glargine":"Insulin","insulin lispro":"Insulin","insulin aspart":"Insulin",insulin:"Insulin",
+ "epinephrine auto-injector":"Heat-labile emergency products","albuterol inhaler":"Heat-labile emergency products",epinephrine:"Heat-labile emergency products",albuterol:"Heat-labile emergency products",salbutamol:"Heat-labile emergency products",nitroglycerin:"Heat-labile emergency products",
+ lithium:"Lithium",ssri:"Antidepressants",tca:"Antidepressants",snri:"Antidepressants",glipizide:"Metformin and sulfonylureas",gliclazide:"Metformin and sulfonylureas",glyburide:"Metformin and sulfonylureas",metformin:"Metformin and sulfonylureas"};
+const INDEX = {};
+rows.forEach(r => { INDEX[r.class.toLowerCase()] = {cls:r.class, name:rn(r.class), kind:"class"}; (EXTRA.drugs[r.class]||[]).forEach(n => INDEX[n.toLowerCase()] ??= {cls:r.class, name:n, kind:"drug"}); });
+Object.entries(GEN).forEach(([g,c]) => { if (rowOf[c]) INDEX[g] ??= {cls:c, name:g, kind:"drug"}; });
+Object.entries(BRAND).forEach(([b,g]) => { const h = INDEX[g]; if (h) INDEX[b] = {cls:h.cls, name:`${g} (${b[0].toUpperCase()+b.slice(1)})`, kind:"brand"}; });
+$("#drugs").innerHTML = Object.keys(INDEX).sort().map(k => `<option value="${esc(k)}">`).join("");
+function search(q){ q = q.trim().toLowerCase(); if (!q) return [];
+  const ks = Object.keys(INDEX), a = ks.filter(k => k === q), b = ks.filter(k => k !== q && k.startsWith(q)), c = ks.filter(k => !k.startsWith(q) && k.includes(q));
+  return [...a, ...b, ...c].slice(0, 9).map(k => ({k, ...INDEX[k]})); }
+const NOTB = {tylenol:"acetaminophen",paracetamol:"acetaminophen",acetaminophen:"acetaminophen",synthroid:"levothyroxine",levothyroxine:"levothyroxine",eliquis:"apixaban",apixaban:"apixaban",tegretol:"carbamazepine",carbamazepine:"carbamazepine",plavix:"clopidogrel",clopidogrel:"clopidogrel",aspirin:"aspirin",doxycycline:"tetracycline",ciprofloxacin:"fluoroquinolone"};
+
+/* ---------- state <-> URL ---------- */
+function readHash(){ const p = new URLSearchParams(location.hash.slice(1));
+  if (p.get("t")) S.tab = p.get("t"); if (!["map","gaps","pop","ev"].includes(S.tab)) S.tab = "map";
+  if (p.get("lens")) S.lens = p.get("lens") === "pt" ? "pt" : "all";
+  if (p.get("c") && rowOf[p.get("c")]) S.g.sel = p.get("c"); }
+function writeHash(){ const p = new URLSearchParams({t:S.tab}); if (S.tab === "map" && S.lens === "pt") p.set("lens","pt"); if (S.tab === "gaps" && S.g.sel) p.set("c", S.g.sel);
+  history.replaceState(null, "", "#" + p.toString()); }
+const DONE = new Set(store.get("hmapp.done", []));
+
+/* ---------- shell ---------- */
+function setTab(t){ S.tab = t; $$(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === t)); $$(".view").forEach(v => v.classList.toggle("on", v.id === "v-" + t)); render(); scrollTo(0,0); }
+$$(".tabs button").forEach(b => b.onclick = () => setTab(b.dataset.tab));
+$("#home").onclick = e => { e.preventDefault(); S.lens = "all"; setTab("map"); };
+function render(){
+  if (S.tab !== "pop") $("#selbar").hidden = true;
+  if (S.tab === "map") renderMap(); else if (S.tab === "pop") renderPop(); else if (S.tab === "ev") renderEv(); else renderGaps();
+  writeHash(); }
+
+/* ================= EVIDENCE MAP + PATIENT LENS ================= */
+function studyLi(s){ const e = s.effect === "risk" ? "risk" : s.effect === "lower" ? "lower" : "null";
+  return `<li><i class="e ${e}"></i><span>${esc(s.summary)} ${pmA(s.pmid)}${s.vetted ? "" : ` <span class="vt">unvetted</span>`}</span></li>`; }
+const MN = {"Acute kidney injury":"AKI","Hyponatremia / electrolytes":"hyponatraemia","Hypotension / falls":"hypotension, falls","Glucose":"glucose","Dehydration / volume":"dehydration","Impaired sweating / thermoregulation":"impaired sweating","Rhabdomyolysis":"rhabdomyolysis","Lithium toxicity / drug levels":"drug levels"};
+function cellEvidence(c,b){ const x = cellOf(c,b), g = grade(c,b), [trig, who, resume] = rv(c,b), mech = (x.mechanisms||[]).filter(m => m.drug_studies || m.heat_studies).slice(0,3);
+  return `<div class="grade">${mk(g.lv)}<div><b>${LV[g.lv]}</b><span>${gline(g)}${g.why.length ? ` · ${g.why.join(", ")}` : ""}</span></div></div>
+    <div class="pb"><dl class="kv">${trig?`<dt>Trigger</dt><dd>${esc(trig)}</dd>`:""}${who?`<dt>Owner</dt><dd>${esc(who)}</dd>`:""}${resume?`<dt>Resume</dt><dd>${esc(resume)}</dd>`:""}${x.note?`<dt>Basis</dt><dd>${esc(x.note)}</dd>`:""}</dl></div>
+    ${g.direct.length ? `<div class="pb"><h3>Heat studies (${g.direct.length})</h3><ul class="studies">${g.direct.map(studyLi).join("")}</ul></div>` : ""}
+    ${!g.direct.length && mech.length ? `<div class="pb"><h3>Mechanism bridge</h3><ul class="studies">${mech.map(m => `<li><i class="e bridge"></i><span>Drug → ${esc(MN[m.mechanism]||m.mechanism)}: ${m.drug_studies + (m.drug_unvetted||0)} studies · heat → ${esc(MN[m.mechanism]||m.mechanism)}: ${m.heat_studies + (m.heat_unvetted||0)}${m.heat_examples?.[0] ? ` · e.g. ${pmA(m.heat_examples[0].pmid)}` : ""}</span></li>`).join("")}</ul></div>` : ""}`; }
+function guideTable(c){ const g = L(c).guidance || {};
+  return `<table class="gt">${SRC.map(s => { const x = g[s.id] || {level:"absent"}; return `<tr><td>${esc(s.short)}</td><td><i class="gg ${x.level}" title="${GLV[x.level]}"></i></td><td>${esc(x.action || x.mech || GLV[x.level])}</td></tr>`; }).join("")}</table>`; }
+function labelList(c){ const ls = L(c).label || []; return ls.length ? `<div class="labs">${ls.map(x => `<div><span class="pips"><i class="${LST(x.status)}"></i></span> <b>${esc(x.generic)}</b> · ${esc(LSW[x.status] || x.status)}${x.storage?.max_c ? ` · ≤ ${x.storage.max_c} °C` : ""}${x.dailymed ? ` · <a href="${esc(x.dailymed)}" target="_blank" rel="noopener" style="color:var(--muted)">DailyMed</a>` : ""}</div>`).join("")}</div>` : `<p class="hint">No labels pulled.</p>`; }
+
+const HVI = D.HVI || {};
+const SIX = ["Primary care","Psychiatry","Cardiology","Endocrinology","Nephrology","Pediatrics"];
+const MCOLS = [
+  {b:"Dose adjustment", n:"Adjust dose"},
+  {b:"Substitute or hold", ph:"unwell", n:"Sick-day hold", grp:"Substitute or hold"},
+  {b:"Substitute or hold", ph:"before", n:"Switch", grp:"Substitute or hold"},
+  {b:"Closer monitoring", n:"Monitor"},
+  {b:"Storage and stability", n:"Storage", narrow:true}];
+const MDESC = {"Adjust dose":"Change the dose before or during heat.", "Sick-day hold":"Pause temporarily while vomiting, having diarrhoea or unable to drink.", "Switch":"Before summer: switch to a heat-safer drug, taper, or review the need.", "Monitor":"Extra labs, glucose or symptom checks during heat.", "Storage":"Keep the product below its labelled temperature."};
+const colOf = (c,b) => MCOLS.find(v => v.b === b && (!v.ph || phase(c,b) === v.ph));
+const PH_TXT = {before:"Before summer", alert:"During a heat advisory", unwell:"When the patient is sick"};
+
+/* harm severity: the worst outcome measured in studies (or named on the label) for the class */
+const HARM = {"Antipsychotics":[3,"Death in the 2003 heat wave (OR 2.09)"],"Antidepressants":[3,"Death in the 2003 heat wave (OR 1.71)"],"Opioids":[3,"Fatal overdose on hotter days (OR 1.3)"],
+ "Diuretics":[3,"Death after heatstroke, antihypertensives as a class (HR 2.17)"],"ACE inhibitors / ARBs":[3,"Death after heatstroke, antihypertensives as a class (HR 2.17)"],"Beta blockers":[3,"Death after heatstroke, antihypertensives as a class (HR 2.17)"],"Calcium channel blockers":[3,"Death after heatstroke, antihypertensives as a class (HR 2.17)"],
+ "Heat-labile emergency products":[3,"Emergency treatment that fails when needed"],"Insulin":[2,"Serious hypoglycaemia needing care (OR 1.38)"],"NSAIDs":[2,"Acute kidney injury"],"SGLT2 inhibitors":[2,"Volume depletion, ketoacidosis"],
+ "Metformin and sulfonylureas":[2,"Hypoglycaemia, lactic acidosis"],"Lithium":[2,"Lithium toxicity"],"Stimulants":[2,"Overdose needing emergency care"],"Topiramate / zonisamide":[2,"Heat stroke in children (label warning)"],
+ "Anticholinergics":[2,"Heat illness from reduced sweating"],"Benzodiazepines / sedatives":[1,"Falls; heat-wave death odds were lower (OR 0.85, unvetted)"]};
+const HL = {3:"Death", 2:"Hospitalization", 1:"Symptoms"};
+const COND = {hf:"Heart failure", ckd:"Kidney disease", dm:"Diabetes", dem:"Dementia", smi:"Serious mental illness", sud:"Substance use", prior:"Prior heat illness", preg:"Pregnancy"};
+const COND_CLS = {hf:["Diuretics","ACE inhibitors / ARBs","SGLT2 inhibitors","Beta blockers","Calcium channel blockers"], ckd:["Diuretics","ACE inhibitors / ARBs","NSAIDs","SGLT2 inhibitors","Metformin and sulfonylureas","Lithium"],
+ dm:["Insulin","Metformin and sulfonylureas","SGLT2 inhibitors"], dem:["Antipsychotics","Anticholinergics","Benzodiazepines / sedatives"], smi:["Antipsychotics","Lithium","Antidepressants"], sud:["Opioids","Stimulants","Benzodiazepines / sedatives"], prior:ORDER.slice(), preg:[]};
+const ENVQ = [["ac","Working air conditioning at home?","no"],["outdoor","Works outdoors, or outside 2+ hours on hot days?","yes"],["alone","Lives alone?","yes"],["mob","Limited mobility?","yes"],["top","Top-floor home?","yes"]];
+const OLDER = ["Antipsychotics","Antidepressants","Insulin","Anticholinergics","Benzodiazepines / sedatives","Diuretics","ACE inhibitors / ARBs","Calcium channel blockers"];
+const YOUNG = ["Topiramate / zonisamide","Stimulants","Heat-labile emergency products"];
+const SSRI = /sertraline|fluoxetine|citalopram|escitalopram|paroxetine|zoloft|prozac|celexa|lexapro|paxil/i;
+const blankP = () => ({name:"", meds:[], age:null, cond:[], env:{ac:"?", outdoor:"?", alone:"?", mob:"?", top:"?"}, zip:"", adv:true, note:"", src:{}});
+const P = Object.assign(blankP(), store.get("hmg.p", {}));
+P.meds = (P.meds || []).filter(m => INDEX[m.k]);
+const saveP = () => store.set("hmg.p", P);
+const boroughOf = z => /^10[0-2]/.test(z) ? "Manhattan" : /^103/.test(z) ? "Staten Island" : /^104/.test(z) ? "Bronx" : /^112/.test(z) ? "Brooklyn" : /^1(1[0-1]|1[3-6])/.test(z) ? "Queens" : "";
+const hvi = () => HVI[P.zip] || 0;
+
+function expo(){ const pts = [], add = (n,t) => pts.push([n,t]);
+  if (P.env.ac === "no") add(2,"no air conditioning"); if (P.env.outdoor === "yes") add(2,"outdoors on hot days"); if (P.env.alone === "yes") add(1,"lives alone");
+  if (P.env.mob === "yes") add(1,"limited mobility"); if (P.env.top === "yes") add(1,"top-floor home");
+  const h = hvi(); if (h >= 5) add(2,`heat-vulnerability index ${h}/5`); else if (h === 4) add(1,"heat-vulnerability index 4/5");
+  if (P.adv) add(1,"heat advisory in effect"); if (P.age >= 75) add(1,"age 75+");
+  const s = pts.reduce((a,[n]) => a + n, 0), unknown = ENVQ.filter(([k]) => P.env[k] === "?").length + (P.zip ? 0 : 1);
+  return {s, lvl: s >= 4 ? 2 : s >= 2 ? 1 : 0, pts, unknown}; }
+const ELV = ["Low","Moderate","High"];
+function relevant(c){ const r = P.cond.filter(k => COND_CLS[k]?.includes(c)).map(k => COND[k]);
+  if (P.age >= 65 && OLDER.includes(c)) r.push("age 65+ (where most heat evidence comes from)"); if (P.age && P.age < 18 && YOUNG.includes(c)) r.push("child or adolescent"); return r; }
+const ptCls = () => [...new Set(P.meds.map(m => m.cls))];
+function tripleWhammy(){ const l = new Set(ptCls()); return l.has("Diuretics") && l.has("ACE inhibitors / ARBs") && l.has("NSAIDs"); }
+
+/* decision tier for one action, for this patient: evidence x harm x exposure, all reasons kept */
+const TIER = {act:"Act now", consider:"Consider", monitor:"Monitor", counsel:"Counsel", na:"No change"};
+function tier(c,b){ const g = grade(c,b), [h, hTxt] = HARM[c] || [1,""], E = expo(), rel = relevant(c), ev = g.lv, col = colOf(c,b).n, why = [];
+  why.push(`Evidence: ${LV[ev]}`); why.push(`Worst measured harm: ${HL[h]} (${hTxt})`); why.push(`Heat exposure: ${ELV[E.lvl]}${E.pts.length ? ` (${E.pts.map(p => p[1]).join(", ")})` : ""}`);
+  if (rel.length) why.push(`Relevant to this patient: ${rel.join(", ")}`);
+  const out = t => ({t, why});
+  if (c === "Antidepressants" && b === "Substitute or hold" && P.meds.some(m => m.cls === c && SSRI.test(m.name))){ why.unshift("Already on an SSRI, the preferred choice in older adults"); return out("na"); }
+  if (b === "Storage and stability"){ const hot = P.env.ac === "no" || P.env.outdoor === "yes" || hvi() >= 4; if (hot) why.unshift("No reliable cool storage (no AC, outdoors, or a high-heat area)"); return out(hot ? "act" : "counsel"); }
+  if (c === "NSAIDs" && b === "Substitute or hold" && tripleWhammy()){ why.unshift("Triple whammy: diuretic + ACE inhibitor/ARB + NSAID. The one heat-wave study found no clear effect (OR 1.02), but drug → kidney injury is the strongest link in the graph (50+ studies)"); return out("act"); }
+  if (ev === 0 || ev === "N") return out(col === "Sick-day hold" ? "counsel" : (h >= 2 && (E.lvl === 2 || rel.length)) ? "monitor" : "counsel");
+  if (ev >= 2) return out(h >= 2 ? "act" : "monitor");
+  if (b === "Dose adjustment") return out(h >= 2 && (E.lvl === 2 || rel.length) ? "consider" : "monitor");
+  return out(h === 3 && E.lvl === 2 ? "act" : h >= 2 && (E.lvl === 2 || rel.length) ? "consider" : "monitor"); }
+
+/* exposure-reduction steps (non-drug), from CDC/NYC general steps and the patient's answers */
+function expoSteps(){ const s = [], h = hvi(), noac = P.env.ac === "no";
+  if (noac || h >= 4) s.push(["Cooling", noac ? "Refer for an air conditioner (NYC HEAP cooling assistance) and list the nearest cooling centre (311)." : "Share the nearest cooling centre (311) for the hottest hours.", "NYC Health"]);
+  if (P.env.alone === "yes") s.push(["Check-in", "Name a contact who will check in during every heat advisory; enrol in advisory calls.", "CDC, NYC, Arizona"]);
+  if (P.env.mob === "yes" || (P.env.alone === "yes" && h >= 4)) s.push(["Errands", "Arrange meal or grocery delivery during advisories so the patient doesn't walk out in peak heat (community organisation).", "Exposure reduction"]);
+  if (P.env.outdoor === "yes") s.push(["Work", "Write a work note: avoid outdoor work in peak heat; rest, shade and water breaks.", "Exposure reduction"]);
+  if (P.env.top === "yes" && noac) s.push(["Housing", "Top floor without AC: spend the hottest hours somewhere cooler (cooling centre, library, family).", "Exposure reduction"]);
+  if (ptCls().some(c => ["Insulin","Heat-labile emergency products"].includes(c)) && noac) s.push(["Power cuts", "Plan for refrigerated medicines and powered devices during outages.", "CDC, NYC"]);
+  return s; }
+function combosP(){ const l = new Set(ptCls()), h = c => l.has(c), n = [];
+  if (tripleWhammy()) n.push(`<b>Diuretic + ACE inhibitor/ARB + NSAID</b> (“triple whammy”): kidney-injury risk; stop the NSAID in heat. <a href="${pmu("29116624")}" target="_blank" rel="noopener">PMID 29116624</a>`);
+  if (h("SGLT2 inhibitors") && h("Diuretics")) n.push(`<b>SGLT2 inhibitor + loop diuretic</b>: volume depletion, IRR 1.82. One shared sick-day plan. <a href="${pmu("35713292")}" target="_blank" rel="noopener">PMID 35713292</a>`);
+  if (h("Lithium") && ["Diuretics","ACE inhibitors / ARBs","NSAIDs"].some(h)) n.push(`<b>Lithium + ${["Diuretics","ACE inhibitors / ARBs","NSAIDs"].filter(h).map(rn).join(" / ")}</b>: raises lithium levels. Pharmacology.`);
+  if (h("Opioids") && h("Benzodiazepines / sedatives")) n.push(`<b>Opioid + benzodiazepine</b>: additive sedation dulls heat awareness. Pharmacology.`);
+  const sw = ["Anticholinergics","Antipsychotics","Antidepressants","Topiramate / zonisamide"].filter(h); if (sw.length >= 2) n.push(`<b>${sw.map(rn).join(" + ")}</b>: additive impairment of sweating. Pharmacology.`);
+  return n; }
+
+/* ---------- note parser (runs in the browser; nothing is sent anywhere) ---------- */
+const DEMO_NOTE = `SYNTHETIC DEMO RECORD (not a real patient)
+Patient: Rosa Rivera. Age: 78. Address: Mott Haven, Bronx, NY 10454.
+Visit: pre-summer medication review.
+Problems: Heart failure (HFpEF). Type 2 diabetes. CKD stage 3a, eGFR 52. Osteoarthritis of both knees.
+Medications: furosemide 40 mg daily; lisinopril 10 mg daily; insulin glargine 18 units at night; sertraline 50 mg daily.
+Reports taking ibuprofen 400 mg (OTC) most days for knee pain.
+Social: lives alone in a 5th-floor walk-up. Window AC unit broken since last summer. Walks with a cane. Daughter lives in New Jersey and calls weekly.`;
+const CRX = {hf:/heart failure|hfref|hfpef|\bchf\b/i, ckd:/\bckd\b|chronic kidney|egfr\s*[:=]?\s*([1-5]\d)\b/i, dm:/diabet|\bt[12]dm\b/i, dem:/dementia|cognitive impairment|alzheimer/i, smi:/schizophren|bipolar|psychosis|schizoaffective/i, sud:/opioid use disorder|\boud\b|substance use|alcohol use disorder/i, prior:/heat ?stroke|heat exhaustion|heat illness/i, preg:/pregnan/i};
+const ERX = {ac:[/(no|without|lacks?|broken|not working)[^.]{0,30}(air[- ]?condition|\bac\b|a\/c)|(air[- ]?condition\w*|\bac\b|a\/c)( unit)?[^.]{0,20}(broken|not working)/i, "no", /has (a )?working (air[- ]?condition|ac\b|a\/c)/i, "yes"],
+  outdoor:[/outdoor work|works outdoors|construction|delivery (worker|rider|cyclist)|landscap|farm ?work|street vendor/i, "yes"], alone:[/lives alone/i, "yes", /lives with/i, "no"],
+  mob:[/\bcane\b|walker|wheelchair|limited mobility|homebound|bedbound/i, "yes"], top:[/top[- ]floor|\d+(st|nd|rd|th)[- ]floor walk-?up|walk-?up/i, "yes"]};
+function parseNote(t){ const found = [];
+  const keys = Object.keys(INDEX).filter(k => k.length > 3).sort((a,b) => b.length - a.length), hit = [];
+  keys.forEach(k => { const re = new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}\\b`, "i"); if (re.test(t) && !hit.some(h => h.includes(k))) hit.push(k); });
+  hit.forEach(k => { if (!P.meds.some(m => m.k === k)) P.meds.push({k, cls:INDEX[k].cls, name:INDEX[k].name}); found.push(INDEX[k].name); });
+  const am = t.match(/\bage[:\s]+(\d{1,3})\b/i) || t.match(/\b(\d{1,3})[- ]?(?:year[- ]old|yo\b|y\/o|yrs?\b)/i); if (am){ P.age = +am[1]; P.src.age = 1; found.push(`age ${P.age}`); }
+  const zm = t.match(/\b(1(?:0[0-4]|1[0-6])\d{2})\b/); if (zm){ P.zip = zm[1]; P.src.zip = 1; found.push(`ZIP ${P.zip}`); }
+  Object.entries(CRX).forEach(([k,re]) => { const m = t.match(re); if (!m) return; if (k === "ckd" && m[1] && +m[1] >= 60) return; if (!P.cond.includes(k)) P.cond.push(k); P.src["c_"+k] = 1; found.push(COND[k]); });
+  Object.entries(ERX).forEach(([k,[re,v,re2,v2]]) => { if (re.test(t)){ P.env[k] = v; P.src["e_"+k] = 1; found.push(ENVQ.find(q => q[0] === k)[1].replace("?","") + ": " + v); } else if (re2 && re2.test(t)){ P.env[k] = v2; P.src["e_"+k] = 1; } });
+  const nm = t.match(/Patient:\s*([^.\n]+)/i); if (nm) P.name = nm[1].trim();
+  return found; }
+
+/* ---------- intake panel ---------- */
+function renderIntake(){ const E = expo(), h = hvi(), b = boroughOf(P.zip);
+  const fromNote = k => P.src[k] ? `<span class="fromnote" title="Filled from the note">note</span>` : "";
+  $("#intake").innerHTML = `
+    <div class="ph"><h2><b>Patient</b>${P.name ? ` · ${esc(P.name)}` : ""}</h2><button class="btn" id="pclear">Clear</button></div>
+    <div class="pb"><h3>1 · Record</h3>
+      <textarea id="note" rows="4" placeholder="Paste a visit note or medication list…">${esc(P.note)}</textarea>
+      <div class="row6"><button class="btn pri" id="readnote">Read note</button><label class="btn" style="cursor:pointer">Upload .txt<input type="file" id="notefile" accept=".txt,text/plain" hidden></label><button class="btn" id="demo">Demo patient</button></div>
+      <p class="hint" id="readmsg" style="margin-top:6px;font-size:12px">${P.note ? "" : "Parsed in your browser; nothing is uploaded. The demo is a synthetic record."}</p></div>
+    <div class="pb"><h3>2 · Medications</h3>
+      <form class="addf" id="addf2" autocomplete="off"><input id="addq2" list="drugs" placeholder="Add a drug or brand"><button class="btn">Add</button></form>
+      <div class="meds">${P.meds.map((m,i) => `<span class="med">${esc(m.name)}<button data-rmm="${i}" aria-label="Remove ${esc(m.name)}">×</button></span>`).join("") || `<span class="hint">None yet</span>`}</div><p class="msg" id="addmsg2"></p></div>
+    <div class="pb"><h3>3 · Age and medical conditions</h3>
+      <label class="agef">Age <input id="age" type="number" min="0" max="110" value="${P.age ?? ""}" placeholder="—">${fromNote("age")}</label>
+      <div class="facts" style="margin-top:8px">${Object.entries(COND).map(([k,t]) => `<button class="fact" data-cond="${k}" aria-pressed="${P.cond.includes(k)}">${t}</button>`).join("")}</div></div>
+    <div class="pb"><h3>4 · Environment and behaviour <span class="lblnote">intake screening</span></h3>
+      ${ENVQ.map(([k,q,risk]) => `<div class="envq"><span>${q}${fromNote("e_"+k)}</span><div class="seg sm">${["yes","no","?"].map(v => `<button data-env="${k}" data-v="${v}" aria-pressed="${P.env[k] === v}" class="${v === risk ? "risk" : ""}">${v === "?" ? "Ask" : v[0].toUpperCase() + v.slice(1)}</button>`).join("")}</div></div>`).join("")}</div>
+    <div class="pb"><h3>5 · Geography</h3>
+      <label class="agef">NYC ZIP <input id="zip" inputmode="numeric" maxlength="5" value="${esc(P.zip)}" placeholder="e.g. 10454">${fromNote("zip")}</label>
+      ${P.zip ? (h ? `<div class="hvi"><div class="hvibar">${[1,2,3,4,5].map(i => `<i class="${i <= h ? "on" : ""}" style="--i:${i}"></i>`).join("")}</div><span><b>Heat vulnerability ${h}/5</b> · ${esc(b)}${h >= 4 ? " · among the city's most vulnerable areas" : ""}</span></div>` : `<p class="hint" style="margin-top:6px">No NYC heat-vulnerability score for this ZIP.</p>`) : ""}
+      <label class="tgl" style="margin-top:10px"><input type="checkbox" id="adv" ${P.adv ? "checked" : ""}><span>Heat advisory in effect</span></label></div>
+    <div class="pb expo-s lv${E.lvl}"><h3>Heat exposure</h3><p><b>${ELV[E.lvl]}</b>${E.pts.length ? ` · ${E.pts.map(p => p[1]).join(", ")}` : ""}</p>${E.unknown ? `<p class="hint" style="font-size:12px;margin-top:4px">${E.unknown} unknown: ask at intake.</p>` : ""}</div>`;
+  const I = $("#intake"), chg = () => { saveP(); renderMap(); };
+  I.querySelector("#pclear").onclick = () => { Object.assign(P, blankP()); S.sel = null; chg(); };
+  I.querySelector("#readnote").onclick = () => { P.note = I.querySelector("#note").value; const f = parseNote(P.note); chg(); $("#readmsg").textContent = f.length ? `Found ${f.length}: ${f.join(" · ")}. Check and correct below.` : "Nothing recognised. Add details below."; };
+  I.querySelector("#demo").onclick = () => { Object.assign(P, blankP()); P.note = DEMO_NOTE; const f = parseNote(DEMO_NOTE); S.sel = null; chg(); $("#readmsg").textContent = `Found ${f.length}: ${f.join(" · ")}.`; };
+  I.querySelector("#notefile").onchange = e => { const fl = e.target.files[0]; if (!fl) return; fl.text().then(t => { P.note = t.slice(0, 20000); const f = parseNote(P.note); chg(); $("#readmsg").textContent = `Found ${f.length}: ${f.join(" · ")}.`; }); };
+  I.querySelector("#addf2").onsubmit = e => { e.preventDefault(); const q = I.querySelector("#addq2").value.trim().toLowerCase(), hit = INDEX[q] ? {k:q, ...INDEX[q]} : search(q)[0];
+    if (!hit){ const g = NOTB[q], ng = g && LENS.not_in_grid.find(x => x.name.toLowerCase().includes(g)); $("#addmsg2").textContent = ng ? `${ng.name}: not mapped. CDC lists: ${ng.mech.toLowerCase()}.` : `No match for “${q}”. Not mapped ≠ safe in heat.`; return; }
+    if (!P.meds.some(m => m.k === hit.k)) P.meds.push({k:hit.k, cls:hit.cls, name:hit.name}); chg(); };
+  I.querySelectorAll("[data-rmm]").forEach(x => x.onclick = () => { P.meds.splice(+x.dataset.rmm, 1); chg(); });
+  I.querySelector("#age").onchange = e => { P.age = e.target.value ? +e.target.value : null; chg(); };
+  I.querySelectorAll("[data-cond]").forEach(x => x.onclick = () => { const k = x.dataset.cond; P.cond = P.cond.includes(k) ? P.cond.filter(y => y !== k) : [...P.cond, k]; chg(); });
+  I.querySelectorAll("[data-env]").forEach(x => x.onclick = () => { P.env[x.dataset.env] = x.dataset.v; chg(); });
+  I.querySelector("#zip").onchange = e => { P.zip = e.target.value.trim(); chg(); };
+  I.querySelector("#adv").onchange = e => { P.adv = e.target.checked; chg(); }; }
+
+/* ---------- the map ---------- */
+const SIXAB = {"Primary care":"PC","Psychiatry":"Psy","Cardiology":"Card","Endocrinology":"Endo","Nephrology":"Neph","Pediatrics":"Peds"};
+function renderMap(){
+  const pt = S.lens === "pt";
+  $$("#lens button").forEach(x => x.setAttribute("aria-pressed", x.dataset.lens === S.lens));
+  $("#mapgrid").classList.toggle("pt", pt);
+  $("#intake").hidden = !pt; if (pt) renderIntake();
+  // filters (all-medicines view)
+  $("#mapfilters").hidden = pt;
+  $("#mapfilters").innerHTML = `<span class="lbl">Prescriber</span><div class="chipsf">${["", ...SIX].map(s => `<button class="chipb" data-spec="${esc(s)}" aria-pressed="${S.spec === s}">${s || "All"}</button>`).join("")}</div>
+    <span class="lbl">Evidence</span><div class="seg sm" id="minseg">${[[0,"Any"],[2,"Low +"],[3,"Moderate"]].map(([v,t]) => `<button data-min="${v}" aria-pressed="${S.min === v}">${t}</button>`).join("")}</div>`;
+  // patient bar
+  const E = expo(), cls = pt ? ptCls() : ORDER, tiers = {};
+  if (pt) cls.forEach(c => B.forEach(b => { if (has(c,b)){ const t = tier(c,b).t; tiers[t] = (tiers[t]||0) + 1; } }));
+  $("#ptbar").hidden = !pt;
+  $("#ptbar").innerHTML = pt ? (cls.length ? `<div class="tiercount">${["act","consider","monitor","counsel","na"].filter(t => tiers[t]).map(t => `<span class="tp ${t}">${tiers[t]} ${TIER[t]}</span>`).join("")}</div>
+      <span class="expo-pill lv${E.lvl}">Exposure ${ELV[E.lvl]}</span><button class="btn" id="mnote" title="Plain-text summary to paste into the EHR progress note">Copy for EHR note</button><button class="btn" id="mhand">Patient handout</button>`
+      : `<span class="hint">Read a note, load the demo patient, or add medications on the left.</span>`) : "";
+  if (pt && cls.length){ $("#mnote").onclick = () => copy(noteText(), "Copied. Paste into the EHR note"); $("#mhand").onclick = handoutP; }
+  // interactions
+  const cb = pt ? combosP() : [];
+  $("#alertsbox").innerHTML = cb.length ? `<div class="alerts" style="padding:0">${cb.map(x => `<div class="alert">${x}</div>`).join("")}</div>` : "";
+  // legend
+  $("#mlegend").innerHTML = pt
+    ? `<span><b>Cell = what to do for this patient</b></span>${["act","consider","monitor","counsel","na"].map(t => `<span data-tip="${esc(TIERD[t])}" style="cursor:help"><i class="tp ${t} sw2"></i>${TIER[t]}</span>`).join("")}<span><i class="mk l2" style="margin-right:5px"></i>small square = evidence strength</span>`
+    : `<span><b>Cell colour = evidence strength</b></span>${[3,2,1,0,"N"].map(k => `<span data-tip="${esc(LVD[k])}" style="cursor:help"><i class="hc l${k}" style="display:inline-block;width:18px;min-height:12px;height:12px;padding:0;vertical-align:-2px;margin-right:6px"></i>${LV[k]}</span>`).join("")}<span class="hint" style="font-size:12px">Click any cell for what to change and why.</span>`;
+  // table
+  const colStats = v => { const who = {}, cnt = {3:0,2:0,1:0,N:0,0:0}; let n = 0; ORDER.forEach(c => { if (!has(c,v.b) || !(!v.ph || phase(c,v.b) === v.ph)) return; n++; cnt[grade(c,v.b).lv]++; rowOf[c].specialties.forEach(s => who[s] = (who[s]||0) + 1); });
+    const ks = [3,2,1,"N",0].filter(k => cnt[k]); return {n, who, ks, cnt}; };
+  let h = `<thead><tr class="grow"><th></th>${MCOLS.map(v => v.grp ? (v.ph === "unwell" ? `<th colspan="2" class="grp2">Substitute or hold</th>` : "") : `<th></th>`).join("")}</tr><tr><th class="mcn">Drug class</th>`;
+  MCOLS.forEach((v,i) => { const st = colStats(v), mx = Math.max(1, ...SIX.map(s => st.who[s] || 0));
+    h += `<th class="${v.narrow ? "narrow" : ""}"><span class="mh" data-tip="${esc(MDESC[v.n])} ${st.n} classes: ${st.ks.map(k => `${st.cnt[k]} ${LV[k].toLowerCase()}`).join(", ")}.">${v.n}</span>
+      <div class="sb colsb">${st.ks.map(k => `<i class="l${k}" style="flex:${st.cnt[k]}"></i>`).join("")}</div>
+      ${pt ? "" : `<div class="rx2" data-tip="Prescribers most involved: number of drug classes in this column that each specialty prescribes. ${SIX.map(s => `${s} ${st.who[s] || 0}`).join(", ")}.">${SIX.filter(s => st.who[s]).sort((a,b) => st.who[b] - st.who[a]).slice(0,3).map(s => `<span class="${S.spec === s ? "on" : ""}">${s} <b>${st.who[s]}</b></span>`).join("")}</div>`}</th>`; });
+  h += `</tr></thead><tbody>`;
+  const groups = pt ? [{t:"This patient's medicines", cls}] : GROUPS.map(g => ({t:g.t, cls:g.cls.filter(c => rowOf[c])}));
+  groups.forEach(g => { if (!g.cls.length) return; h += `<tr class="gh"><th colspan="${MCOLS.length + 1}">${esc(g.t)}</th></tr>`;
+    g.cls.forEach(c => { const lz = L(c), ok = pt || !S.spec || rowOf[c].specialties.includes(S.spec), gap = ["missed","overwarned"].includes(lz.pattern);
+      h += `<tr class="r${ok ? "" : " dim"}"><td class="cn"><button data-cls="${esc(c)}"><b>${esc(rn(c))}</b>${pt ? `<small>${esc(P.meds.filter(m => m.cls === c).map(m => m.name).join(", "))}</small>` : ""}</button>${gap ? `<span class="gapb ${lz.pattern}" data-tip="${esc(PATD[lz.pattern]?.title || "")}. ${esc(lz.finding || "")}">${lz.pattern === "missed" ? "Under-warned" : "Over-warned"}</span>` : ""}</td>`;
+      MCOLS.forEach(v => { const on = has(c,v.b) && (!v.ph || phase(c,v.b) === v.ph);
+        if (!on){ h += `<td class="c${v.narrow ? " narrow" : ""}"><span class="hc none" aria-hidden="true">·</span></td>`; return; }
+        const id = c+"|"+v.b, g2 = grade(c,v.b), sel = S.sel === id;
+        if (pt){ const t = tier(c,v.b).t; h += `<td class="c${v.narrow ? " narrow" : ""}"><button class="tc ${t}${sel ? " sel" : ""}" data-mcell="${esc(id)}"><span class="tl">${TIER[t]}</span><span class="ta">${esc(SHORT[id] || v.n)}</span><i class="mk l${g2.lv}"></i></button></td>`; }
+        else { const live = ok && (S.min === 0 || (typeof g2.lv === "number" && g2.lv >= S.min)); h += `<td class="c${v.narrow ? " narrow" : ""}"><button class="hc l${g2.lv}${sel ? " on" : ""}" data-mcell="${esc(id)}" ${live ? "" : `style="opacity:.22"`}>${esc(SHORT[id] || v.n)}</button></td>`; } });
+      h += `</tr>`; }); });
+  if (pt && !cls.length) h += `<tr><td colspan="${MCOLS.length + 1}"><div class="empty"><b>No medications yet</b>The map narrows to this patient's medicines and shows what to do for each.</div></td></tr>`;
+  $("#em").innerHTML = h + `</tbody>`;
+  // exposure-reduction row
+  const xs = pt && cls.length ? expoSteps() : [];
+  $("#expo").innerHTML = xs.length ? `<div class="pane"><div class="ph"><h2><b>Reduce heat exposure</b> · non-drug steps for this patient</h2></div><div class="xs">${xs.map(([k,t,src]) => `<div class="x"><b>${k}</b><p>${esc(t)}</p><small>${esc(src)}</small></div>`).join("")}</div></div>` : "";
+  // filter handlers
+  $$("#mapfilters [data-spec]").forEach(x => x.onclick = () => { S.spec = x.dataset.spec; renderMap(); });
+  $$("#mapfilters [data-min]").forEach(x => x.onclick = () => { S.min = +x.dataset.min; renderMap(); });
+  if (pt && !S.sel && cls.length){ const first = cls.flatMap(c => B.filter(b => has(c,b)).map(b => [c,b])).find(([c,b]) => tier(c,b).t === "act"); if (first){ S.sel = first.join("|"); $$("#em [data-mcell]").forEach(x => x.classList.toggle("sel", x.dataset.mcell === S.sel)); } }
+  renderMDrawer(); }
+const TIERD = {act:"Do this now: evidence and harm justify acting at this patient's exposure.", consider:"Low evidence but serious harm for an exposed patient: discuss and decide. Don't change doses reflexively.", monitor:"Keep watching. Evidence or exposure doesn't justify a change yet.", counsel:"Give the patient the rule or advice; no change needed now.", na:"Not applicable to this patient's current drug."};
+$$("#lens button").forEach(x => x.onclick = () => { S.lens = x.dataset.lens; S.sel = null; render(); });
+$("#em").addEventListener("click", e => { const c = e.target.closest("[data-mcell]"), r = e.target.closest("[data-cls]");
+  if (c){ S.sel = c.dataset.mcell; } else if (r){ S.sel = "cls:" + r.dataset.cls; } else return;
+  tip.classList.remove("show"); renderMap(); if (innerWidth < 1180) $("#mdrawer").scrollIntoView({behavior:"smooth", block:"start"}); });
+
+function renderMDrawer(){ const dr = $("#mdrawer"), pt = S.lens === "pt";
+  if (!S.sel){ dr.innerHTML = pt ? `<div class="ph"><h2>Details</h2></div><div class="empty"><b>Pick a cell</b>See why it has that tier, the steps, who does them, and the studies.</div>`
+    : `<div class="ph"><h2>How to read the map</h2></div><div class="pb guide"><p><b>Rows</b> are drug classes; <b>columns</b> are the four actions from the brief (Substitute or hold is split into sick-day hold and switch).</p><p><b>Colour</b> is how strong the heat evidence is, not how dangerous the drug is.</p><p><b>Under the headers:</b> how many classes each action covers, its evidence mix, and which of the six prescriber specialties are involved.</p><p><b>Badges</b> flag classes where guidance is out of step with the evidence.</p><p>Switch to <b>For a patient</b> to apply the map to one person.</p></div>`; return; }
+  if (S.sel.startsWith("cls:")){ const c = S.sel.slice(4), lz = L(c);
+    dr.innerHTML = `<div class="ph"><h2>${esc(rn(c))}</h2><button class="btn" data-gap="${esc(c)}">Guidance gaps →</button></div>
+      <div class="dh"><small>${esc(rowOf[c].examples)}</small><p style="font-weight:400">${esc(WHY[c] || "")}</p></div>
+      <div class="pb"><h3>Actions</h3>${B.filter(b => has(c,b)).map(b => `<p class="ra"><button class="lnk" data-go="${esc(c+"|"+b)}">${bn(c,b)}: ${esc(SHORT[c+"|"+b] || "")}</button>${grc(grade(c,b).lv)}</p>`).join("")}</div>
+      <div class="pb"><h3>Worst measured harm</h3><p class="hint" style="color:var(--ink)">${HL[(HARM[c]||[1])[0]]} · ${esc((HARM[c]||[0,""])[1])}</p></div>
+      <div class="pb"><h3>Prescribers</h3><div class="sp-tags">${rowOf[c].specialties.map(s => `<span>${esc(s)}</span>`).join("")}</div></div>
+      ${lz.finding ? `<div class="pb"><h3>Research vs guidance</h3><p style="font:400 12.5px/1.45 var(--sans)">${lz.pattern ? `<span class="tag ${lz.pattern}">${PAT[lz.pattern]}</span> ` : ""}${esc(lz.finding)}</p></div>` : ""}
+      <details class="pb dd"><summary>What the ${SRC.length} guidelines say</summary>${guideTable(c)}</details><details class="pb dd"><summary>What FDA labels say</summary>${labelList(c)}</details>`; }
+  else { const [c,b] = S.sel.split("|"), x = cellOf(c,b), T = pt ? tier(c,b) : null;
+    dr.innerHTML = `<div class="ph"><h2>${esc(rn(c))} · ${bn(c,b)}</h2><button class="btn" data-gap="${esc(c)}">Guidance gaps →</button></div>
+      ${T ? `<div class="why tier-${T.t}"><span class="tp ${T.t}">${TIER[T.t]}</span><ul>${T.why.map(w => `<li>${esc(w)}</li>`).join("")}</ul></div>` : ""}
+      <div class="dh"><small>${PH_TXT[phase(c,b)]}</small><h3>${esc(SHORT[S.sel] || bn(c,b))}</h3><p>${esc(x.action)}</p>${pt && COUNSEL[c] ? `<p class="hint" style="margin-top:8px"><b>Tell the patient:</b> ${esc(COUNSEL[c])}</p>` : ""}</div>
+      ${cellEvidence(c,b)}
+      <div class="pb"><h3>Prescribers</h3><div class="sp-tags">${rowOf[c].specialties.map(s => `<span>${esc(s)}</span>`).join("")}</div></div>
+      <details class="pb dd"><summary>What the ${SRC.length} guidelines say · ${gN(c)} name it</summary>${guideTable(c)}</details><details class="pb dd"><summary>What FDA labels say</summary>${labelList(c)}</details>`; }
+  dr.querySelectorAll("[data-gap]").forEach(x => x.onclick = () => { S.g.sel = x.dataset.gap; setTab("gaps"); });
+  dr.querySelectorAll("[data-go]").forEach(x => x.onclick = () => { S.sel = x.dataset.go; renderMap(); }); }
+
+function noteText(){ const cls = ptCls(), E = expo(), d = new Date().toISOString().slice(0,10), L1 = [`HEAT-WAVE MEDICATION REVIEW (${d})`];
+  L1.push(`Medications: ${P.meds.map(m => m.name).join("; ")}`);
+  L1.push(`Age: ${P.age ?? "not recorded"}. Conditions: ${P.cond.map(k => COND[k]).join(", ") || "none recorded"}.`);
+  L1.push(`Environment: ${ENVQ.map(([k,q]) => `${q.replace("?","")}: ${P.env[k] === "?" ? "unknown (ask)" : P.env[k]}`).join("; ")}.`);
+  L1.push(`Geography: ${P.zip ? `ZIP ${P.zip}${hvi() ? `, NYC heat vulnerability ${hvi()}/5` : ""}` : "not recorded"}${P.adv ? "; heat advisory in effect" : ""}.`);
+  L1.push(`Heat exposure: ${ELV[E.lvl]}${E.pts.length ? ` (${E.pts.map(p => p[1]).join(", ")})` : ""}.`);
+  const cb = combosP(); if (cb.length) L1.push("", "Interactions:", ...cb.map(x => "- " + x.replace(/<[^>]+>/g, "")));
+  ["act","consider","monitor","counsel"].forEach(t => { const its = []; cls.forEach(c => B.forEach(b => { if (has(c,b) && tier(c,b).t === t) its.push(`- ${rn(c)}, ${bn(c,b).toLowerCase()}: ${cellOf(c,b).action} [evidence ${LV[grade(c,b).lv].toLowerCase()}; harm ${HL[(HARM[c]||[1])[0]].toLowerCase()}]`); }));
+    if (its.length) L1.push("", TIER[t].toUpperCase() + ":", ...its); });
+  const xs = expoSteps(); if (xs.length) L1.push("", "REDUCE HEAT EXPOSURE:", ...xs.map(([k,t]) => `- ${k}: ${t}`));
+  L1.push("", "Counselling given:", ...cls.filter(c => COUNSEL[c]).map(c => `- ${rn(c)}: ${COUNSEL[c]}`), "- General: fluids, cooling, heat-illness warning signs, check-in contact, don't stop medicines without advice.");
+  L1.push("", "Decision support from the System Public Graph heat-medication evidence map; tiers combine evidence, measured harm and this patient's exposure. Not a substitute for clinical judgement.");
+  return L1.join("\n"); }
+function handoutP(){ const cls = ptCls(), MO = [["before","Before summer"],["alert","During a heat wave"],["unwell","If you are sick or can't drink"]], xs = expoSteps();
+  $("#print").innerHTML = `<h1>Your medicines and hot weather</h1><p>Talk to your doctor or pharmacist before changing any medicine. Never stop one suddenly.</p>
+    ${cls.map(c => `<h2>${esc(P.meds.filter(m => m.cls === c).map(m => m.name).join(", "))}</h2><p class="why">${esc(WHY[c] || "")}</p>
+      ${MO.map(([k,t]) => { const it = B.filter(b => has(c,b) && phase(c,b) === k && tier(c,b).t !== "na"); return it.length ? `<h3>${t}</h3><ul>${it.map(b => `<li>${esc(PLAIN[c+"|"+b] || cellOf(c,b).action)}</li>`).join("")}</ul>` : ""; }).join("")}`).join("")}
+    ${xs.length ? `<h2>Staying cooler</h2><ul>${xs.map(([k,t]) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+    <h2>On every hot day</h2><ul>${COUNSEL_ALL.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  document.body.classList.add("printing"); window.print(); setTimeout(() => document.body.classList.remove("printing"), 400); }
+
+/* ================= POPULATION ================= */
+const LVD = {3:"≥2 heat-exposure studies found higher risk; at least one vetted.", 2:"One vetted heat-exposure study found higher risk, or lab heat raised drug exposure.", 1:"Indirect only: mechanism bridge, seasonal or class-wide study, or unvetted study.", 0:"No study in the graph; based on drug labels or pharmacology.", N:"Studied in heat with no clear difference. Not proof of safety."};
+const MIN = [[0,"Any evidence","Include every action, even those based only on drug labels or pharmacology."],
+  [1,"Very low or better", "At least indirect support. " + LVD[1]],
+  [2,"Low or better", "At least: " + LVD[2]],
+  [3,"Moderate only", LVD[3]]];
+const PATD = Object.fromEntries((LENS.patterns || []).map(p => [p.id, p]));
+const PATF = [["","All classes","No filter."], ...["missed","label_silent","overwarned","agree","storage"].filter(k => PATD[k]).map(k => [k, PAT[k], `${PATD[k].title}. ${PATD[k].blurb}`])];
+const BDESC = {"Dose adjustment":"Change the dose before or during heat, e.g. insulin, diuretics, antihypertensives.","Substitute or hold":"Pause on sick days, or switch to a heat-safer drug.","Closer monitoring":"Extra labs, glucose or symptom checks during heat.","Storage and stability":"Keep the product below its labelled temperature."};
+const PPH = {before:["Prepare","Before summer","Medication reviews, storage advice, and handing out sick-day rules in advance."], alert:["Activate","On a heat advisory","Triggered by the weather-service advisory: outreach within 24 h."], unwell:["Respond","When a patient is sick","Vomiting, diarrhoea or unable to drink: apply the sick-day rules."]};
+const ROLES = ["Prescriber","Pharmacist","Nurse / educator","Family / school"];
+function roleOf(c,b){ const w = rv(c,b)[1] || "";
+  if (/^pharmacist/i.test(w)) return "Pharmacist"; if (/^(diabetes educator|nurse)/i.test(w)) return "Nurse / educator"; if (/^(parents|carer)/i.test(w)) return "Family / school"; return "Prescriber"; }
+function cover(c){ const g = L(c).guidance || {}, act = SRC.filter(s => g[s.id]?.level === "action").map(s => s.short), named = SRC.filter(s => ["action","mention"].includes(g[s.id]?.level)).map(s => s.short);
+  return act.length ? {k:"act", l:"In guidance", t:`Class-specific action in ${act.join(", ")}`} : named.length ? {k:"named", l:"Named only", t:`Named by ${named.join(", ")}, with no specific action`} : {k:"none", l:"Not in guidance", t:"No guideline names this class: an evidence-led addition"}; }
+const popOk = c => involves(c, S.pop.spec) && (!S.pop.pat || L(c).pattern === S.pop.pat);
+const cellOk = (c,b) => { const g = grade(c,b); return g && (S.pop.min === 0 || (typeof g.lv === "number" && g.lv >= S.pop.min)); };
+const PRE = [
+  ["Strongest evidence", "Every action graded Low or Moderate.", () => ALL.filter(id => { const g = grade(...id.split("|")); return typeof g.lv === "number" && g.lv >= 2; })],
+  ["Under-warned", "All actions for classes where research shows harm but guidance misses it.", () => ALL.filter(id => L(id.split("|")[0]).pattern === "missed")],
+  ["Heat-advisory outreach", "Everything triggered by a heat advisory, except label-only actions.", () => ALL.filter(id => phase(...id.split("|")) === "alert" && grade(...id.split("|")).lv !== 0)],
+  ["Storage", "All storage actions.", () => ALL.filter(id => id.endsWith("|Storage and stability"))]];
+$("#presets").innerHTML = `<span class="lbl" style="align-self:center">Presets</span>` + PRE.map(([t,d],i) => `<button class="btn" data-pre="${i}" data-tip="${esc(d)}">${t}</button>`).join("");
+$("#presets").onclick = e => { const b = e.target.closest("[data-pre]"); if (b){ S.pop.picked = PRE[+b.dataset.pre][2](); renderPop(); } };
+$("#popreset").onclick = () => { S.pop = {spec:"", min:0, pat:"", picked:[]}; renderPop(); };
+function radios(host, items, cur, key){ $(host).innerHTML = items.map(([v,t,d,n]) => `<button aria-pressed="${v === cur}" data-v="${esc(v)}" data-tip="${esc(d || "")}">${esc(t)}${n !== undefined ? `<em>${n}</em>` : ""}</button>`).join("");
+  $(host).onclick = e => { const b = e.target.closest("[data-v]"); if (!b) return; S.pop[key] = key === "min" ? +b.dataset.v : b.dataset.v; renderPop(); }; }
+/* one tooltip handler for anything with data-tip, plus heatmap cells */
+function cellTip(id){ const [c,b] = id.split("|"), g = grade(c,b), cv = cover(c);
+  return `<b>${esc(rn(c))} · ${bn(c,b)}</b><br>${esc(cellOf(c,b).action)}<div class="m"><b>${LV[g.lv]}:</b> ${LVD[g.lv]}${g.risk.length ? `<br><span style="color:var(--heat-ink)">●</span> A heat study measured higher risk.` : ""}<br><b>Owner:</b> ${esc(roleOf(c,b))} · <b>When:</b> ${PPH[phase(c,b)][1].toLowerCase()}<br><b>Guidance:</b> ${esc(cv.t)}</div>`; }
+document.addEventListener("mouseover", e => { const t = e.target.closest("[data-tip],[data-cell]"); if (!t) return;
+  const html = t.dataset.cell ? cellTip(t.dataset.cell) : esc(t.dataset.tip); if (!html) return; tip.innerHTML = html; tip.classList.add("show"); tipMove(e); });
+document.addEventListener("mousemove", e => { if (tip.classList.contains("show") && e.target.closest("[data-tip],[data-cell]")) tipMove(e); });
+document.addEventListener("mouseout", e => { if (e.target.closest("[data-tip],[data-cell]") && !e.relatedTarget?.closest?.("[data-tip],[data-cell]")) tip.classList.remove("show"); });
+document.addEventListener("click", e => { const i = e.target.closest(".info"); if (!i && !e.target.closest(".tip")) tip.classList.remove("show"); if (i){ tip.innerHTML = esc(i.dataset.tip); tip.classList.add("show"); const r = i.getBoundingClientRect(); tip.style.left = Math.min(innerWidth - 310, r.left) + "px"; tip.style.top = r.bottom + 6 + "px"; } });
+
+function renderPop(){
+  radios("#fspec", [["","All prescribers","Show every class.", ORDER.length], ...SPEC.map(s => [s, s === "Pharmacy" ? "Pharmacists" : s, s === "Pharmacy" ? "Classes where a pharmacist carries out at least one action." : `Classes usually prescribed in ${s.toLowerCase()}.`, ORDER.filter(c => involves(c,s)).length])].filter(x => x[3]), S.pop.spec, "spec");
+  radios("#fmin", MIN, S.pop.min, "min");
+  radios("#fpat", PATF.map(([v,t,d]) => [v,t,d, v ? ORDER.filter(c => L(c).pattern === v).length : undefined]), S.pop.pat, "pat");
+  $("#legend2").innerHTML = `<span><b>Cell colour = how strong the evidence is</b></span>
+    ${[3,2,1,0,"N"].map(k => `<span data-tip="${esc(LVD[k])}" style="cursor:help"><i class="sw hc l${k}" style="display:inline-block;width:18px;min-height:12px;height:12px;padding:0;vertical-align:-2px"></i>${LV[k]}</span>`).join("")}
+    <span data-tip="At least one study measured higher risk in heat for this drug and action. Without it, the action rests on mechanism, labels or a null result." style="cursor:help"><span style="width:7px;height:7px;border-radius:50%;background:var(--heat);display:inline-block;margin-right:5px"></span>Heat study found higher risk</span>
+    <span><span style="width:14px;height:10px;border-radius:2px;outline:2px solid var(--heat);display:inline-block;margin-right:6px"></span>In your protocol</span>`;
+  const pk = new Set(S.pop.picked);
+  const colBar = v => { const cnt = {3:0,2:0,1:0,N:0,0:0}, who = {}; ORDER.filter(c => inCol(v,c) && popOk(c)).forEach(c => { cnt[grade(c,v.b).lv]++; rowOf[c].specialties.forEach(s => who[s] = (who[s]||0) + 1); });
+    const ks = [3,2,1,"N",0].filter(k => cnt[k]), tot = ks.reduce((a,k) => a + cnt[k], 0), top = Object.entries(who).sort((a,b) => b[1]-a[1]).slice(0,3).map(([s,n]) => `${s} ${n}`).join(", ");
+    return {html:`<div class="sb colsb">${ks.map(k => `<i class="l${k}" style="flex:${cnt[k]}"></i>`).join("")}</div><small class="colct">${tot} class${tot===1?"":"es"}</small>`, tip:`${tot} classes: ${ks.map(k => `${cnt[k]} ${LV[k].toLowerCase()}`).join(", ")}. Most involved: ${top}.`}; };
+  let h = `<thead><tr><th>Drug class</th>${VCOL.map((v,i) => { const cb = colBar(v); return `<th class="${v.narrow ? "narrow" : ""}"><button data-col="${i}" data-tip="${esc(v.d)} ${esc(cb.tip)} Click to select the column.">${v.n}</button>${cb.html}</th>`; }).join("")}<th class="gnh"><span data-tip="How many of the ${SRC.length} guidelines name this class (CDC, NYC, Arizona, UKHSA, Health Canada, ANSM France, WHO Europe)." style="cursor:help">Guidelines</span></th></tr></thead><tbody>`;
+  GROUPS.forEach(g => { const cl = g.cls.filter(c => rowOf[c]); h += `<tr class="gh"><th colspan="7">${esc(g.t)}</th></tr>`;
+    cl.forEach(c => { const ok = popOk(c), n = gN(c);
+      h += `<tr class="r${ok ? "" : " dim"}"><td class="cn"><button data-row="${esc(c)}" data-tip="Select every action for ${esc(rn(c))}."><b>${esc(rn(c))}</b><small>${esc(rowOf[c].examples)}</small></button></td>`;
+      VCOL.forEach(v => { const b = v.b; if (!inCol(v,c)){ h += `<td class="c${v.narrow ? " narrow" : ""}"><span class="hc none" aria-hidden="true">·</span></td>`; return; }
+        const g = grade(c,b), id = c+"|"+b, live = ok && cellOk(c,b);
+        h += `<td class="c"><button class="hc l${g.lv}${g.risk.length ? " risk" : ""}${pk.has(id) ? " on" : ""}" data-cell="${esc(id)}" ${live ? "" : `style="opacity:.25"`} aria-pressed="${pk.has(id)}" aria-label="${esc(rn(c))} ${v.n}: ${esc(SHORT[id])}. Evidence ${LV[g.lv]}.">${esc(SHORT[id] || v.n)}</button></td>`; });
+      h += `<td class="gn num"><span class="gbar"><i style="width:${n/SRC.length*100}%"></i></span>${n}/${SRC.length}</td></tr>`; }); });
+  $("#hm").innerHTML = h + `</tbody>`;
+  renderProto(); }
+$("#hm").onclick = e => { const pk = new Set(S.pop.picked), cell = e.target.closest("[data-cell]"), row = e.target.closest("[data-row]"), col = e.target.closest("[data-col]");
+  const live = id => { const [c,b] = id.split("|"); return popOk(c) && cellOk(c,b); };
+  const toggleSet = ids => { const all = ids.every(i => pk.has(i)); ids.forEach(i => all ? pk.delete(i) : pk.add(i)); };
+  if (cell) toggleSet([cell.dataset.cell]); else if (row) toggleSet(ALL.filter(i => i.startsWith(row.dataset.row + "|") && live(i))); else if (col){ const v = VCOL[+col.dataset.col]; toggleSet(ALL.filter(i => { const [c,b] = i.split("|"); return b === v.b && inCol(v,c) && live(i); })); } else return;
+  S.pop.picked = ALL.filter(i => pk.has(i)); tip.classList.remove("show"); renderPop(); };
+
+function protoData(){ const ids = S.pop.picked, cls = [...new Set(ids.map(i => i.split("|")[0]))], by = {};
+  ids.forEach(id => { const [c,b] = id.split("|"), ph = phase(c,b), r = roleOf(c,b); ((by[ph] ||= {})[r] ||= []).push(id); });
+  const mix = {3:0,2:0,1:0,N:0,0:0}; ids.forEach(id => mix[grade(...id.split("|")).lv]++);
+  const newC = cls.filter(c => cover(c).k === "none");
+  return {ids, cls, by, mix, newC}; }
+let protoInView = false; new IntersectionObserver(([e]) => { protoInView = e.isIntersecting; const b = $("#selbar"); if (b) b.hidden = protoInView || !S.pop.picked.length || S.tab !== "pop"; }, {rootMargin:"0px 0px -35% 0px"}).observe($("#proto"));
+function renderProto(){ const host = $("#proto"), p = protoData(), bar = $("#selbar");
+  bar.hidden = !p.ids.length || S.tab !== "pop" || protoInView;
+  if (p.ids.length) bar.innerHTML = `<span>${p.ids.length} action${p.ids.length===1?"":"s"} · ${p.cls.length} class${p.cls.length===1?"":"es"}</span><button class="a" id="sbgo">View protocol ↓</button><button class="b" id="sbclr">Clear</button>`;
+  if (!p.ids.length){ host.innerHTML = `<div class="ph"><h2><b>2 · Outreach protocol</b></h2></div><div class="empty"><b>Your protocol builds here</b>Click cells above, a class name to take its whole row, or a column header. Or start from a preset. The protocol sorts the actions into Prepare, Activate and Respond, and by who carries them out.</div>`; return; }
+  const ks = [3,2,1,"N",0].filter(k => p.mix[k]);
+  let h = `<div class="pr-h"><div><h2 class="lbl" style="font-size:11px;color:var(--muted)"><b style="color:var(--ink)">2 · Outreach protocol</b></h2>
+      <div class="kpis"><div class="kpi"><b>${p.cls.length}</b><span>drug classes to flag</span></div><div class="kpi"><b>${p.ids.length}</b><span>actions</span></div>
+      <div class="kpi" style="min-width:150px"><div class="sb" style="margin:6px 0 6px">${ks.map(k => `<i class="l${k}" style="flex:${p.mix[k]}" data-tip="${LV[k]}: ${p.mix[k]}"></i>`).join("")}</div><span>${ks.map(k => `${p.mix[k]} ${LV[k].toLowerCase()}`).join(" · ")}</span></div>
+      <div class="kpi"><b style="color:${p.newC.length ? "var(--heat-ink)" : "inherit"}">${p.newC.length}</b><span>classes no guideline covers</span></div></div></div>
+    <div style="display:flex;gap:6px"><button class="btn pri" id="pcopy">Copy protocol</button><button class="btn" id="pprint">Print</button><button class="btn" id="pclr">Clear</button></div></div>`;
+  h += `<div class="reg"><h3 class="lbl" style="margin-bottom:8px">Who to flag in the registry or EHR</h3><div class="regs">${p.cls.map(c => `<span class="rc">${esc(rn(c))}<small>${esc((EXTRA.drugs[c] || []).slice(0,6).join(", "))}</small></span>`).join("")}</div></div>`;
+  h += `<div class="steps">${["before","alert","unwell"].map((k,i) => { const roles = p.by[k] || {}, n = Object.values(roles).flat().length;
+    return `<div class="step${k === "alert" ? " hot" : ""}"><h4><span class="n">${i+1}</span>${PPH[k][0]} <small>· ${PPH[k][1]}</small></h4><p class="sub">${PPH[k][2]}</p>
+      ${n ? ROLES.filter(r => roles[r]).map(r => `<div class="role"><h5>${r}<span>${roles[r].length}</span></h5>${roles[r].map(id => { const [c,b] = id.split("|"), g = grade(c,b), cv = cover(c);
+        return `<div class="pi" data-cell="${esc(id)}">${mk(g.lv)}<span><b>${esc(rn(c))}</b> · ${esc(SHORT[id] || bn(c,b))}</span><span class="cv ${cv.k}">${cv.l}</span></div>`; }).join("")}</div>`).join("")
+        : `<p class="hint">Nothing selected for this step.</p>`}
+      ${k === "alert" ? `<div class="role"><h5>Care team</h5><div class="pi" style="grid-template-columns:1fr">Call or text every flagged patient within 24 h of the advisory, using the counselling script below${p.cls.includes("Opioids") ? "; confirm naloxone at home" : ""}${p.cls.some(c => c === "Insulin" || c === "Heat-labile emergency products") ? "; remind about cool storage" : ""}.</div></div>` : ""}
+      ${k === "unwell" && n ? `<div class="role"><h5>Care team</h5><div class="pi" style="grid-template-columns:1fr">Make the sick-day plan visible to clinic, pharmacy and ED; track restarts.</div></div>` : ""}</div>`; }).join("")}</div>`;
+  h += `<div class="cscript"><div class="cs-h"><h3 class="lbl">Counselling script <span style="text-transform:none;letter-spacing:0;font-weight:500">· use at the pre-summer review and in heat-advisory calls</span></h3><button class="btn" id="cscopy">Copy script</button></div>
+    <div class="cs-cols"><div><h5>Everyone</h5><ul>${COUNSEL_ALL.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div><h5>By drug class</h5><ul>${p.cls.filter(c => COUNSEL[c]).map(c => `<li><b>${esc(rn(c))}:</b> ${esc(COUNSEL[c])}</li>`).join("")}</ul></div></div></div>`;
+  h += `<div class="every"><h3 class="lbl">For every flagged patient <span style="text-transform:none;letter-spacing:0;font-weight:500">· general steps in CDC and NYC guidance</span></h3><ul>${(D.GUIDE?.general_actions || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul></div>`;
+  h += `<div class="pb key"><span><span class="cv act">In guidance</span> a guideline gives a class-specific action</span><span><span class="cv named">Named only</span> named, no specific action</span><span><span class="cv none">Not in guidance</span> evidence-led addition</span></div>`;
+  host.innerHTML = h;
+  $("#pcopy").onclick = () => copy(protoText(), "Protocol copied");
+  $("#cscopy").onclick = () => copy(["HEAT COUNSELLING SCRIPT", "", "Everyone:", ...COUNSEL_ALL.map(x => "- " + x), "", "By drug class:", ...p.cls.filter(c => COUNSEL[c]).map(c => `- ${rn(c)}: ${COUNSEL[c]}`)].join("\n"), "Counselling script copied"); $("#pclr").onclick = () => { S.pop.picked = []; renderPop(); };
+  $("#pprint").onclick = () => { $("#print").innerHTML = `<h1>Heat-health medication outreach protocol</h1><pre style="white-space:pre-wrap;font:11pt/1.5 var(--sans)">${esc(protoText())}</pre>`; document.body.classList.add("printing"); window.print(); setTimeout(() => document.body.classList.remove("printing"), 400); };
+  const go = $("#sbgo"); if (go) go.onclick = () => host.scrollIntoView({behavior:"smooth", block:"start"}); const sc = $("#sbclr"); if (sc) sc.onclick = () => { S.pop.picked = []; renderPop(); }; }
+function protoText(){ const p = protoData(), out = ["HEAT-HEALTH MEDICATION OUTREACH PROTOCOL", "", "Flag in registry / EHR:"];
+  p.cls.forEach(c => out.push(`- ${rn(c)} (${(EXTRA.drugs[c] || []).join(", ")})`));
+  ["before","alert","unwell"].forEach((k,i) => { const roles = p.by[k] || {}; if (!Object.keys(roles).length && k !== "alert") return;
+    out.push("", `${i+1}. ${PPH[k][0].toUpperCase()}: ${PPH[k][1]}`);
+    ROLES.filter(r => roles[r]).forEach(r => { out.push(`  ${r}:`); roles[r].forEach(id => { const [c,b] = id.split("|"); out.push(`  - ${rn(c)}: ${cellOf(c,b).action} [evidence: ${LV[grade(c,b).lv].toLowerCase()}; ${cover(c).l.toLowerCase()}]`); }); });
+    if (k === "alert") out.push("  Care team:", `  - Call or text every flagged patient within 24 h of the advisory, using the counselling script below${p.cls.includes("Opioids") ? "; confirm naloxone at home" : ""}.`); });
+  out.push("", "COUNSELLING SCRIPT (pre-summer review and advisory calls)", "  Everyone:", ...COUNSEL_ALL.map(x => "  - " + x), "  By drug class:", ...p.cls.filter(c => COUNSEL[c]).map(c => `  - ${rn(c)}: ${COUNSEL[c]}`));
+  out.push("", "For every flagged patient (CDC/NYC general steps):", ...(D.GUIDE?.general_actions || []).map(a => "- " + a), "", "Source: System Public Graph heat-medication evidence map; guidance coded from CDC, NYC, Arizona, UKHSA, Health Canada, ANSM, WHO Europe.");
+  return out.join("\n"); }
+
+/* ================= EVIDENCE ================= */
+const FOREST = [
+  {c:"Antipsychotics", o:"Mild heat injury, US Army", r:3.25, lo:1.33, hi:7.9, v:false, p:"29020197", k:"HR", out:"illness", go:"Antipsychotics"},
+  {c:"Antihypertensives", o:"Death after heatstroke (class-wide)", r:2.17, lo:1.17, hi:4.05, v:true, p:"17698677", k:"HR", out:"death", go:"Diuretics"},
+  {c:"Antipsychotics", o:"Death, 2003 France heat wave, 70+", r:2.09, lo:1.89, hi:2.35, v:true, p:"20104062", k:"OR", out:"death", go:"Antipsychotics"},
+  {c:"Antidepressants", o:"Death, 2003 France heat wave, 70+", r:1.71, lo:1.57, hi:1.86, v:true, p:"20104062", k:"OR", out:"death", go:"Antidepressants"},
+  {c:"Insulin", o:"Serious hypoglycaemia, hottest category, 65+", r:1.38, lo:1.28, hi:1.48, v:true, p:"38060348", k:"OR", out:"glucose", go:"Insulin"},
+  {c:"Opioids", o:"Fatal overdose, hotter week", r:1.3, lo:1.1, hi:1.5, v:true, p:"31205291", k:"OR", out:"overdose", go:"Opioids"},
+  {c:"Anticholinergics", o:"In-hospital death, heat waves (p = 0.31)", r:1.21, lo:null, hi:null, v:false, p:"27160370", k:"OR", out:"death", go:"Anticholinergics", nul:true},
+  {c:"Amphetamines", o:"Overdose per temperature step", r:1.15, lo:1.085, hi:1.218, v:false, p:"37897873", k:"OR", out:"overdose", go:"Stimulants"},
+  {c:"Opioids", o:"Death per +10 °C, British Columbia", r:1.15, lo:0.99, hi:1.33, v:true, p:"37369523", k:"OR", out:"overdose", go:"Opioids"},
+  {c:"Opioids", o:"Overdose per temperature step", r:1.079, lo:1.054, hi:1.106, v:true, p:"37897873", k:"OR", out:"overdose", go:"Opioids"},
+  {c:"Diuretic + ACEi/ARB + NSAID", o:"AKI during heat waves", r:1.02, lo:0.21, hi:2.97, v:true, p:"29116624", k:"OR", out:"kidney", go:"NSAIDs"},
+  {c:"Benzodiazepines", o:"Death, 2003 France heat wave, 70+", r:0.85, lo:0.79, hi:0.91, v:false, p:"20104062", k:"OR", out:"death", go:"Benzodiazepines / sedatives"}];
+FOREST.forEach((f,i) => { f.i = i; f.eff = f.nul || f.lo === null ? "null" : f.lo > 1 ? "risk" : f.hi < 1 ? "lower" : "null"; });
+const OUTS = [["all","All outcomes"],["death","Death"],["illness","Heat illness"],["glucose","Hypoglycaemia"],["overdose","Overdose"],["kidney","Kidney"]];
+const EVSUB = [["studies","Heat studies"],["storage","Storage limits"],["wear","Wearables"]];
+function renderEv(){
+  $("#evsub").innerHTML = EVSUB.map(([k,t]) => `<button class="chipb" data-sub="${k}" aria-pressed="${S.ev.sub === k}">${t}</button>`).join("") + (S.ev.sub === "studies" ? `<span style="width:1px;background:var(--rule);margin:0 6px"></span>` + OUTS.map(([k,t]) => `<button class="chipb" data-out="${k}" aria-pressed="${S.ev.out === k}">${t}</button>`).join("") : "");
+  if (S.ev.sub === "studies"){ $("#evbody").innerHTML = `<div class="chart"><div class="key" style="margin-bottom:8px"><span><svg width="11" height="11"><circle cx="5.5" cy="5.5" r="4.5" fill="var(--heat)"/></svg>Higher risk</span><span><svg width="11" height="11"><circle cx="5.5" cy="5.5" r="4" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.5"/></svg>No clear difference</span><span><svg width="11" height="11"><circle cx="5.5" cy="5.5" r="4.5" fill="var(--s2)"/></svg>Lower risk</span><span>† unvetted</span></div><div id="forest"></div></div><p class="src">Ratios with 95% CI, log scale. Exposures differ (heat wave, per-step, hottest category); compare direction, not size. <b>Not plotted:</b> lithium, two studies, no temperature–level association (r = −0.008; p = 0.08).</p>`; drawForest(); }
+  else if (S.ev.sub === "storage"){ $("#evbody").innerHTML = `<div class="chart"><div id="thermo"></div></div><p class="src">FDA label limits (DailyMed). NWS NYC heat advisory from heat index 95 °F (35 °C). Heat index ≠ product temperature; bags and cars run hotter.</p>`; drawThermo(); }
+  else { $("#evbody").innerHTML = `<div class="chart"><div id="funnel"></div></div><div class="wc">${[["Beta blockers","Blunt HR; HR-based heat-strain alerts may under-read.","Pharmacology"],["Anticholinergics, topiramate","Low sweating: skin/core temp may be the better signal.","Untested"],["Insulin + CGM","Tighten low alerts on advisory days (OR 1.38 for lows).","No trial"],["Diuretics in HF","Daily weight as a dehydration trigger for dose review.","Not studied for heat"]].map(([a,b,c]) => `<div><b>${a}</b><p>${b}</p><em>${c}</em></div>`).join("")}</div><p class="src" style="padding-top:12px">PubMed search hits, Nov. 14, 2026; not screened.</p>`; drawFunnel(); }
+  renderEvSide(); }
+$("#evsub").onclick = e => { const s = e.target.closest("[data-sub]"), o = e.target.closest("[data-out]"); if (s){ S.ev.sub = s.dataset.sub; renderEv(); } else if (o){ S.ev.out = o.dataset.out; renderEv(); } };
+function renderEvSide(){ const host = $("#evside");
+  if (S.ev.sub !== "studies"){ host.innerHTML = S.ev.sub === "storage"
+    ? `<div class="ph"><h2>Storage actions</h2></div><div class="pb"><ul class="studies">${["Heat-labile emergency products","Insulin","Opioids"].map(c => `<li><i class="e bridge"></i><span><b>${esc(rn(c))}</b>: ${esc(cellOf(c,"Storage and stability").action)}</span></li>`).join("")}</ul></div><div class="pb"><h3>Guidance with storage advice</h3><p class="hint">${(LENS.scorecard||[]).filter(s => s.checks?.[7]).map(s => esc(s.short)).join(", ") || "—"}</p></div>`
+    : `<div class="ph"><h2>Where the evidence ends</h2></div><div class="pb"><p class="hint">${PUB.W3 ? `${PUB.W3.count} PubMed record${PUB.W3.count === 1 ? "" : "s"} combine wearables, heat and medication${PUB.W3.ids?.[0] ? ` (${pmA(PUB.W3.ids[0])})` : ""}.` : ""} No study personalises heat thresholds for people on these drugs.</p></div>`; return; }
+  const f = FOREST.find(x => x.i === S.ev.sel);
+  if (!f){ host.innerHTML = `<div class="ph"><h2>Study</h2></div><div class="empty">Select a row to see the study and the actions it supports.</div>`; return; }
+  const uses = ALL.filter(id => (cellOf(...id.split("|")).direct || []).some(s => s.pmid === f.p));
+  host.innerHTML = `<div class="ph"><h2>Study</h2>${pmA(f.p)}</div><div class="dh"><small>${esc(f.c)}</small><h3>${esc(f.o)}</h3><p class="num">${f.k} ${f.r}${f.lo !== null ? ` (95% CI ${f.lo}–${f.hi})` : ""}</p></div>
+    <div class="grade">${f.v ? mk(2) : mk(1)}<div><b>${f.v ? "Vetted" : "Unvetted"}</b><span>${f.v ? "In System's curated Dataverse release." : "API extraction only (~20% error rate)."}</span></div></div>
+    <div class="pb"><h3>Supports</h3>${uses.length ? `<div style="display:grid;gap:5px">${uses.map(id => { const [c,b] = id.split("|"); return `<button class="btn" style="text-align:left" data-gap="${esc(c)}">${esc(rn(c))} · ${bn(c,b)} ${grc(grade(c,b).lv)}</button>`; }).join("")}</div>` : `<p class="hint">Context only.</p>`}</div>`;
+  host.querySelectorAll("[data-gap]").forEach(b => b.onclick = () => { S.g.sel = b.dataset.gap; setTab("gaps"); }); }
+function drawForest(){
+  const host = $("#forest"), W = host.clientWidth || 800, mob = W < 560, rowsF = FOREST.filter(f => (S.ev.out === "all" || f.out === S.ev.out) && (!S.vet || f.v));
+  const rowH = mob ? 56 : 36, top = 30, H = top + Math.max(1, rowsF.length) * rowH + 28, Lw = mob ? 0 : Math.min(290, W * .36), Rw = mob ? 0 : 130;
+  const P0 = Lw + (mob ? 4 : 12), P1 = W - Rw - (mob ? 4 : 8), lmin = Math.log(0.2), lmax = Math.log(8), X = v => P0 + (Math.log(Math.min(8, Math.max(0.2, v))) - lmin) / (lmax - lmin) * (P1 - P0);
+  host.innerHTML = ""; const svg = el("svg", {viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"Forest plot of heat studies"}, host);
+  [0.25,0.5,1,2,4,8].forEach(t => { el("line", {x1:X(t), x2:X(t), y1:top-6, y2:H-22, stroke: t === 1 ? "var(--ink)" : "var(--rule)", "stroke-width": t === 1 ? 1.2 : 1}, svg); txt(svg, X(t), H-6, t < 1 ? (t === .25 ? "¼" : "½") : t + "×", {"text-anchor":"middle", "font-size":11, fill:"var(--muted)"}); });
+  txt(svg, X(1)-8, top-12, "← Lower", {"text-anchor":"end", "font-size":11.5, "font-weight":600, fill:"var(--muted)"}); txt(svg, X(1)+8, top-12, "Higher risk in heat →", {"font-size":11.5, "font-weight":700, fill:"var(--heat-ink)"});
+  if (!rowsF.length) txt(svg, W/2, top + 24, "No studies for this filter", {"text-anchor":"middle", "font-size":13, fill:"var(--muted)"});
+  const halo = mob ? {stroke:"var(--bg)", "stroke-width":5, "paint-order":"stroke"} : {};
+  rowsF.forEach((f,i) => { const y0 = top + i*rowH, yc = mob ? y0 + rowH - 13 : y0 + rowH/2, col = f.eff === "risk" ? "var(--heat)" : f.eff === "lower" ? "var(--s2)" : "var(--muted)";
+    const g = el("g", {class:"fr" + (S.ev.sel === f.i ? " sel" : ""), tabindex:0, role:"button", "aria-label":`${f.c}, ${f.o}, ${f.k} ${f.r}`}, svg);
+    el("rect", {class:"hit", x:0, y:y0+1, width:W, height:rowH-2, rx:3, fill:"transparent"}, g);
+    const lab = f.c + (f.v ? "" : " †"), val = `${f.k} ${f.r}${f.lo !== null ? ` (${f.lo}–${f.hi})` : ""}`;
+    if (mob){ txt(g, 4, y0+16, lab, {"font-size":13, "font-weight":700, fill:"var(--ink)", ...halo}); txt(g, 4, y0+30, f.o, {"font-size":11.5, fill:"var(--muted)", ...halo}); txt(g, W-4, y0+16, f.r + "", {"font-size":12, "text-anchor":"end", fill:"var(--ink2)", ...halo}); }
+    else { txt(g, 0, yc-2, lab, {"font-size":13, "font-weight":700, fill:"var(--ink)"}); txt(g, 0, yc+12, f.o, {"font-size":11.5, fill:"var(--muted)"}); txt(g, W, yc+4, val, {"font-size":12, "text-anchor":"end", fill: f.eff === "risk" ? "var(--ink)" : "var(--muted)", "font-weight": f.eff === "risk" ? 600 : 400, class:"num"}); }
+    if (f.lo !== null){ const ln = el("line", {class:"ci", x1:X(f.lo), x2:X(f.hi), y1:yc, y2:yc, stroke:col, "stroke-width":2, "stroke-linecap":"round", pathLength:1}, g); ln.style.transitionDelay = i*40 + "ms"; }
+    const pt = f.eff === "null" ? el("circle", {class:"pt", cx:X(f.r), cy:yc, r:5, fill:"var(--bg)", stroke:"var(--muted)", "stroke-width":1.7}, g) : el("circle", {class:"pt", cx:X(f.r), cy:yc, r:5.5, fill:col, stroke:"var(--bg)", "stroke-width":2}, g);
+    pt.style.transitionDelay = 200 + i*40 + "ms";
+    const go = () => { S.ev.sel = f.i; $$("#forest .fr").forEach(x => x.classList.remove("sel")); g.classList.add("sel"); renderEvSide(); };
+    g.onclick = go; g.onkeydown = e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } }; });
+  host.getBoundingClientRect(); setTimeout(() => host.classList.add("go"), 30); }
+const THERMO = [{n:"Epinephrine auto-injector", s:"20–25 °C; excursions to 30 °C", hi:25, ex:30},{n:"Nitroglycerin", s:"≤ 25 °C", hi:25},{n:"Albuterol inhaler", s:"20–25 °C; canister bursts > 49 °C", hi:25, fail:49},{n:"Insulin glargine pen, in use", s:"≤ 30 °C for 28 days", hi:30},{n:"Fentanyl patch", s:"≤ 30 °C; skin heat ↑ AUC ~30%", hi:30}];
+function drawThermo(){ const host = $("#thermo"), W = host.clientWidth || 800, mob = W < 560, Lw = mob ? 0 : 250, rowH = mob ? 50 : 40, top = 26, H = top + THERMO.length*rowH + 40, P0 = Lw + 6, P1 = W - 8, X = t => P0 + t/55*(P1-P0);
+  host.innerHTML = ""; const svg = el("svg", {viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"Label storage limits"}, host);
+  el("rect", {x:X(35), y:top-8, width:X(55)-X(35), height:H-top-32, fill:"var(--heat-soft)"}, svg);
+  [0,10,20,30,40,50].forEach(t => { el("line", {x1:X(t), x2:X(t), y1:top-8, y2:H-32, stroke:"var(--rule)"}, svg); txt(svg, X(t), H-18, t + " °C", {"text-anchor":"middle", "font-size":11, fill:"var(--muted)"}); txt(svg, X(t), H-5, Math.round(t*9/5+32) + " °F", {"text-anchor":"middle", "font-size":10, fill:"var(--faint)"}); });
+  el("line", {x1:X(35), x2:X(35), y1:top-12, y2:H-32, stroke:"var(--heat)", "stroke-width":1.5}, svg); txt(svg, X(35)+5, top-13, "NYC heat advisory 35 °C", {"font-size":11.5, "font-weight":700, fill:"var(--heat-ink)"});
+  THERMO.forEach((r,i) => { const y0 = top + i*rowH, yc = mob ? y0 + rowH - 12 : y0 + rowH/2 + 2;
+    txt(svg, 0, mob ? y0+14 : yc-2, r.n, {"font-size":13, "font-weight":700, fill:"var(--ink)"}); txt(svg, 0, mob ? y0+27 : yc+12, r.s, {"font-size":11, fill:"var(--muted)"});
+    el("rect", {x:X(0), y:yc-4, width:X(r.hi)-X(0), height:8, rx:2, fill:"var(--s2)"}, svg); if (r.ex) el("rect", {x:X(r.hi)+2, y:yc-4, width:X(r.ex)-X(r.hi)-2, height:8, rx:2, fill:"var(--s1)"}, svg);
+    txt(svg, X(r.ex || r.hi)+5, yc+4, (r.ex || r.hi) + " °C", {"font-size":11.5, "font-weight":700, fill:"var(--ink)"});
+    if (r.fail){ const fx = X(r.fail); el("path", {d:`M${fx-5} ${yc-5}L${fx+5} ${yc+5}M${fx+5} ${yc-5}L${fx-5} ${yc+5}`, stroke:"var(--heat)", "stroke-width":2.2}, svg); } }); }
+function drawFunnel(){ const host = $("#funnel"), W = host.clientWidth || 800, mob = W < 560;
+  const G = [{h:"Physiology", rows:[["W4","Beta blockers × thermoregulation"],["W2","Core temperature from heart rate"],["W5","Anticholinergics × sweating"]]},{h:"Wearables", rows:[["W1","Wearables × heat stress"],["W6","… older adults"],["W7","… alert / intervention trials"],["W3","… any medication"]]}];
+  const items = G.flatMap(g => [{hd:g.h}, ...g.rows.filter(([k]) => PUB[k]).map(([k,t]) => ({k, t, n:PUB[k].count}))]), mx = Math.max(1, ...items.filter(i => i.n).map(i => i.n));
+  const Lw = mob ? 0 : 260, rowH = mob ? 40 : 26, H = items.reduce((s,i) => s + (i.hd ? 30 : rowH), 0) + 4, P0 = Lw + 4, P1 = W - 46, X = n => (P1-P0)*n/mx;
+  host.innerHTML = ""; const svg = el("svg", {viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"PubMed records narrowing to medication-aware wearables"}, host); let y = 0;
+  items.forEach(it => { if (it.hd){ txt(svg, 0, y+20, it.hd.toUpperCase(), {"font-size":10.5, "font-weight":700, "letter-spacing":".06em", fill:"var(--muted)"}); el("line", {x1:0, x2:W, y1:y+26, y2:y+26, stroke:"var(--rule2)"}, svg); y += 30; return; }
+    const yc = mob ? y + rowH - 9 : y + rowH/2 + 1, last = it.k === "W3";
+    txt(svg, 0, mob ? y+14 : yc+4, it.t, {"font-size":12.5, "font-weight": last ? 700 : 500, fill: last ? "var(--heat-ink)" : "var(--ink)"});
+    el("rect", {x:P0, y:yc-4, width:Math.max(2, X(it.n)), height:8, rx:2, fill: last ? "var(--heat)" : "var(--s2)"}, svg); txt(svg, P0 + Math.max(2, X(it.n)) + 5, yc+4, it.n.toLocaleString(), {"font-size":12, "font-weight":700, fill:"var(--ink)"}); y += rowH; }); }
+
+/* ================= GAPS ================= */
+function renderGaps(){
+  const ac = LENS.alignment || [], sc = LENS.scorecard || [];
+  $("#score").innerHTML = `<thead><tr><th>Source</th>${ac.map((a,i) => `<th class="${i > 3 ? "hide-s" : ""}" title="${esc(a.why)}"><span>${esc(a.label.replace(/^Names /,"").replace(/^Treats insulin as a clinical risk, not only storage$/,"Insulin as clinical risk").replace(/^Warns that opioid overdose rises in heat$/,"Opioid overdose").replace(/^Gives storage advice for insulin, inhalers or auto-injectors$/,"Storage advice"))}</span></th>`).join("")}<th>Aligned</th><th class="hide-s">Class actions</th></tr></thead>
+    <tbody>${sc.map(s => `<tr><td><b>${esc(s.short)}</b><span class="yr">${esc(s.year)}</span></td>${(s.checks||[]).map((c,i) => `<td class="${c ? "y" : "n"} ${i > 3 ? "hide-s" : ""}">${c ? "✓" : "✕"}</td>`).join("")}<td class="tot num">${s.aligned}/${ac.length}</td><td class="num hide-s">${s.actions}/${s.of}</td></tr>`).join("")}</tbody>`;
+  $$("#gview button").forEach(b => b.setAttribute("aria-pressed", b.dataset.g === S.g.view));
+  if (S.g.view === "matrix"){
+    let h = `<div class="hm-wrap"><table class="gm"><thead><tr><th>Class</th><th>Evidence</th>${SRC.map(s => `<th title="${esc(s.name || s.short)}">${esc(s.short.replace(" France","").replace("Health Canada","Canada").replace("WHO Europe","WHO Eur."))}</th>`).join("")}<th>Named</th><th class="hide-s">Labels</th><th class="hide-s">Pattern</th></tr></thead><tbody>`;
+    ORDER.forEach(c => { const lz = L(c), n = gN(c), lv = classLv(c), ls = lz.label || [];
+      h += `<tr data-c="${esc(c)}" class="${S.g.sel === c ? "sel" : ""}"><td class="cn"><b>${esc(rn(c))}</b></td><td class="ev">${grc(lv)}</td>${SRC.map(s => { const x = (lz.guidance||{})[s.id] || {level:"absent"}; return `<td title="${esc(s.short)}: ${GLV[x.level]}${x.mech ? " · " + esc(x.mech) : ""}"><i class="gg ${x.level}"></i></td>`; }).join("")}
+        <td class="cnt num ${n <= 2 && typeof lv === "number" && lv >= 1 ? "lo" : ""}">${n}/${SRC.length}</td><td class="hide-s"><span class="pips">${ls.map(x => `<i class="${LST(x.status)}"></i>`).join("")}</span></td><td class="hide-s">${lz.pattern ? `<span class="tag ${lz.pattern}">${PAT[lz.pattern]}</span>` : ""}</td></tr>`; });
+    $("#gbody").innerHTML = h + `</tbody></table></div>`;
+  } else { $("#gbody").innerHTML = `<div class="chart"><div id="quad"></div></div>`; drawQuad(); }
+  renderGapSide(); }
+$("#gview").onclick = e => { const b = e.target.closest("[data-g]"); if (b){ S.g.view = b.dataset.g; renderGaps(); } };
+$("#gbody").onclick = e => { const r = e.target.closest("[data-c]"); if (r){ S.g.sel = r.dataset.c; renderGaps(); writeHash(); if (innerWidth < 1180) $("#gside").scrollIntoView({behavior:"smooth"}); } };
+function gapText(c){ const lz = L(c), g = lz.guidance || {}, named = SRC.filter(s => ["action","mention"].includes(g[s.id]?.level)).map(s => s.short), act = SRC.filter(s => g[s.id]?.level === "action").map(s => s.short), ls = lz.label || [];
+  const best = B.filter(b => has(c,b)).sort((a,b) => lvRank(grade(c,b).lv) - lvRank(grade(c,a).lv))[0];
+  return `${rn(c)}: ${PAT[lz.pattern] || ""}. Evidence: ${LV[classLv(c)]}. ${lz.finding || ""} Guidance: named by ${named.length}/${SRC.length} (${named.join(", ") || "none"}); class-specific actions: ${act.join(", ") || "none"}. FDA labels: ${ls.filter(x => LST(x.status) === "heat").length} of ${ls.length} warn about heat.${best ? ` Suggested addition: ${cellOf(c,best).action}` : ""}`; }
+function renderGapSide(){ const c = S.g.sel, lz = L(c), host = $("#gside"); if (!rowOf[c]){ host.innerHTML = ""; return; }
+  host.innerHTML = `<div class="ph"><h2>${esc(rn(c))}</h2><div style="display:flex;gap:6px"><button class="btn pri" id="gcopy">Copy gap summary</button></div></div>
+    <div class="cmp">
+      <div style="border-top:0"><h4>Pattern</h4><p>${lz.pattern ? `<span class="tag ${lz.pattern}">${PAT[lz.pattern]}</span> ` : ""}${esc(lz.finding || "")}</p></div>
+      <div><h4>Research</h4>${B.filter(b => has(c,b)).map(b => `<p style="display:flex;justify-content:space-between;gap:8px;padding:2px 0"><span>${bn(c,b)}: ${esc(SHORT[c+"|"+b] || "")}</span>${grc(grade(c,b).lv)}</p>`).join("")}</div>
+      <div><h4>Guidelines · ${gN(c)}/${SRC.length} name it</h4>${guideTable(c)}</div>
+      <div><h4>FDA labels</h4>${labelList(c)}</div>
+      <div><h4>Prescribers</h4><p>${esc(rowOf[c].specialties.join(", "))}</p></div>
+    </div>`;
+  $("#gcopy").onclick = () => copy(gapText(c), "Gap summary copied"); }
+const LSC = {heat:1, heat_patient:.75, hyperthermia:.4, dehydration:.4, handling:.3, silent:0};
+function qx(c){ const r = L(c).research || {}; if (r.tier === "gap") return 0; if (r.signal === "null") return 1; if (r.tier === "bridged") return 2; return classLv(c) === 3 ? 4 : 3; }
+function qy(c){ const ls = L(c).label || []; return gN(c) / Math.max(1, SRC.length) * 2 + (ls.length ? ls.reduce((s,x) => s + (LSC[x.status]||0), 0) / ls.length * 2 : 0); }
+const QN = {"SGLT2 inhibitors":"SGLT2i","Heat-labile emergency products":"Epi, inhalers, GTN","Benzodiazepines / sedatives":"Benzodiazepines","Topiramate / zonisamide":"Topiramate","Metformin and sulfonylureas":"Metformin, SUs","Calcium channel blockers":"CCBs","ACE inhibitors / ARBs":"ACEi / ARBs"};
+function drawQuad(){ const host = $("#quad"), W = host.clientWidth || 800; if (W < 520){ host.innerHTML = `<p class="hint">Chart needs a wider screen; use Matrix.</p>`; return; }
+  const H = 420, m = {l:50, r:8, t:12, b:54}, pw = W-m.l-m.r, ph = H-m.t-m.b, cw = pw/5, YM = 4, Y = v => m.t + ph - v/YM*ph;
+  host.innerHTML = ""; const svg = el("svg", {viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"Evidence vs warning strength"}, host);
+  el("rect", {x:m.l, y:Y(YM), width:cw*2, height:Y(2)-Y(YM), fill:"var(--soft)"}, svg); el("rect", {x:m.l+cw*3, y:Y(2), width:cw*2, height:Y(0)-Y(2), fill:"var(--heat-soft)", opacity:.8}, svg);
+  txt(svg, m.l+8, Y(YM)+16, "OVER-WARNED", {"font-size":11, "font-weight":800, "letter-spacing":".06em", fill:"var(--ink2)"}); txt(svg, W-m.r-8, Y(0)-8, "UNDER-WARNED", {"font-size":11, "font-weight":800, "letter-spacing":".06em", fill:"var(--heat-ink)", "text-anchor":"end"});
+  [0,1,2,3,4].forEach(v => { el("line", {x1:m.l, x2:W-m.r, y1:Y(v), y2:Y(v), stroke:"var(--rule)"}, svg); txt(svg, m.l-6, Y(v)+4, v, {"text-anchor":"end", "font-size":11, fill:"var(--muted)"}); });
+  txt(svg, 0, 0, "Warning strength (guidelines + labels) →", {"font-size":11.5, "font-weight":600, fill:"var(--muted)", transform:`translate(12 ${m.t+ph/2}) rotate(-90)`, "text-anchor":"middle"});
+  ["None","No clear effect","Mechanism only","Higher risk: 1 / indirect","Higher risk: ≥2"].forEach((t,i) => { if (i) el("line", {x1:m.l+cw*i, x2:m.l+cw*i, y1:m.t, y2:m.t+ph, stroke:"var(--rule)"}, svg); txt(svg, m.l+cw*i+6, H-m.b+18, t, {"font-size":11.5, "font-weight":600, fill:"var(--ink)"}); });
+  txt(svg, W-m.r, H-6, "Evidence of harm in heat →", {"font-size":11.5, "font-weight":600, fill:"var(--muted)", "text-anchor":"end"});
+  el("line", {x1:m.l, x2:W-m.r, y1:m.t+ph, y2:m.t+ph, stroke:"var(--ink)"}, svg);
+  for (let i = 0; i < 5; i++){ const pts = ORDER.filter(c => qx(c) === i).map(c => ({c, y:Y(qy(c)), p:L(c).pattern})).sort((a,b) => a.y - b.y);
+    pts.forEach((p,k) => { p.j = 0; for (let q = 0; q < k; q++) if (Math.abs(pts[q].y - p.y) < 9 && pts[q].j === p.j) p.j++; });
+    const mj = Math.max(0, ...pts.map(p => p.j)), x0 = m.l + cw*i + 14, lx = x0 + mj*12 + 12;
+    pts.forEach(p => p.ly = p.y); for (let k = 1; k < pts.length; k++) if (pts[k].ly - pts[k-1].ly < 14) pts[k].ly = pts[k-1].ly + 14;
+    const over = pts.length ? pts[pts.length-1].ly - (m.t+ph-6) : 0; if (over > 0) pts.forEach(p => p.ly -= over);
+    pts.forEach(p => { const g = el("g", {class:"qd", tabindex:0}, svg), dx = x0 + p.j*12, ow = p.p === "overwarned", sel = S.g.sel === p.c;
+      if (Math.abs(p.ly - p.y) > 2) el("path", {d:`M${dx+5} ${p.y}L${lx-3} ${p.ly-3}`, stroke:"var(--rule2)", fill:"none"}, g);
+      el("circle", {cx:dx, cy:p.y, r: ow ? 4.5 : 5.5, fill: p.p === "missed" ? "var(--heat)" : p.p === "agree" ? "var(--ink)" : ow ? "var(--bg)" : "var(--faint)", stroke: ow ? "var(--ink)" : "var(--bg)", "stroke-width": ow ? 1.7 : 2}, g);
+      txt(g, lx, p.ly, QN[p.c] || rn(p.c), {"font-size":12, "font-weight": sel ? 800 : (p.p === "missed" || ow) ? 700 : 500, fill: p.p === "missed" ? "var(--heat-ink)" : "var(--ink)", "dominant-baseline":"middle", "text-decoration": sel ? "underline" : "none"});
+      el("rect", {x:dx-8, y:Math.min(p.y,p.ly)-9, width:lx-dx+120, height:Math.abs(p.ly-p.y)+18, fill:"transparent"}, g);
+      tipOn(g, `<b>${esc(rn(p.c))}</b> · ${PAT[p.p]}<br>${gN(p.c)}/${SRC.length} guidelines name it`);
+      const go = () => { S.g.sel = p.c; renderGaps(); writeHash(); }; g.onclick = go; g.onkeydown = e => { if (e.key === "Enter") go(); }; }); } }
+
+/* ---------- about + keys ---------- */
+$("#openabout").onclick = () => $("#about").showModal(); $("#about").onclick = e => { if (e.target.id === "about") e.target.close(); };
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input,select,textarea") || e.metaKey || e.ctrlKey || e.altKey || document.querySelector("dialog[open]")) return;
+  const t = {"1":"map","2":"gaps","3":"pop","4":"ev"}[e.key]; if (t){ setTab(t); return; } if (e.key === "/"){ e.preventDefault(); S.lens = "pt"; setTab("map"); $("#note")?.focus(); } });
+$("#aboutb").innerHTML = `<h2>Heat + Meds: method</h2>
+  <p>Evidence map of ${rows.length} heat-sensitive drug classes across four actions (dose, hold/switch, monitor, storage), graded by how sure the heat-and-drug evidence is. Grades describe certainty, not danger.</p>
+  <h3>Grading</h3><table><tr><th>${mk(3)} Moderate</th><td>≥2 heat-exposure studies with higher risk, ≥1 vetted (in System's curated release).</td></tr><tr><th>${mk(2)} Low</th><td>One vetted heat-exposure study, or lab heat raising drug exposure.</td></tr><tr><th>${mk(1)} Very low</th><td>Seasonal proxy, class-wide, unvetted, or mechanism bridge (drug → harm and heat → same harm in separate studies).</td></tr><tr><th>${mk(0)} None</th><td>Label or pharmacology only.</td></tr><tr><th>${mk("N")} No clear effect</th><td>Measured in heat; CI includes null. Not proof of safety.</td></tr></table>
+  <h3>Data</h3><ul><li>${esc(DATA.source)}. System estimates ~20% of API extractions are wrong. Findings in System's curated Dataverse release count as vetted; others are marked “unvetted” and cap a grade at Very low unless a vetted study agrees.</li><li>Guidelines coded per class: ${SRC.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.short)}</a>`).join(", ")}. CALOR (Germany) list not yet published.</li><li>${esc(LENS.label_source)}.</li><li>Patient-factor prioritisation and health-system steps are rule-based proposals, not graph evidence.</li></ul>
+  <h3>Other versions</h3><p><a href="heat-med-story-specialist.html">Long-form report</a> · <a href="heat-med-story-public.html">Plain-language version</a> · <a href="heat-med-story-app.html">Guide v1</a></p>
+  <p style="margin-top:16px"><button class="btn" onclick="this.closest('dialog').close()">Close</button></p>`;
+
+/* ---------- boot ---------- */
+readHash();
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { if (S.tab === "ev") renderEv(); if (S.tab === "gaps" && S.g.view === "chart") drawQuad(); }, 150); });
+setTab(S.tab);
+addEventListener("hashchange", () => { readHash(); setTab(S.tab); });
+/* keep sticky offsets equal to the real toolbar height (it wraps on narrow screens) */
+new ResizeObserver(([e]) => document.documentElement.style.setProperty("--top", Math.round(e.target.getBoundingClientRect().height) + "px")).observe($(".top"));
+</script>
+</body>
+</html>

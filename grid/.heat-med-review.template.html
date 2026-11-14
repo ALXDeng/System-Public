@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heat Medication Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Search first, answer first, numbered citations. One visual signal: shade = strength of evidence, in a cool hue
+   so it reads as "how sure", not "how dangerous". The warm accent is kept only for "higher risk" study labels. */
+:root{
+  --bg:#ffffff; --ink:#14181d; --muted:#626b78; --faint:#8a929d; --line:#e6e8eb; --soft:#f4f5f7; --accent:#c4410f; --ev:#2c5d9a;
+  --l3:color-mix(in srgb,var(--ev) 58%,var(--bg));
+  --l2:color-mix(in srgb,var(--ev) 30%,var(--bg));
+  --l1:color-mix(in srgb,var(--ev) 13%,var(--bg));
+  --f:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121519;--ink:#e6e9ed;--muted:#9aa3ae;--faint:#737c87;--line:#2a3038;--soft:#1b1f24;--accent:#ff7a45;--ev:#6f9fe0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121519;--ink:#e6e9ed;--muted:#9aa3ae;--faint:#737c87;--line:#2a3038;--soft:#1b1f24;--accent:#ff7a45;--ev:#6f9fe0;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--f);font-variant-numeric:tabular-nums}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit;text-underline-offset:2px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)} .faint{color:var(--faint)} .sm{font-size:12.5px}
+.cap{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:500;font-size:13px}
+.btn:hover{border-color:var(--muted)}
+.link{border:0;background:none;padding:0;cursor:pointer;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:2px}
+.link:hover{color:var(--ink)}
+.tag{display:inline-block;font-size:11.5px;border-radius:4px;padding:0 6px;line-height:1.8;background:var(--soft);color:var(--muted);white-space:nowrap}
+.cite{display:inline-block;min-width:16px;text-align:center;font-size:10.5px;font-weight:600;line-height:16px;border-radius:4px;background:var(--soft);color:var(--muted);margin-left:3px;vertical-align:1px;text-decoration:none}
+a.cite:hover{background:var(--line);color:var(--ink)}
+
+/* header */
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:20}
+.hd{display:flex;gap:6px 32px;align-items:center;flex-wrap:wrap;min-height:54px}
+.hd h1{font-size:15px}
+nav.tabs{display:flex;gap:22px;align-self:stretch}
+nav.tabs button{border:0;background:none;padding:0;font-weight:500;font-size:14px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* layout */
+.main{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:32px;align-items:start;padding-block:24px 48px}
+.view{min-width:0;display:grid;gap:22px;align-content:start}
+
+/* legend */
+.legend{display:flex;gap:4px 14px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.lvl{display:inline-block;width:11px;height:11px;border-radius:3px;flex:none;border:1px solid var(--line)}
+.lvl.l3{background:var(--l3);border-color:transparent}.lvl.l2{background:var(--l2);border-color:transparent}.lvl.l1{background:var(--l1);border-color:transparent}
+.lvl.lN{border:1.5px solid var(--ink);border-radius:50%}
+
+/* patient: search first */
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:6px 6px 6px 14px;max-width:640px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.search:focus-within{border-color:var(--muted)}
+.search input{flex:1;border:0;outline:0;background:none;min-width:0;padding:6px 0;font-size:15px}
+.search button{border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:7px 14px;font-weight:600;font-size:13px;cursor:pointer}
+.hero{display:grid;gap:14px;justify-items:center;align-content:start;text-align:center;padding:12vh 0 0;min-height:62vh}
+.hero h2{font-size:26px;letter-spacing:-.02em}
+.hero .search{width:100%}
+.hero .sugg{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;gap:6px;align-items:center;background:var(--soft);border-radius:999px;padding:3px 4px 3px 11px;font-size:13px}
+.chip small{color:var(--faint)}
+.chip button{border:0;background:none;border-radius:50%;width:20px;height:20px;cursor:pointer;line-height:1;color:var(--muted)}
+.msg{font-size:13px;color:var(--muted)}
+.ix{display:grid;gap:6px}
+.ix p{font-size:13.5px}
+.ix b{font-weight:600}
+.phase{display:grid}
+.phase>h3{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding-bottom:6px}
+.item{all:unset;box-sizing:border-box;display:grid;grid-template-columns:12px minmax(110px,190px) minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 8px;border-top:1px solid var(--line);cursor:pointer}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item:hover{background:var(--soft)}
+.item[aria-pressed="true"]{background:var(--soft)}
+.item:focus-visible{outline:2px solid var(--ink)}
+.item b{font-weight:600}
+.item .who{font-size:12.5px;color:var(--faint);white-space:nowrap}
+.foot{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px}
+.seg button{border:0;background:none;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--soft);color:var(--ink)}
+
+/* patient: swimlanes by role */
+.sl{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+.sl table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;table-layout:fixed}
+.sl col.l{width:122px}
+.sl thead th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding:0 8px 6px;border-bottom:1px solid var(--ink)}
+.sl tbody th{text-align:left;vertical-align:top;font-size:13px;font-weight:600;padding:12px 8px 12px 0;border-bottom:1px solid var(--line);line-height:1.3}
+.sl tbody th small{display:block;font-weight:400;color:var(--faint);font-size:11.5px;margin-top:2px}
+.sl td{vertical-align:top;padding:5px;border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.sl tr.ln-sys>*{border-top:1px dashed var(--muted)}
+.sl tr.ln-sys td{background:var(--soft)}
+.sl .none{display:block;padding:7px;color:var(--faint);font-size:12.5px}
+.li{all:unset;box-sizing:border-box;display:grid;grid-template-columns:11px minmax(0,1fr);gap:1px 7px;width:100%;padding:6px 7px;border-radius:5px;cursor:pointer;font-size:12.5px;line-height:1.35}
+.li .lvl{margin-top:3px}
+.li small{grid-column:2;color:var(--faint);font-size:11.5px}
+.li:hover,.li[aria-pressed="true"]{background:var(--soft)}
+.li[aria-pressed="true"]{box-shadow:inset 0 0 0 1px var(--ink)}
+.li:focus-visible{outline:2px solid var(--ink)}
+.sysi{padding:6px 7px;font-size:12.5px;line-height:1.35}
+.sysi+.sysi{border-top:1px solid var(--line)}
+
+/* grid */
+.ctrl{display:flex;gap:10px 20px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.ctrl select{border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--bg);font-size:13px}
+.tw{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+table.g{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;table-layout:fixed}
+.g col.c0{width:180px}
+.g thead th{text-align:left;vertical-align:bottom;padding:0 6px 8px;border-bottom:1px solid var(--ink);font-weight:600;font-size:13px}
+.g thead th small{display:block;font-weight:400;color:var(--faint);font-size:11.5px}
+.g tr.grp th{text-align:left;padding:14px 0 4px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.g tbody th[scope=row]{text-align:left;font-weight:500;font-size:13px;padding:0 8px 0 0;border-bottom:1px solid var(--line);vertical-align:middle;line-height:1.3}
+.g td{padding:3px;border-bottom:1px solid var(--line);vertical-align:middle}
+.g tr.dim>*{opacity:.25}
+.cell{all:unset;box-sizing:border-box;display:flex;gap:6px;align-items:center;width:100%;min-height:36px;padding:4px 9px;border-radius:5px;cursor:pointer;font-size:12.5px;line-height:1.3;border:1px solid var(--line)}
+.cell.l3{background:var(--l3);border-color:transparent}.cell.l2{background:var(--l2);border-color:transparent}.cell.l1{background:var(--l1);border-color:transparent}
+.cell .o{width:9px;height:9px;border:1.5px solid var(--ink);border-radius:50%;flex:none}
+.cell:hover{box-shadow:0 0 0 2px var(--muted)}
+.cell[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
+.cell:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.mine{color:var(--ink);font-size:10px;vertical-align:1px}
+
+/* evidence tab */
+.sec{display:grid;gap:10px}
+.sec>h3{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.find{margin:0;padding:0;list-style:none;counter-reset:f}
+.find li{counter-increment:f;display:flex;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line)}
+.find li::before{content:counter(f);font-size:12px;font-weight:600;color:var(--faint);width:14px;flex:none}
+.find li span{flex:1}
+.bars{display:grid;gap:8px;max-width:680px}
+.bar{display:grid;grid-template-columns:110px minmax(0,1fr) 24px;gap:12px;align-items:center;font-size:13px}
+.bar .t{display:flex;height:16px;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.bar .t i{display:block;height:100%}
+.bar .t i.l3{background:var(--l3)}.bar .t i.l2{background:var(--l2)}.bar .t i.l1{background:var(--l1)}
+.bar .t i.lN{background:repeating-linear-gradient(90deg,var(--bg) 0 3px,var(--line) 3px 4px)}
+.bar .n{color:var(--faint);text-align:right}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 28px}
+.cols b{font-size:13px}
+.cols ul{margin:6px 0 0;padding:0;list-style:none}
+.cols li button{all:unset;cursor:pointer;display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px}
+.cols li button:hover{text-decoration:underline}
+.cols li button:focus-visible{outline:2px solid var(--ink)}
+.dm{overflow-x:auto}
+.dm table{border-collapse:collapse;font-size:12px;min-width:620px}
+.dm th{font-weight:500;text-align:left;padding:4px 8px 4px 0;white-space:nowrap}
+.dm thead th{vertical-align:bottom;text-align:center;padding:0 4px 6px;font-weight:600;white-space:normal;width:72px;line-height:1.25}
+.dm thead th small{display:block;font-weight:400;color:var(--faint)}
+.dm td{text-align:center;padding:2px 4px;height:22px;border-top:1px solid var(--line)}
+.dm tbody th{border-top:1px solid var(--line)}
+.dot{display:inline-block;border-radius:50%;background:var(--ink);vertical-align:middle}
+.dot.h{background:none;border:1.5px solid var(--faint)}
+.todo{display:flex;gap:8px;flex-wrap:wrap}
+
+/* panel: answer-first */
+.panel{position:sticky;top:72px;max-height:calc(100vh - 88px);overflow-y:auto}
+.pclose{display:none}
+.pb{display:grid;gap:18px;padding:2px 2px 24px}
+.ph{display:grid;gap:6px}
+.ph .row{display:flex;gap:10px;justify-content:space-between;align-items:center}
+.ph h2{font-size:13px;font-weight:500;color:var(--muted)}
+.ans{font-size:18px;line-height:1.4;font-weight:600;letter-spacing:-.01em}
+dl.kv{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 10px;margin:0;font-size:13px}
+dl.kv dt{color:var(--faint)} dl.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.ev{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+.ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ev .top b{font-weight:600}
+.refs{margin:0;padding:0;list-style:none;display:grid}
+.refs li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:2px 6px;padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+.refs li>span:first-child{font-size:11px;font-weight:600;color:var(--faint);padding-top:2px}
+.refs .m{grid-column:2;font-size:12px;color:var(--faint)}
+.refs .m .up{color:var(--accent);font-weight:600}
+.counter{border-left:2px solid var(--ink);padding-left:10px;display:grid;gap:4px;font-size:13px}
+details{border-top:1px solid var(--line);padding-top:12px}
+details>summary{cursor:pointer;font-weight:500;font-size:13px;color:var(--muted)}
+details[open]>summary{margin-bottom:6px}
+.mech{display:grid;gap:4px;padding:8px 0;border-top:1px solid var(--line);font-size:12.5px}
+.mech:first-of-type{border-top:0}
+.mech .ex{display:grid;gap:6px;padding-left:10px;border-left:2px solid var(--line)}
+
+/* methods */
+.about{border-top:1px solid var(--line);padding-block:16px 40px;color:var(--muted);font-size:13px}
+.about summary{color:var(--muted)}
+.about .cols{margin-top:14px}
+.about ul{padding-left:18px;margin:6px 0 0;display:grid;gap:4px}
+.funnel{display:grid;gap:5px;margin-top:6px}
+.funnel div{display:grid;grid-template-columns:26px minmax(0,1fr);gap:8px;align-items:center}
+.funnel i{display:block;height:6px;background:var(--ink);border-radius:2px}
+
+@media (max-width:1099px){
+  .main{grid-template-columns:minmax(0,1fr)}
+  .panel{position:fixed;inset:0 0 0 auto;width:min(440px,100%);max-height:none;background:var(--bg);border-left:1px solid var(--line);z-index:50;display:none;padding:0 18px}
+  .panel.open{display:block}
+  .pclose{display:block;position:sticky;top:0;margin-left:auto;border:0;background:var(--bg);font-size:20px;width:44px;height:44px;cursor:pointer;color:var(--muted)}
+  .scrim.open{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:49}
+}
+@media (max-width:640px){
+  .item{grid-template-columns:12px minmax(0,1fr)}
+  .item .act,.item .who{grid-column:2}
+  .hd{padding-block:10px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <h1>Heat Medication Review</h1>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" data-v="patient">Patient</button>
+    <button role="tab" data-v="all">Medications</button>
+    <button role="tab" data-v="gaps">Evidence</button>
+  </nav>
+</div></header>
+
+<div class="wrap main">
+  <main class="view" id="view"></main>
+  <aside class="panel" id="panel" aria-label="Detail">
+    <button class="pclose" id="pclose" aria-label="Close">×</button>
+    <div class="pb" id="pb"></div>
+  </aside>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<div class="wrap"><details class="about" id="about">
+  <summary>Draft, not clinically reviewed · Methods</summary>
+  <div class="cols">
+    <div><b>Grading</b><ul>
+      <li><b>Moderate:</b> 2+ heat-exposure studies, 1+ vetted.</li>
+      <li><b>Low:</b> 1 vetted heat or lab-heat study.</li>
+      <li><b>Very low:</b> seasonal, class-wide, unvetted or mechanism-only.</li>
+      <li><b>No effect:</b> studied in heat, no difference. Not proof of safety.</li>
+      <li><b>None:</b> label or pharmacology only.</li>
+      <li>Observational unless marked as a trial.</li>
+    </ul></div>
+    <div><b>Limits</b><ul>
+      <li>Actions are drafts. A forecast alone is not a reason to change a medication.</li>
+      <li>No study tests any action here.</li>
+      <li>Unvetted rows: ~20% mis-extracted. None hand-checked.</li>
+      <li>Mechanism examples exclude non-ambient heat and reversed effects.</li>
+      <li>Agency guidance not yet reviewed.</li>
+    </ul></div>
+    <div><b>Coverage</b>
+      <div class="funnel">
+        <div><b>57</b><span>heat–medication papers in PubMed</span></div><div><span></span><i style="width:100%"></i></div>
+        <div><b>18</b><span>in the graph</span></div><div><span></span><i style="width:31.6%"></i></div>
+        <div><b>10</b><span>found by this map</span></div><div><span></span><i style="width:17.5%"></i></div>
+      </div>
+      <p style="margin-top:10px" id="srcline"></p>
+    </div>
+  </div>
+</details></div>
+
+<script>
+/*__DATA__*/
+</script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pmu = id => `https://pubmed.ncbi.nlm.nih.gov/${esc(id)}/`;
+const pm = id => `<a href="${pmu(id)}" target="_blank" rel="noopener">PMID ${esc(id)}</a>`;
+const cite = (n, id) => `<a class="cite" href="${pmu(id)}" target="_blank" rel="noopener" title="PMID ${esc(id)}">${n}</a>`;
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const wide = () => matchMedia("(min-width:1100px)").matches;
+
+/* ---------- vocabulary ---------- */
+const B = DATA.buckets;
+const BN = {"Dose adjustment":"Adjust dose","Substitute or hold":"Hold or switch","Closer monitoring":"Monitor","Storage and stability":"Storage"};
+const GROUPS = [["Cardiovascular and kidney",["Diuretics","ACE inhibitors / ARBs","Beta blockers","Calcium channel blockers"]],
+  ["Psychiatry and neurology",["Antipsychotics","Lithium","Antidepressants","Benzodiazepines / sedatives","Topiramate / zonisamide","Stimulants"]],
+  ["Diabetes",["Insulin","SGLT2 inhibitors","Metformin and sulfonylureas"]],
+  ["Pain",["Opioids","NSAIDs"]],
+  ["Other",["Anticholinergics","Heat-labile emergency products"]]];
+const SHORT = {
+ "Diuretics|Dose adjustment":"Review dose","Diuretics|Substitute or hold":"Sick-day hold","Diuretics|Closer monitoring":"Na, K, creatinine",
+ "ACE inhibitors / ARBs|Dose adjustment":"Lower if BP low","ACE inhibitors / ARBs|Substitute or hold":"Sick-day hold","ACE inhibitors / ARBs|Closer monitoring":"Creatinine, K",
+ "Beta blockers|Substitute or hold":"Don't stop abruptly","Beta blockers|Closer monitoring":"Dizziness",
+ "Calcium channel blockers|Dose adjustment":"Review if hypotensive","Calcium channel blockers|Closer monitoring":"Falls, oedema",
+ "Anticholinergics|Substitute or hold":"Deprescribe or switch","Anticholinergics|Closer monitoring":"Sweating, confusion",
+ "Antipsychotics|Substitute or hold":"Don't stop abruptly","Antipsychotics|Closer monitoring":"Temperature, NMS",
+ "Lithium|Dose adjustment":"Dose by level","Lithium|Substitute or hold":"Sick-day hold","Lithium|Closer monitoring":"Lithium level",
+ "Antidepressants|Substitute or hold":"SSRI over tricyclic","Antidepressants|Closer monitoring":"Sodium, overheating",
+ "Benzodiazepines / sedatives|Substitute or hold":"Taper, review","Benzodiazepines / sedatives|Closer monitoring":"Falls, fluids",
+ "Opioids|Closer monitoring":"Naloxone, check-ins","Opioids|Storage and stability":"Shield patch from heat",
+ "Insulin|Dose adjustment":"May need less","Insulin|Closer monitoring":"Check glucose often","Insulin|Storage and stability":"Keep below 30 °C",
+ "SGLT2 inhibitors|Substitute or hold":"Sick-day hold","SGLT2 inhibitors|Closer monitoring":"Fluids, ketones",
+ "Metformin and sulfonylureas|Dose adjustment":"Lower SU if lows","Metformin and sulfonylureas|Substitute or hold":"Hold metformin if sick","Metformin and sulfonylureas|Closer monitoring":"Glucose, kidneys",
+ "NSAIDs|Substitute or hold":"Avoid if dehydrated","NSAIDs|Closer monitoring":"Creatinine",
+ "Topiramate / zonisamide|Closer monitoring":"Overheating (children)","Stimulants|Closer monitoring":"Overheating, misuse",
+ "Heat-labile emergency products|Storage and stability":"Keep cool; replace"};
+const ROW = {"ACE inhibitors / ARBs":"ACE inhibitors, ARBs","Benzodiazepines / sedatives":"Sedatives","Topiramate / zonisamide":"Topiramate, zonisamide","Metformin and sulfonylureas":"Metformin, sulfonylureas","Heat-labile emergency products":"EpiPens, inhalers, GTN"};
+const rn = c => ROW[c] || c;
+const MN = {"Acute kidney injury":"Kidney injury","Hyponatremia / electrolytes":"Low sodium","Hypotension / falls":"Low BP, falls","Glucose":"Glucose","Dehydration / volume":"Dehydration","Impaired sweating / thermoregulation":"Reduced sweating","Rhabdomyolysis":"Muscle breakdown","Lithium toxicity / drug levels":"Drug levels"};
+const PH = [["before","Before summer"],["alert","Heat alert"],["unwell","Sick day"]];
+const LV = {3:"Moderate",2:"Low",1:"Very low",0:"None",N:"No effect"};
+const SPEC = {"Primary care":"Primary care","Pain and palliative":"Palliative","Addiction medicine":"Addiction"};
+
+/* ---------- data ---------- */
+const rows = DATA.rows, rowOf = Object.fromEntries(rows.map(r => [r.class, r]));
+// The pump-heating study measures absorption: it belongs with dose, not storage.
+(() => { const ins = rowOf["Insulin"]; if (!ins) return; const st = ins.cells["Storage and stability"], dz = ins.cells["Dose adjustment"];
+  if (st && dz && st.direct){ const mv = st.direct.filter(d => d.pmid === "22538141"); st.direct = st.direct.filter(d => d.pmid !== "22538141");
+    if (!st.direct.length) st.tier = "gap"; dz.direct = [...(dz.direct||[]), ...mv]; } })();
+const UNCLEAR = new Set(["24334574"]);
+const cellOf = id => { const [c,b] = id.split("|"); return rowOf[c] && rowOf[c].cells[b]; };
+const has = id => { const c = cellOf(id); return !!c && c.tier !== "none"; };
+const ALL = []; GROUPS.forEach(([,cls]) => cls.forEach(c => { if (rowOf[c]) B.forEach(b => { const id = c+"|"+b; if (has(id)) ALL.push(id); }); }));
+const rv = id => { const [c,b] = id.split("|"); return (EXTRA.review[c]||{})[b] || ["","",""]; };
+const ownerShort = w => { let s = (w||"").split(/[;(]/)[0].trim(); s = s.replace(/^Prescriber orders$/,"Prescriber").replace(/ and community mental health team/,""); return s.length > 26 ? s.slice(0,24).replace(/[ ,]+\S*$/,"") + "…" : s; };
+
+/* ---------- grading ---------- */
+const GC = {};
+function grade(id){
+  if (GC[id]) return GC[id];
+  const c = cellOf(id); if (!c || c.tier === "none") return null;
+  const d = c.direct || [], why = new Set();
+  const score = s => (s.type === "S" || s.type === "C" || UNCLEAR.has(s.pmid)) ? 1 : (s.vetted ? 2 : 1);
+  const risk = d.filter(s => s.effect === "risk"), nul = d.filter(s => s.effect !== "risk");
+  let lv;
+  if (risk.length){
+    const h = risk.filter(s => (s.type||"H") === "H"), mx = Math.max(...risk.map(score));
+    lv = (h.length >= 2 && h.some(s => s.vetted)) ? 3 : mx;
+    const top = risk.filter(s => score(s) === mx);
+    if (lv < 3){
+      if (top.every(s => s.type === "S")) why.add("Seasonal proxy");
+      if (top.some(s => s.type === "C")) why.add("Class-wide");
+      if (top.some(s => s.type === "X")) why.add("Lab heat");
+      if (top.some(s => !s.vetted)) why.add("Unvetted");
+      if (top.some(s => UNCLEAR.has(s.pmid))) why.add("Direction unclear");
+    }
+    if (nul.length) why.add("Mixed");
+  } else if (nul.length){
+    lv = "N"; if (nul.every(s => !s.vetted)) why.add("Unvetted");
+  } else if (c.tier === "bridged"){ lv = 1; why.add("Mechanism only"); }
+  else { lv = 0; why.add(c.tier === "partial" ? "No heat studies" : "Label only"); }
+  return GC[id] = {lv, why:[...why], risk, nul, direct:d};
+}
+const lc = g => g ? "l" + g.lv : "";
+const lvMark = g => `<i class="lvl ${lc(g)}" aria-hidden="true"></i>`;
+function line(g){
+  if (g.lv === 3) return "Multiple heat-exposure studies found higher risk.";
+  if (g.lv === 2) return g.risk.some(s => (s.type||"H") === "H" && s.vetted) ? "One heat-exposure study found higher risk." : "Lab heat raised drug exposure.";
+  if (g.lv === 1) return g.risk.length ? "Indirect or unvetted studies only." : "Drug and heat each linked to the same harm, in separate studies.";
+  if (g.lv === "N") return "Studied in heat; no clear effect. Not proof of safety.";
+  return "No studies. Based on label and pharmacology.";
+}
+function phase(id){
+  const [,b] = id.split("|"), a = (cellOf(id).action || "").toLowerCase();
+  if (b === "Storage and stability") return "before";
+  if (b === "Substitute or hold") return /sick-day|vomit|diarrh|dehydrat|not eating|temporarily|avoid during/.test(a) ? "unwell" : "before";
+  return "alert";
+}
+
+/* ---------- mechanism example hygiene ---------- */
+const NONRATIO = /correl|differ|mean|pearson|^r$|β|change|coefficient/i;
+const RATIO = /ratio|odds|hazard|risk|\b(a?or|rr|hr|irr|a?ror|arr)\b/i;
+function dir(x){ const s = (x.stat||"").trim(); if (NONRATIO.test(s) || !RATIO.test(s)) return "na";
+  const v = parseFloat(x.value), lo = parseFloat((x.ci||[])[0]), hi = parseFloat((x.ci||[])[1]); if (isNaN(v)) return "na";
+  if (v < 1 && (isNaN(hi) || hi < 1)) return "down"; if (v > 1 && (isNaN(lo) || lo > 1)) return "up"; return "flat"; }
+const OFF = /malaria|hyperpyrexia|\bcpb\b|bypass|cardiopulmonary|cool season|drop in ambient|°c drop|students|intradialytic|cold/i;
+const STOP = /discontinu|withdraw|stopp|cessation/i;
+function clean(m, hold){
+  const drug = [], heat = [], counter = []; let skip = 0;
+  m.drug_examples.forEach(x => { const d = dir(x); if (hold && STOP.test(x.a) && d === "up") counter.push(x); else if (d === "down") skip++; else drug.push(x); });
+  m.heat_examples.forEach(x => { if (OFF.test(`${x.a} ${x.b} ${x.pop}`) || dir(x) === "down") skip++; else heat.push(x); });
+  return {drug, heat, counter, skip};
+}
+const fx = x => { const ci = x.ci && x.ci[0] ? ` (${x.ci[0]}–${x.ci[1]})` : ""; const st = String(x.stat||"").replace(/_/g," ");
+  return `<div>${esc(x.a)} → ${esc(x.b)}<br><span class="faint">${esc(st)} ${esc(x.value)}${esc(ci)} · ${pm(x.pmid)}${x.vetted===false?" · unvetted":""}</span></div>`; };
+
+/* ---------- state ---------- */
+const INDEX = {}; rows.forEach(r => { INDEX[r.class.toLowerCase()] = {name:r.class, cls:r.class}; (EXTRA.drugs[r.class]||[]).forEach(n => INDEX[n.toLowerCase()] = {name:n, cls:r.class}); });
+const S = {v:store.get("hmr.v","patient"), list:store.get("hmr.list",[]).filter(m => rowOf[m.cls]), sel:null, spec:"", pv:store.get("hmr.pv","role")};
+const listCls = () => new Set(S.list.map(m => m.cls));
+const saveList = () => store.set("hmr.list", S.list);
+const myIds = () => { const l = listCls(); return ALL.filter(id => l.has(id.split("|")[0])); };
+const nameFor = c => S.list.filter(m => m.cls === c && m.name !== m.cls).map(m => m.name).join(", ") || rn(c);
+
+/* ---------- views ---------- */
+const searchBox = ph => `<form class="search" id="medF"><label class="sr" for="medIn">Add a medication</label><input id="medIn" list="medDL" placeholder="${ph}" autocomplete="off"><datalist id="medDL"></datalist><button>Add</button></form>`;
+function vPatient(){
+  if (!S.list.length) return `<div class="hero"><h2>What should change before a heat wave?</h2>${searchBox("Add a medication, e.g. furosemide")}<div class="msg" id="medMsg" role="status"></div>
+    <div class="sugg"><button class="btn" data-ex="furosemide,lisinopril,ibuprofen,empagliflozin">Heart failure + diabetes</button><button class="btn" data-ex="lithium,olanzapine,amitriptyline,oxybutynin">Bipolar disorder</button><button class="btn" data-ex="insulin,oxycodone,metoprolol">Older adult, insulin</button></div></div>`;
+  const ids = myIds();
+  let h = `${searchBox("Add another medication")}<div class="msg" id="medMsg" role="status"></div>
+    <div class="chips">${S.list.map((m,i) => `<span class="chip">${esc(m.name)}${m.name!==m.cls?` <small>${esc(rn(m.cls))}</small>`:""}<button data-rm="${i}" aria-label="Remove ${esc(m.name)}">×</button></span>`).join("")}<button class="link" id="clr">Clear</button></div>`;
+  const ix = combos();
+  if (ix.length) h += `<section class="ix"><h3 class="cap">Interactions</h3>${ix.map(n => `<p>${n}</p>`).join("")}</section>`;
+  if (!ids.length) h += `<p class="muted">No topics mapped for these medications. Not proof of safety.</p>`;
+  if (ids.length) h += `<div class="ctrl"><span class="cap">Plan</span><div class="seg" role="group" aria-label="Group plan by">${[["role","By role"],["phase","By phase"]].map(([k,t]) => `<button data-pv="${k}" aria-pressed="${S.pv===k}">${t}</button>`).join("")}</div></div>`;
+  if (S.pv === "role" && ids.length) h += lanes(ids);
+  else PH.forEach(([k,t]) => { const it = ids.filter(id => phase(id) === k); if (!it.length) return;
+    h += `<section class="phase"><h3>${t}</h3>${it.map(id => { const [c] = id.split("|"), g = grade(id);
+      return `<button class="item" data-id="${esc(id)}" aria-pressed="${S.sel===id}" aria-label="${esc(nameFor(c))}: ${esc(SHORT[id])}. Evidence ${LV[g.lv]}.">${lvMark(g)}<b>${esc(nameFor(c))}</b><span class="act">${esc(SHORT[id])}</span><span class="who">${esc(ownerShort(rv(id)[1]))}</span></button>`; }).join("")}</section>`; });
+  h += `<div class="foot"><button class="btn" id="copy">Copy plan</button><div class="legend">${legend()}</div></div>`;
+  return h;
+}
+/* Swimlanes: who acts in each phase. Roles come from the draft "who" field; health-system steps are proposals. */
+const LANES = [["pt","Patient and carers","At home"],["ph","Pharmacist","Counter, dispensing"],["rx","Prescriber","Clinic, care team"],["sys","Health system","Behind the scenes"]];
+const RX = /prescriber|psychiatry|primary care|diabetes team|neurology|pediatrics|cardiology|nephrology|addiction|nurse|educator/;
+function roles(id){
+  const [,b] = id.split("|"), k = phase(id), who = (rv(id)[1] || "").toLowerCase(), out = {};
+  who.split(/;\s*/).forEach(cl => {
+    if (/pharmacist/.test(cl)) out.ph = /reinforces/.test(cl) ? "Reinforces the plan" : /interaction|combination/.test(cl) ? "Checks interactions" : /review/.test(cl) ? "Medication review"
+      : /counsel/.test(cl) ? "Counsels" : /dispensing/.test(cl) ? "At dispensing" : /over-the-counter/.test(cl) ? "Over-the-counter sales" : /follows up/.test(cl) ? "Follows up" : "Supports";
+    if (RX.test(cl.replace(/pharmacist/g,""))) out.rx = /sets the plan/.test(cl) ? "Sets the plan" : /orders/.test(cl) ? "Orders tests" : "";
+    if (/carer|parent|coach|school/.test(cl)) out.pt = /parent|coach|school/.test(cl) ? "Parents and coaches watch" : "Carers watch for symptoms";
+  });
+  if (k === "unwell") out.pt = "Follows the sick-day plan";
+  if (b === "Storage and stability") out.pt = "Keeps it cool";
+  if (!out.rx && !out.ph && !out.pt) out.rx = "";
+  return out;
+}
+function sysSteps(k, ids){
+  const cls = new Set(ids.map(id => id.split("|")[0])), n = cls.size;
+  if (k === "before") return [`Flag ${n} heat-sensitive medication class${n>1?"es":""} in the record`, "Book a medication review before summer"];
+  if (k === "alert") return ["Heat advisory triggers outreach to flagged patients", ...(cls.has("Opioids") ? ["Check-in calls; naloxone on hand"] : []), ...(cls.has("Insulin") || cls.has("Heat-labile emergency products") ? ["Storage reminder by text"] : [])];
+  return ["Sick-day plan visible to clinic, pharmacy and ED", "Track restarts after the episode"];
+}
+function lanes(ids){
+  const cell = {}; ids.forEach(id => { const k = phase(id); Object.entries(roles(id)).forEach(([l,v]) => (cell[l+k] = cell[l+k] || []).push([id,v])); });
+  let h = `<div class="sl"><table><colgroup><col class="l"><col><col><col></colgroup><thead><tr><th scope="col"><span class="sr">Role</span></th>${PH.map(([,t]) => `<th scope="col">${t}</th>`).join("")}</tr></thead><tbody>`;
+  LANES.forEach(([l,t,s]) => { h += `<tr class="ln-${l}"><th scope="row">${t}<small>${s}</small></th>`;
+    PH.forEach(([k]) => {
+      if (l === "sys") { h += `<td>${sysSteps(k, ids).map(x => `<div class="sysi">${esc(x)}</div>`).join("")}</td>`; return; }
+      const it = cell[l+k] || [];
+      h += `<td>${it.length ? it.map(([id,v]) => { const [c] = id.split("|"), g = grade(id);
+        return `<button class="li" data-id="${esc(id)}" aria-pressed="${S.sel===id}" aria-label="${esc(t)}, ${esc(nameFor(c))}: ${esc(SHORT[id])}${v?`, ${esc(v)}`:""}. Evidence ${LV[g.lv]}.">${lvMark(g)}<span><b>${esc(nameFor(c))}</b> · ${esc(SHORT[id])}</span>${v?`<small>${esc(v)}</small>`:""}</button>`; }).join("") : `<span class="none" aria-label="Nothing">–</span>`}</td>`; });
+    h += `</tr>`; });
+  return h + `</tbody></table></div><p class="sm faint">Shaded row: proposed health-system steps, not drawn from the evidence map. Roles are drafts.</p>`;
+}
+function combos(){
+  const l = listCls(), n = [], hasC = c => l.has(c);
+  if (hasC("Diuretics") && hasC("ACE inhibitors / ARBs") && hasC("NSAIDs")) n.push(`<b>Diuretic + ACE/ARB + NSAID</b> · kidney injury risk; avoid the NSAID in heat. One heat-wave study: no clear effect${cite(1,"29116624")}.`);
+  if (hasC("SGLT2 inhibitors") && hasC("Diuretics")) n.push(`<b>SGLT2 + loop diuretic</b> · volume depletion, IRR 1.82${cite(n.length+1,"35713292")}. Shared sick-day plan.`);
+  if (hasC("Lithium") && ["Diuretics","ACE inhibitors / ARBs","NSAIDs"].some(hasC)) n.push(`<b>Lithium + diuretic, ACE/ARB or NSAID</b> · raises lithium levels. Pharmacology.`);
+  const sw = ["Anticholinergics","Antipsychotics","Antidepressants","Topiramate / zonisamide"].filter(hasC);
+  if (sw.length >= 2) n.push(`<b>${sw.map(rn).join(" + ")}</b> · additive sweating impairment. Pharmacology.`);
+  return n;
+}
+const legend = () => `<span class="cap" style="margin-right:2px">Evidence strength</span><span>${lvMark({lv:3})}Moderate</span><span>${lvMark({lv:2})}Low</span><span>${lvMark({lv:1})}Very low</span><span>${lvMark({lv:0})}None</span><span>${lvMark({lv:"N"})}No effect</span>`;
+function vAll(){
+  const specs = [...new Set(rows.flatMap(r => r.specialties))].sort();
+  let h = `<div class="ctrl"><div class="legend">${legend()}</div>
+    <label><span class="sr">Prescriber</span><select id="spec"><option value="">All prescribers</option>${specs.map(s => `<option${S.spec===s?" selected":""}>${esc(s)}</option>`).join("")}</select></label></div>
+    <div class="tw"><table class="g"><colgroup><col class="c0"><col><col><col><col></colgroup><thead><tr><th scope="col"></th>`;
+  B.forEach(b => { const rs = rows.filter(r => has(r.class+"|"+b)), cnt = {}; rs.forEach(r => r.specialties.forEach(s => cnt[s] = (cnt[s]||0) + 1));
+    const top = Object.entries(cnt).sort((a,b) => b[1]-a[1]).slice(0,2).map(x => SPEC[x[0]] || x[0]);
+    h += `<th scope="col">${BN[b]}<small>${esc(top.join(", "))}</small></th>`; });
+  h += `</tr></thead><tbody>`;
+  let ri = 0;
+  GROUPS.forEach(([gname, cls]) => { h += `<tr class="grp"><th colspan="5" scope="colgroup">${esc(gname)}</th></tr>`;
+    cls.forEach(c => { const r = rowOf[c]; if (!r) return; const dim = S.spec && !r.specialties.includes(S.spec), mine = listCls().has(c);
+      h += `<tr class="${dim?"dim":""}"><th scope="row" title="${esc(r.examples)}">${esc(rn(c))}${mine?` <span class="mine" title="In patient list">●</span>`:""}</th>`;
+      B.forEach((b,ci) => { const id = c+"|"+b, g = grade(id);
+        if (!g){ h += `<td aria-label="Not mapped"></td>`; return; }
+        h += `<td><button class="cell ${lc(g)}" data-id="${esc(id)}" data-r="${ri}" data-c="${ci}" aria-pressed="${S.sel===id}" aria-label="${esc(rn(c))}, ${BN[b]}: ${esc(SHORT[id])}. Evidence ${LV[g.lv]}.">${g.lv==="N"?`<i class="o" aria-hidden="true"></i>`:""}${esc(SHORT[id])}</button></td>`; });
+      h += `</tr>`; ri++; }); });
+  return h + `</tbody></table></div><p class="sm faint">Blank: not mapped, not proof of safety.</p>`;
+}
+function vGaps(){
+  const ids = ALL, n = k => ids.filter(id => String(grade(id).lv) === String(k));
+  const F = [
+    ["Antipsychotics: twice the odds of death in the 2003 French heat wave","Antipsychotics|Closer monitoring"],
+    ["Opioid overdoses rise on hotter days","Opioids|Closer monitoring"],
+    ["Insulin: more severe hypoglycaemia in heat","Insulin|Closer monitoring"],
+    ["Lithium: two heat studies, no clear effect","Lithium|Closer monitoring"],
+    ["Mechanism evidence is kidneys and sodium, not sweating",null]];
+  let h = `<section class="sec"><h3>Key findings</h3><ol class="find">${F.map(([t,id]) => `<li><span>${esc(t)}</span>${id?`<button class="link" data-go="${esc(id)}">Evidence</button>`:`<button class="link" data-scroll="mechs">Mechanisms</button>`}</li>`).join("")}</ol></section>`;
+  const K = [[3,"Moderate"],[2,"Low"],[1,"Very low"],["N","No effect"],[0,"None"]];
+  h += `<section class="sec"><h3>Strength by action</h3><div class="bars">`;
+  B.forEach(b => { const it = ids.filter(id => id.endsWith("|"+b)), c = k => it.filter(id => String(grade(id).lv)===String(k)).length;
+    h += `<div class="bar"><span>${BN[b]}</span><span class="t" role="img" aria-label="${K.map(([k,t]) => `${c(k)} ${t}`).join(", ")}">${K.map(([k,t]) => c(k) ? `<i class="l${k}" style="width:${c(k)/it.length*100}%" title="${t}: ${c(k)}"></i>` : "").join("")}</span><span class="n">${it.length}</span></div>`; });
+  h += `</div><p class="sm faint">No study tests whether any of these ${ids.length} actions helps.</p></section>`;
+  const lst = arr => `<ul>${arr.map(id => `<li><button data-go="${esc(id)}">${lvMark(grade(id))}${esc(rn(id.split("|")[0]))} · ${esc(SHORT[id])}</button></li>`).join("")}</ul>`;
+  h += `<section class="sec"><h3>Gaps</h3><div class="cols">
+    <div><b>Supported</b>${lst([...n(3),...n(2)])}</div>
+    <div><b>Unsupported</b>${lst([...n(0),...ids.filter(id => grade(id).lv===1 && !grade(id).risk.length)])}</div>
+    <div><b>No effect found</b>${lst(n("N"))}</div></div></section>`;
+  const link = {}; DATA.bridge.links.forEach(x => link[x.class+"|"+x.mechanism] = x.drug + x.drug_unvetted);
+  const tot = m => DATA.bridge.links.filter(x => x.mechanism === m.name).reduce((s,x) => s + x.drug + x.drug_unvetted, 0);
+  const mech = DATA.bridge.mechanisms.slice().sort((a,b) => tot(b) - tot(a));
+  h += `<section class="sec" id="mechs"><h3>Mechanisms</h3><p class="sm faint">Dot size: drug studies. Hollow: no heat studies.</p><div class="dm"><table><thead><tr><th></th>${mech.map(m => `<th scope="col">${esc(MN[m.name]||m.name)}<small>${tot(m)} · ${m.heat+m.heat_unvetted} heat</small></th>`).join("")}</tr></thead><tbody>`;
+  GROUPS.forEach(([,cls]) => cls.forEach(c => { if (!rowOf[c] || c === "Heat-labile emergency products") return;
+    h += `<tr><th scope="row">${esc(rn(c))}</th>${mech.map(m => { const k = link[c+"|"+m.name] || 0; if (!k) return `<td></td>`; const s = Math.max(5, Math.min(20, 4 + Math.sqrt(k)*1.6));
+      return `<td title="${esc(rn(c))} · ${esc(MN[m.name])}: ${k}"><span class="dot${(m.heat+m.heat_unvetted)?"":" h"}" style="width:${s}px;height:${s}px"></span><span class="sr">${k} studies</span></td>`; }).join("")}</tr>`; }));
+  h += `</tbody></table></div></section>`;
+  h += `<section class="sec"><h3>Not yet covered</h3><div class="todo"><span class="tag">Agency guidance</span><span class="tag">Wearables</span><span class="tag">NYC exposure overlap</span></div></section>`;
+  return h;
+}
+
+/* ---------- panel ---------- */
+function panel(){
+  const id = S.sel, g = id && grade(id);
+  if (!g) return `<p class="faint">Select an item.</p>`;
+  const [c,b] = id.split("|"), r = rowOf[c], cell = cellOf(id), [trig,who,re] = rv(id), inList = listCls().has(c);
+  let h = `<div class="ph"><div class="row"><h2>${esc(rn(c))} · ${esc(BN[b])}</h2>${inList?"":`<button class="btn" id="addCls">Add to patient</button>`}</div>
+    <p class="ans">${esc(cell.action)}</p>
+    <dl class="kv">${trig?`<dt>When</dt><dd>${esc(trig)}</dd>`:""}${who?`<dt>Who</dt><dd>${esc(who)}</dd>`:""}${re?`<dt>Then</dt><dd>${esc(re)}</dd>`:""}${cell.note && !/guidance/i.test(cell.note)?`<dt>Basis</dt><dd>${esc(cell.note)}</dd>`:""}</dl></div>`;
+  const refs = g.direct;
+  h += `<div class="ev"><div class="top"><span class="cap">Evidence strength</span>${lvMark(g)}<b>${LV[g.lv]}</b>${g.why.map(w => `<span class="tag">${esc(w)}</span>`).join("")}</div>
+    <p>${esc(line(g))}${refs.map((s,i) => cite(i+1, s.pmid)).join("")}</p>`;
+  if (refs.length) h += `<ol class="refs">${refs.map((s,i) => { const lab = s.type==="S" ? "Seasonal" : s.effect==="risk" ? (s.type==="X" ? "Lab heat" : "Higher risk") : s.effect==="lower" ? "Lower risk" : "No effect";
+    return `<li><span>${i+1}</span><span>${esc(s.summary)}</span><span class="m"><span class="${s.effect==="risk"&&s.type!=="S"?"up":""}">${lab}</span> · ${pm(s.pmid)}${s.vetted?"":" · unvetted"}</span></li>`; }).join("")}</ol>`;
+  const ms = (cell.mechanisms||[]).map(m => ({m, k:clean(m, b === "Substitute or hold")})), counter = ms.flatMap(x => x.k.counter);
+  if (counter.length) h += `<div class="counter"><b>Against holding</b>${counter.map(fx).join("")}</div>`;
+  h += `<div class="top"><span class="tag">No trials of this action</span><span class="tag">Guidance not reviewed</span></div>`;
+  if (ms.length){
+    h += `<details><summary>Mechanisms (${ms.length})</summary>`;
+    ms.forEach(({m,k}) => { const nm = MN[m.mechanism] || m.mechanism, dn = m.drug_studies + m.drug_unvetted, hn = m.heat_studies + m.heat_unvetted;
+      h += `<div class="mech"><b>${esc(nm)}</b><span class="faint">${dn} drug · ${hn} heat${k.skip?` · ${k.skip} excluded`:""}</span>
+        ${k.drug.length?`<div class="ex">${k.drug.slice(0,2).map(fx).join("")}</div>`:""}${k.heat.length?`<div class="ex">${k.heat.slice(0,2).map(fx).join("")}</div>`:""}</div>`; });
+    h += `</details>`;
+  }
+  return h + `</div>`;
+}
+
+/* ---------- render + events ---------- */
+function fixSel(){ const mine = myIds(); if (S.v === "patient" && mine.length && !mine.includes(S.sel)) S.sel = mine[0]; if (!S.sel || !grade(S.sel)) S.sel = mine[0] || "Antipsychotics|Closer monitoring"; }
+function render(){
+  fixSel();
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.v === S.v));
+  $("#view").innerHTML = S.v === "patient" ? vPatient() : S.v === "all" ? vAll() : vGaps();
+  const empty = S.v === "patient" && !S.list.length;
+  $("#panel").hidden = empty; $(".main").style.gridTemplateColumns = empty ? "minmax(0,1fr)" : "";
+  $("#pb").innerHTML = panel();
+  bind();
+}
+function select(id){ S.sel = id; $("#pb").innerHTML = panel(); bindPanel(); document.querySelectorAll("[data-id][aria-pressed]").forEach(n => n.setAttribute("aria-pressed", n.dataset.id === id)); if (!wide()) openP(); else $("#panel").scrollTop = 0; }
+const openP = () => { $("#panel").classList.add("open"); $("#scrim").classList.add("open"); };
+const closeP = () => { $("#panel").classList.remove("open"); $("#scrim").classList.remove("open"); };
+function addMed(v){ v = (v||"").trim(); if (!v) return; const hit = INDEX[v.toLowerCase()];
+  if (!hit){ $("#medMsg").textContent = `${v} isn't covered yet.`; return; }
+  if (!S.list.some(m => m.name === hit.name)) S.list.push(hit); saveList(); S.sel = null; render(); const i = $("#medIn"); if (i) i.focus(); }
+function bind(){
+  const dl = $("#medDL"); if (dl) dl.innerHTML = Object.values(INDEX).map(m => `<option value="${esc(m.name)}">${m.name!==m.cls?esc(rn(m.cls)):""}</option>`).join("");
+  const f = $("#medF"), mi = $("#medIn"); if (f){ f.onsubmit = e => { e.preventDefault(); addMed(mi.value); };
+    mi.addEventListener("input", e => { if (e.inputType === "insertReplacementText" || (!e.inputType && INDEX[mi.value.toLowerCase()])) addMed(mi.value); }); }
+  document.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { S.list.splice(+b.dataset.rm, 1); saveList(); render(); });
+  const cl = $("#clr"); if (cl) cl.onclick = () => { S.list = []; saveList(); render(); };
+  document.querySelectorAll("[data-ex]").forEach(b => b.onclick = () => { b.dataset.ex.split(",").forEach(n => { const h = INDEX[n]; if (h && !S.list.some(m => m.name === h.name)) S.list.push(h); }); saveList(); S.sel = null; render(); });
+  document.querySelectorAll("#view .cell, #view .item, #view .li").forEach(b => b.onclick = () => select(b.dataset.id));
+  document.querySelectorAll("[data-pv]").forEach(b => b.onclick = () => { S.pv = b.dataset.pv; store.set("hmr.pv", S.pv); render(); });
+  document.querySelectorAll("#view [data-go]").forEach(b => b.onclick = () => { S.v = "all"; store.set("hmr.v", S.v); S.sel = b.dataset.go; render(); const n = document.querySelector(`.cell[data-id="${CSS.escape(S.sel)}"]`); if (n) n.scrollIntoView({block:"center"}); if (!wide()) openP(); });
+  document.querySelectorAll("[data-scroll]").forEach(b => b.onclick = () => document.getElementById(b.dataset.scroll).scrollIntoView({behavior:"smooth"}));
+  const sp = $("#spec"); if (sp) sp.onchange = e => { S.spec = e.target.value; render(); };
+  const cp = $("#copy"); if (cp) cp.onclick = () => navigator.clipboard.writeText(planText()).then(() => { cp.textContent = "Copied"; setTimeout(() => cp.textContent = "Copy plan", 1500); }).catch(() => { cp.textContent = "Copy blocked"; });
+  bindPanel();
+}
+function bindPanel(){ const a = $("#addCls"); if (a) a.onclick = () => { const c = S.sel.split("|")[0]; if (!S.list.some(m => m.cls === c)) S.list.push({name:c, cls:c}); saveList(); render(); }; }
+function planText(){
+  const ids = myIds(); let t = `Heat plan: ${S.list.map(m => m.name).join(", ")}\nDraft, not clinically reviewed.\n`;
+  PH.forEach(([k,title]) => { const it = ids.filter(id => phase(id) === k); if (!it.length) return; t += `\n${title}\n`;
+    it.forEach(id => { const [c] = id.split("|"), [,who,re] = rv(id), g = grade(id); t += `[ ] ${nameFor(c)}: ${cellOf(id).action} (${who}; evidence ${LV[g.lv].toLowerCase()})${re?`\n    Then: ${re}`:""}\n`; }); });
+  const n = combos(); if (n.length) t += `\nInteractions\n` + n.map(x => "- " + x.replace(/<a class="cite"[^>]*>\d+<\/a>/g, "").replace(/<[^>]+>/g, "")).join("\n") + "\n";
+  return t;
+}
+$("#view").addEventListener("keydown", e => { const t = e.target.closest(".cell"); if (!t || !e.key.startsWith("Arrow")) return;
+  const r = +t.dataset.r, c = +t.dataset.c; let best = null, bd = 1e9;
+  document.querySelectorAll(".cell").forEach(n => { const nr = +n.dataset.r, nc = +n.dataset.c; let d = -1;
+    if (e.key==="ArrowRight" && nr===r && nc>c) d = nc-c; if (e.key==="ArrowLeft" && nr===r && nc<c) d = c-nc;
+    if (e.key==="ArrowDown" && nr>r) d = (nr-r)*10+Math.abs(nc-c); if (e.key==="ArrowUp" && nr<r) d = (r-nr)*10+Math.abs(nc-c);
+    if (d >= 0 && d < bd){ bd = d; best = n; } });
+  if (best){ e.preventDefault(); best.focus(); } });
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => { S.v = b.dataset.v; store.set("hmr.v", S.v); render(); });
+$("#pclose").onclick = closeP; $("#scrim").onclick = closeP; document.addEventListener("keydown", e => { if (e.key === "Escape") closeP(); });
+$("#srcline").textContent = `Source: ${DATA.source}. Built ${DATA.built}.`;
+render();
+</script>
+</body>
+</html>

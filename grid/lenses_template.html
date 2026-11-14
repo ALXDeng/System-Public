@@ -1,0 +1,526 @@
+<title>Heat Medication Crosscheck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column; one comparison table (class x three lenses + finding), grouped by mismatch pattern; rows expand in place. */
+:root{
+  --bg:#f6f7f8; --surface:#ffffff; --ink:#16202a; --muted:#5a6672; --faint:#8a949e; --line:#dde2e7; --line-strong:#c3cad1;
+  --heat:#c2410c; --heat-soft:#fde7d9; --null:#5b6b7a; --mech:#b7791f; --mech-soft:#fbf1dc; --accent:#0f5f6e; --accent-soft:#e2f0f2;
+  --hatch:#e9ecef;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161b; --surface:#182028; --ink:#e7ecf0; --muted:#a3aeb8; --faint:#76828d; --line:#2a343e; --line-strong:#3a4652;
+  --heat:#fb8a55; --heat-soft:#3a2418; --null:#9aabbb; --mech:#e2b04f; --mech-soft:#33291a; --accent:#5cc3d3; --accent-soft:#16323a; --hatch:#222b34; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161b; --surface:#182028; --ink:#e7ecf0; --muted:#a3aeb8; --faint:#76828d; --line:#2a343e; --line-strong:#3a4652;
+  --heat:#fb8a55; --heat-soft:#3a2418; --null:#9aabbb; --mech:#e2b04f; --mech-soft:#33291a; --accent:#5cc3d3; --accent-soft:#16323a; --hatch:#222b34; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f-body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(24px,3.2vw,34px);font-weight:700;letter-spacing:-.01em;max-width:30ch}
+h2{font-size:19px;font-weight:650}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+p{margin:0}
+.lede{color:var(--muted);max-width:68ch;margin-top:10px}
+.mono{font-family:var(--f-mono);font-size:12.5px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.sm{font-size:13px}.faint{color:var(--faint)}.muted{color:var(--muted)}
+
+/* lens explainer */
+.lenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.lens{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;min-width:0}
+.lens b{font-size:14px}
+.lens .src{font-size:12.5px;color:var(--muted)}
+.keyrow{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px;color:var(--muted);margin-top:4px}
+.keyrow span{display:inline-flex;align-items:center;gap:5px}
+
+/* pattern summary */
+.patterns{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:28px}
+.pat{all:unset;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:4px;align-content:start;min-width:0}
+.pat:hover{border-color:var(--line-strong)}
+.pat[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.pat .n{font:600 26px/1 var(--f-body);font-variant-numeric:tabular-nums}
+.pat .t{font-weight:600;font-size:13.5px;line-height:1.3}
+.pat .b{font-size:12.5px;color:var(--muted);line-height:1.4}
+.pat:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* table */
+.tablebox{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.thead,.row{display:grid;grid-template-columns:minmax(150px,1.15fr) minmax(150px,1.1fr) minmax(120px,.8fr) minmax(150px,1fr) minmax(220px,2fr);gap:14px;align-items:start;padding:12px 16px}
+.thead{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);background:var(--bg)}
+.group{padding:16px 16px 6px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.group:first-of-type{border-top:0}
+.group h2{font-size:15px}
+.group p{font-size:13px;color:var(--muted)}
+.row{all:unset;box-sizing:border-box;display:grid;grid-template-columns:minmax(150px,1.15fr) minmax(150px,1.1fr) minmax(120px,.8fr) minmax(150px,1fr) minmax(220px,2fr);gap:14px;align-items:start;padding:12px 16px;width:100%;cursor:pointer;border-top:1px solid var(--line)}
+.row:hover{background:var(--bg)}
+.row[aria-expanded="true"]{background:var(--accent-soft)}
+.row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.cls b{display:block;font-size:14.5px}
+.cls small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:2px}
+.cell{display:flex;gap:8px;align-items:flex-start;min-width:0;font-size:13px;line-height:1.35}
+.cell .lbl{min-width:0}
+.cell .sub{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.finding{font-size:13.5px;line-height:1.45;min-width:0}
+.colhint{display:none}
+
+/* glyphs */
+.g{flex:none;width:14px;height:14px;border-radius:50%;margin-top:2px;border:2px solid currentColor;display:inline-block}
+.g.risk{color:var(--heat);background:var(--heat)}
+.g.lower,.g.null{color:var(--null);background:transparent}
+.g.mech{color:var(--mech);background:linear-gradient(90deg,var(--mech) 50%,transparent 50%)}
+.g.partial{color:var(--mech);background:transparent;border-style:dashed}
+.g.gap{color:var(--line-strong);background:repeating-linear-gradient(45deg,var(--line-strong) 0 2px,transparent 2px 5px)}
+.g.unv{outline:2px dotted var(--faint);outline-offset:2px}
+.gd{flex:none;width:12px;height:12px;border-radius:2px;border:2px solid var(--ink);display:inline-block;margin-top:3px}
+.gd.action{background:var(--ink)}
+.gd.mention{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
+.gd.storage{border-style:solid;background:repeating-linear-gradient(0deg,var(--ink) 0 2px,transparent 2px 4px)}
+.gd.absent{border-color:var(--line-strong)}
+.dots{display:flex;flex-wrap:wrap;gap:4px}
+.ld{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);display:inline-block;flex:none}
+.ld.heat{background:var(--accent)}
+.ld.heat_patient{background:linear-gradient(90deg,var(--accent) 50%,transparent 50%)}
+.ld.hyperthermia{border-style:dashed}
+.ld.dehydration{border-color:var(--muted)}
+.ld.handling{border-radius:2px;border-color:var(--muted)}
+.ld.silent{border-color:var(--line-strong);background:transparent}
+.ld.none{border-style:dotted;border-color:var(--line-strong)}
+
+/* detail */
+.detail{border-top:1px solid var(--line);background:var(--bg);padding:16px 16px 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.detail section{display:grid;gap:8px;align-content:start;min-width:0}
+.detail p{font-size:13.5px}
+.quote{border-left:2px solid var(--line-strong);padding-left:10px;color:var(--muted);font-size:12.5px;line-height:1.45;overflow-wrap:anywhere}
+.drug{display:grid;gap:4px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.drug:last-child{border-bottom:0}
+.drug .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.drug .top b{font-size:13.5px}
+.pill{font-size:11.5px;padding:1px 7px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.warn{background:var(--heat-soft);border-color:transparent;color:var(--heat)}
+.pill.unv{border-style:dashed}
+.share{font-family:var(--f-mono);font-size:11.5px;color:var(--faint)}
+
+/* scorecard */
+.sc-wrap{margin-top:40px;display:grid;gap:12px}
+.scroll{overflow-x:auto}
+table.sc{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px;font-variant-numeric:tabular-nums}
+.sc th,.sc td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+.sc th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.sc tr:last-child td{border-bottom:0}
+.bar{display:flex;align-items:center;gap:8px}
+.bar i{display:block;height:8px;border-radius:2px;background:var(--ink);min-width:2px}
+.bar .track{flex:1;max-width:120px;height:8px;background:var(--hatch);border-radius:2px;overflow:hidden;display:block}
+.ck{display:flex;gap:4px}
+.ck i{width:16px;height:16px;border-radius:3px;border:2px solid var(--accent);display:inline-grid;place-items:center;font:600 9px/1 var(--f-mono);color:var(--accent);font-style:normal}
+.ck i.y{background:var(--accent);color:var(--surface)}
+.checks{margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;font-size:12.5px;color:var(--muted)}
+.checks b{color:var(--ink);font-weight:600}
+@media (max-width:700px){.checks{grid-template-columns:1fr}}
+
+/* studied vs extracted */
+.litline{color:var(--accent)!important}
+.effs{display:flex!important;flex-wrap:wrap;gap:4px;margin-top:4px!important}
+.ef{display:inline-flex;align-items:center;gap:2px;font:600 11px/1 var(--f-mono);padding:2px 5px;border-radius:3px;border:1px solid var(--line);color:var(--muted);background:var(--surface);white-space:nowrap}
+.ef.risk,.ef.impairs{color:var(--heat);border-color:var(--heat)}
+.ef.null,.ef.no_impair{color:var(--null)}
+.ef.lower{color:var(--accent);border-color:var(--accent)}
+.ef.mixed{color:var(--mech);border-color:var(--mech)}
+.litlist{margin:0;padding-left:16px;display:grid;gap:6px;font-size:12.5px}
+.litlist li{display:grid;gap:2px}
+.exgrid{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:6px 14px;align-items:center;font-size:13px}
+.exgrid .lab{text-align:right;color:var(--ink)}
+.exbar{display:flex;align-items:center;gap:8px;min-width:0}
+.exbar .tot{height:12px;background:var(--hatch);border-radius:2px;position:relative;display:block}
+.exbar .ext{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:2px}
+.exbar .num{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;font-size:12.5px}
+@media (max-width:600px){.exgrid{grid-template-columns:1fr}.exgrid .lab{text-align:left;margin-top:6px}}
+
+/* reach */
+.reach{display:grid;gap:5px}
+.rrow{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr) minmax(0,1.3fr);gap:12px;align-items:center;font-size:13px}
+.rrow .rn{text-align:right}
+.rrow .rn small{display:block;color:var(--faint);font-size:11.5px}
+.rbar{display:flex;align-items:center;gap:8px;min-width:0}
+.rbar i{display:block;height:12px;border-radius:2px;min-width:2px}
+.rbar em{font-style:normal;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:12.5px}
+.rbar i.missed{background:var(--heat)}.rbar i.label_silent{background:var(--mech)}.rbar i.overwarned{background:var(--null)}
+.rbar i.agree{background:var(--accent)}.rbar i.thin{background:var(--line-strong)}.rbar i.storage{background:var(--ink)}
+.rspec{font-size:12px;color:var(--muted);min-width:0}
+.rhead{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+@media (max-width:760px){.rrow{grid-template-columns:1fr}.rrow .rn{text-align:left}}
+
+/* action plan */
+.apbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.apbar select{font:inherit;font-size:13.5px;padding:6px 8px;border-radius:6px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+.apall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:800px){.apall{grid-template-columns:1fr}}
+table.ap{border-collapse:collapse;width:100%;min-width:900px;font-size:12.5px}
+.ap th,.ap td{border-bottom:1px solid var(--line);padding:8px 6px;vertical-align:top;text-align:left}
+.ap thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;width:22%}
+.ap thead th:first-child{width:12%}
+.ap tbody th{font-weight:600;font-size:13px}
+.ap td{display:table-cell}
+.ac{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:3px;width:100%;padding:6px 8px;margin-bottom:6px;font-size:12.5px;border-radius:5px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);line-height:1.35}
+.ac:hover{border-color:var(--line-strong)}
+.ac[aria-pressed="true"]{box-shadow:inset 0 0 0 1px var(--accent);border-color:var(--accent)}
+.ac:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.ac .bk{font:600 10.5px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ac.study{border-left-color:var(--heat)}
+.ac.guidance{border-left-color:var(--accent)}
+.ac.label{border-left-color:var(--ink)}
+.ac.mechanism{border-left-color:var(--mech)}
+.ac.draft{border-left-style:dashed}
+.bsw{display:inline-block;width:10px;height:10px;border-radius:2px;border:1px solid var(--line);border-left:3px solid var(--line-strong);vertical-align:middle;margin-right:4px}
+.bsw.study{border-left-color:var(--heat)}.bsw.guidance{border-left-color:var(--accent)}.bsw.label{border-left-color:var(--ink)}.bsw.mechanism{border-left-color:var(--mech)}.bsw.draft{border-left-style:dashed}
+
+/* wearables */
+.ladder{display:grid;gap:6px;max-width:760px}
+.rung{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;align-items:center;font-size:13px}
+.rung .rl b{display:block;font-weight:600}
+.rung .rl span{color:var(--muted);font-size:12px}
+.rung .rb{display:flex;align-items:center;gap:8px}
+.rung .rb i{display:block;height:10px;border-radius:2px;background:var(--null);min-width:3px}
+.rung.last .rb i{background:var(--heat)}
+.rung .rb em{font-style:normal;font-variant-numeric:tabular-nums;font-weight:600}
+table.wm{border-collapse:collapse;width:100%;min-width:760px;font-size:12.5px;margin-top:8px}
+.wm th,.wm td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-align:top}
+.wm thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.wm tbody th{font-weight:600;font-size:13px;white-space:nowrap}
+.wbtn{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:3px;width:100%;padding:6px 7px;border-radius:5px;border:1px solid var(--line);background:var(--surface);min-height:44px}
+.wbtn:hover{border-color:var(--line-strong)}
+.wbtn[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.wbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.wbtn .we{font-weight:600}
+.wbtn .wl{font:500 10.5px/1 var(--f-mono);color:var(--faint)}
+.we.blunts,.we.suppresses,.we.lowers{color:var(--null)}
+.we.raises{color:var(--heat)}
+.we.confounds{color:var(--mech)}
+.we.useful{color:var(--accent)}
+.wempty{color:var(--faint);font:11px var(--f-mono);display:block;padding:6px 7px}
+.lv{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle;border:1.5px solid var(--ink)}
+.lv.heat{background:var(--ink)}
+.lv.lab{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
+.lv.pharm,.lv.none{background:transparent;border-style:dashed}
+.wnote{min-height:40px;font-size:13.5px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--bg);border-radius:0 6px 6px 0}
+
+/* lower sections */
+.lower{margin-top:40px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h2{margin-bottom:10px}
+.srcs{display:grid;gap:12px}
+.srcitem{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:baseline}
+.status{font-size:11.5px;padding:1px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
+.status.reviewed{background:var(--accent-soft);color:var(--accent)}
+.status.pending{background:var(--mech-soft);color:var(--mech)}
+.status.not_reviewed{background:var(--hatch);color:var(--muted)}
+.srcitem p{grid-column:2;font-size:13px;color:var(--muted)}
+ul.plain{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px}
+.extra{display:grid;gap:6px;font-size:13px}
+.extra div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.extra div:last-child{border-bottom:0}
+.caveats{margin-top:28px}
+.foot{margin-top:28px;font-size:12px;color:var(--faint);max-width:90ch}
+
+@media (max-width:900px){
+  .patterns{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lenses{grid-template-columns:1fr}
+  .thead{display:none}
+  .row{grid-template-columns:1fr 1fr;gap:10px 14px}
+  .row .cls,.row .finding{grid-column:1/-1}
+  .colhint{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:3px}
+  .cell{flex-wrap:wrap}
+  .detail{grid-template-columns:1fr}
+  .lower{grid-template-columns:1fr}
+}
+@media (max-width:480px){.row{grid-template-columns:1fr}.patterns{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.row,.pat{transition:background .12s,border-color .12s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="mono faint">Heat × medication · System Public Challenge, Visualize 3 · built <span id="built"></span></p>
+    <h1 style="margin-top:8px">Do guidance and drug labels warn about the medications that research shows are dangerous in heat?</h1>
+    <p class="lede">Each drug class is checked against three independent sources. The research graph says what has been measured. Agency guidance says what prescribers are told. FDA labels say what the manufacturer must warn about. The interesting rows are where the three disagree.</p>
+  </header>
+
+  <div class="lenses" aria-label="The three sources">
+    <div class="lens"><b>Research</b><span class="src">System Public Graph: vetted Dataverse release plus API rows</span>
+      <div class="keyrow"><span><i class="g risk"></i>Measured in heat: raises risk</span><span><i class="g null"></i>Measured: no clear effect</span><span><i class="g mech"></i>Mechanism only</span><span><i class="g gap"></i>Nothing</span><span><i class="g risk unv" style="width:10px;height:10px"></i>Relies on unvetted rows</span></div></div>
+    <div class="lens"><b>Guidance</b><span class="src">Seven sources: CDC, NYC Health, Arizona, UKHSA (England), Health Canada, ANSM (France), WHO Europe. One square per source</span>
+      <div class="keyrow"><span><i class="gd action"></i>Class-specific action</span><span><i class="gd mention"></i>Named, mechanism only</span><span><i class="gd storage"></i>Storage advice only</span><span><i class="gd absent"></i>Not named</span></div></div>
+    <div class="lens"><b>FDA label</b><span class="src" id="labelsrc"></span>
+      <div class="keyrow"><span><i class="ld heat"></i>Warns about heat</span><span><i class="ld heat_patient"></i>Patient leaflet only</span><span><i class="ld hyperthermia"></i>Drug fever only</span><span><i class="ld dehydration"></i>Dehydration, not heat</span><span><i class="ld handling"></i>Storage note only</span><span><i class="ld silent"></i>Silent</span></div></div>
+  </div>
+
+  <div class="patterns" id="patterns" role="group" aria-label="Filter by pattern"></div>
+
+  <div class="tablebox" id="table">
+    <div class="thead" aria-hidden="true"><span>Drug class</span><span>Research</span><span>Guidance, 7 sources</span><span>FDA label, one dot per drug</span><span>What the comparison shows</span></div>
+    <div id="rows"></div>
+  </div>
+  <p class="sm faint" style="margin-top:8px">Select a row for the study, the guidance wording and the label text behind each mark.</p>
+
+  <section class="card sc-wrap" aria-labelledby="rc-h">
+    <h2 id="rc-h">Who takes these drugs, and who prescribes them</h2>
+    <p class="sm muted" style="max-width:76ch" id="rc-lede"></p>
+    <div class="reach" id="reach"></div>
+    <p class="sm faint" id="rc-src"></p>
+  </section>
+
+  <section class="card sc-wrap" aria-labelledby="ap-h">
+    <h2 id="ap-h">Heat-season action plan</h2>
+    <p class="sm muted" style="max-width:76ch">What a prescriber, pharmacist or care team might change, by when it happens. Each action shows what it rests on. Draft actions need clinician review before use; none gives a dose.</p>
+    <div class="apbar">
+      <label for="apspec" class="sm">Prescriber</label>
+      <select id="apspec"><option value="">All prescribers</option></select>
+      <span class="keyrow" id="apkey" style="margin:0"></span>
+    </div>
+    <div class="apall" id="apall"></div>
+    <p class="sm faint" id="aptrig"></p>
+    <div class="wnote" id="apnote" role="status" aria-live="polite"></div>
+    <div class="scroll"><table class="ap" id="ap"></table></div>
+  </section>
+
+  <section class="card sc-wrap" aria-labelledby="ex-h">
+    <h2 id="ex-h">Studied, but missing from the graph</h2>
+    <p class="sm muted" style="max-width:72ch" id="ex-lede"></p>
+    <div class="exgrid" id="exbars"></div>
+    <p class="sm faint" id="ex-method"></p>
+  </section>
+
+  <section class="card sc-wrap" aria-labelledby="sc-h">
+    <h2 id="sc-h">Guidance scorecard</h2>
+    <p class="sm muted" style="max-width:72ch">Each source is scored on how many of the 22 classes and combinations in the map it names, how many get a class-specific action, and whether it covers the eight risks the evidence supports most. No source gives a dose.</p>
+    <div class="scroll"><table class="sc" id="sc"></table></div>
+    <ol class="checks" id="checks"></ol>
+  </section>
+
+  <section class="card sc-wrap" aria-labelledby="wr-h">
+    <h2 id="wr-h">Wearables: which signals each drug makes unreliable</h2>
+    <p class="sm muted" style="max-width:72ch" id="wr-lede"></p>
+    <div class="ladder" id="ladder" aria-label="Evidence ladder"></div>
+    <div class="scroll"><table class="wm" id="wm"></table></div>
+    <div class="wnote" id="wnote" role="status" aria-live="polite"></div>
+    <div class="keyrow" id="wkey"></div>
+  </section>
+
+  <div class="lower">
+    <div class="card">
+      <h2>What guidance actually tells prescribers</h2>
+      <p class="sm muted" style="margin-bottom:10px">Only Health Canada (2011, the oldest source) gives class-specific actions, all of them monitoring. WHO Europe (2026) treats medicines as a health-system task: a pre-season medication review for named classes, and registers of at-risk people that include medication use. The others list classes with a mechanism and give every class the same general steps (CDC wording shown):</p>
+      <ul class="plain" id="general"></ul>
+      <h3 style="margin-top:20px;margin-bottom:8px">Named by guidance, not in this map</h3>
+      <div class="extra" id="extra"></div>
+    </div>
+    <div class="card">
+      <h2>Sources and their status</h2>
+      <div class="srcs" id="srcs"></div>
+    </div>
+  </div>
+
+  <div class="card caveats">
+    <h2>How to read this</h2>
+    <ul class="plain">
+      <li>Research marks show the strongest evidence for the class across all four actions (dose, hold, monitor, storage). "Mechanism only" means the drug and heat each link to the same mechanism in separate studies. It is plausible, not measured.</li>
+      <li>Label marks come from automated text matching across every manufacturer label openFDA returned for that drug (the share is shown in the detail). A dot is filled when at least half the labels say it. "Drug fever only" means the label lists hyperthermia as a symptom of serotonin syndrome, NMS or overdose, which is not a hot-weather warning.</li>
+      <li>Guidance was coded by hand from seven sources on 14 Nov 2026, by one coder. NYC and Arizona copy the CDC list, so the three US sources are close to one source. Germany's Heidelberg table and Australian state guidance were not included.</li>
+      <li>No study has been checked against its abstract yet. Unvetted API rows (System estimates about 20% are mis-extracted) are marked with a dotted ring.</li>
+      <li>A silent label or a null study is not evidence of safety.</li>
+    </ul>
+  </div>
+
+  <p class="foot">Research data: System Public Graph v1, doi:10.7910/DVN/7V6JDO, CC BY-NC 4.0 (non-commercial use). FDA label text via openFDA (public domain). CDC and NYC Health pages are public. Pattern labels and one-line findings are the authors' interpretation and need clinician review.</p>
+</div>
+
+<script>
+const D = /*DATA*/null;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LSTAT = {heat:"Warns about heat", heat_patient:"Patient leaflet only", hyperthermia:"Drug fever only", dehydration:"Dehydration, not heat", handling:"Storage note only", silent:"No heat or dehydration warning", none:"No label found"};
+const GLEV = {action:"Specific action", mention:"Named, mechanism only", storage:"Storage advice only", absent:"Not named"};
+const ETN = {epidemiology: "heat epidemiology", seasonal: "seasonal", experimental: "experimental heat", physiology: "lab physiology", case: "case report", storage: "storage / stability"};
+const BUCK = {"Dose adjustment":"dose","Substitute or hold":"hold","Closer monitoring":"monitoring","Storage and stability":"storage"};
+let filter = null, open = null;
+try { filter = localStorage.getItem("hmc.filter") || null; } catch (e) {}
+
+function rglyph(r) {
+  const k = r.tier === "direct" ? (r.signal === "risk" ? "risk" : "null") : r.tier === "bridged" ? "mech" : r.tier;
+  return `<i class="g ${k}${r.vetted ? "" : " unv"}" aria-hidden="true"></i>`;
+}
+const EFF = {risk: ["↑", "raise risk"], null: ["0", "no clear effect"], lower: ["↓", "lower risk"], mixed: ["±", "mixed"], impairs: ["↑", "lab: impairs heat response"], no_impair: ["0", "lab: no impairment"], harm_reported: ["!", "case or ADR reports"], context: ["·", "context only"], graph: ["▸", "in graph (see above)"], unread: ["?", "not yet read"]};
+function effSummary(e) {
+  if (!e) return "";
+  const parts = [["risk", e.risk], ["null", e.null], ["lower", e.lower], ["mixed", e.mixed], ["impairs", e.impairs], ["harm_reported", e.harm_reported]].filter(([, n]) => n);
+  return parts.length ? `<span class="sub effs">${parts.map(([k, n]) => `<span class="ef ${k}" title="${esc(EFF[k][1])}">${EFF[k][0]} ${n}</span>`).join("")}</span>` : "";
+}
+function researchCell(r, lit) {
+  let sub = "";
+  if (r.tier === "direct") sub = `${r.n_direct_studies} heat stud${r.n_direct_studies === 1 ? "y" : "ies"} · best for ${BUCK[r.bucket]}`;
+  else if (r.mechanism) sub = `${r.mechanism.name}: ${r.mechanism.drug} drug / ${r.mechanism.heat} heat studies`;
+  return `<div class="cell">${rglyph(r)}<span class="lbl">${esc(r.label)}${r.vetted ? "" : " †"}<span class="sub">${esc(sub)}</span>${lit ? `<span class="sub litline">Literature: ${lit.n} stud${lit.n === 1 ? "y" : "ies"} · ${lit.extracted} in graph</span>${effSummary(lit.effects)}` : ""}</span></div>`;
+}
+const SRC = () => Object.fromEntries(D.sources.map(s => [s.id, s.short]));
+function guidanceCell(g, row) {
+  const n = row.guidance_n, a = row.guidance_actions, st = D.coded.filter(k => g[k].level === "storage").length;
+  const N = D.coded.length;
+  const txt = n === 0 ? (st ? `Storage advice only (${st} of ${N})` : "Not named") : `Named by ${n} of ${N}${a ? ` · ${a} give an action` : " · no actions"}`;
+  return `<div class="cell" style="flex-direction:column;gap:4px"><span style="display:flex;gap:3px">${D.coded.map(k => `<i class="gd ${g[k].level}" title="${esc(SRC()[k])}: ${esc(GLEV[g[k].level])}"></i>`).join("")}</span><span class="sub" style="margin:0">${esc(txt)}</span></div>`;
+}
+function labelCell(ls) {
+  if (!ls.length) return `<div class="cell"><span class="sub" style="margin:0">Combination: see the component classes' labels</span></div>`;
+  const warn = ls.filter(d => d.status === "heat").length;
+  return `<div class="cell" style="flex-direction:column;gap:4px"><span class="dots">${ls.map(d => `<i class="ld ${d.status}" title="${esc(d.generic)}: ${esc(LSTAT[d.status])}"></i>`).join("")}</span><span class="sub" style="margin:0">${warn} of ${ls.length} warn about heat</span></div>`;
+}
+function detail(row) {
+  const r = row.research, g = row.guidance;
+  let lead = r.lead ? `<p>${esc(r.lead.summary)}</p><p class="sm"><a href="https://pubmed.ncbi.nlm.nih.gov/${esc(r.lead.pmid)}/" target="_blank" rel="noopener">PubMed ${esc(r.lead.pmid)}</a> · ${r.lead.vetted ? "vetted" : "unvetted API row"} · unchecked</p>` : `<p class="muted">No study measured this class together with heat.</p>`;
+  if (r.mechanism) lead += `<p class="sm muted">Mechanism bridge: ${esc(r.mechanism.name)}, ${r.mechanism.drug} drug-side and ${r.mechanism.heat} heat-side studies (vetted).</p>`;
+  const L = row.literature, GS = {vetted: "graph: vetted", api_only: "graph: API only", record_only: "graph: no findings", absent: "not in graph"};
+  if (L && L.n) {
+    const RANK = {risk: 0, lower: 1, null: 2, mixed: 3, impairs: 4, no_impair: 5, graph: 6, harm_reported: 7, unread: 8, context: 9};
+    const sorted = [...L.studies].sort((a, b) => (RANK[a.effect] ?? 9) - (RANK[b.effect] ?? 9) || b.year - a.year);
+    const shown = sorted.slice(0, 10);
+    lead += `<h3 style="margin-top:10px">Literature outside the graph</h3><p class="sm muted">${L.n} studies on this class and heat; the graph has drug findings for ${L.extracted}. Directions hand-read from abstracts; case reports are counted as reports of harm.</p>
+    <ul class="litlist">${shown.map(x => `<li><span><span class="ef ${esc(x.effect)}" title="${esc((EFF[x.effect] || ["", ""])[1])}">${(EFF[x.effect] || ["?"])[0]}</span> <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(x.pmid)}/" target="_blank" rel="noopener">${esc(x.title)}</a></span>${x.finding ? `<span class="sm">${esc(x.finding)}</span>` : ""}<span class="share">${esc(x.year)} · ${esc(ETN[x.etype] || x.etype)}${x.class_wide ? " · class-wide" : ""} · ${x.drug_extracted ? "drug finding in graph" : esc(GS[x.graph])}</span>${x.note ? `<span class="pill warn">${esc(x.note)}</span>` : ""}</li>`).join("")}</ul>${L.n > shown.length ? `<p class="sm faint">+ ${L.n - shown.length} more (mostly case reports) in probe_results/literature.csv</p>` : ""}`;
+  }
+  const gd = k => `<div class="drug"><div class="top"><i class="gd ${g[k].level}"></i><b>${esc(SRC()[k])}</b><span class="pill">${esc(GLEV[g[k].level])}</span></div>${g[k].mech ? `<p class="sm">${esc(g[k].mech)}</p>` : ""}${g[k].action ? `<p class="sm"><b>Action:</b> ${esc(g[k].action)}</p>` : ""}</div>`;
+  const pct = x => x == null ? "–" : Math.round(x * 100) + "%";
+  const lab = row.label.map(d => `<div class="drug"><div class="top"><i class="ld ${d.status}"></i><b>${esc(d.generic)}</b><span class="pill ${d.status === "heat" ? "warn" : ""}">${esc(LSTAT[d.status])}</span></div>
+    <span class="share">${d.n} labels · heat in warnings ${pct(d.heat_warning)} · patient leaflet ${pct(d.heat_patient)} · dehydration ${pct(d.dehyd_warning)}${d.storage && d.storage.max_c ? ` · store ≤${d.storage.max_c} °C` : ""}${d.storage && d.storage.days && d.storage.days.length ? ` · ${d.storage.days.join("/")} days unrefrigerated` : ""}</span>
+    ${d.snippet ? `<p class="quote">${esc(d.snippet)}</p>` : ""}${d.dailymed ? `<a class="sm" href="${esc(d.dailymed)}" target="_blank" rel="noopener">Example label on DailyMed${d.brand ? ` (${esc(d.brand)})` : ""}</a>` : ""}</div>`).join("");
+  return `<div class="detail" id="det-${esc(slug(row.class))}">
+    <section><h3>Research</h3>${lead}</section>
+    <section><h3>Guidance</h3>${D.coded.map(gd).join("")}</section>
+    <section><h3>FDA label</h3>${lab || `<p class="sm muted">No label of its own; see the component classes.</p>`}</section></div>`;
+}
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+function render() {
+  document.getElementById("built").textContent = D.built;
+  document.getElementById("labelsrc").textContent = D.label_source + "; about 50 drugs, every manufacturer label";
+  const counts = {}; D.rows.forEach(r => counts[r.pattern] = (counts[r.pattern] || 0) + 1);
+  document.getElementById("patterns").innerHTML = D.patterns.map(p => `<button class="pat" data-p="${p.id}" aria-pressed="${filter === p.id}"><span class="n">${counts[p.id] || 0}</span><span class="t">${esc(p.title)}</span><span class="b">${esc(p.blurb)}</span></button>`).join("");
+  let h = "";
+  D.patterns.forEach(p => {
+    if (filter && filter !== p.id) return;
+    const rs = D.rows.filter(r => r.pattern === p.id);
+    if (!rs.length) return;
+    h += `<div class="group"><h2>${esc(p.title)}</h2><p>${esc(p.blurb)}</p></div>`;
+    rs.forEach(row => {
+      const id = slug(row.class), ex = open === row.class;
+      h += `<button class="row" data-c="${esc(row.class)}" aria-expanded="${ex}" aria-controls="det-${id}">
+        <div class="cls"><b>${esc(row.class)}</b><small>${esc(row.examples)}</small></div>
+        <div><span class="colhint">Research</span>${researchCell(row.research, row.literature)}</div>
+        <div><span class="colhint">Guidance</span>${guidanceCell(row.guidance, row)}</div>
+        <div><span class="colhint">FDA label</span>${labelCell(row.label)}</div>
+        <div class="finding">${esc(row.finding)}</div></button>${ex ? detail(row) : ""}`;
+    });
+  });
+  document.getElementById("rows").innerHTML = h;
+  document.querySelectorAll(".pat").forEach(b => b.onclick = () => { filter = filter === b.dataset.p ? null : b.dataset.p; try { localStorage.setItem("hmc.filter", filter || ""); } catch (e) {} render(); });
+  document.querySelectorAll(".row").forEach(b => b.onclick = () => { open = open === b.dataset.c ? null : b.dataset.c; render(); const n = document.querySelector(`.row[data-c="${CSS.escape(b.dataset.c)}"]`); if (n) n.focus({preventScroll: true}); });
+}
+function renderScorecard() {
+  const C = D.alignment_checks, rows = [...D.scorecard].sort((a, b) => b.aligned - a.aligned || b.named - a.named);
+  document.getElementById("sc").innerHTML = `<thead><tr><th scope="col">Source</th><th scope="col">Year</th><th scope="col">Classes named</th><th scope="col">Class actions</th><th scope="col">Evidence checks</th></tr></thead><tbody>${rows.map(r => `<tr>
+    <td><b>${esc(r.short)}</b><div class="sm faint">${esc(r.jurisdiction)}</div></td><td>${esc(r.year)}</td>
+    <td><span class="bar"><span class="track"><i style="width:${r.named / r.of * 100}%"></i></span>${r.named} of ${r.of}</span></td>
+    <td><span class="bar"><span class="track"><i style="width:${r.actions / r.of * 100}%;background:var(--accent)"></i></span>${r.actions}</span></td>
+    <td><span class="ck" aria-label="${r.aligned} of ${C.length} checks met">${r.checks.map((ok, i) => `<i class="${ok ? "y" : ""}" title="${esc(C[i].label)}: ${ok ? "yes" : "no"}">${i + 1}</i>`).join("")}<span style="margin-left:6px">${r.aligned}/${C.length}</span></span></td></tr>`).join("")}</tbody>`;
+  document.getElementById("checks").innerHTML = C.map(c => `<li><b>${esc(c.label)}</b>. ${esc(c.why)}</li>`).join("");
+}
+function renderExtraction() {
+  const L = D.literature, pct = Math.round(L.extracted / L.primary * 100);
+  document.getElementById("ex-lede").innerHTML = `We searched the literature directly: <b>${L.primary} studies</b> look at a medication together with heat. The graph has a finding that names the drug for <b>${L.extracted} (${pct}%)</b>. ${L.graph_status.record_only || 0} more are in the graph as a study record with no findings. So many "gaps" are extraction gaps, not research gaps. Bars: studies per class (grey) and those with a drug finding in the graph (teal).`;
+  const rows = [...D.rows].sort((a, b) => b.literature.n - a.literature.n);
+  const max = Math.max(...rows.map(r => r.literature.n));
+  document.getElementById("exbars").innerHTML = rows.map(r => `<span class="lab">${esc(r.class)}</span><span class="exbar"><span class="tot" style="width:${r.literature.n / max * 70}%"><i class="ext" style="width:${r.literature.n ? r.literature.extracted / r.literature.n * 100 : 0}%"></i></span><span class="num">${r.literature.extracted} of ${r.literature.n}</span></span>`).join("")
+    + Object.entries(L.beyond).filter(([, v]) => v.n).map(([k, v]) => `<span class="lab muted">${esc(k)} (not in map yet)</span><span class="exbar"><span class="tot" style="width:${v.n / max * 70}%"><i class="ext" style="width:${v.n ? v.extracted / v.n * 100 : 0}%"></i></span><span class="num">${v.extracted} of ${v.n}</span></span>`).join("");
+  document.getElementById("ex-method").textContent = `How: the 57 hand-screened papers from our recall test, plus the reference lists of 5 reviews and papers citing 9 key studies (PubMed), screened by rule for heat and a medication, titles reviewed by hand. Class-wide studies ("antihypertensives", "psychotropics") count for each class they cover. Hand-checking found one graph finding with the wrong direction: PMID 31205291 is about cold, not heat.`;
+}
+const WLV = {heat: "measured in heat", lab: "lab study, mostly healthy volunteers", pharm: "known pharmacology, not tested in heat", none: "no study found"};
+const WEF = {blunts: "Blunts", raises: "Raises", suppresses: "Suppresses", lowers: "Lowers", confounds: "Unreliable", useful: "Useful signal"};
+let wsel = null;
+function renderWearables() {
+  const W = D.wearables;
+  document.getElementById("wr-lede").innerHTML = `Wearable heat alerts read heart rate, skin temperature or sweat and assume a normal response to heat. Many of these drugs change exactly those signals. The research graph holds ${W.graph_drug_signal.toLocaleString()} drug-to-signal links and <b>none measured in heat</b>. In PubMed, <b>${W.cells_with_wearable_heat} of ${W.cells_total}</b> drug × signal pairs has a study that adds a wearable in heat: insulin with a glucose monitor.`;
+  const max = Math.max(...W.ladder.map(l => l.n), ...W.why.map(l => l.n));
+  const rung = (l, last) => `<div class="rung${last ? " last" : ""}"><div class="rl"><b>${esc(l.label)}</b><span>${esc(l.note)}</span></div><div class="rb"><i style="width:${Math.max(1, l.n / max * 100)}%"></i><em>${l.n}</em></div></div>`;
+  document.getElementById("ladder").innerHTML = `<h3>Where the wearable evidence runs out (PubMed papers)</h3>${W.ladder.map((l, i) => rung(l, i === W.ladder.length - 1)).join("")}<h3 style="margin-top:10px">Why it matters: lab physiology on drugs and heat signals</h3>${W.why.map(l => rung(l, false)).join("")}`;
+  const S = W.signals;
+  document.getElementById("wm").innerHTML = `<thead><tr><th scope="col">Drug class</th>${S.map(s => `<th scope="col">${esc(s)}</th>`).join("")}</tr></thead><tbody>${W.rows.map((r, ri) => `<tr><th scope="row">${esc(r.class)}</th>${S.map((s, si) => {
+    const c = r.cells[s]; const id = `${ri}|${si}`;
+    if (!c || !c.effect) return `<td><span class="wempty" title="No study found">—${c && c.pubmed_heat ? ` · ${c.pubmed_heat} lab` : ""}</span></td>`;
+    return `<td><button class="wbtn" data-w="${id}" aria-pressed="${wsel === id}"><span class="we ${c.effect}">${esc(WEF[c.effect])}</span><span class="wl"><i class="lv ${c.level}"></i>${esc(c.level)}</span></button></td>`; }).join("")}</tr>`).join("")}</tbody>`;
+  document.getElementById("wkey").innerHTML = `<span><i class="lv heat"></i>Measured in heat</span><span><i class="lv lab"></i>Lab study</span><span><i class="lv pharm"></i>Pharmacology only</span><span>— no study found; "lab" count = PubMed drug × signal × heat papers</span>`;
+  const note = () => {
+    const el = document.getElementById("wnote");
+    if (!wsel) { el.textContent = "Select a cell to see what the drug does to the signal and the studies behind it."; return; }
+    const [ri, si] = wsel.split("|").map(Number), r = W.rows[ri], s = S[si], c = r.cells[s];
+    el.innerHTML = `<b>${esc(r.class)} · ${esc(s)}: ${esc(WEF[c.effect])}</b> (${esc(WLV[c.level])}). ${esc(c.text)} ${c.pmids.length ? c.pmids.map(p => `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(p)}/" target="_blank" rel="noopener">${esc(p)}</a>`).join(", ") : ""}<br><span class="sm faint">Graph: ${c.graph} drug–signal papers, ${c.graph_heat} in heat. PubMed: ${c.pubmed_heat} with heat, ${c.pubmed_heat_wearable} with heat and a wearable.</span>`;
+  };
+  note();
+  document.querySelectorAll(".wbtn").forEach(b => b.onclick = () => { wsel = wsel === b.dataset.w ? null : b.dataset.w; document.querySelectorAll(".wbtn").forEach(x => x.setAttribute("aria-pressed", x.dataset.w === wsel)); note(); });
+}
+const BASIS = {study: "Heat study", guidance: "Guidance", label: "FDA label", mechanism: "Mechanism only", draft: "Draft, unsourced"};
+const BSHORT = {"Dose adjustment": "Dose", "Substitute or hold": "Hold / switch", "Closer monitoring": "Monitor", "Storage and stability": "Storage", "Continue, don't stop": "Continue", "Counsel and plan": "Counsel"};
+let apsel = null, apspec = "";
+try { apspec = localStorage.getItem("hmc.apspec") || ""; } catch (e) {}
+function renderActions() {
+  const A = D.actions, W = ["before", "alert", "unwell", "after"];
+  const all = [...A.all_classes.map((a, i) => ({...a, class: "Every patient", _id: "g" + i})), ...A.items.map((a, i) => ({...a, _id: "i" + i}))];
+  const byId = Object.fromEntries(all.map(a => [a._id, a]));
+  const specs = [...new Set(D.rows.flatMap(r => r.specialties))].sort();
+  const sel = document.getElementById("apspec");
+  sel.innerHTML = `<option value="">All prescribers</option>` + specs.map(s => `<option${s === apspec ? " selected" : ""}>${esc(s)}</option>`).join("");
+  document.getElementById("apkey").innerHTML = Object.entries(BASIS).map(([k, v]) => `<span><i class="bsw ${k}"></i>${esc(v)}</span>`).join("");
+  document.getElementById("aptrig").textContent = A.trigger_note;
+  const chip = a => `<button class="ac ${a.basis}" data-a="${a._id}" aria-pressed="${apsel === a._id}"><span class="bk">${esc(BSHORT[a.bucket] || a.bucket)} · ${esc(BASIS[a.basis])}</span><span>${esc(a.text)}</span></button>`;
+  document.getElementById("apall").innerHTML = A.all_classes.map((a, i) => chip({...a, _id: "g" + i})).join("");
+  const rows = D.rows.filter(r => !apspec || r.specialties.includes(apspec));
+  document.getElementById("ap").innerHTML = `<thead><tr><th scope="col">Drug class</th>${W.map(w => `<th scope="col">${esc(A.timing[w])}</th>`).join("")}</tr></thead><tbody>${rows.map(r => {
+    const its = all.filter(a => a.class === r.class);
+    return `<tr><th scope="row">${esc(r.class)}</th>${W.map(w => `<td>${its.filter(a => a.when === w).map(chip).join("") || `<span class="wempty">—</span>`}</td>`).join("")}</tr>`; }).join("")}</tbody>`;
+  const note = () => {
+    const el = document.getElementById("apnote"), a = byId[apsel];
+    if (!a) { el.textContent = "Select an action to see who does it, what triggers it and what it rests on."; return; }
+    const src = (a.sources || []).map(k => (D.sources.find(s => s.id === k) || {}).short || k);
+    el.innerHTML = `<b>${esc(a.class)} · ${esc(a.bucket)} · ${esc(A.timing[a.when])}</b><br>${esc(a.text)}${a.who ? `<br><span class="sm"><b>Who:</b> ${esc(a.who)}</span>` : ""}${a.trigger ? `<br><span class="sm"><b>Trigger:</b> ${esc(a.trigger)}</span>` : ""}<br><span class="sm"><b>Rests on:</b> ${esc(BASIS[a.basis])}${src.length ? ` · guidance: ${esc(src.join(", "))}` : ""}${a.pmids && a.pmids.length ? ` · studies: ${a.pmids.map(p => `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(p)}/" target="_blank" rel="noopener">${esc(p)}</a>`).join(", ")}` : ""}</span>${a.note ? `<br><span class="sm muted">${esc(a.note)}</span>` : ""}`;
+  };
+  note();
+  document.querySelectorAll(".ac").forEach(b => b.onclick = () => {
+    apsel = apsel === b.dataset.a ? null : b.dataset.a;
+    document.querySelectorAll(".ac").forEach(x => x.setAttribute("aria-pressed", x.dataset.a === apsel)); note();
+    const n = document.getElementById("apnote"); if (n.getBoundingClientRect().top < 0) n.scrollIntoView({block: "nearest"});
+  });
+  sel.onchange = () => { apspec = sel.value; try { localStorage.setItem("hmc.apspec", apspec); } catch (e) {} renderActions(); };
+}
+const fmt = n => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "k" : String(n);
+function renderReach() {
+  const rows = D.rows.filter(r => r.reach).sort((a, b) => b.reach.national_benes - a.reach.national_benes);
+  if (!rows.length) { document.getElementById("rc-lede").textContent = "Part D data not loaded."; return; }
+  const max = rows[0].reach.national_benes, PT = Object.fromEntries(D.patterns.map(p => [p.id, p.title]));
+  const big = rows.filter(r => ["missed", "label_silent"].includes(r.pattern)).reduce((s, r) => s + r.reach.national_benes, 0);
+  document.getElementById("rc-lede").innerHTML = `Medicare Part D beneficiaries per class, coloured by the pattern above. Classes where the heat risk is measured but guidance or labels miss it reach <b>${fmt(big)} prescriptions-to-people</b> nationally (a person on two drugs in a class counts twice). Right: the prescriber types writing the most New York claims for the class's top two drugs.`;
+  document.getElementById("reach").innerHTML = `<div class="rrow rhead"><span class="rn">Drug class</span><span>Medicare users, US (NY)</span><span>Top New York prescribers, share of claims</span></div>` + rows.map(r => {
+    const p = r.prescribers;
+    return `<div class="rrow"><span class="rn">${esc(r.class)}<small>${esc(PT[r.pattern] || "")}</small></span>
+      <span class="rbar"><i class="${r.pattern}" style="width:${r.reach.national_benes / max * 70}%"></i><em>${fmt(r.reach.national_benes)} <span class="faint">(NY ${fmt(r.reach.ny_benes)})</span></em></span>
+      <span class="rspec">${p ? p.types.slice(0, 4).map(t => `${esc(t.type)} ${Math.round(t.share * 100)}%`).join(" · ") : "—"}</span></div>`; }).join("");
+  document.getElementById("rc-src").textContent = `${D.partd_source.reach} (users) and ${D.partd_source.prescribers} (prescriber types). Medicare only, so mostly people 65+; CMS suppresses cells under 11. Prescriber location is the prescriber's office, not where patients live.`;
+}
+function renderStatic() {
+  renderScorecard(); renderExtraction(); renderWearables(); renderActions(); renderReach();
+  document.getElementById("general").innerHTML = D.general_actions.map(a => `<li>${esc(a)}</li>`).join("");
+  document.getElementById("extra").innerHTML = D.not_in_grid.map(x => `<div><b>${esc(x.name)}</b><span class="muted">${esc(x.mech)}${x.action ? `. <b style="color:var(--ink)">Action:</b> ${esc(x.action)}` : ""}</span></div>`).join("");
+  const ST = {reviewed: "Reviewed", pending: "List not published", not_reviewed: "Not reviewed"};
+  document.getElementById("srcs").innerHTML = D.sources.map(s => `<div class="srcitem"><span class="status ${s.status}">${ST[s.status]}</span><a href="${esc(s.url)}" target="_blank" rel="noopener"><b>${esc(s.name)}</b></a><p>${s.date ? esc(s.date) + ". " : ""}${esc(s.note)}</p></div>`).join("")
+    + `<div class="srcitem"><span class="status reviewed">Pulled</span><b>FDA labels via openFDA</b><p>${esc(D.label_source)}. Warnings, precautions, boxed warning, patient leaflet and storage sections; matched for heat, hyperthermia and dehydration terms.</p></div>`;
+}
+renderStatic(); render();
+</script>

@@ -1,0 +1,1907 @@
+'on alert' period during a heat wave (summer 2006)
+1 degree Celsius increase in ambient temperatures during the warm season (May-September)
+1 degree Celsius increase in minimum and mean temperatures (climatic factors)
+1 degree Celsius temperature increase (increase in temperature by 1 degree Celsius)
+1 hour after hyperthermic perfusion [vs before hyperthermic perfusion]
+1 °C decrease of mean temperature (compared to mean temperature)
+1 °C increase of temperature above the hot threshold at the lag0 (current day)
+1 °C increase of temperature above the hot threshold at the lag0 (hot weather)
+1 °C rise in maximum temperature (adjusted for seasonality and long-term trends)
+1 °C rise in maximum temperature (during warm seasons)
+10 degrees F increase in daily temperature (compared to a reference temperature)
+10 minutes after termination of thermal stress [vs before heat stress]
+10 °C increment in ambient temperature (compared to the original temperature)
+10°C decrease in temperature (daily average temperature)
+13-HOTrE
+14-day lagged daily maximum temperatures at or above 41.1°C
+14-day lagged daily maximum temperatures at or above 41.1°C (all climate-sensitive communicable diseases)
+14-day lagged daily maximum temperatures at or above 41.9°C (90th percentile of daily maximum temperatures)
+1995 Chicago heat wave
+1°C decrease in ambient temperature (as measured by weather data)
+1°C increase in ambient temperatures (during the warm and cold season)
+1°C increase of mean temperature (compared to average temperature)
+2 hyperthermia per week group [vs 1 hyperthermia per week group]
+2 min post-SpI Hot Trial [vs 2 min post-SpI Control Trial]
+2003 heat wave in Paris (France)
+2006 California heat wave
+2009 heatwave in Melbourne, Australia
+2012 heatwave
+24 hours after days with a Heat Index ≥ 44 [vs days with a Heat Index < 44]
+25 min of exercise in a hot environment [vs at rest]
+30 min after heat exposure [vs before heat exposure]
+30 min into heat exposure in 42°C environment [vs 30 min into heat exposure in 32°C environment]
+3D-Printed Implant-Supported Overdenture Material [vs Conventional Heat-Cured Implant-Supported Overdenture Material]
+4-day cumulative rise in maximum daily temperature from 36.4°C (50th percentile) to 41.4°C (90th percentile) (moderate rise in temperature)
+4-day cumulative rise in maximum daily temperature from 36.4°C (50th percentile) to 41.4°C (90th percentile) (moderate temperature rise)
+4-day period with simulated heat wave cycle (P2) [vs 4-day period with baseline weather conditions (P1)]
+4°C drop in ambient temperature (below 27°C)
+50 min of exercise in a hot environment [vs first 5 min of exercise]
+60 min post-heat exposure (changes in plasma ANP levels) [vs Baseline]
+95th percentile daily maximum heat index
+A 10°C increase in maximum temperature above threshold (maximum temperature > 34-36°C)
+Adjuvant interstitial hyperthermia
+After Heat Acclimation [vs Baseline]
+After Heat Acclimation [vs Before Heat Acclimation]
+After heat acclimation [vs Before heat acclimation]
+Age 20–39 years (Heat stroke patients)
+Age ≥ 65 years (Predictive factor for hospitalization in patients with heat illness)
+Ambient Temperature (Temperature for Heat Exposure Assessment)
+Ambient Temperature (preceding mean 24-h and 1-h)
+Ambient Temperature Increase (Escherichia coli enteritis)
+Ambient heat (measured by heat index percentile)
+Ambient temperature
+Ambient temperature (Q1 = 7.1 °C) in patients with witnessed out-of-hospital cardiac arrest occurring outdoors
+Ambient temperature (Ta) in degrees Celsius
+Ambient temperature (daily mean temperature)
+Ambient temperature (during high temperature in the summer)
+Ambient temperature (temperature)
+Ambient temperature above 9 °C (mild heat)
+Ambient temperature at 18 °C (48th of daily mean temperature distribution)
+Ambient temperature of 16 degrees C [vs Ambient temperature of 22 degrees C]
+Ambient temperature of 3 degrees C (CT) [vs Ambient temperature of 20 degrees C (NT)]
+Ambient temperature of 30 °C or higher (compared to 5.0 °C-9.9 °C)
+Ambient temperatures (heat and cold)
+Annual average air temperature
+Annual average temperature increase (1°C)
+Apparent Temperature (AT) on a daily scale
+Apparent temperature (comprehensive environmental factors including ambient temperature, relative humidity, and wind speed)
+Apparent temperature (comprehensively considered a variety of environmental factors)
+Apparent temperature (comprehensively considered ambient temperature, relative humidity, and wind speed, ranged from -2.0 to 37.0 degrees Celsius)
+Apparent temperature (measured by ambient temperature, relative humidity, and wind speed)
+Apparent temperature (temperature perceived by individuals, which takes into account factors such as ambient temperature, relative humidity, and wind speed)
+Apparent temperature during extreme cold conditions
+Average Monthly Ambient Temperature at Cold Temperatures (<0°C)
+Average Temperature
+Average air temperature
+Average annual temperature increase (linked to climate change) in Djelfa and its surrounding regions
+Average apparent temperature (7-day moving average)
+Average apparent temperature (averaged over 2 days)
+Average daily maximum temperature (during the heat wave)
+Average daily temperature (in degrees Celsius)
+Average monthly ambient temperature in Taiwan during a 14-year period (2005-2018)
+Average temperature
+Average temperature (15 days preceding each renal colic)
+Average temperature (during warm seasons)
+Average temperature (mean temperature)
+Average temperature (monthly average temperature)
+Average temperature (negative effect)
+Average temperature (°C) in Seoul metropolitan region and Daegu-Gyeongbuk region
+Average temperature at 25°C (with no lag)
+Average temperature in the 7 days before death (in degrees Celsius)
+Average temperature-Tmed
+Average weekly mean temperature (at the higher quantile, 75th percentile)
+Average weekly mean temperature (the temperature on average for each week)
+Before Passive mild heat acclimation intervention [vs After 7 days of Passive mild heat acclimation]
+CAP + HEAT session [vs CAP session]
+CBDCA plus whole body hyperthermia [vs CBDCA alone]
+CPB hyperthermia
+Change in ambient maximum temperature (per 1 °C fall in temperature)
+Change in body heat content (Delta Hb)
+Change in body heat content (ΔHb)
+Change in daily maximum temperature (-1.479 °C)
+Change in maximum temperature by 1.2 °C (from 30.5 °C to 31.7 °C)
+Change in monthly average temperature in Suzhou area (from November to April)
+Cheek temperature rise
+Cold season group [vs Hot season group]
+Cold spell (defined as daily minimum apparent temperature falling below 5th percentile for at least 3 consecutive days)
+Cold spell (period of at least 7 consecutive days with daily maximum temperature and daily average temperatures below the 3rd percentile during the study period)
+Cold temperature effect on apparent temperature (AT)
+Complaints of hot flushes
+Compound hot extremes
+Conditioned Pain Modulation Heat
+Contact heat-evoked potential amplitude
+Control group after heat acclimation [vs Control group before heat acclimation]
+Correlation between daily mean temperature and 24-hr ozone concentration (second stratum)
+Correlation between single-point air temperature measures and data logger 12-day mean air temperature
+Correlation between weather conditions (implied by history observations in the study) and ___ (weekly average temperature)
+Cumulative Mean Temperature (CTM)
+Cumulative risk increase in mortality due to heat wave (defined as 98th percentile temperature and ≥2, 3, or 4 consecutive days)
+Daily Mean Temperature (extremely cold temperatures)
+Daily Mean Temperature (for hip fracture patients)
+Daily Mean Temperature (in the study of ambulance dispatch)
+Daily Mean Temperature during Warm Season
+Daily average temperature (during the first two months)
+Daily average temperature (in degrees Celsius)
+Daily average temperature (per 10 °C increment)
+Daily average temperature (°C)
+Daily average temperature above 40°C (heatwaves)
+Daily average temperature ranging from 9.2°C to 14.2°C
+Daily average temperatures above the 95th percentile (both on current days and in lag 1)
+Daily maximum ambient temperature
+Daily maximum ambient temperature (extreme heat)
+Daily mean temperature (10th percentile)
+Daily mean temperature (compared to the optimal temperature)
+Daily mean temperature (correlated with daily mean levels of particulate matter up to 10 μm)
+Daily mean temperature (extremely cold temperature, 2.5th percentile, 0.5°C)
+Daily mean temperature (lowest temperature range) on cold days
+Daily mean temperature > 99th percentile (during warm seasons of 2020-2021)
+Daily mean temperature at 24°C (lag 5-10 days)
+Daily mean temperature at the 75th percentile (25 °C) at a lag of 0-3 days
+Daily mean temperature over the 99th percentile (extreme heat)
+Daily minimum apparent temperature (ATmin) at the 1st percentile
+Daily temperature (measured in Turin, Italy)
+Daily temperature increase (1°C increase)
+Day 1 vs Day 5 (heat acclimation duration)
+Days of extreme heat
+Days of extreme heat (defined as the 95th centile of the local warm season temperature distribution)
+Days of extreme heat (defined as the 95th percentile of the county-specific warm-season temperature distribution)
+Days of extreme heat (temperature at 34.4°C)
+Decrease in ambient temperature of 5°C below the optimum temperature (24-hour mean)
+Difference between maximum and minimum ambient temperature (winter)
+Dry heat soybean -Ryegrass straw (R) diet [vs Tamarind kernel powder extract residue (TKPER)-Ryegrass straw (R) diet]
+Duration of temperature above 39°C
+Each 10 °C increment in ambient temperature
+Effect of a 10 degrees F increase in daily temperature (compared to normal temperature levels)
+Effect of extremely low ambient temperature (cumulated over 0-21 days)
+Effect of passive heat exposure on maximal voluntary force changes (muscle temperature increase to 37.0 ± 0.8°C)
+Elevated ambient temperature (days of extreme heat)
+Elevation of one IQR of average temperature during cold pregnancies (among patients with Bedouin-Arab ethnicity)
+Emergency hospital admissions for hypertension during hot days
+Endurance time (of heat-acclimated men)
+Environmental Training (Heat Acclimation and/or Hypoxic Exposure)
+Excess mortality rates based on total mortality differentials during and before the heat wave
+Exhaled air temperature increase (delta(e) T)
+Experimental Group (treated with low-dose apatinib plus deep hyperthermia) [vs Control Group (treated with apatinib)]
+Exposure to 3very hot days
+Exposure to a minimum outdoor temperature of -30°C (compared with 0°C) on the day of and the day before the burn
+Exposure to cold temperatures (apparent temperature) for 0 to 14 days
+Exposure to extreme heat (99th temperature percentile)
+Exposure to extreme heat temperature (> 29 °C) (during pregnancy)
+Exposure to extremely hot days (daily mean temperature >95th percentile of regional monthly mean temperature)
+Exposure to extremely hot days in summer in New York State (2005-2013)
+Exposure to extremely low mean temperature (mean temperature at P1 percentile)
+Exposure to heat event
+Exposure to heat periods (3 consecutive days exceeding the 95th percentile of area-specific maximum temperature)
+Exposure to high heat index (April, May, and October)
+Exposure to high heat index (during April, May, and October)
+Exposure to high temperature (lag 0)
+Exposure to high temperature (≥30°C) (risk of OHCA)
+Exposure to hot (> 90th percentile) or cold (< 10th percentile)
+Exposure to low ambient temperature within several hours (-20°C) (at or below -20°C)
+Exposure to low ambient temperature within several hours (≤10°C)
+Exposure to low and high temperatures (ambient temperature)
+Exposure to low apparent temperature at lag7 (RR = 1.018)
+Exposure to maximum temperature in the first trimester
+Exposure to maximum temperature in the last trimester
+Exposure to non-optimal temperatures (extreme heat and extreme cold)
+Exposure to non-optimum ambient temperature (extremely low temperature)
+Exposure to three consecutive hot days (temperature exceeding the 95th percentile of maximum temperature)
+Exposure to very cold days (days with a maximum temperature below 0°C)
+Extra heat
+Extreme Heat Exposure (adolescents aged 9 to 15)
+Extreme Low Ambient Temperature (1st percentile)
+Extreme heat
+Extreme heat (27 °C, the 97.5th percentile)
+Extreme heat (97.5th percentile of temperature distribution)
+Extreme heat (99th percentile average daily temperature of 28.6 °C)
+Extreme heat (99th percentile)
+Extreme heat (99th percentile, 26 °C)
+Extreme heat (daily mean temperature of 32°C)
+Extreme heat (temperature above the optimum level)
+Extreme heat events
+Extreme heat events (EHEs)
+Extreme heat exposure (temperature at 99th percentile)
+Extreme high temperature (99th temperature percentile)
+Extreme high temperature (compared to median temperature) at lag0-7 days
+Extreme high temperature (lag 0-27)
+Extreme high temperature change between neighboring days (TCN) in the temperature drop period
+Extreme hot temperature (30°C) at lag 6 days
+Extreme hot temperature (95th percentile temperature)
+Extreme hot temperature (99th percentile of temperature)
+Extreme hot temperatures (at a lag of 3 days)
+Extreme hot temperatures (comparing the 99th and 75th centile temperatures)
+Extreme temperature (high and low temperatures)
+Extreme temperatures (ambient temperature)
+Extreme temperatures (hot and cold)
+Extreme temperatures (hot effect)
+Extremely cold and hot conditions
+Extremely high temperature
+Extremely high temperature (97.5th percentile of weekly average temperature (WAT))
+Extremely high temperature (97.5th percentile of weekly average temperature in Huludao City)
+Extremely high temperatures
+Extremely hot temperatures
+FS (ice slurry) [vs W (ambient temperature water)]
+Frequency of exposure to hot environments (as a provoking factor)
+Frequency of extreme heat days (over 35°C) (2019-2018)
+Frequency of heat days (1999-2008 vs 2009-2018)
+Frequency of severe heat days (1999-2008 versus 2009-2018)
+GPH (gemcitabine 1000 mg/m2 on day 1, 15 and cisplatin 25 mg/m2 with Regional hyperthermia on day 2, 3 and 15,16) [vs G (gemcitabine 1000 mg/m2 on day 1,8,15)]
+Group C (regional hepatectomy) [vs Group D (regional hepatectomy plus regional hyperthermia)]
+HEATR6
+HOT (15°C) [vs NORMAL (25°C)]
+HOT (35 °C) [vs COOL (20 °C)]
+HOT (35°C) [vs NORMAL (25°C)]
+HOT (38°C) [vs CON (25°C)]
+HOT (50°C, 50% RH) [vs CON (25°C, 50% RH)]
+HOT (heat stress) [vs CON (control)]
+HOT [vs COOL]
+HOT [vs NEUTRAL]
+HOT [vs TEMP]
+HOT condition (35 degrees C) [vs COOL condition (15 degrees C)]
+HOT condition [vs CON condition]
+HOT condition [vs TC condition]
+HOT condition with no music [vs NEU condition with no music]
+HOT environment [vs TEMP environment]
+HOT trial [vs CONTROL trial]
+HOTAIR rs1899663
+HOTAIR rs1899663 polymorphism
+Hargreaves heat test
+Heat (33.3 ± 0.1 °C) [vs Moderate (16.0 ± 3.0 °C)]
+Heat (measured by comparing adjusted mortality rates at 97.5th and 75th percentiles of 2-day mean temperature)
+Heat (short-term exposure to high temperatures)
+Heat Acclimation Protocol (Comparison between Day 1 and Day 5)
+Heat Alert frequency
+Heat Exposure (90th percentile of temperature with reference to the 75th percentile of temperature)
+Heat Exposure (measured by baseline heat index in the Southern Community Cohort Study)
+Heat Exposure (short-term effect)
+Heat Exposure (the 90th percentile of temperature with reference to the 75th percentile of temperature)
+Heat Group (38 °C ambient temperature) [vs Control Group (18 °C ambient temperature)]
+Heat Group [vs Cold Group]
+Heat Injury
+Heat Intolerance
+Heat Stress (1.5°C increase in core temperature) [vs Normothermic]
+Heat Stress (HS) [vs Control (controls)]
+Heat Stress Condition [vs Normothermic Condition]
+Heat Stress Condition [vs Temperate Condition]
+Heat Stress Group [vs Control Group]
+Heat Stress Impact on Productivity
+Heat Stress Index
+Heat Stress Treatment [vs Thermoneutral Treatment]
+Heat Stress [vs Normothermia]
+Heat Stress [vs Normothermic Conditions]
+Heat Stress condition [vs Thermoneutral condition]
+Heat Stress group [vs Control group]
+Heat Stressed [vs Normothermic]
+Heat Therapy [vs Sham Control]
+Heat Treatment in Furnace [vs Heat Treatment with Hot Air ]
+Heat Vulnerability Index (HVI)
+Heat Wave (defined as 90th percentile temperature and ≥2, 3, and 4 consecutive days)
+Heat [vs No Heat]
+Heat acclimated group [vs Control group]
+Heat acclimation
+Heat environment [vs Cool environment]
+Heat events on 99th percentile heat days (May to September 1990-2010)
+Heat exposure
+Heat exposure (32 °C) [vs Control session (22 °C)]
+Heat exposure (lag 0) on the same day
+Heat exposure (temperature above 26.3°C vs minimum morbidity temperature of 22.2°C)
+Heat exposure (temperature at the 99th percentile)
+Heat exposure (urban areas)
+Heat exposure (working in very hot conditions)
+Heat exposure [vs Thermoneutral]
+Heat exposure above the cut-point temperature (lag 0 and lag 1)
+Heat exposure at 20 degrees C or above (lag 0 and lag 1)
+Heat exposure during 0 to 1 hour (preceding interval 0-1 hour)
+Heat exposure on children and adolescents in the ABCD study (early puberty initiation)
+Heat index
+Heat index (Quartile 4)
+Heat index (daily climate measurement of temperature and humidity)
+Heat index (measurement of perceived temperature that takes into account humidity and temperature)
+Heat injury
+Heat of form (in silico prediction)
+Heat probe group [vs Control group]
+Heat sensitivity
+Heat sensitivity for fatigue
+Heat strain score index (HSSI)
+Heat stress
+Heat stress (summer vs autumn)
+Heat stress [vs No heat stress]
+Heat stress condition [vs Thermoneutral condition]
+Heat stress group [vs Control group]
+Heat stress illness emergency department visits
+Heat stress index
+Heat stress indices
+Heat stressed hearts [vs Control hearts]
+Heat stressed rats [vs Controls]
+Heat wave (period of at least 7 consecutive days with daily maximum temperature above 35.0 °C and daily average temperatures above the 97th percentile)
+Heat wave days
+Heat wave days [vs Non-heat wave days]
+Heat waves
+Heat wrap [vs Control wrap]
+Heat-Acclimated Status (heat acclimationS) after Endurance Capacity Test [vs Heat-Acclimated Status (heat acclimationS) before Endurance Capacity Test]
+Heat-Acclimated [vs Non-Heat-Acclimated]
+Heat-Stressed Animals [vs Control Group]
+Heat-Stressed Hearts [vs Control Group]
+Heat-acclimated [vs Control (C)]
+Heat-acclimated athletes [vs Non-acclimated athletes]
+Heat-acclimated rats [vs Age-matched controls (C)]
+Heat-distressed (35 C, HD) [vs Thermoneutral (24 C, TN)]
+Heat-induced Microvascular Hyperemia
+Heat-preconditioned internal mammary artery [vs Controls]
+Heat-related calls
+Heat-related mortality rates based on the classification of heat-related deaths by the Cook County Medical Examiner's Office
+Heat-related symptom severity
+Heat-sensitive moxibustion
+Heat-stressed group [vs Control group (rectal temperature of the ewe within the normal range)]
+Heatstroke Patients after 7 days of heat acclimation [vs Heatstroke Patients on Day 1]
+Heatstroke-induced coagulopathy score
+Heatwave
+Heatwaves
+Heatwaves (3 or more days with temperatures above the 75th percentile)
+Height of National Institutes of Health Stroke Scale
+High Ambient Temperature [vs Neutral Ambient Temperature]
+High Ambient Temperature and Relative Humidity [vs Low Ambient Temperature and Relative Humidity]
+High Heat Stress (HHS) [vs isometric handgrip Exercise]
+High Temperature (31.6 °C and 31.9 °C) [vs Low Temperature (14.4 °C and 15.3 °C)]
+High Temperature (95th percentile)
+High ambient temperature
+High ambient temperature (25°C)
+High ambient temperature (99th percentile of daily temperatures)
+High ambient temperature (summer) leading to repeat asthma hospitalizations
+High mean temperature (MT)
+High mean temperature (in males and those <65 years)
+High temperature (95th and 99th percentiles)
+High temperature (average annual temperature) in north-western Ethiopia
+High temperature (fever)
+High temperature (increase)
+High temperature (lag 0-27 days)
+High temperature (vs. normal temperature)
+High temperature and high humidity exercise group (35±2°C, 80%±10% humidity) [vs Normal temperature exercise group (25±2°C, 60%±5% humidity)]
+High temperature exposure (97.5th percentile)
+High temperature in the bedroom (temperature)
+High temperatures (exposure to high temperatures)
+High temperatures (same-day)
+Higher Education Level (daily mean temperature)
+Higher ambient temperatures in the last 4 weeks of pregnancy (compared to the reference temperature of 21°C)
+Higher mean daily temperature (30 °C) relative to 21 °C
+Higher preset maximum temperature (per 1 °C increase)
+Higher temperature (daily temperature)
+Higher-than-average temperatures (in specific study sites)
+Highest quartile of ambient temperatures during pregnancy (Ta > =21.3)
+Highest temperature increase
+Holder pasteurization [vs F-flash-heat pasteurization]
+Hot Season [vs Cool Season]
+Hot Season [vs Warm Season]
+Hot Temperature (games players) [vs Moderate Temperature (endurance athletes)]
+Hot Water Ingestion [vs Cold Water Ingestion]
+Hot condition (35°C) [vs Thermoneutral condition (20°C)]
+Hot environment (36.3°C) [vs Temperate environment (18.3°C)]
+Hot environment [vs Control environment]
+Hot environment with minimal clothing [vs Temperate environment with overdressing]
+Hot nights
+Hot season (August) [vs Temperate season (January)]
+Hot season [vs Warm season]
+Hot temperature (90th percentile of temperature)
+Hot temperatures (temperature at 33 degrees Celcius)
+Hot water immersion41 [vs Hot water immersion40]
+Hot water treatment (60 degrees C for 15 or 30 s) [vs Untreated control]
+Hot water treatments [vs Control (No treatment)]
+Hourly ambient temperature at which individuals were working (before cardiac arrest)
+Hourly temperature increase from 50th percentile (26.1 °C) to 95th percentile (33.6 °C)
+Hourly temperature increase from 50th percentile to 95th percentile (26.1 °C to 33.6 °C)
+Hyperpyrexia (body temperature >39°C)
+Hyperthermia
+Hyperthermia (elevated body temperature)
+Hyperthermia Group [vs Nonhyperthermia Group]
+Hyperthermia [vs Hyperthermia combined with GCSF]
+Hyperthermia condition [vs Hyperthermia condition]
+Hyperthermia group [vs Control group]
+Hyperthermia in patients with large-artery atherosclerosis (supra- or infratentorial cerebral vascular lesion)
+Hyperthermia in the first 24 hours of DT diagnosis
+Hyperthermia-induced animals [vs Normothermic controls]
+Hyperthermic babies
+Hyperthermic environment (37 °C) [vs Thermo-neutral environment (25 °C)]
+Hyperthermic group [vs Control group]
+Hyperthermic participants [vs Completers]
+IUheat stress [vs IUTN]
+Implementation of heat-action days (measure to prevent heat-related mortality)
+In-hospital mortality (among heat stroke patients)
+In-hospital mortality (among patients hospitalized for heat stroke)
+In-hospital mortality (of heat stroke patients)
+In-hospital mortality among heat stroke patients
+Incidence of Hot Flush
+Incidence of hot flushes
+Increase in Apparent Temperature (by 1.7 °C)
+Increase in Apparent Temperature by 17.38 degrees Celsius (Higher AT)
+Increase in ambient temperature (in degrees)
+Increase in ambient temperature (per °C)
+Increase in ambient temperature (temperature increase)
+Increase in ambient temperature by 1 degree Celsius (lag 0)
+Increase in ambient temperature by 14 degrees (from 18°C to 32°C)
+Increase in ambient temperature by 1°C (lag 0)
+Increase in ambient temperature to 27 °C (P75) (compared to the mean air temperature)
+Increase in ambient temperatures (specifically related to heat waves)
+Increase in average daily temperature (during heat days)
+Increase in average temperature by 1 degree Celsius (lag 1)
+Increase in daily maximum temperature (in degrees) in women
+Increase in daily maximum temperature (°C) by 1 degree
+Increase in daily maximum temperature above the median (28°C [82°F])
+Increase in daily mean temperature (above 25°C)
+Increase in daily mean temperature (°C) by 1°C
+Increase in daily mean temperature by one degree on lag day 6
+Increase in daily temperature by 1°C (in Beijing)
+Increase in daytime maximum temperature from the median to the 98th percentile of the warm season temperature distribution (22°C to 32°C)
+Increase in maximum daily temperature between 14.2°C and 37.7°C (temperature range: 14.2°C to 37.7°C)
+Increase in maximum temperature (°C) by 1 unit
+Increase in maximum temperature from the previous day (per °C)
+Increase in mean temperature above 16 °C (compared to days without heat stroke deaths)
+Increase in mean temperature within the 2 months preceding the surveys (compared to a decrease in temperature)
+Increase in monthly average temperature (by 1 degree Celsius)
+Increase in positive rate of serum amyloid A due to low ambient temperature (7 °C, P1)
+Increase in temperature above a cut-point (heat-related mortality)
+Increase in temperature above threshold for high ambient temperature (1°C above threshold)
+Increase in temperature by 10 degrees F (daily temperature)
+Increase in temperature from the 75th to 99th percentile (hot days)
+Increase of 1 degree Celsius in ambient temperature (per °C)
+Increase of one Celsius degree in ambient temperature (monthly, lagged by one month)
+Increased ambient temperature (above 9°C)
+Increases in outdoor temperature (compared to previous temperature levels)
+Indoor heat and humidity exposure above a 26 °C threshold (increasing indoor temperature and specific humidity)
+Intravenous cloprostenol treatment at insemination (given to cows in the warm season)
+Ischemic heart disease (heat exposure)
+January-February mean temperatures
+July high temperature
+July/August mean temperature
+Knowledge about the heat plan
+Knowledge of heat-related illnesses (measured by the knowledge score)
+Level of occupational heat exposure
+Local Heating (44°C) [vs Acetylcholine Iontophoresis]
+Local heating plateau
+Local hyperthermia [vs Cryotherapy]
+Low Ambient Temperature [vs Neutral Ambient Temperature]
+Low Apparent Temperature (-11°C, 2.5th percentile)
+Low ambient temperature (14°C)
+Low ambient temperature (4°C)
+Low ambient temperature (≤10°C) exposure within several hours
+Low apparent temperature (10th percentile)
+Low apparent temperature exposure (females)
+Low mean temperature (MT)
+Lower mean daily temperature (11°C vs. 25°C)
+MDP in combination with hyperthermia
+Major League Baseball pitchers from warm weather areas [vs Major League Baseball pitchers from cold weather areas]
+Males - apparent temperature
+Maximum Ambient Temperature (95th percentile)
+Maximum Temperature during Heat Wave Alert Periods (HWAP)
+Maximum daily temperature (41.7°C)
+Maximum daily temperature at 41.7°C (lag 0)
+Maximum daily temperature exceeding 45°C (following implementation of the heat action plan)
+Maximum daily temperature greater than 24.3°C (Tmax above 24.3 °C)
+Maximum daily temperature on lags 7-9 (RR = 1.02; 1.00-1.04)
+Maximum temperature
+Maximum temperature (Quintiles 2-5)
+Maximum temperature (assessed from the Gifu Meteorological Observatory) in females
+Maximum temperature (at the 10th percentile)
+Maximum temperature (average daily maximum temperature)
+Maximum temperature (between 14.2°C and 37.7°C)
+Maximum temperature (measured by Gifu Meteorological Observatory) on the day of the study
+Maximum temperature (measured in degrees Celsius)
+Maximum temperature (°C)
+Maximum temperature (°C) in Oslo
+Maximum temperature increase (between 14.2°C and 37.7°C)
+Maximum temperature on the day before measurement (as it relates to arm volume)
+Maximum temperature over the past 24-72 hours (during the summer season)
+Maximum temperature recorded during the first 7 days in patients with high fever (≥ 37.9 degrees C)
+Maximum temperatures during different seasons
+May urban heat risk index
+Mean Daily Temperature (Average daily temperature)
+Mean Daily Temperature (Summer)
+Mean July-September daily minimum temperatures (as the temperature increases during these months)
+Mean Temperature (Low vs High)
+Mean Temperature (MT)
+Mean Temperature (among febrile infants aged 0 to 24 months)
+Mean Temperature (among newborns)
+Mean Temperature (as a meteorological factor)
+Mean Temperature (average temperature)
+Mean Temperature (lagged in 6 months, as a driver of human brucellosis incidence)
+Mean Temperature (low temperature -8.86°C)
+Mean Temperature Change (1°C)
+Mean Temperature as a Risk Factor for Waterborne Diseases in Bangladesh (mean temperature as a determinant associated with waterborne diseases in Bangladesh from 2017 to 2020)
+Mean Temperature on Admission
+Mean Weighted Temperature (weighted mean temperature)
+Mean ambient temperature during the months of TIA peak (June-August)
+Mean apparent temperature (same and previous day) at 30 degrees C
+Mean daily apparent temperature at 18°C (lag 2 to 4)
+Mean daily temperature
+Mean daily temperature (11°C vs. 25°C)
+Mean daily temperature (< 10°C)
+Mean daily temperature (in Mexico City Metropolitan Area)
+Mean daily temperature at 28°C (exposure to hot temperatures)
+Mean daily temperature at 29°C (vs. 13°C)
+Mean daily temperature in urban areas (2009-2013)
+Mean daily temperature of 27Â°C (95th percentile)
+Mean highest temperature (temperature recorded at the highest point of the day)
+Mean maximal temperature (the average highest temperature)
+Mean monthly temperature (maximum temperature)
+Mean summer temperature
+Mean temperature
+Mean temperature (MeanT) at 25.8 °C
+Mean temperature (among HIV-positive children in the Children's Hospital AIDS Program)
+Mean temperature (among patients with traumatic brain injury)
+Mean temperature (among women after childbirth)
+Mean temperature (average daily temperature)
+Mean temperature (average temperature in degrees Celsius)
+Mean temperature (daily average temperature)
+Mean temperature (extreme hot temperatures)
+Mean temperature (in the recovery room)
+Mean temperature (increase by 1.22 degrees Celsius)
+Mean temperature (increasing by 1 °C)
+Mean temperature (of the gold-tip catheter group versus the control catheter group)
+Mean temperature (temperature dropping below 13°C)
+Mean temperature (°C) (among temperature measurements)
+Mean temperature above the theoretical minimum-risk exposure level (TMREL) (Temperature above TMREL)
+Mean temperature at -8.86°C (lag 0 days)
+Mean temperature at its lowest point (lag 0 days)
+Mean temperature difference
+Mean temperature in patients with nephrolithiasis (stone formers)
+Mean temperature in the most ischemic region
+Mean temperature increase of 0.5 °C in Bali (lag of four months)
+Mean temperature measurements
+Mean temperature of the same month in Shiraz City (2006-2012)
+Mean temperature within 48 hours following rewarming (post-targeted temperature management period)
+Mean temperatures of the period from June to October (Weather conditions during the summer and early fall)
+Membrane Filtration infant milk formula [vs Heat Treatment infant milk formula]
+Metabolic Heat Conformation (MHC) method (noninvasive measurement of blood glucose)
+Microbase (thermoplastic, polyurethane-based) [vs Paladon 65 (heat-polymerized, methacrylate)]
+Microvascular Resistance During Heat-induced Hyperemia
+Mild heat treatment (incubation at 40 degrees C for 2 h) for asthenozoospermic males
+Minimum ambient temperature (the lowest temperature recorded each day)
+Minimum daily temperature (26.9 °C compared to 13.2 °C)
+Minimum daily temperature (as a proxy for pesticide application)
+Minimum daily temperature (in cities of Iran)
+Minimum temperature increase of 1 degree Celsius (lag 7 weeks)
+Moderate Heat Stress (MHS) [vs isometric handgrip Exercise]
+Moderate hypothermia using cooling blankets (Group 1) vs. Endovascular cooling technique with intravenous heat exchange catheters (Group 2)
+Moderate temperatures (ambient temperature)
+Moderate-high daily average temperature (between 12.89°C and extreme high temperature)
+Moderate-low temperature (daily average temperature)
+Modulated electro-hyperthermia group [vs non-Modulated electro-hyperthermia group]
+Monthly average ambient temperature in Taiwan (measured from 19 meteorological stations)
+Monthly average temperature (18.2±2.8°C)
+Monthly average temperature (between 16.3 and 17.3 °C at lagged 14 months)
+Monthly average temperature (°C)
+Monthly average temperature at 0°C or below (mean temperature at 0°C or below)
+Monthly mean temperature (average temperature over a month)
+Monthly outdoor mean temperature
+Mortality on hot days
+Mortality rate (among rats subjected to experimental rat heat stress)
+Mortality rate (among the dogs with severe heatstroke and acute kidney injury)
+Non-viable somatic cells group (Buffalo skin fibroblast cells rendered non-viable by heat treatment) vs. Controls group (Viable somatic cells)
+Not-enclosed extreme heat sources
+Number of days with a maximum temperature of 90°F or higher (during warm season)
+Number of extreme heat days (severe heat days due to climate change)
+Number of extremely hot days (>95th percentile of regional monthly mean temperature) (during summer)
+Number of heat days (2019-2018)
+Number of heat days (days with temperature above 30°C)
+Number of heat injuries per program
+Number of hyperthermia given
+Occupational heat exposure
+Outdoor temperature (spring)
+Outdoor temperatures (≥ 20 °C)
+Outpatient visits of acute upper respiratory infections at an average temperature of 15 °C
+POST (post-heat acclimation) [vs REST (pre-heat acclimation)]
+Particulate emissions during cold-start tests at low ambient temperatures (LATs)
+Passive heat exposure (muscle temperature increased to 37.0 ± 0.8°C)
+Passive heat intervention following pre-match and half-time warm-up [vs Standardised tracksuit bottoms (CON)]
+Patients after heat stroke [vs Age-matched healthy volunteers]
+Patients with Hot Can device [vs Patients with Cold Can device]
+Patients with a heat stroke episode [vs Patients without any heat stroke episode]
+Patients with hyperthermia [vs Patients with normothermia]
+Perceived Emergency Preparedness Scale for heat illness (heatPEPS)
+Percentage of patients with hyperpyrexia
+Plasma heat stress protein70 levels
+Plastic body hood heat shield [vs Plastic blanket heat shield]
+Post-HAz+HA (Heat Acclimatization followed by Heat Acclimation) [vs Post-HAz (Heat Acclimatization)]
+Post-Heat Acclimation [vs Pre-Heat Acclimation]
+Post-Heat Acclimatisation [vs Pre-Heat Acclimatisation]
+Post-Passive Heat Acclimation [vs Pre-Passive Heat Acclimation]
+Post-heat acclimation [vs Pre-heat acclimation]
+Post-heat acclimatization+heat acclimation [vs Post-heat acclimatization]
+Preconditioned Group (pigs exposed to local heat preconditioning) vs. Control Group (pigs not exposed to local heat preconditioning)
+Preference for very hot temperature for beverages and food
+Preferred ambient temperature (T(a) pref)
+Presence of severe heat (as a stressor)
+Preset maximum temperature (70 °C)
+Prevalence of hot season (males)
+Prolonged extreme weather conditions over three days (mean temperature of 0°C)
+Rate of temperature rise
+Rebound hyperthermia
+Red meats cooked at high temperatures
+Relative risk of urolithiasis presentation associated with daily mean temperature of 29°C (compared to a reference value of 13°C)
+Respiration rate (RR) during heat treatments
+Respiration rate (of ewes exposed to heat stress vs. thermoneutral conditions)
+Reticulorumen hyperthermia
+Risk of an emergency department chronic bronchitis diagnosis in Douglas County, NE during the 2012 heatwave compared to the same calendar period in 2011
+Risk of heat illness during the second decade of the study
+Rotavirus infection relative risk with increasing 7-day average temperatures above 28°C
+STEMI presentation during temperature extremes (minimum temperature <0 °C or maximum temperature >25 °C)
+STEMI presentation on a day of temperature extremes (minimum temperature <0 °C or maximum temperature >25 °C)
+Same-day hot temperatures (lag 0-2)
+Same-day maximum temperatures (20 °F lower)
+Scrotal superficies mean temperature
+Season (Hot Season)
+Season (warm season)
+Season (warm seasons)
+Season of Irbesartan/Hydrochlorothiazide Treatment Commencement (Cold vs. Warm Seasons)
+Season of Treatment Commencement (Cold vs. Warm Seasons)
+Season of the year (cool season vs. hot season)
+Seasonal variation (cool vs hot months)
+Seasonality (warm season vs. cold season)
+Seasonality (warm season)
+Sensation of Heat During Octylcyanoacrylate Application
+Severe heat days (temperature above 35°C)
+Soldiers with heat exhaustion symptoms (Symptomatic) vs. Soldiers who completed the march (Completers)
+Storage time of ultra-high temperature-treated milk
+Summer hot days (above percentile 70) compared to reference temperatures (below percentile 30)
+Summer temperature
+Techniques that used heat
+Temperature (Increase in average and maximum temperature)
+Temperature (average daily temperature in the cities of Wuhan, Xiaogan, and Huanggang, China)
+Temperature (average daily temperature)
+Temperature (average temperature decrease compared to baseline)
+Temperature (average temperature in the Huang-Huai-Hai region)
+Temperature (average temperature)
+Temperature (cold and heat)
+Temperature (daily temperature)
+Temperature (during the 2011 heat wave)
+Temperature (during the January 30-February 6, 2011 heat wave)
+Temperature (extremely high temperature at lag 0 day)
+Temperature (heat exposure)
+Temperature (heat)
+Temperature (high temperature)
+Temperature (high temperatures)
+Temperature (highest recorded daily temperature)
+Temperature (hot and humid day games)
+Temperature (hot condition vs neutral condition)
+Temperature (hot season)
+Temperature (hot temperature quartiles compared to cooler temperature quartiles)
+Temperature (maximum temperature)
+Temperature (mean temperature)
+Temperature (monthly average temperature)
+Temperature (specific average temperature)
+Temperature Increase
+Temperature Increase (T) ≤0.2 °C [vs Temperature Increase (T) 0.2-1.5 °C]
+Temperature Rise
+Temperature Rise (of the external surface of primary roots)
+Temperature Rise (of the titanium substrate)
+Temperature above 10 °C (cumulative bacillary dysentery cases)
+Temperature above 20.8 °C (peaking risk)
+Temperature above the 75th percentile for 3 or more consecutive days (Heatwaves)
+Temperature above the hot threshold at the lag0 (increase in 1 °C)
+Temperature drop of 16 °C within 1-2 days (ambient temperature)
+Temperature in urban areas (moderate heat exposure)
+Temperature increase (1 °C)
+Temperature increase (29°C)
+Temperature increase (4 °C) [vs Control (early in the night)]
+Temperature increase (during the heat wave)
+Temperature increase after Thoracic sympathetic ganglion block
+Temperature increase by 1 degree Celsius (as a result of climate change)
+Temperature increase by 1°C above 25°C (average temperature above 25°C)
+Temperature increase by 5 degrees Celsius
+Temperature increase from the 75th to the 99th percentile (from May to September)
+Temperature increase from the median to the 98th percentile (22°C to 32°C) of the warm season temperature distribution with 10 days of lag
+Temperature increase impacting risk of unclassified diarrhea
+Temperature increase leading to higher risk of bacillary dysentery in infectious diarrhea patients
+Temperature increase of 1 °C above 39 °C (during warmer months)
+Temperature increases in the background compartment
+Temperature of 30 °C (maximum temperature the day of drowning)
+Temperature of the environment where water treatment plants operate (ambient temperature)
+Temperature variation (changes in daily maximum temperature in winter)
+Tension-dependent heat per tension-time integral
+The effect of 1 °C increase in ambient temperature (associated with increased incidence of mumps)
+Thermoneutral [vs Heat Stress]
+Thermoregulatory restrictions on piglets (ability to make operant response for heat)
+Time to 50% of maximum temperature change
+Time to 95% of maximum temperature change
+Total-body hyperthermia [vs Baseline]
+Use of heat recovery ventilators
+Using hot water
+Valley heat deficit
+Warm Season (high temperature, high humidity) vs. Hot Season (even higher temperature, high humidity)
+Warm Season [vs Hot Season]
+Warmest Day (highest daily mean outdoor temperature) vs. Coldest Day (lowest daily mean outdoor temperature)
+Water availability in wet and highly vegetated areas (affected by high temperatures)
+Weather conditions (correlation to maximum temperature)
+Weather factors (maximum temperature, precipitation, day of week, and month)
+Weekly average temperature during heatwave periods (defined as seven or more days with temperatures above the 95th percentile of daily temperature distribution)
+Weekly mean maximum temperature (in metropolitan New South Wales, Australia)
+Weekly mean temperature (50th percentile)
+Weekly mean temperature (90th percentile over 22 weeks)
+Weekly mean temperature (90th percentile)
+Weekly mean temperature (at the 90th percentile)
+Weekly mean temperature (compared to the 50th percentile temperature)
+Weekly mean temperature (in Alberta, Canada)
+Weekly mean temperature at the 95th percentile (Cold temperature)
+Weekly mean temperature during the first trimester (2-25 weeks)
+Weekly mean temperature increase of 1°C in the rainy season
+Wet Bulb Globe Temperature area
+Wet bulb globe temperature
+Wet bulb globe temperature index
+Whole body heat stress [vs Normothermia]
+Winter (cold season) vs. Summer (warm season)
+Work unit (Work units with greater exposure to heat and higher requirement for protective clothing, such as Underground, Overhead - Predominantly Live Line, and Overhead - Distribution and Transmission)
+Work unit exposure to heat and requirement for protective clothing (Underground, Overhead - Predominantly Live Line, Overhead - Distribution and Transmission)
+Workers exposed to heat stress during an 8.5 hour work shift [vs Controls not exposed to heat stress during an 8.5 hour work shift]
+absolute difference of indoor and outdoor temperatures (|Tin–Tout|)
+acetylcholine iontophoresis iontophoresis and local heating
+active heat acclimation/acclimatization effectiveness
+acute exposure to extreme heat
+admission hyperthermia (>37.5 °C)
+adverse health outcomes (among the heat-exposed workers)
+after 10 days of heat acclimation [vs before heat acclimation]
+after a 30-min rapid local heating protocol (30°C-44°C) [vs baseline]
+after discontinuation of hyperthermic exposure [vs before hyperthermic exposure]
+after heat acclimation [vs before heat acclimation]
+after heat acclimation period (ACC-heat exercise test) [vs before heat acclimation period (UN-heat exercise test)]
+after heat stress [vs before heat stress]
+air temperature increase
+all-cause mortality (among individuals who had been hospitalized for severe heat illness)
+all-cause mortality (among the population in the Barcelona metropolitan area during the warm seasons of 1999-2006)
+all-cause mortality (among those who have experienced prior hospitalization for heat illness)
+all-cause mortality (for the population of subtropical islanders in warm seasons)
+ambient average daily temperature
+ambient extreme temperatures (heat)
+ambient heat (measured by heat index percentile categories)
+ambient heat (measured by heat index percentile)
+ambient heat/high temperature exposure in the Mediterranean basin
+ambient temperature
+ambient temperature (>20°C)
+ambient temperature (AT) for 75-84 year older group
+ambient temperature (Q2)
+ambient temperature (Relative Risk at lag 5)
+ambient temperature (among CAPD patients)
+ambient temperature (among Ross and Hubbard broilers)
+ambient temperature (among the examined landfill gas-to-energy plants in Turkey)
+ambient temperature (among the participants/runners)
+ambient temperature (both high and low temperatures)
+ambient temperature (changes in temperature)
+ambient temperature (cool season)
+ambient temperature (cycling at 21°C or 33°C)
+ambient temperature (daily maximum temperature for men in East Asia and Pacific region)
+ambient temperature (degrees C)
+ambient temperature (during the cool season)
+ambient temperature (exposure to temperatures in the 5th percentile)
+ambient temperature (in the last day prior to admission)
+ambient temperature (in the study)
+ambient temperature (increase)
+ambient temperature (mean temperature in degrees Celsius)
+ambient temperature (measured by heat index)
+ambient temperature (measured in degrees Celsius)
+ambient temperature (of benthic reef fish)
+ambient temperature (of the study participants)
+ambient temperature (ranging between 28 degrees C and 5 degrees C)
+ambient temperature (seasonal changes)
+ambient temperature (specifically high temperatures in the summer and falls in temperature in the cold season)
+ambient temperature (summer and winter)
+ambient temperature (temperature decline)
+ambient temperature (temperature of the environment)
+ambient temperature (temperature range of 25-45 degrees C)
+ambient temperature (varied between 5-14 degrees C and 25-31 degrees C)
+ambient temperature (weekly mean temperature)
+ambient temperature [extreme cold (-1.3 °C)]
+ambient temperature [extreme heat (30.5 °C)]
+ambient temperature above 22.3 °C (warm weather)
+ambient temperature above 9 °C (mild and high heat)
+ambient temperature associated with least mortality, 25 ℃
+ambient temperature at three trimesters of pregnancy
+ambient temperature change
+ambient temperature changes
+ambient temperature during chronic heat stress (HT)
+ambient temperature during gestation
+ambient temperature during pregnancy
+ambient temperature during pregnancy in Sweden
+ambient temperature during the seasonal transition from summer to fall (correlated with serum PRL concentrations)
+ambient temperature during winter
+ambient temperature experienced in the afternoon (sheared alpacas)
+ambient temperature exposure impacting influenza risk in Chinese cities (based on cumulative relative risk of 2.13)
+ambient temperature extremes
+ambient temperature in cold weather
+ambient temperature in potable water treatment process
+ambient temperature in the operating room
+ambient temperature increase (warmer temperatures)
+ambient temperature increase affecting cholera incidence
+ambient temperature increase affecting salmonellosis risk
+ambient temperature less than 26c0 (temperature threshold)
+ambient temperature of 36 °C [vs ambient temperature of 20 °C]
+ambient temperature of the BDFA
+ambient temperature parameters on stroke incidence
+ambient temperature variation
+ambient temperature, -9.6 °C
+ambient temperature: cool room [vs ambient temperature: neutral room]
+ambient temperatures (among the study population)
+ambient temperatures (higher)
+ambient temperatures (of the horses under outdoor conditions)
+ambient temperatures (positive correlation with the number of clinically sick birds)
+ambient temperatures (temperature of the environment)
+ambient temperatures <20 degrees C [vs ambient temperatures > or =20 degrees C]
+ambient temperatures above 17.2°C (during race weekends at Kansas Speedway)
+ambulance transports stratified by heat stroke
+amount of heat exchange
+amount of heat generated by postcardiac arrest patients
+amplitude of contact heat-evoked potentials (CHEPs)
+annual average temperature
+annual average temperature (among the selected healthy individuals in China)
+annual average temperature (among the selected individuals from different ethnic groups in China)
+annual average temperature (among the selected individuals from eight ethnic groups in nine provinces in China)
+annual average temperature (temperature of the area averaged over a year)
+annual average temperature increase (in Antarctic Peninsula)
+annual maximum temperature
+annual mean and maximum temperature
+annual mean temperature
+annual mean temperature (in degrees Celsius)
+annual mean temperature (mean temperature of the county)
+annual summaries of heat and cold
+anomalously warm weather
+anthropogenic heat emissions
+apparent temperature (7-day moving average)
+apparent temperature (cumulative 8-day measurement)
+apparent temperature (heat index)
+apparent temperature (hot days with a lag of 7 days)
+apparent temperature (males)
+apparent temperature (of the elderly population of Metro Vancouver)
+apparent temperature >30°C (86°F)
+apparent temperature above 15°C
+apparent temperature at Z=2
+apparent temperature below 10°C
+apparent temperature incorporating relative humidity readings
+area above the threshold of hyperthermia
+association between observed apparent temperature and daily all-cause mortality
+average air temperature
+average ambient temperature
+average ambient temperature (at 22 °C, 67th of daily mean temperature distribution)
+average annual maximum temperature (in the geographical location of residence)
+average daily air temperature during the first five out of 10 days preceding the onset of flowering
+average daily temperature
+average daily temperature (during heat days)
+average daily temperature (in degrees Celsius)
+average daily temperature (maximum absolute humidity) in highly populated areas
+average daily temperature (temperature)
+average daily temperature above 30 °C (during water supply shortage)
+average daily temperature during warm months (above 30 °C)
+average daily temperature over the previous seven weeks (cold weather)
+average daily temperatures between 15°C and 20°C
+average heat temperature of three points
+average minimum daily temperature (1999-2013)
+average monthly maximum temperature (among the records of meteorological stations in Bangladesh)
+average monthly maximum temperatures (climatic predictor)
+average monthly maximum temperatures (temperature range during the hottest month)
+average monthly temperature increase (per 1°C)
+average temperature
+average temperature (15 days preceding each renal colic)
+average temperature (AT) with a 2-month lag
+average temperature (Dhaka, Bangladesh)
+average temperature (Gilgit-Baltistan)
+average temperature (Guadalcanal Province at a lag of one month)
+average temperature (T mean)
+average temperature (T°C)
+average temperature (annual)
+average temperature (at a mean temperature of 14°C)
+average temperature (average temperature in Xiamen)
+average temperature (degrees F)
+average temperature (drop in temperature)
+average temperature (mean maximum and minimum temperature)
+average temperature (mean temperature of 14°C)
+average temperature (meteorological factor)
+average temperature (metrological parameter)
+average temperature (minimum, maximum and average temperature)
+average temperature (monthly average temperature)
+average temperature (negative impact)
+average temperature (of the study area)
+average temperature (untreated plots)
+average temperature Tavg (ΔTavg)
+average temperature at oocyte retrieval
+average temperature less than or equal to 32°F
+average temperatures (increase by 1°C)
+average tension-independent heat rate
+bacterial counts for survivors of the different heat treatments
+baseline body temperature and temperature increases after stroke
+baseline temperatures and hyperthermic responses
+before heat treatment [vs after heat treatment]
+before warming with hot water bottles [vs after warming with hot water bottles]
+body temperature above 38.5°C
+body temperature above 39°C
+body temperature of chicks at 30 minutes of heat stress
+body temperature rise rate
+brain injury induced by exertional heatstroke
+capacity to lose heat
+cardiovascular mortality during extreme heat (EH)
+change in ambient temperature (day-to-day increase)
+change in ambient temperature (from indoor to ambulance)
+change in average temperature (one-month lag)
+change in body heat content during exercise
+change in body heat content during recovery
+change in number of hot flushes (Landgren scale)
+changes in hematocrit during heat-response test
+cold (5th vs 50th percentile of mean temperature)
+cold season [vs hot season]
+cold spell (period of at least 7 consecutive days with daily maximum temperature and daily average temperatures below the 3rd percentile during the study period)
+cold spells (ambient temperature below 10th percentile)
+cold spells (≥2 consecutive days with <5th percentile of daily mean temperature)
+cold temperature (mean daily temperature)
+cold temperature exposure (ambient temperature)
+cold weather and warm weather months [vs spring and fall months]
+cold-exposure [vs heat-exposure]
+cold-heat patterns
+colder temperatures (maximum temperature)
+colonic temperature increase
+combination therapy [vs T-VEC-only group, RF hyperthermia-only group, control group]
+comparison of high and median minimum daily temperature (99th percentile: 26.9 °C - median: 13.2 °C)
+comparison of knee injury prevalence at low ambient temperatures versus higher ambient temperatures (temperature quartiles)
+concerns over high temperature
+consumption of coffee and vegetables prepared at high temperature
+consumption of frozen or shelf-stable ready-to-eat/heat meals
+contact with a hot object
+control group (CG) [vs hyperthermia group (HG)]
+control group [vs heat therapy at 37°C and 39°C groups]
+control group [vs heat therapy at 39°C group]
+cool ambient temperature [vs moderate ambient temperature]
+cool seasons [vs warm seasons]
+core and muscle hyperthermia (temperature-induced)
+core body temperature increase
+core heat content
+correlation between heat index and number of dehydration cases
+crop heat units
+cumulative 8-day relative risk (of DVT) due to extreme low mean daily temperatures (-17.7 °C)
+cumulative heat exposure
+cumulative heat release
+current day's heat demand
+custard made with ultra high temperature milk
+daily ambient temperature
+daily apparent temperature (AT)
+daily average ambient temperature (extreme heat)
+daily average temperature (measured at the Uccle station in Brussels)
+daily average temperature (per 10 °C increment)
+daily average temperature (temperature)
+daily average temperature at the time of ovulation induction
+daily average temperature during the first six months of COVID-19 pandemic
+daily average temperatures during heat waves (days characterized by severe thermal conditions)
+daily frequency of hot flush count
+daily high temperature
+daily maximum air temperature
+daily maximum ambient temperature
+daily maximum temperature (National Health Insurance group)
+daily maximum temperature (in Celsius)
+daily maximum temperature (lowest temperature recorded during the day)
+daily maximum temperature (measured in both the macro- and microenvironment)
+daily maximum temperature (measured in degrees Celsius)
+daily maximum temperature (measurement of weather)
+daily maximum temperature (per 1°C above 31.2°C)
+daily maximum temperature at or above 41.1°C (90th percentile)
+daily maximum temperature on very cold and hot days (1st and 99th percentile of the temperature distribution)
+daily maximum temperature over the day of death and the 2 days prior to this day (ambient temperature)
+daily maximum temperature-humidity index
+daily maximum temperatures
+daily maximum temperatures (days with temperatures higher than 95th percentile)
+daily maximum urban heat island intensity (UHIImax)
+daily mean air temperature
+daily mean air temperatures
+daily mean temperature
+daily mean temperature (-0.076)
+daily mean temperature (T mean) at ultra high levels of warmth
+daily mean temperature (T mean) on the same day (lag 14) compared to the average temperature
+daily mean temperature (at 15-34 years old)
+daily mean temperature (at the 99th percentile during summer)
+daily mean temperature (average temperature over the same day and the previous six days)
+daily mean temperature (cold temperatures)
+daily mean temperature (hot temperatures ≥ 21°C)
+daily mean temperature (increased by 1°C)
+daily mean temperature (lower temperature)
+daily mean temperature (short-term association)
+daily mean temperature (temperature increase)
+daily mean temperature (temperature of 24.4 °C)
+daily mean temperature (temperature of each day)
+daily mean temperature (warm season)
+daily mean temperature at 21°C
+daily mean temperature at the 95th percentile during summer (June through September)
+daily mean temperature at the lower educational level (specifically for women)
+daily mean temperature at which drug overdose risk is 1.07
+daily mean temperature during warm season (lag 0-6 days)
+daily mean temperature for those aged ≥65 years
+daily mean temperature of 12.5 °C (5th percentile)
+daily means, maximums, minimums, and early morning measures of temperature, heat index, and wet bulb globe temperature indices
+daily temperature (above 0 °C)
+daily temperature (and other weather parameters)
+daily temperature (changes in daily temperature)
+daily temperature (hot and cold temperatures)
+daily temperature (in degrees Celsius)
+daily temperature (increase above the heat threshold temperature)
+daily temperature (increase)
+daily temperature above the 90th percentile (90th percentile of daily temperature)
+daily temperature change
+daily temperature difference
+daily temperature over 28 °C (summer and fall)
+daily temperature range
+daily temperature variation (TV)
+daily temperature variation (increase of 1 degree Celsius)
+daily temperature, 25.2 °C
+data logger 12-day mean air temperature
+days to first heat (DFH)
+daytime maximum temperature during the warm season (10 days of lag)
+decrease in apparent temperature (interquartile range)
+decrease in daily maximum temperature (over the day of death and the 2 days prior to this day, adjusted for relative humidity)
+decrease of one year in age on intraoperative hyperthermia risk in children undergoing external warming by forced-air (Pediatric Population)
+defined hot period [vs defined cold period]
+degree of hyperthermia
+delay in sweating onset (td) in men and women under dry heat exposure
+depletion of heat content during winter
+dew point (minimum temperature, mean temperature)
+diabetics under the heatwave
+difference between indoor and outdoor temperatures
+difference in daily temperature (compared to a mean temperature of 15°C)
+difference in maximum temperature (0.02)
+differenced annual average maximum temperature (among meteorological variables)
+dimensionless heat transfer coefficient
+direct heat-related hospitalisations during heatwaves
+discharge-breath factor of heat pattern
+distance covered during the time trial in the heat
+districts classified as hot
+dogs exposed to high Ambient temperature and high RH (HA/heart rate) conditions [vs dogs exposed to HA and low RH conditions]
+double-induced whey protein isolate nanoparticles (WPINs) [vs non-heat-induced whey protein isolate nanoparticles (WPINs)]
+dry heat exchange
+dry heat gain
+duration of temperature above 103 degrees F (39.4 degrees C)
+during the heat wave [vs same period in the previous year]
+early hyperthermia
+education about setting hot water temperature
+effect of ambient temperature on incidence of mumps (cold effect)
+effective temperature (used to assess heat stress levels)
+efficiency (among heat engines under strong coupling and symmetry conditions)
+emergency department visits for heat-related causes
+emergency department visits visits for heat-related illness
+end of cold pressor test [vs heat stress]
+end of decay phase of heat acclimation [vs end of induction phase of heat acclimation]
+end of regional hyperthermia treatment [vs end of interstitial hyperthermia treatment]
+environmental exposure (heat acclimation and normobaric hypoxia exposure)
+environmental heat load at the time of darting and immobilization
+episode of hyperthermia
+epistaxis patients attended [vs average temperature for the time examined]
+every 1 °C increase in mean temperature above 28 °C (cumulative effects over 11 days of lag)
+exceedingly high temperatures mean
+excess deaths (among the study population of people who died at home during the August 2003 heat wave in Paris)
+excessive exposure to high ambient temperature
+exercise in the heat
+exercising in a hot environment
+exertional heat illness Patients [vs Healthy Controls]
+exertional heat stroke with acute renal failure [vs Healthy Controls]
+exertional heat stroke without acute renal failure [vs Healthy Controls]
+experiencing hot flushes
+exposure of pregnant women in rural regions to daytime-only daily maximum temperature exceeds thresholds heat waves in the last week before delivery
+exposure of pregnant women to daytime-only daily maximum temperature exceeds thresholds heat waves in the last week before delivery
+exposure to ambient temperature above the 95th percentile (daily mean temperature percentile in summer)
+exposure to an intense Surface Urban Heat Island effect
+exposure to daytime heat
+exposure to extreme heat days
+exposure to extreme heat events
+exposure to extreme high temperatures
+exposure to heat and CO [vs heat only and cool]
+exposure to heat and CO [vs heat only]
+exposure to heat stress
+exposure to heat wave
+exposure to heat waves (HW_975_4d)
+exposure to heat/heat waves during the last week of gestation
+exposure to high temperature
+exposure to high temperatures
+exposure to higher mean temperature
+exposure to hot or cold weather
+exposure to hot temperatures
+exposure to hyperthermia
+exposure to very cold days (days with a maximum temperature below 0°C)
+exposures to O3 (ozone) during the hot season (October-March)
+expression level of high temperature requirement serine protease A1 protein
+extreme ambient temperatures
+extreme heat
+extreme heat (99th percentile of temperature)
+extreme heat (at 97.5th percentile of daily maximum temperature distribution)
+extreme heat (periods of extreme heat)
+extreme heat and heatwaves
+extreme heat days
+extreme heat event during the summer months
+extreme heat events that occur during summer months
+extreme heat exposure
+extreme heat exposure (95th percentile) during gestational weeks 10-16 and 26-31, with a maximum effect in the 28th week
+extreme heat exposure (temperature >95th percentile)
+extreme heat exposure in adolescents (aged 9-15)
+extreme heat temperature (> 29 °C)
+extreme heat temperature events
+extreme heatwave
+extreme high temperature (98th percentile, >39 °C)
+extreme high temperature (P95th, P90th)
+extreme high temperatures
+extreme high-temperature conditions
+extreme maximum temperature in South Central Mainland China
+extremely high temperature
+extremely high temperature (25°C)
+extremely high temperature (EHT) at a lag of 0-14 days
+extremely high temperature (ambient)
+extremely high temperatures
+extremely high temperatures (comparing the 99th percentile temperature with the reference temperature of 26°C over the cumulative lags of 0-14 days)
+extremely hot days (days with maximum temperature above the 95th percentile)
+extremely hot temperature, -0.3 °C
+extremely hot temperatures (99th percentile)
+extremely low ambient temperature (influenza-related pneumonia)
+extremely low temperature (2.5th percentile of weekly average temperature (WAT))
+fever-range whole-body hyperthermia group 48 hours post-operation [vs control group 48 hours post-operation]
+fever-range whole-body hyperthermia group [vs control group]
+fever-range whole-body hyperthermia group post-operation [vs control group post-operation]
+focal brain hyperthermia
+folic acid supplementation [vs hyperthermia alone]
+follicular fluid+FW1 [vs follicular fluid1 (with various forms of heat pretreatment)]
+four consecutive hot daily temperature exceeding the county-specific 97.5 percentile during the previous week
+frequency of hot flushes
+frequent exposure to hot/flammable objects
+genetic variant rs920778 in HOTAIR
+gestational heat exposure
+gestational heat stress group [vs GTN group]
+gonadotropin releasing hormone (GnRH) treatment (heat-stressed)
+group I with occlusive dressings and variable ambient temperature [vs group I with cold stress]
+group II with cold stress [vs group II with no dressings and variable ambient temperature]
+group with gastrointestinal heat retention syndrome
+having a heat emergency plan
+having a high temperature (fever)
+having worn heat-resistant clothing on the job
+heart rate increase during heat exposure
+heat
+heat acclimation (alone or combined with normobaric hypoxia exposure)
+heat acclimation (with or without hypoxic exposure)
+heat acclimation state test 2 [vs heat acclimation state test 1]
+heat acclimation training
+heat and cold stimulation condition [vs no stimulation condition]
+heat application [vs no heat application]
+heat conduction depths in porcine burn wound
+heat conduction depths in the model
+heat conduction patterns in porcine burn wound
+heat conduction patterns in the model
+heat content in the eastern subpolar gyre region
+heat content in the fall off the coastline of Lebanon
+heat content rate
+heat discomfort
+heat dome risk
+heat effects
+heat elimination (of the hand and forearm)
+heat exhaustion, total distance during small-sided games
+heat exposed group [vs control group]
+heat exposed industrial workers
+heat exposure
+heat exposure (daily extreme heat and nighttime extreme heat in the third trimester)
+heat exposure (extreme heat)
+heat exposure (heat exposure and its effects on mortality risk in diabetes)
+heat exposure (heat-related illness ambulance transport) and mortality
+heat exposure (maximum daily Humidex)
+heat exposure (occurring 15 hours later for men and 23 hours later for adults)
+heat exposure (workers younger than 35 years with and without heat exposure)
+heat exposure [vs exercise training (ET)]
+heat exposure during pregnancy
+heat exposure exceeding the 99th percentile temperature relative to the locally defined minimum morbidity temperature percentile (MMP) during the warm season (June to September) in Japan
+heat exposure in children (extreme heat exposure)
+heat exposures
+heat illness
+heat illness category
+heat illness symptom index scores
+heat index
+heat index (HI)
+heat index (among patients presenting to the emergency department with acute diarrhea and diagnosed with amoebic diarrhea)
+heat index (maximum and minimum temperatures and humidity)
+heat index (temperature and humidity)
+heat index among cases of Hand, foot, and mouth disease
+heat indicators (wet-bulb globe temperature , temperature (T), and apparent temperature )
+heat intolerance
+heat ischemia time
+heat island coefficients
+heat level of extraction
+heat of form (Gibbs energy and heat of form)
+heat of formation
+heat overexposure
+heat precipitation method (Aberdeen method)
+heat resistance
+heat resistant stock [vs heat susceptible stock]
+heat response
+heat risk
+heat safety region
+heat sensitivity of spectrin heterodimer
+heat stability
+heat stored
+heat stress
+heat stress (35°C, 30% relative humidity) [vs temperate (20°C, 30% relative humidity)]
+heat stress (HS) pigs
+heat stress + nitro-L-arginine-methylester (L-NAME)
+heat stress [vs normothermia]
+heat stress exposure
+heat stress group [vs control group]
+heat stress illness emergency department visits
+heat stress index
+heat stress treatment [vs electronic cooling pads treatment]
+heat stress treatment group [vs CN group]
+heat stress trial [vs heat stress trial]
+heat stressP27
+heat stressP70
+heat stressed males [vs controls]
+heat stroke
+heat stroke ED visits
+heat stroke admissions
+heat stroke and heat exhaustion encounters among active duty servicemembers
+heat stroke and sunstroke
+heat stroke episode
+heat stroke mortality
+heat susceptible stock [vs heat resistant stock]
+heat temperature (extreme temperatures and overall natural mortality)
+heat temperatures
+heat threshold among patients with keratoconus
+heat transfer coefficient
+heat transfer index
+heat transferred per cm
+heat treatment (42 degrees C) vs. control treatment (37 degrees C)
+heat treatment at 100 degrees C for 30 minutes [vs no heat treatment]
+heat treatment during the first 48 h of in vitro culture (IVC) vs. control group (no heat treatment)
+heat vs. non-heat etiologies
+heat vulnerability index score among individuals treated at the community mental health center
+heat warnings and advisories (collectively, 'alerts') issued by the United States National Weather Service
+heat wave (period of at least 7 consecutive days with daily maximum temperature above 35.0 °C and daily average temperatures above the 97th percentile)
+heat wave definitions
+heat wave duration
+heat wave exposure
+heat wave in the Pearl River Delta
+heat wave intensity
+heat wave period
+heat wave periods
+heat waves
+heat waves defined by WBGT and heat index
+heat waves defined by average temperature at lag 1
+heat waves defined by maximum apparent temperature at lag 0
+heat waves defined by minimum temperature at lag 0
+heat waves occurring in 2015
+heat wind-up
+heat+exercise [vs heat wrap]
+heat-associated cases [vs cases of rhabdomyolysis with exertion alone]
+heat-associated mortality
+heat-based Conditioned pain modulation responses
+heat-distressed control [vs thermoneutral control]
+heat-exposed mice [vs heat-exposed mice supplemented with Zn]
+heat-exposed mice [vs non-heat-exposed mice]
+heat-exposed workers
+heat-induced peak flux
+heat-induced reductions in plasma volume
+heat-intolerant (HI) subjects
+heat-mortality risk (among the population in districts)
+heat-mortality risk (among the population in the census tracts)
+heat-mortality risk (among the population in the districts)
+heat-mortality risk (among the population studied)
+heat-not-burn tobacco group [vs smoking cessation group]
+heat-related death (among the population studied in the Chicago heat wave of 1999)
+heat-related death (among the study participants)
+heat-related deaths (among the female population)
+heat-related deaths (among the population studied in the city of Barcelona)
+heat-related deaths (among the population)
+heat-related emergency department presentations (EDPs)
+heat-related emergency department visits
+heat-related emergency visits
+heat-related hospitalizations among the elderly
+heat-related illness rates
+heat-related illness symptoms
+heat-related illnesses in women
+heat-related mortality (among the elderly population of Metro Vancouver)
+heat-related mortality (among the population in Jordan)
+heat-related visits (International Classification of Diseases (ICD) 10 codes T67 and X30; ICD 9 codes 992 and E900.0)
+heat-resistant agglutinin occurrence
+heat-sensitive moxibustion
+heat-stress index
+heat-stress-induced group (exposed to 42 degrees C for 2 hours) [vs control group (no heat stress)]
+heat-stressed condition [vs normothermic condition]
+heat-stressed granulosa cells [vs control granulosa cells]
+heat-stressed pigs [vs TNAL controls]
+heat-stressed spermatozoa [vs non-heat-stressed spermatozoa]
+heat-up and cool-down curves
+heatstroke
+heatwave
+heatwave duration in 2022
+heatwave exposure
+heatwave variable
+heatwaves
+heterothermic responses
+high Joule heat
+high ambient temperature
+high ambient temperature (32 °C)
+high mean temperature
+high temperature (> or = 38.4 degrees C) within 72 hours after admission
+high temperature (exposure to high temperatures)
+high temperature at 4 weeks prior to the date of hospital visits (monthly average temperature)
+high temperature criterion [vs low temperature criterion]
+high temperature difference (ΔT)
+high temperature exposure (97.5th percentile)
+high temperatures
+high temperatures (during heatwaves)
+high temperatures (immediately)
+high temperatures (lag 0-7 days)
+high temperatures (observed in summer 2022)
+high temperatures (periods of sustained heat without nightly cooling)
+high temperatures combined with low humidity
+high temperatures during the consultation (measured by healthcare provider)
+high-level pulsed heat (45°C)
+high/low apparent temperature
+higher-than-average temperature (measured in degrees Celsius)
+higher-than-average temperatures (compared to average temperatures)
+higher-than-average temperatures (compared to the average temperature of the study site)
+highest pregnancy ambient temperatures (Ta > =21.3)
+highest quintile of temperature (hot days in summer)
+hospital mortality (among patients with exertional heatstroke)
+hospitalisation odds associated with ambient heat exposure
+hospitalization (among patients who presented with mild to moderate heat illness at an emergency department)
+hospitalization (among patients with mild to moderate heat illness)
+hospitalization (of patients with mild to moderate heat illness)
+hospitalization for heat illness
+hospitalization from heat disorders
+hospitalization of patients with mild to moderate heat illness
+hospitalizations for heat-related illnesses
+hot and spicy food consumption
+hot clinic' patients [vs Emergency admission patients]
+hot compared to rainy season
+hot conditions group [vs temperate conditions group]
+hot days (temperature >= 31.1 degrees C) [vs other days (temperature < 31.1 degrees C)]
+hot dogs
+hot environment (32.8+/-0.3 degrees C, 80.5+/-1.6% relative humidity) [vs cool environment (21.3+/-0.4 degrees C, 48.8+/-2.2% relative humidity)]
+hot environments
+hot flush
+hot months (warmer months) vs. cooler months
+hot months [vs cooler months]
+hot pain
+hot pattern (among patients with enterovirus 71-associated hand, foot, and mouth disease)
+hot pattern (among the cases of enterovirus 71-associated hand, foot, and mouth disease)
+hot plates
+hot temperature perception threshold (HPT)
+hot temperatures
+hot water immersion [vs TRAD]
+hot water immersion [vs air control ]
+hot water immersion trials [vs control]
+hot-area workers (group 3) [vs room-temperature workers (group 4)]
+hot-end temperature
+hot-mediated-decrements in HOT
+hourly ambient temperature (during exercising)
+humidification with a heat and moisture exchanger (Group 1
+humidity output of the heat and moisture exchanger filters
+hyperpyrexia
+hyperthermia
+hyperthermia (>/=38.3 degrees C)
+hyperthermia [vs normothermic conditions]
+hyperthermia and high pressure [vs normothermia and atmospheric pressure]
+hyperthermia at admission
+hyperthermia group [vs sham group]
+hyperthermia initiated within the first 24 hours from stroke onset
+hyperthermia mortality
+hyperthermia without fanning [vs hyperthermia with fanning]
+hyperthermia, alone or in combination with irradiation
+hyperthermic patients (body temperature >37.5°C) [vs normothermic patients (body temperature ≤37.5°C)]
+illness (among those without adequate firewood to reheat food)
+impact of high temperatures on mortality (specifically during a heat wave in Europe)
+implementation of heat-action days
+in vitro permeation of heat-separated human epidermis
+in-hospital mortality (among patients with heatstroke-induced disseminated intravascular coagulation)
+in-hospital mortality (of patients with heat-related diseases)
+in-hospital mortality rate (among patients with heat stroke)
+incidence of exertional heat stroke
+incidence of heat exhaustion
+incidence of heat illness
+incidence of heat-related illnesses
+incidence of hyperthermia
+incidence of post-rewarming rebound hyperthermia
+increase in ambient temperature (during autumn season) over the 96 hours preceding symptoms onset
+increase in annual mean temperature (by 1 °C)
+increase in average temperature of 1°C (compared to the average temperature)
+increase in daily mean temperature (at 21 °C)
+increase in daily temperature (10 degrees F)
+increase in heat strain (increase in core body temperature and heart rate)
+increase in high temperatures (hot temperatures)
+increase in high temperatures by 1 degree Celsius (lag 0)
+increase in maximum temperature (1°C increase)
+increase in maximum temperature (per °C)
+increase in maximum temperature by one degree (ambient temperature)
+increase in minimum daily temperature over 23.9°C on the day of death
+increase in monthly mean temperature (growing 1°C)
+increase in weekly average apparent temperature during the cold season (late fall and winter)
+increased temperature (heat days)
+increasing monthly mean temperatures
+increasing trend of maximum temperature
+independent hot event
+individuals who had been hospitalized for severe heat illness
+industrial heat
+initial local thermal hyperemia peak
+instrumental mean temperatures (April–July and September–October)
+intake of meat cooked at high temperature
+intensity of heat-induced erythema
+intracranial pressure during hyperthermia
+intraoperative hyperthermia
+iopamidol 340 (non-heat reactions occurred in 2.7% of patients receiving iopamidol 340) [vs iomeprol 350 (Iomeron 350)]
+iopamidol 340 (non-heat reactions occurred in 2.7% of patients receiving iopamidol 340) group [vs iomeprol 350 (Iomeron 350) group]
+isometric handgrip Exercise [vs No Heat Stress]
+knowledge of heat-related illnesses
+lag 4 day apparent temperature (AT) exposure
+lag1 day ambient temperature (temperature exposure one day prior)
+latency to paw-licking in the hot-plate test
+length of hospital stay (among patients with burns of heat vs. non-heat etiologies)
+length of stay in the hospital (among patients with heat stroke)
+living in cities with high temperatures
+local heat loss
+local hyperthermia group
+location of the province (coastal/inland), altitude, patient age, average air temperature
+long-term exposure to anthropogenic heat
+long-term residential levels of ambient ozone in the warm season (O3)
+low ambient temperature (0°C)
+low ambient temperature (evaluated by aggregated daily mean values)
+lower ambient temperatures
+lower average temperature of 26 °C (compared to higher temperatures)
+lower mean temperature (atmospheric condition)
+lowest pregnancy ambient temperatures (Ta quartile <= 18.5)
+lowest quartile of ambient temperatures (temperature below 18.5 degrees centigrade)
+mRNA level of high temperature requirement serine protease A1
+machinists exposed to heat stress [vs controls working in normal temperature]
+male cases of heat illness
+male of dampness and heat syndrome gout cases [vs male IPSBS gout cases]
+maternal exposure to ambient temperature
+maternal exposure to extreme heat
+maternal exposure to weather-related extreme heat events
+maternal exposures to ambient temperatures during pregnancy
+maternal heat wave exposure
+maternal hot tub use
+max temperature of warmest month
+max temperature-squared
+maximal daily temperature
+maximum Heat Index
+maximum absolute humidity, ambient temperature, and population density
+maximum air temperature
+maximum ambient temperature
+maximum ambient temperature (°C)
+maximum and minimum (Tmin) daily temperature
+maximum daily temperature (36.4°C)
+maximum daily temperature (hot and cold conditions)
+maximum daily temperature (of the local area)
+maximum daily temperature (temperature on the days with the highest temperatures)
+maximum daily temperature (weather)
+maximum daily temperature (°C)
+maximum daily temperature-humidity index
+maximum daily temperatures (degrees C)
+maximum daily temperatures that constitute a heat wave (T)
+maximum heat index
+maximum hourly heat index (HI) temperature thresholds
+maximum outdoor temperature
+maximum outdoor temperatures
+maximum sweat evaporation heat
+maximum temperature
+maximum temperature ([among the citizens of Shenzhen, China])
+maximum temperature (among healthy women)
+maximum temperature (among participants with or without forearm injury)
+maximum temperature (as it relates to allergen concentration)
+maximum temperature (associated with asthma and allergic rhinitis symptoms)
+maximum temperature (at a lag of 5 weeks)
+maximum temperature (daily variations)
+maximum temperature (daily)
+maximum temperature (day of drowning)
+maximum temperature (heat exposure)
+maximum temperature (high fever)
+maximum temperature (high-temperature indices)
+maximum temperature (highest recorded temperature)
+maximum temperature (in South Asian countries)
+maximum temperature (in °C) in Bangladesh
+maximum temperature (increase)
+maximum temperature (lowest recorded temperature)
+maximum temperature (maximum temperature in Quintiles 2-5)
+maximum temperature (measured in degrees Celsius)
+maximum temperature (past 24 hours)
+maximum temperature (positive correlation)
+maximum temperature < 15.1 °C
+maximum temperature at a lag of 5 weeks (climatological variable)
+maximum temperature at lag 2 (temperature two months prior to dengue incidence)
+maximum temperature in Punjab regions, Pakistan
+maximum temperature in the electricity, gas and water industry
+maximum temperature in the first trimester
+maximum temperature in the last trimester
+maximum temperature with 2-month lag (during dengue epidemics)
+maximum temperatures (of phenophase)
+maximum temperatures (of the study period)
+maximum temperatures (temperatures above 36°C)
+maximum temperatures of right side
+maximum wet bulb globe temperature
+mean air temperature
+mean air temperature (T)
+mean ambient temperature
+mean ambient temperature in the 24 hours preceding hospital presentation (increasing by 5 degrees Celsius)
+mean ambient temperature in the coldest months (December to February)
+mean annual temperature (MAT), a measure of the average temperature over a year
+mean annual temperature (average temperature in each individual municipality)
+mean apparent temperature (same and previous day, high summer temperatures)
+mean average temperature (colder climates)
+mean average temperature (temp measured in degrees Celsius)
+mean average temperature (temperature)
+mean average temperatures (in urban areas)
+mean daily number of hot flushes
+mean daily outdoor temperature
+mean daily temperature (among COPD patients)
+mean daily temperature (average temperature of each day)
+mean daily temperature (cumulative RR for a 20-day period)
+mean daily temperature (degrees Celsius)
+mean daily temperature (in Parma, northern Italy)
+mean daily temperature (in degrees Celsius)
+mean daily temperature (vs. 13°C)
+mean daily temperature at 29 degrees Celsius (compared to a reference value of 13 degrees Celsius)
+mean heat index (MHI) - the average heat index of the climate
+mean intensity of daytime surface urban heat island
+mean maximum temperature (of critically ill children with suspected infection)
+mean monthly maximum temperature (temperature recorded at its highest point during each month)
+mean monthly temperature (average temperature in degrees Celsius during a month)
+mean monthly temperature (average temperature in degrees Celsius during a specific month)
+mean monthly temperature (average temperature per month)
+mean monthly temperature (monthly average temperature in Atlantic Canada)
+mean monthly temperature increase (in °C)
+mean outdoor temperature around the time of birth
+mean summer temperature
+mean temperature
+mean temperature (5°C decrease)
+mean temperature (MeanT) at 1.4 °C
+mean temperature (MeanT) at 1.4°C
+mean temperature (among individuals with or without forearm injury)
+mean temperature (among rats)
+mean temperature (among the ICU-admitted patients)
+mean temperature (annual)
+mean temperature (average daily temperature)
+mean temperature (average temperature in the study area)
+mean temperature (average temperature in the week prior)
+mean temperature (below optimal temperature)
+mean temperature (daily average temperature)
+mean temperature (during the period of early pregnancy)
+mean temperature (extremely high temperatures)
+mean temperature (high percentile)
+mean temperature (in degrees Celsius)
+mean temperature (mean daily maximum and minimum temperature)
+mean temperature (measured in degrees Celsius)
+mean temperature (meteorological factor)
+mean temperature (minimum risk temperature)
+mean temperature (monthly average temperature in central Thailand)
+mean temperature (monthly average temperature)
+mean temperature (of the center of the palm of the non-dominant hand)
+mean temperature (of very low birth weight inborn infants)
+mean temperature (r=0.867)
+mean temperature (temperature at the time of death)
+mean temperature (temperature measured in Celsius)
+mean temperature (temperature range 23.2-27.7 °C)
+mean temperature (temperature)
+mean temperature (weather conditions)
+mean temperature (wettest quarter) in sub-districts
+mean temperature (when it was 27.7°C with 1-week lag)
+mean temperature (°C)
+mean temperature LST-UHI
+mean temperature SAT-UHI
+mean temperature [vs clinical reference temperature]
+mean temperature at 1 hour after treatment (of febrile children)
+mean temperature at a 1-day lag
+mean temperature at the minimum value 15.3°C (in the range of 15.3°C to higher temperatures)
+mean temperature below optimal temperature (13°C)
+mean temperature difference (high-minus low-elevation)
+mean temperature during non-epidemic periods (2-month lag)
+mean temperature during the hot and arid climate (extremely hot and arid climate)
+mean temperature from CYCL to OR
+mean temperature from May to October
+mean temperature from May to October (among Qinghai spruce trees on Mt. Dongda, North of the Hexi Corridor in Northwest China)
+mean temperature from heading to harvest
+mean temperature in September at the Zimovnikovsky state variety plot (SVP)
+mean temperature in the ear canal
+mean temperature in the finishing room below 23°C
+mean temperature in the hottest quarter
+mean temperature of the Caspian Sea region (Bandar-E-Anzali monitoring site)
+mean temperature of the coldest month (megaflora)
+mean temperature of the coldest month (palynoflora)
+mean temperature of the hottest month
+mean temperature of warmest quarter
+mean temperature of wettest quarter
+mean temperature on the same day in Winter (PPCI)
+mean temperature time series for subareas - lower troposphere temperature
+mean temperature time series for subareas - sea surface temperature
+mean temperature with a 2-month lag (β = -0.003)
+mean temperatures (among adults with cystic fibrosis)
+mean-daily temperature in degrees C (change of 23.6 degrees C)
+measures of heat, cold, ischemic, and electrical laboratory pains
+median daily “Heat/Cold” calls
+mental illnesses and/or behavioral disorders hospitalizations with a concurrent heat-related illnesses diagnosis
+microvascular function (heat-induced skin hyperemia)
+mild ambient temperature (in Oktiabrsky District of Novosibirsk, Siberia, Russia)
+mild heat illness (MHI)
+mild hyperthermia
+minimum daily temperature (17 February 2016 to 17 February 2018, Iranian cities)
+minimum daily temperature (comparing a temperature of 24.8 °C to 13.2 °C)
+minimum daily temperature (increasing daily rainfall)
+minimum daily temperature (of the region)
+minimum daily temperature (temperature increase)
+minimum daily temperature of 24.8 °C (compared to a temperature of 13.2 °C)
+minimum daily temperature of 26.9 °C (compared to 13.2 °C)
+minimum daily temperatures (degrees C)
+minimum mean ambient temperature
+minimum temperatures (among the days of the extreme heat wave period)
+moderate-to-severe hyperthermia (≥ 39 °C)
+moderately low ambient temperature (compared to reference temperature of 26°C)
+moderately low temperatures (ambient temperature)
+modulated electro-hyperthermia Group [vs Control Group]
+moist heat disinfection [vs other disinfection methods]
+monthly ambient temperature and temperature variations
+monthly average ambient temperature
+monthly average temperature (in Linyi City, China)
+monthly average temperature (in Rufiji, Tanzania)
+monthly average temperature (in degrees Celsius)
+monthly average temperature (in degrees)
+monthly average temperature (increase by 1 degree Celsius)
+monthly average temperature (measured in degrees Celsius) and monthly rainfall (measured in millimeters)
+monthly average temperature (measured in degrees Celsius) and monthly rainfall (measured in millimeters) (weather variables)
+monthly average temperature (temperature)
+monthly average temperature and precipitation (weather measurements)
+monthly averages of maximum temperature (1-month lag)
+monthly averages of maximum temperature (compared to other climate variables)
+monthly mean temperature (17°-32 °C at lag 0 months)
+monthly mean temperature (average temperature over a month)
+monthly mean temperature (in Hong Kong)
+monthly mean temperature (in Suzhou, China)
+monthly mean temperature (in degrees Celsius)
+monthly mean temperature (increase)
+monthly mean temperature (monthly mean temperature)
+monthly mean temperature (temperature measured in degrees Celsius)
+monthly mean temperature (the average temperature in a given month)
+monthly mean temperatures between 20 and 29°C
+monthly temperature (average temperature in degrees Celsius)
+monthly weather temperature (average temperature)
+morbidity (of diabetics under heatwave)
+mortality (among patients with heatstroke)
+mortality (among the patients with heatstroke)
+mortality (of diabetics under the heatwave)
+mortality (of patients with heatstroke)
+mortality due to high temperatures (among the population)
+mortality during the heat wave (of the study participants)
+mortality risk of heat-related deaths
+national equivalent heat output
+no humidification [vs heat and moisture exchangers]
+non-accidental mortality in hot season (May-September) (among the population of Wuhan, China during 2003-2010)
+normal brain temperature after hyperthermia [vs brain tumor temperature after hyperthermia]
+normothermia [vs heat stress]
+normothermia [vs hyperthermia without fanning]
+normothermia [vs hyperthermia]
+noxious heat (47 degrees C for 10 s)
+number of ambulance dispatches related to heat illness
+number of days in which the official thresholds for extreme heat were exceeded (by city)
+number of days with mean temperature < 0°C (DMT0)
+number of heat days (among vulnerable groups in Seoul, Incheon, Daegu, and Gwangju, Korea)
+number of severe heat days (in the past decade and recent decade)
+observed heat wave days
+occupation in hot temperatures [vs occupation in normal temperatures]
+occupational exposure in perfume industry or in high temperature environments
+occupational exposures to construction, metal and wood dusts; motor fuel and oil; paints and varnishes; certain other chemicals; industrial heat; solar heat from outdoor occupations; certain smokes; cigarette smoking; and childhood exposure to parental smoking
+occupational heat exposure
+occupations that involved heat exposure
+occurrence and mean concentrations of heat-denatured antigen
+occurrences of hyperthermia, abnormal swelling, and discharge
+odds of death from heat exposure
+odds ratio (among the dogs diagnosed with heat stroke in the study population)
+on-scene heat index
+outdoor heatstroke (OHS) occurrence
+outdoor temperature
+outdoor temperature above 15°C
+outdoor temperature at examination
+outdoor temperature below 15°C
+outdoor temperature exposure
+outdoor temperatures between 5 and 10°C
+outpatient visits (among subtropical islanders in warm seasons)
+ovulation failure rate (among non-heat-stressed hCG-treated cows)
+passive, extreme-heat sauna bath
+patients with a maximum temperature of 39.0 degrees C or higher [vs patients with a maximum temperature lower than 39.0 degrees C]
+peak pain magnitude to tonic heat
+pelvic floor average temperature
+per 10°C increase in ambient temperature (compared to lower temperatures)
+perceiving serious extreme heat in Beijing
+percent of time that coal was used to heat homes over the past 30 years
+percentage IQOS HeatStick substitution for cigarettes
+percentage change in thermal hyperemia-laser Doppler flowmetry
+percentage of produced heat stored
+performance changes in hot environment
+period of exposure to tandoor heat
+plant sector ambient temperature
+post-heat acclimation [vs pre-heat acclimation]
+preoperative anterior thigh temperature
+preparing heroin without heat
+presence of hot flushes
+presence of rebound hyperthermia
+previous December's mean temperature
+previous day's heat demand
+prior heat stroke
+prior repeated moderate heat exposure [vs post repeated moderate heat exposure]
+prior severe heat illness (SHI)
+prolonged heat stress
+prolonged heatwaves
+prolonged hot dry weather [vs relatively typical climatic conditions]
+prolonged hyperthermia
+prolonged periods of heat exposure
+pronounced changes in daily temperature
+proportion of 'hypothermia OR hyperthermia episodes (HHE)'
+prostaglandin E1-evoked hyperthermia
+quantity of heat extracted
+rate of body temperature increase
+rate of skin temperature rise
+rate of temperature rise (RTR) in extensively burned patients (survivors vs nonsurvivors)
+rats with seizure-producing hyperthermia at 5 days [vs control group]
+rebound hyperthermia
+reduced muscle hardness in heat and cold stimulation condition
+reduction in the within HST ΔTre after heat acclimation
+regional temperature (relatively high temperatures)
+reports of heat stress-related health symptoms
+residence in high temperature geothermal area
+residents of highland and hot areas
+resistance to heat stress
+response to local heating
+rest [vs thermal stress]
+resting heat plus contracture heat
+rhabdomyolysis with exertion alone [vs rhabdomyolysis associated with heat]
+rise in ambient temperature (by 5 °C)
+risk of a heat-related illness
+risk of death during the heat wave
+risk of emergency department chronic bronchitis diagnosis during the 2012 heatwave compared to the same calendar period in 2011
+risk of exertional heat stroke
+risk of exertional heat-related illness
+risk of heat-related death (increase in risk per degrees C above the heat cut-point)
+risk of heat-related death above a certain temperature threshold (high temperatures)
+risk of hyperthermia > 37.9 degrees C
+risk of injury (among workers exposed to extreme hot temperatures of 40°C)
+risk of mortality associated with experiencing a heat wave (total population)
+risk of repeated exertional heat illness events
+risk of reporting heat stress symptoms
+risk of surgery for acute type A aortic dissection with daily mean temperature ≤-5°C (cold temperatures)
+running time (of participants in a hot environment)
+season (warm season)
+season of measurement (warm season)
+season of treatment commencement (cold vs. warm seasons)
+self-perceived frequent exposure to high temperatures in the working environment
+self-reported occupational heat stress
+sensation recovery of pain and hot temperature
+sensible heat
+session type (control or heat; acute whole body heat stress)
+severe heat days (comparison between past and recent decade)
+severe heat days (temperature above 35°C)
+severe heat days (temperature exceeding a certain threshold)
+severe heat illness (SHI)
+severe heat stress [vs normothermic baseline]
+severe/very severe hot flushes
+severity of heat days (increasing trends of severe heat days due to climate change)
+severity of heat days (measured by maximum temperature) in vulnerable groups (elderly, single-person households, less-educated)
+severity of impact of outdoor heat
+short-term exposure to high temperatures (96-hour moving average temperature exposure)
+short-term heat exposure (effect on risk of cardiovascular mortality in males)
+short-term heat exposure (heat exposure during the month after the rainy season)
+short-term, high-intensity interval-training heat acclimation (HA)
+skin temperature increase
+spermatozoa collected from heat stressed males [vs controls]
+start of regional hyperthermia treatment [vs end of regional hyperthermia treatment]
+state average temperature (temperature in the geographical area where the study took place)
+stopping work due to heat
+storing salt near heat sources
+stratosphere mean temperatures
+subjective feeling of heat, humidity, and difficult breathing during light work
+subsequent heatwaves (after the first heatwave)
+sudden cooling (after an acute heat stress)
+summer average maximum temperature (in degrees Celsius)
+summer heat
+summer temperature
+summer temperature (1901-1945)
+summer temperature variability
+summer temperatures
+summer temperatures (hot days)
+supra-threshold heat
+surface convective heat transfer coefficient
+surface temperature increase from baseline
+surface urban heat island (SUHI) intensity
+surface urban heat island effect (ESUHI)
+sympathetic blocks (post-block temperature increase)
+temperature (Average Temperature, Maximum Temperature, Minimum Temperature)
+temperature (ambient temperature)
+temperature (average daily temperature)
+temperature (average temperature)
+temperature (daily average temperature)
+temperature (daily temperature)
+temperature (during a heatwave)
+temperature (heat and cold)
+temperature (high temperature sensitivity)
+temperature (mean temperature)
+temperature (of human tumors during hyperthermia treatment)
+temperature (of the tumor/phantom during hyperthermia treatment)
+temperature (warm temperatures)
+temperature above 10 °C (cumulative)
+temperature above 37.5°C
+temperature above 37.8°C (as a prognostic factor)
+temperature above 45 °C (during heat waves)
+temperature above background levels
+temperature and humidity (hot or warm weather)
+temperature at extreme hot temperature
+temperature change (ambient temperature)
+temperature decrease > 2.25°C (rapid variations in ambient temperature)
+temperature in patients with exertional heat stroke
+temperature increase
+temperature increase (at a lag of 2 and 4 weeks)
+temperature increase (per 1 °C increase)
+temperature increase (related to risk of infectious diarrhea)
+temperature increase at lag 1-4 weeks (°C)
+temperature increase at the first 24 h
+temperature increase detection
+temperature increase from 90th to 99th percentile (heat exposure)
+temperature increase of 1°C (between 14.2°C and 37.7°C)
+temperature increase rate
+temperature increases
+temperature increases above the median (22°C) to the 98th percentile (32°C) of the warm season temperature distribution with 10 days of lag (daytime maximum temperature above average)
+temperature metrics (daily mean (Tmean), maximum (Tmax), minimum (Tmin) and maximum apparent temperature (Tappmax))
+temperature rise
+temperature-related food safety violations
+temperature-related indices
+tetraplegics after Heat Challenge [vs controls after Heat Challenge]
+thermal heat threshold
+thermal index (apparent temperature)
+thermal neutral (TN) or heat stress conditions
+timberline 5-day mean temperature
+time (pre-post-Whole-body hyperthermia session)
+time to reach a volume-normalized heat flow of 0.1 mW/ml
+total body heat
+total body heat treatment (42 degrees C for 15 min)
+total daily mortality (among all deaths in the Catalonia region of Spain during the warm seasons of 1983-2006)
+total haemoglobin mass effect of Live High-Train High' [vs total haemoglobin mass effect of heat acclimation training]
+total heat gain
+total hospital admissions (of patients [in/affected by] the 2009 heatwave in Melbourne, Australia)
+total number of heats during the competitive season (HS)
+traditional Chinese medicine constitution of wetness-heat
+turpentine and dexamethasone+heat exposure only rats [vs heat exposure only rats]
+unusually high temperature
+urban heat island
+urban heat island (UHI)
+urban heat island exposure
+urban heat temperature (defined as the 97.5th percentile of daily mean temperature)
+using gas stoves for heat
+using sprinklers or misters for heat abatement
+valley bottom 5-day mean temperature
+velocities of heats
+visits to the emergency department for heat related illness
+warm ambient temperature
+warm and hot months of the year
+warm season (season during which the fish were caught)
+warm season [vs cold season]
+warm season ambient temperature
+warm season at age 18 months
+warm seasons (May to August) [vs cold seasons (November to February)]
+warm temperature (23 degrees C) [vs cold temperature (5 degrees C)]
+warm water at heat stress [vs cold water]
+warm weather seasons
+warmer annual ambient temperatures
+warming up (applying heat to the mice)
+weekly ambient temperature
+weekly average apparent temperature increase (10 °F) during the warm season
+weekly average temperature (among the children's bedrooms)
+weekly average temperature (of Shenzhen, China)
+weekly average temperature at 26°C (highest relative risk)
+weekly average temperature during dengue outbreaks (small, medium, large)
+weekly average temperature during heatwaves (defined as seven or more days with temperatures above the 95th percentile of daily temperature distribution during the study period)
+weekly maximum temperature (mean temperature, PM1, barometric pressure, Rh)
+weekly maximum temperature (temperature above 20 °C)
+weekly mean maximum temperature (temperature during the colder months)
+weekly mean temperature (and its correlation with the weekly number of influenza B outpatients)
+weekly mean temperature (at 31 °C during lag week 14)
+weekly mean temperature (during the rainy season)
+weekly mean temperature in Alberta (increase by 1 degree)
+weekly mean temperature in high urbanized cities (Anhui Province)
+weekly mean temperature increase (Alberta)
+weighted mean temperature
+wet bulb globe temperature
+wet-bulb globe temperature
+wet-bulb globe temperaturecrit
+wet-bulb temperature
+whole body heat stress group [vs sham anaesthesia group]
+with early local heat [vs without local heat]
+witnessed injuries to others during high temperatures
+workers exposed to high-heat levels
+working in a hot/warm environment
+working under heat stress conditions
+yearly increase in extreme high-temperature events (average 2.1-fold increase)
+years of exposure to heat

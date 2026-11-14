@@ -1,0 +1,319 @@
+[
+  {
+    "class": "Diuretics",
+    "tier": "direct",
+    "direct_studies": 1,
+    "direct_findings": 1,
+    "modifier_studies": 1,
+    "modifier_findings": 1,
+    "bridged": {
+      "Acute kidney injury": 82,
+      "Hyponatremia / electrolytes": 60,
+      "Hypotension / falls": 17,
+      "Rhabdomyolysis": 1,
+      "Glucose": 2,
+      "Dehydration / volume": 1
+    },
+    "bridged_studies": 163
+  },
+  {
+    "class": "Beta blockers",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Glucose": 10,
+      "Hypotension / falls": 18,
+      "Acute kidney injury": 10,
+      "Impaired sweating / thermoregulation": 1,
+      "Hyponatremia / electrolytes": 3,
+      "Rhabdomyolysis": 1
+    },
+    "bridged_studies": 43
+  },
+  {
+    "class": "ACE inhibitors / ARBs",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 27,
+      "Acute kidney injury": 86,
+      "Hyponatremia / electrolytes": 33,
+      "Rhabdomyolysis": 1,
+      "Glucose": 4,
+      "Impaired sweating / thermoregulation": 1
+    },
+    "bridged_studies": 152
+  },
+  {
+    "class": "Calcium channel blockers",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Acute kidney injury": 10,
+      "Hypotension / falls": 17,
+      "Hyponatremia / electrolytes": 3,
+      "Glucose": 1
+    },
+    "bridged_studies": 31
+  },
+  {
+    "class": "Antihypertensives (any)",
+    "tier": "direct",
+    "direct_studies": 2,
+    "direct_findings": 2,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 24,
+      "Hyponatremia / electrolytes": 4,
+      "Acute kidney injury": 9,
+      "Glucose": 2
+    },
+    "bridged_studies": 39
+  },
+  {
+    "class": "Anticholinergics",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hyponatremia / electrolytes": 1,
+      "Hypotension / falls": 11,
+      "Acute kidney injury": 1
+    },
+    "bridged_studies": 13
+  },
+  {
+    "class": "Antipsychotics",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 13,
+      "Acute kidney injury": 4,
+      "Glucose": 9,
+      "Hyponatremia / electrolytes": 6,
+      "Rhabdomyolysis": 1
+    },
+    "bridged_studies": 33
+  },
+  {
+    "class": "Lithium",
+    "tier": "direct",
+    "direct_studies": 1,
+    "direct_findings": 1,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Impaired sweating / thermoregulation": 1,
+      "Hyponatremia / electrolytes": 1,
+      "Acute kidney injury": 3
+    },
+    "bridged_studies": 5
+  },
+  {
+    "class": "Antidepressants",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hyponatremia / electrolytes": 13,
+      "Hypotension / falls": 28,
+      "Glucose": 4,
+      "Rhabdomyolysis": 1,
+      "Impaired sweating / thermoregulation": 2
+    },
+    "bridged_studies": 48
+  },
+  {
+    "class": "Benzodiazepines / sedatives",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 28,
+      "Glucose": 1,
+      "Hyponatremia / electrolytes": 1
+    },
+    "bridged_studies": 30
+  },
+  {
+    "class": "Anticonvulsants",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hyponatremia / electrolytes": 1,
+      "Hypotension / falls": 3,
+      "Impaired sweating / thermoregulation": 1
+    },
+    "bridged_studies": 5
+  },
+  {
+    "class": "Stimulants",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hyponatremia / electrolytes": 1,
+      "Glucose": 1
+    },
+    "bridged_studies": 2
+  },
+  {
+    "class": "Opioids",
+    "tier": "direct",
+    "direct_studies": 3,
+    "direct_findings": 4,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 35,
+      "Glucose": 3,
+      "Acute kidney injury": 12,
+      "Dehydration / volume": 1,
+      "Hyponatremia / electrolytes": 1
+    },
+    "bridged_studies": 52
+  },
+  {
+    "class": "Insulin",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Glucose": 135,
+      "Hypotension / falls": 3,
+      "Acute kidney injury": 3,
+      "Hyponatremia / electrolytes": 2
+    },
+    "bridged_studies": 143
+  },
+  {
+    "class": "SGLT2 inhibitors",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Acute kidney injury": 53,
+      "Hyponatremia / electrolytes": 13,
+      "Glucose": 55,
+      "Hypotension / falls": 2,
+      "Dehydration / volume": 3,
+      "Rhabdomyolysis": 1
+    },
+    "bridged_studies": 127
+  },
+  {
+    "class": "Other diabetes drugs",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Glucose": 130,
+      "Hypotension / falls": 1,
+      "Acute kidney injury": 9,
+      "Hyponatremia / electrolytes": 1,
+      "Dehydration / volume": 1
+    },
+    "bridged_studies": 142
+  },
+  {
+    "class": "NSAIDs",
+    "tier": "direct",
+    "direct_studies": 1,
+    "direct_findings": 1,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Acute kidney injury": 50,
+      "Hyponatremia / electrolytes": 8,
+      "Dehydration / volume": 1,
+      "Hypotension / falls": 1
+    },
+    "bridged_studies": 60
+  },
+  {
+    "class": "GLP-1 agonists",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Glucose": 44,
+      "Acute kidney injury": 7,
+      "Hyponatremia / electrolytes": 1
+    },
+    "bridged_studies": 52
+  },
+  {
+    "class": "Parkinson / dopaminergic",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 6
+    },
+    "bridged_studies": 6
+  },
+  {
+    "class": "Cholinesterase inhibitors",
+    "tier": "bridged",
+    "direct_studies": 0,
+    "direct_findings": 0,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 4
+    },
+    "bridged_studies": 4
+  },
+  {
+    "class": "Medication (unspecified)",
+    "tier": "direct",
+    "direct_studies": 3,
+    "direct_findings": 3,
+    "modifier_studies": 0,
+    "modifier_findings": 0,
+    "bridged": {
+      "Hypotension / falls": 56,
+      "Acute kidney injury": 38,
+      "Glucose": 24,
+      "Impaired sweating / thermoregulation": 3,
+      "Hyponatremia / electrolytes": 12,
+      "Rhabdomyolysis": 3,
+      "Dehydration / volume": 1
+    },
+    "bridged_studies": 137
+  }
+]

@@ -1,0 +1,143 @@
+{
+ "W1 wearables x heat stress": {
+  "count": 160,
+  "ids": [
+   "39580817",
+   "39221564",
+   "38200867",
+   "36083624",
+   "36236737",
+   "36624139",
+   "40984105",
+   "38728620"
+  ],
+  "query": "(\"wearable electronic devices\"[MeSH] OR wearable*[tiab] OR smartwatch*[tiab] OR \"wrist-worn\"[tiab]) AND (\"heat stress disorders\"[MeSH] OR \"heat stress\"[tiab] OR \"heat strain\"[tiab] OR \"heat illness\"[tiab] OR heatwave*[tiab] OR \"heat wave\"[tiab])"
+ },
+ "W2 core-temp estimation from HR": {
+  "count": 163,
+  "ids": [
+   "33629884",
+   "36094450",
+   "35114899",
+   "36209512",
+   "28798200",
+   "40369130",
+   "36354473",
+   "34337798"
+  ],
+  "query": "(\"core temperature\"[tiab] OR \"core body temperature\"[tiab]) AND (\"heart rate\"[tiab]) AND (estimat*[tiab] OR algorithm*[tiab] OR \"Kalman\"[tiab])"
+ },
+ "W3 wearables x heat x any medication": {
+  "count": 1,
+  "ids": [
+   "29726698"
+  ],
+  "query": "(\"wearable electronic devices\"[MeSH] OR wearable*[tiab] OR smartwatch*[tiab]) AND (\"heat stress\"[tiab] OR \"heat illness\"[tiab] OR heatwave*[tiab] OR \"heat wave\"[tiab] OR \"hot weather\"[tiab]) AND (medication*[tiab] OR drug*[tiab] OR \"beta-blocker\"[tiab] OR anticholinergic*[tiab] OR \"Pharmaceutical Preparations\"[MeSH])"
+ },
+ "W4 beta-blockers x heat/thermoregulation": {
+  "count": 403,
+  "ids": [
+   "42635998",
+   "14671205",
+   "22454884",
+   "2860845",
+   "9773514",
+   "7961267",
+   "427088",
+   "17544305"
+  ],
+  "query": "(\"Adrenergic beta-Antagonists\"[MeSH] OR \"beta-blocker*\"[tiab] OR propranolol[tiab]) AND (\"Body Temperature Regulation\"[MeSH] OR \"heat stress\"[tiab] OR \"hot environment\"[tiab] OR \"heat exposure\"[tiab])"
+ },
+ "W5 anticholinergics x sweating/heat": {
+  "count": 69,
+  "ids": [
+   "40575073",
+   "14058429",
+   "37009806",
+   "28318360",
+   "2443046",
+   "8369593",
+   "25152341",
+   "15088261"
+  ],
+  "query": "(\"Cholinergic Antagonists\"[MeSH] OR anticholinergic*[tiab] OR atropine[tiab] OR glycopyrr*[tiab]) AND (\"Sweating\"[MeSH] OR sweat*[tiab]) AND (heat[tiab] OR thermoregulat*[tiab] OR \"core temperature\"[tiab])"
+ },
+ "W6 wearables x heat x older adults": {
+  "count": 36,
+  "ids": [
+   "41305264",
+   "37474050",
+   "40607918",
+   "42424329",
+   "41863189",
+   "25502915",
+   "37975151",
+   "39780496"
+  ],
+  "query": "(\"wearable electronic devices\"[MeSH] OR wearable*[tiab] OR smartwatch*[tiab]) AND (heat[tiab] OR \"hot weather\"[tiab] OR \"ambient temperature\"[tiab]) AND (\"Aged\"[MeSH] OR older[tiab] OR elderly[tiab])"
+ },
+ "W7 wearables x heat x RCT/intervention alerts": {
+  "count": 3,
+  "ids": [
+   "36730025",
+   "34424842",
+   "40846922"
+  ],
+  "query": "(\"wearable electronic devices\"[MeSH] OR wearable*[tiab] OR smartwatch*[tiab]) AND (heat[tiab] OR \"hot weather\"[tiab]) AND (alert*[tiab] OR warning*[tiab] OR \"early warning\"[tiab]) AND (trial[tiab] OR randomi*[tiab] OR intervention[tiab])"
+ },
+ "G1 heat x medication (epi)": {
+  "count": 17,
+  "ids": [
+   "30990296",
+   "26381473",
+   "27919629",
+   "34519460",
+   "30248482",
+   "31346679",
+   "37392107",
+   "40714605"
+  ],
+  "query": "(\"Hot Temperature\"[MeSH] OR heatwave*[tiab] OR \"heat wave\"[tiab] OR \"extreme heat\"[tiab]) AND (\"Drug-Related Side Effects and Adverse Reactions\"[MeSH] OR \"medication use\"[tiab] OR \"drug use\"[tiab]) AND (hospitali*[tiab] OR mortality[tiab] OR \"emergency department\"[tiab])"
+ },
+ "G2 heat guidance/heat-health action plan x medication": {
+  "count": 7,
+  "ids": [
+   "31346679",
+   "42846241",
+   "42510711",
+   "39468673",
+   "30997525",
+   "37799534",
+   "42063585"
+  ],
+  "query": "(\"heat-health action plan*\"[tiab] OR \"heat health action plan*\"[tiab] OR \"heat action plan*\"[tiab] OR \"heat guidance\"[tiab]) AND (medication*[tiab] OR drug*[tiab])"
+ },
+ "S1 drug stability x heat (insulin/inhaler/epinephrine)": {
+  "count": 313,
+  "ids": [
+   "37930742",
+   "32401642",
+   "36858962",
+   "26579469",
+   "39150724",
+   "37276988",
+   "39837352",
+   "39834364"
+  ],
+  "query": "(insulin[tiab] OR inhaler*[tiab] OR epinephrine[tiab] OR \"auto-injector*\"[tiab]) AND (stability[tiab] OR potency[tiab] OR degradation[tiab]) AND (heat[tiab] OR \"high temperature*\"[tiab] OR \"temperature excursion*\"[tiab] OR \"hot car\"[tiab])"
+ },
+ "_titles": {
+  "25502915": "2015 Laser-Doppler microvascular measurements in the peri-implant areas of different osseointegrated bone conductor implant systems.",
+  "29726698": "2018 On the use of wearable physiological monitors to assess heat strain during occupational heat stress.",
+  "34424842": "2021 Novel Health Risk Alert System for Occupational Safety in Hot Environments.",
+  "36730025": "2023 Prospective Validation of 2B-Cool : Integrating Wearables and Individualized Predictive Analytics to Reduce Heat Injuries.",
+  "37474050": "2023 Nighttime ambient temperature and sleep in community-dwelling older adults.",
+  "37975151": "2024 Biophysical, thermo-physiological and perceptual determinants of cool-seeking behaviour during exercise in younger and older women.",
+  "39780496": "2025 Intelligent Thermochromic Heating E-Textile for Personalized Temperature Control in Healthcare.",
+  "40607918": "2025 Wearable sensor-derived heart rate variability (LF/HF): a promising biomarker for predicting inadvertent perioperative hypothermia.",
+  "40846922": "2025 Wearable device-based interventions in heat-exposed outdoor workers - a scoping review and an explanatory intervention model.",
+  "41305264": "2025 Thermoregulation and Heat Stroke Prevention in Older Adults: Advances in Emerging Technologies and Interventions.",
+  "41863189": "2026 Identification of Breast Abnormalities Using Feminai-Breast Examination Patch: A Feasibility Study.",
+  "42424329": "2026 The heat exposure, aging trajectories, and Alzheimer's disease (HEAT-AD) study protocol."
+ }
+}

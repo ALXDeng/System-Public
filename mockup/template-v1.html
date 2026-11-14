@@ -1,0 +1,388 @@
+<title>Heat &amp; Medication Evidence Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: clinical tool. Header + three views (Overview quadrant, Action grid, Heat-wave plan), shared specialty filter, slide-in evidence card. */
+:root{
+  --bg:#f4f6f7; --surface:#ffffff; --sunk:#eaeef0; --ink:#15202a; --muted:#596572; --line:#d9dfe4;
+  --ember:#c2410c; --on-ember:#ffffff; --amber:#e39b2d; --hatch:#b9c1c9;
+  --blue:#2f55d4; --slate:#5b6672; --quiet:#9aa4ae;
+  --f-display:"Archivo",system-ui,sans-serif; --f-body:"Public Sans",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e1318; --surface:#161d24; --sunk:#1d262e; --ink:#e5e9ed; --muted:#9aa5b0; --line:#2a343e;
+  --ember:#f0703a; --on-ember:#140a05; --amber:#d99a45; --hatch:#46515c; --blue:#7d95ff; --slate:#9aa5b0; --quiet:#5f6a75; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0e1318; --surface:#161d24; --sunk:#1d262e; --ink:#e5e9ed; --muted:#9aa5b0; --line:#2a343e;
+  --ember:#f0703a; --on-ember:#140a05; --amber:#d99a45; --hatch:#46515c; --blue:#7d95ff; --slate:#9aa5b0; --quiet:#5f6a75; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body);}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(24px,3.4vw,34px);font-weight:800}
+h2{font-size:20px;font-weight:700}
+h3{font-size:15px;font-weight:700}
+.eyebrow{font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono)}
+a{color:var(--blue)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+header.top{display:grid;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+header.top p{margin:0;color:var(--muted);max-width:70ch}
+.notice{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);background:var(--sunk);border-radius:var(--r);padding:8px 12px;max-width:fit-content}
+.notice b{color:var(--ink);font-weight:600}
+
+.bar{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding-block:14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:3px;border-radius:8px}
+.tabs button{border:0;background:transparent;padding:7px 14px;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.spec{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.spec .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+section.view{padding-top:22px}
+.ov{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+@media (max-width:900px){.ov{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.chart{overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:560px;height:auto}
+.chart .ax{font:500 11px var(--f-mono);fill:var(--muted)}
+.chart .ql{font:700 12px var(--f-display);letter-spacing:.04em;text-transform:uppercase}
+.chart .qs{font:400 11px var(--f-body);fill:var(--muted)}
+.bub{cursor:pointer}
+.bub circle{transition:opacity .2s, stroke-width .15s}
+.bub text{font:600 12px var(--f-body);fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.bub:hover circle,.bub:focus-visible circle{stroke-width:3}
+.bub.dim{opacity:.15}
+.bub:focus{outline:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+.heads{display:grid;gap:10px}
+.head{all:unset;box-sizing:border-box;display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:12px 14px;cursor:pointer}
+.head:hover{border-color:var(--c)}
+.head:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.head .k{font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.head b{font-family:var(--f-display);font-size:16px}
+.head span{font-size:13px;color:var(--muted)}
+
+/* Grid */
+.gridwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table.g{border-collapse:separate;border-spacing:0;width:100%;min-width:900px}
+.g th,.g td{border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.g thead th{font:600 12px var(--f-body);color:var(--muted);padding:10px;background:var(--surface);position:sticky;top:0}
+.g thead th.b{width:19%}
+.g tbody th{padding:10px 12px;width:200px;font-weight:400;background:var(--surface);position:sticky;left:0;z-index:1;border-right:1px solid var(--line)}
+.g tbody th button{all:unset;cursor:pointer;font:700 14px var(--f-display)}
+.g tbody th button:hover{text-decoration:underline}
+.g tbody th small{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:2px}
+.g td{padding:5px}
+.flag{display:inline-block;font:600 10px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:4px;margin-top:5px;color:var(--c);border:1px solid var(--c)}
+.cell{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:3px;width:100%;min-height:68px;padding:7px 9px;border-radius:5px;cursor:pointer;font-size:12.5px;line-height:1.35}
+.cell:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.cell:hover{filter:brightness(.97)}
+.cell .t{font:600 10.5px var(--f-mono);letter-spacing:.05em;text-transform:uppercase}
+.cell .a{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.t-direct{background:var(--ember);color:var(--on-ember)}
+.t-bridged{color:var(--ink)}
+.t-bridged.s1{background:color-mix(in srgb,var(--amber) 28%,var(--surface))}
+.t-bridged.s2{background:color-mix(in srgb,var(--amber) 50%,var(--surface))}
+.t-bridged.s3{background:color-mix(in srgb,var(--amber) 78%,var(--surface))}
+.t-gap,.t-partial{background:repeating-linear-gradient(135deg,var(--surface) 0 6px,color-mix(in srgb,var(--hatch) 45%,var(--surface)) 6px 8px);border:1px dashed var(--hatch);color:var(--ink)}
+.t-partial{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--amber) 22%,var(--surface)) 0 6px,color-mix(in srgb,var(--hatch) 45%,var(--surface)) 6px 8px)}
+.empty{min-height:68px;display:flex;align-items:center;justify-content:center;color:var(--quiet);font-size:12px}
+.gsq{display:flex;gap:3px;padding:8px 10px}
+.gsq i{width:14px;height:14px;border-radius:3px;border:1px solid var(--blue)}
+.gsq i.v2{background:var(--blue)} .gsq i.v1{background:color-mix(in srgb,var(--blue) 30%,var(--surface))} .gsq i.v0{border-color:var(--line);background:transparent}
+.glegend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--muted);margin:0 0 12px}
+.sw{display:inline-block;width:22px;height:13px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+
+/* Plan */
+.plan{display:grid;gap:18px;max-width:820px}
+.plan .ph{display:flex;flex-wrap:wrap;gap:12px;align-items:end;justify-content:space-between}
+.pb{display:grid;gap:6px}
+.pb h3{display:flex;gap:8px;align-items:baseline}
+.pb h3 small{font:500 12px var(--f-body);color:var(--muted)}
+.item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.item input{margin-top:3px;accent-color:var(--ember);width:16px;height:16px}
+.item b{font-weight:700}
+.item p{margin:2px 0 0;color:var(--ink)}
+.item label{cursor:pointer}
+.item:has(input:checked) p{color:var(--muted);text-decoration:line-through}
+.pill{font:600 10px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.pill.direct{background:var(--ember);color:var(--on-ember)}
+.pill.bridged{background:color-mix(in srgb,var(--amber) 55%,var(--surface));color:var(--ink)}
+.pill.gap,.pill.partial{border:1px dashed var(--hatch);color:var(--muted)}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:6px;padding:8px 14px;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.general{font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+
+/* Card */
+.scrim{position:fixed;inset:0;background:rgba(10,15,20,.35);z-index:20}
+aside.card{position:fixed;top:0;right:0;bottom:0;width:min(480px,100%);background:var(--surface);border-left:1px solid var(--line);z-index:21;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.12);
+  padding:calc(18px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) 20px}
+@media (max-width:600px){aside.card{top:auto;height:88%;width:100%;border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+.card .x{position:sticky;top:0;float:right;border:1px solid var(--line);background:var(--surface);border-radius:6px;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1}
+.card header{display:grid;gap:6px;margin-bottom:14px}
+.card .ex{color:var(--muted);font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:12px;background:var(--sunk);border-radius:4px;padding:2px 7px}
+.verdict{border-left:4px solid var(--c);background:color-mix(in srgb,var(--c) 8%,var(--surface));padding:9px 12px;border-radius:0 6px 6px 0;font-size:13.5px}
+.verdict b{color:var(--c)}
+.bk{border-top:1px solid var(--line);padding-top:14px;margin-top:14px;display:grid;gap:9px}
+.bk.hl{background:color-mix(in srgb,var(--blue) 6%,transparent);margin-inline:-10px;padding-inline:10px;border-radius:6px}
+.bk .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.bk .act{font-size:15px;font-weight:500;margin:0}
+.bk .src{font-size:12.5px;color:var(--muted);margin:0}
+.chain{display:grid;grid-template-columns:auto minmax(28px,1fr) auto minmax(28px,1fr) auto;align-items:center;font-size:12px}
+.node{padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:var(--sunk);max-width:11em;text-align:center;line-height:1.25}
+.node.heat{background:color-mix(in srgb,var(--ember) 15%,var(--surface));border-color:color-mix(in srgb,var(--ember) 45%,var(--surface))}
+.edge{position:relative;height:22px;display:flex;align-items:center}
+.edge::before{content:"";flex:1;border-top:var(--w,2px) solid var(--slate)}
+.edge.zero::before{border-top:2px dashed var(--ember)}
+.edge i{position:absolute;left:0;right:0;top:-6px;text-align:center;font:500 10px var(--f-mono);font-style:normal;color:var(--muted);white-space:nowrap}
+.edge.zero i{color:var(--ember)}
+details{font-size:12.5px}
+details summary{cursor:pointer;color:var(--muted)}
+.find{display:grid;gap:2px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.find .m{color:var(--muted)}
+.direct-f{background:color-mix(in srgb,var(--ember) 8%,var(--surface));border:1px solid color-mix(in srgb,var(--ember) 35%,var(--surface));border-radius:6px;padding:8px 10px;font-size:13px;display:grid;gap:4px}
+.check{font:600 10px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;justify-self:start}
+.gl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.gl .v2{color:var(--blue);font-weight:600} .gl .v0{color:var(--quiet)}
+@media (prefers-reduced-motion:no-preference){aside.card{animation:slide .22s ease-out}@keyframes slide{from{transform:translateX(24px);opacity:.6}}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">System Public Challenge · Visualize 3 · Mockup</span>
+    <h1>Heat &amp; Medication Evidence Map</h1>
+    <p>Which common medications make heat more dangerous, how strong the evidence is, and what a prescriber can change before and during a heat wave.</p>
+    <div class="notice"><span>⚠</span><span><b>Mockup.</b> Evidence comes from the System Public Graph (Dataverse release). <b>Guidance scores are placeholders</b> until the guidance matrix (CDC, UKHSA, WHO Europe, Health Canada, Australia) is filled in. No finding has been hand-checked yet.</span></div>
+  </header>
+
+  <div class="bar">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-overview" data-v="overview">Overview</button>
+      <button role="tab" id="tab-grid" data-v="grid">Action grid</button>
+      <button role="tab" id="tab-plan" data-v="plan">Heat-wave plan</button>
+    </div>
+    <div class="spec" id="spec"><span class="lbl">Prescriber</span></div>
+  </div>
+
+  <section class="view" id="v-overview">
+    <div class="ov">
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px">
+          <h2>Evidence vs. guidance</h2>
+          <span style="font-size:12px;color:var(--muted)">Bubble size: studies linking the class to a heat mechanism · click a bubble</span>
+        </div>
+        <div class="chart" id="quad"></div>
+        <div class="legend" id="qlegend"></div>
+      </div>
+      <div class="heads">
+        <span class="eyebrow">Headline mismatches</span>
+        <div id="heads" class="heads"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-grid" hidden>
+    <div class="glegend">
+      <span><i class="sw t-direct"></i>Direct: graph links drug to a heat outcome</span>
+      <span><i class="sw t-bridged s3"></i>Bridged: drug and heat share a mechanism (shade = strength)</span>
+      <span><i class="sw t-partial"></i>Partial: only the drug side is in the graph</span>
+      <span><i class="sw t-gap"></i>Label or guidance only: not in the graph</span>
+      <span><span class="gsq" style="display:inline-flex;padding:0;vertical-align:-3px"><i class="v2"></i><i class="v1"></i><i class="v0"></i></span> Guidance: specific action / mention / absent</span>
+    </div>
+    <div class="gridwrap"><table class="g" id="grid"></table></div>
+  </section>
+
+  <section class="view" id="v-plan" hidden>
+    <div class="plan" id="plan"></div>
+  </section>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="card" id="card" hidden aria-modal="true" role="dialog" aria-label="Evidence card"></aside>
+
+<script>
+const D = /*DATA*/;
+const SOURCES=['CDC','UKHSA','WHO Europe','Health Canada','Australia'];
+// PLACEHOLDER guidance scores: 2 = specific action, 1 = mention, 0 = absent. Replace from the guidance matrix.
+const G={'Diuretics':[2,2,1,2,1],'ACE inhibitors / ARBs':[1,2,1,1,1],'Beta blockers':[2,1,1,2,1],'Calcium channel blockers':[0,1,0,1,0],
+'Anticholinergics':[2,2,2,2,2],'Antipsychotics':[2,2,2,2,2],'Lithium':[1,2,1,2,2],'Antidepressants':[1,1,1,2,1],'Benzodiazepines / sedatives':[1,1,1,1,1],
+'Opioids':[0,0,0,1,0],'Insulin':[1,1,1,1,1],'SGLT2 inhibitors':[0,1,0,0,0],'Metformin and sulfonylureas':[0,1,0,0,0],'NSAIDs':[0,1,1,1,0],
+'Topiramate / zonisamide':[0,1,0,1,0],'Stimulants':[1,1,0,1,0],'Heat-labile emergency products':[1,1,0,1,0]};
+const SPECS=['All','Primary care','Psychiatry','Cardiology','Endocrinology','Nephrology','Pediatrics','Geriatrics','Pharmacy','Neurology','Pain and palliative','Addiction medicine'];
+const BUCKETS=D.buckets;
+const BV={'Dose adjustment':'Adjust','Substitute or hold':'Substitute or hold','Closer monitoring':'Monitor','Storage and stability':'Store'};
+const QUAD={
+  aligned:{name:'Aligned',color:'var(--slate)',say:'Evidence and guidance agree. Make sure counseling actually happens.'},
+  under:{name:'Under-recognized',color:'var(--ember)',say:'The graph shows a real signal, but heat guidance barely mentions this class. A guidance gap.'},
+  ahead:{name:'Guidance ahead of evidence',color:'var(--blue)',say:'Guidance names this class, but the graph has little to back it. A research gap; rely on pharmacology and labels.'},
+  low:{name:'Low signal',color:'var(--quiet)',say:'Little evidence and little guidance. Watch for new studies.'}
+};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const GROUP_ONLY=new Set(['17698677']); // antihypertensives as a group, not class-specific
+
+function cellScore(c){
+  if(c.tier==='direct'){const p=(c.direct||[]).map(x=>x.pmid);return p.length&&p.every(x=>GROUP_ONLY.has(x))?2.6:3}
+  if(c.tier==='bridged')return 1+0.5*(c.strength||1);
+  if(c.tier==='partial')return 1; if(c.tier==='gap')return .5; return 0;
+}
+const rows=D.rows.map(r=>{
+  const cells=Object.values(r.cells);
+  const ev=Math.max(...cells.map(cellScore));
+  const mech={}; cells.forEach(c=>(c.mechanisms||[]).forEach(m=>{mech[m.mechanism]=Math.max(mech[m.mechanism]||0,m.drug_studies)}));
+  const studies=Object.values(mech).reduce((a,b)=>a+b,0);
+  const g=G[r.class]||[0,0,0,0,0]; const gi=g.reduce((a,b)=>a+b,0)/10;
+  const q=ev>=1.75?(gi>=.5?'aligned':'under'):(gi>=.5?'ahead':'low');
+  return {...r,ev,studies,g,gi,q};
+});
+const byName=Object.fromEntries(rows.map(r=>[r.class,r]));
+let spec='All';
+const match=r=>spec==='All'||r.specialties.includes(spec);
+
+/* ---------- specialty chips ---------- */
+function renderSpec(){
+  const el=$('#spec'); el.querySelectorAll('.chip').forEach(c=>c.remove());
+  SPECS.forEach(s=>{const b=document.createElement('button');b.className='chip';b.textContent=s;b.setAttribute('aria-pressed',s===spec);
+    b.onclick=()=>{spec=s;try{localStorage.setItem('spec',s)}catch(e){};renderAll()};el.appendChild(b)});
+}
+
+/* ---------- quadrant ---------- */
+function renderQuad(){
+  const W=720,H=470,L=58,R=700,T=20,B=414;
+  const TOP=T+50; const sx=x=>L+(x/3.25)*(R-L), sy=y=>B-y*(B-TOP);
+  const mx=sx(1.75), my=sy(.5);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Drug classes plotted by strength of graph evidence against attention in heat guidance">`;
+  s+=`<rect x="${mx}" y="${my}" width="${R-mx}" height="${B-my}" fill="var(--ember)" fill-opacity=".07"/>`;
+  s+=`<rect x="${L}" y="${T}" width="${mx-L}" height="${my-T}" fill="var(--blue)" fill-opacity=".07"/>`;
+  s+=`<line x1="${mx}" y1="${T}" x2="${mx}" y2="${B}" stroke="var(--line)" stroke-dasharray="4 4"/><line x1="${L}" y1="${my}" x2="${R}" y2="${my}" stroke="var(--line)" stroke-dasharray="4 4"/>`;
+  s+=`<line x1="${L}" y1="${B}" x2="${R}" y2="${B}" stroke="var(--muted)"/><line x1="${L}" y1="${T}" x2="${L}" y2="${B}" stroke="var(--muted)"/>`;
+  [[0,'None'],[.5,'Label only'],[1.5,'Bridged, weak'],[2.5,'Bridged, strong'],[3,'Direct']].forEach(([v,t])=>{
+    s+=`<line x1="${sx(v)}" y1="${B}" x2="${sx(v)}" y2="${B+5}" stroke="var(--muted)"/><text class="ax" x="${sx(v)}" y="${B+18}" text-anchor="middle">${t}</text>`});
+  [0,.5,1].forEach(v=>{s+=`<text class="ax" x="${L-8}" y="${sy(v)+4}" text-anchor="end">${v*10}/10</text>`});
+  s+=`<text class="ax" x="${(L+R)/2}" y="${B+42}" text-anchor="middle" style="fill:var(--ink);font-weight:600">Strength of evidence in the graph →</text>`;
+  s+=`<text class="ax" transform="translate(16 ${(T+B)/2}) rotate(-90)" text-anchor="middle" style="fill:var(--ink);font-weight:600">Attention in heat guidance →</text>`;
+  const ql=(x,y,a,k,sub)=>`<text class="ql" x="${x}" y="${y}" text-anchor="${a}" fill="${QUAD[k].color}">${QUAD[k].name}</text><text class="qs" x="${x}" y="${y+15}" text-anchor="${a}">${sub}</text>`;
+  s+=ql(L+10,T+18,'start','ahead','research gap');
+  s+=ql(R-10,T+18,'end','aligned','counsel consistently');
+  s+=ql(R-10,B-24,'end','under','guidance gap');
+  s+=ql(L+10,B-24,'start','low','watch');
+  // bubbles, largest first
+  const pts=rows.map(r=>({r,x:sx(r.ev+Math.min(.18,Math.log10(r.studies+1)*.06)),y:sy(r.gi),rad:5+Math.sqrt(r.studies)*.95}));
+  pts.sort((a,b)=>b.rad-a.rad).forEach(p=>{
+    const c=QUAD[p.r.q].color;
+    p.svg=`<circle cx="${p.x}" cy="${p.y}" r="${p.rad}" fill="${c}" fill-opacity=".22" stroke="${c}" stroke-width="1.5"/>`});
+  // label placement, greedy
+  const placed=[];
+  [...pts].sort((a,b)=>a.y-b.y).forEach(p=>{
+    const right=p.x<R-150; let lx=right?p.x+p.rad+5:p.x-p.rad-5, ly=p.y+4;
+    const w=p.r.class.length*6.6;
+    for(let i=0;i<12;i++){const hit=placed.find(o=>Math.abs(o.y-ly)<14&&!(lx+(right?w:0)<o.x0||lx-(right?0:w)>o.x1));if(!hit)break;ly=hit.y+14}
+    placed.push({y:ly,x0:right?lx:lx-w,x1:right?lx+w:lx});
+    p.label=`<text x="${lx}" y="${ly}" text-anchor="${right?'start':'end'}">${esc(p.r.class)}</text>`;
+  });
+  pts.forEach(p=>{s+=`<g class="bub${match(p.r)?'':' dim'}" tabindex="0" role="button" aria-label="${esc(p.r.class)}: ${QUAD[p.r.q].name}" data-c="${esc(p.r.class)}">${p.svg}${p.label}</g>`});
+  s+='</svg>';
+  $('#quad').innerHTML=s;
+  $('#quad').querySelectorAll('.bub').forEach(g=>{g.onclick=()=>openCard(g.dataset.c);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard(g.dataset.c)}}});
+  $('#qlegend').innerHTML=Object.values(QUAD).map(q=>`<span><i style="background:${q.color}"></i>${q.name}</span>`).join('');
+}
+function renderHeads(){
+  const H=[
+    {c:'Opioids',k:'under',t:'Opioids: the strongest direct heat signal',d:'Opioid overdoses rise with daily temperature (OR 1.079 per step). Heat guidance rarely names opioids.'},
+    {c:'Anticholinergics',k:'ahead',t:'Anticholinergics: named everywhere, studied nowhere',d:'Every guidance warns about reduced sweating. The graph has 0 studies linking these drugs to sweating.'},
+    {c:'Lithium',k:'ahead',t:'Lithium: the heat half of the chain is missing',d:'The graph has lithium-level studies but none tying heat to toxicity. Labels and guidance carry it.'},
+    {c:'Diuretics',k:'aligned',t:'Dose adjustment rests on one study',d:'Starting irbesartan/HCTZ in summer changes the blood-pressure response by 7 mmHg. Nothing else in the graph covers seasonal dosing.'}
+  ];
+  $('#heads').innerHTML=H.map(h=>`<button class="head" style="--c:${QUAD[h.k].color}" data-c="${esc(h.c)}"><span class="k">${QUAD[h.k].name}</span><b>${esc(h.t)}</b><span>${esc(h.d)}</span></button>`).join('');
+  $('#heads').querySelectorAll('.head').forEach(b=>b.onclick=()=>openCard(b.dataset.c));
+}
+
+/* ---------- grid ---------- */
+const tierLabel=c=>c.tier==='direct'?'Direct':c.tier==='bridged'?'Bridged '+'●'.repeat(c.strength||1)+'○'.repeat(3-(c.strength||1)):c.tier==='partial'?'Partial':c.tier==='gap'?'Label only':'';
+function gsq(g){return `<div class="gsq" title="${SOURCES.map((s,i)=>s+': '+['absent','mention','specific action'][g[i]]).join(' · ')}">${g.map(v=>`<i class="v${v}"></i>`).join('')}</div>`}
+function renderGrid(){
+  let h=`<thead><tr><th>Drug class</th>${BUCKETS.map(b=>`<th class="b">${esc(b)}</th>`).join('')}<th>Guidance <span style="font-weight:400">(placeholder)</span></th></tr></thead><tbody>`;
+  rows.filter(match).forEach(r=>{
+    const flag=(r.q==='under'||r.q==='ahead')?`<span class="flag" style="--c:${QUAD[r.q].color}">${QUAD[r.q].name}</span>`:'';
+    h+=`<tr><th><button data-c="${esc(r.class)}">${esc(r.class)}</button><small>${esc(r.examples)}</small>${flag}</th>`;
+    BUCKETS.forEach(b=>{const c=r.cells[b];
+      h+= c.tier==='none'?`<td><div class="empty">—</div></td>`:
+      `<td><button class="cell t-${c.tier} s${c.strength||1}" data-c="${esc(r.class)}" data-b="${esc(b)}"><span class="t">${tierLabel(c)}</span><span class="a">${esc(c.action)}</span></button></td>`});
+    h+=`<td>${gsq(r.g)}</td></tr>`;
+  });
+  if(!rows.some(match))h+=`<tr><td colspan="6" style="padding:20px;color:var(--muted)">No drug classes tagged for ${esc(spec)}.</td></tr>`;
+  $('#grid').innerHTML=h+'</tbody>';
+  $('#grid').querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>openCard(b.dataset.c,b.dataset.b));
+}
+
+/* ---------- plan ---------- */
+function planText(list){
+  let t=`Heat-wave medication plan${spec==='All'?'':' for '+spec}\n`;
+  BUCKETS.forEach(b=>{const it=list.filter(x=>x.b===b);if(!it.length)return;t+=`\n${BV[b].toUpperCase()}\n`;it.forEach(x=>t+=`[ ] ${x.r.class} (${x.r.examples}): ${x.c.action}\n`)});
+  return t+`\nSource: ${D.source}. Mockup; not clinical advice.`;
+}
+function renderPlan(){
+  const list=[];rows.filter(match).forEach(r=>BUCKETS.forEach(b=>{const c=r.cells[b];if(c.tier!=='none'&&c.action)list.push({r,b,c})}));
+  const rank={direct:0,bridged:1,partial:2,gap:3};
+  let h=`<div class="ph"><div><span class="eyebrow">One-page counseling checklist</span><h2>Heat-wave plan: ${spec==='All'?'all prescribers':esc(spec)}</h2></div><div style="display:flex;gap:8px"><button class="btn" id="copy">Copy checklist</button></div></div>`;
+  h+=`<p class="general">Any medication: people taking medication had about 3× the odds of heat illness (aOR 3.09, 1.15–8.29; PMID ${D.general[0].pmid}). Start outreach with patients on two or more classes below.</p>`;
+  BUCKETS.forEach(b=>{const it=list.filter(x=>x.b===b).sort((a,z)=>rank[a.c.tier]-rank[z.c.tier]);if(!it.length)return;
+    h+=`<div class="pb"><h3>${BV[b]} <small>${it.length} item${it.length>1?'s':''}</small></h3>`;
+    it.forEach((x,i)=>{const id=`pl-${b.replace(/\W/g,'')}-${x.r.class.replace(/\W/g,'')}`;
+      h+=`<div class="item"><input type="checkbox" id="${id}"><label for="${id}"><b>${esc(x.r.class)}</b> <span style="color:var(--muted);font-size:13px">${esc(x.r.examples)}</span><p>${esc(x.c.action)}</p></label><span class="pill ${x.c.tier}">${tierLabel(x.c).replace(/[●○]/g,'').trim()}</span></div>`});
+    h+='</div>'});
+  if(!list.length)h+=`<p style="color:var(--muted)">No actions tagged for ${esc(spec)} yet.</p>`;
+  $('#plan').innerHTML=h;
+  const cp=$('#copy'); if(cp)cp.onclick=()=>{const t=planText(list);
+    navigator.clipboard.writeText(t).then(()=>{cp.textContent='Copied';setTimeout(()=>cp.textContent='Copy checklist',1600)}).catch(()=>{cp.textContent='Copy blocked here'})};
+}
+
+/* ---------- card ---------- */
+function edge(n){const w=n?Math.min(7,1.5+Math.log2(n+1)*.9):0;return `<span class="edge${n?'':' zero'}" style="--w:${w.toFixed(1)}px"><i>${n?n+' stud'+(n>1?'ies':'y'):'no studies'}</i></span>`}
+function findRow(e){const ci=e.ci&&e.ci[0]?` (${esc(e.ci[0])}–${esc(e.ci[1])})`:'';return `<div class="find"><span>${esc(e.a)} → ${esc(e.b)}</span><span class="m">${esc(e.stat)} ${esc(e.value)}${ci} · <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(e.pmid)}/" target="_blank" rel="noopener">PMID ${esc(e.pmid)}</a></span>${e.pop?`<span class="m">${esc(e.pop)}</span>`:''}</div>`}
+function openCard(name,bucket){
+  const r=byName[name]; if(!r)return; const q=QUAD[r.q];
+  let h=`<button class="x" id="cx" aria-label="Close">×</button><header><span class="eyebrow">Drug class</span><h2>${esc(r.class)}</h2><span class="ex">${esc(r.examples)}</span><div class="chips">${r.specialties.map(s=>`<span class="tag">${esc(s)}</span>`).join('')}</div></header>`;
+  h+=`<div class="verdict" style="--c:${q.color}"><b>${q.name}.</b> ${q.say}</div>`;
+  BUCKETS.forEach(b=>{const c=r.cells[b]; if(c.tier==='none')return;
+    h+=`<div class="bk${b===bucket?' hl':''}" id="bk-${b.replace(/\W/g,'')}"><div class="row"><h3>${esc(b)}</h3><span class="pill ${c.tier}">${tierLabel(c)}</span></div>`;
+    if(c.action)h+=`<p class="act">${esc(c.action)}</p>`;
+    if(c.note)h+=`<p class="src">From: ${esc(c.note)}${c.tier==='gap'||c.tier==='partial'?' (not from the graph)':''}</p>`;
+    (c.direct||[]).forEach(d=>{h+=`<div class="direct-f"><span class="eyebrow" style="color:var(--ember)">Direct finding${GROUP_ONLY.has(d.pmid)?' · antihypertensives as a group':''}</span><span>${esc(d.summary)}</span><span><a href="https://pubmed.ncbi.nlm.nih.gov/${esc(d.pmid)}/" target="_blank" rel="noopener">PMID ${esc(d.pmid)}</a></span><span class="check">Not yet hand-checked</span></div>`});
+    (c.mechanisms||[]).forEach(m=>{
+      h+=`<div class="chain"><span class="node">${esc(r.class)}</span>${edge(m.drug_studies)}<span class="node">${esc(m.mechanism)}</span>${edge(m.heat_studies)}<span class="node heat">Heat</span></div>`;
+      const ex=[...(m.drug_examples||[]),...(m.heat_examples||[])];
+      if(ex.length)h+=`<details><summary>Example findings (${ex.length})</summary>${ex.map(findRow).join('')}</details>`;
+    });
+    h+='</div>';
+  });
+  h+=`<div class="bk"><div class="row"><h3>Heat guidance</h3><span class="check">Placeholder</span></div><div class="gl">${SOURCES.map((s,i)=>`<span>${s}</span><span class="v${r.g[i]}">${['Not mentioned','Mentions the class','Specific action'][r.g[i]]}</span>`).join('')}</div></div>`;
+  const card=$('#card'); card.innerHTML=h; card.hidden=false; $('#scrim').hidden=false;
+  $('#cx').onclick=closeCard; $('#cx').focus();
+  if(bucket){const el=document.getElementById('bk-'+bucket.replace(/\W/g,''));if(el)el.scrollIntoView({block:'center'})}else card.scrollTop=0;
+}
+function closeCard(){$('#card').hidden=true;$('#scrim').hidden=true}
+$('#scrim').onclick=closeCard;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCard()});
+
+/* ---------- views ---------- */
+const VIEWS=['overview','grid','plan'];
+function show(){const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):'overview';
+  VIEWS.forEach(x=>{$('#v-'+x).hidden=x!==v;$('#tab-'+x).setAttribute('aria-selected',x===v)})}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{location.hash=b.dataset.v;show()});
+window.addEventListener('hashchange',show);
+function renderAll(){renderSpec();renderQuad();renderGrid();renderPlan()}
+try{const s=localStorage.getItem('spec');if(s&&SPECS.includes(s))spec=s}catch(e){}
+renderHeads();renderAll();show();
+</script>

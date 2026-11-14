@@ -1,0 +1,2602 @@
+{
+ "pulled": "2026-11-14",
+ "source": "openFDA drug label endpoint (DailyMed SPL)",
+ "drugs": {
+  "furosemide": {
+   "class": "Diuretics",
+   "generic": "furosemide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 49,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026g loss in neonates has been associated with the use of furosemide injection (see WARNINGS , above). PRECAUTIONS General: Excessive diuresis may cause dehydration and blood volume reduction with circulatory collapse and possibly vascular thrombosis and embolism, particularly in elderly patients. As with any eff\u2026"
+   ],
+   "rep": {
+    "set_id": "2f547f7c-0322-465c-9764-43f955d98ab2",
+    "effective_time": "20261102",
+    "brand": "Furosemide",
+    "manufacturer": "Micro Labs Limited",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f547f7c-0322-465c-9764-43f955d98ab2"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u02da to 30\u02daC (59\u02da to 86\u02daF) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "hydrochlorothiazide": {
+   "class": "Diuretics",
+   "generic": "hydrochlorothiazide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 19,
+   "heat_warning": 0.95,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.95,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.05,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "hot weather"
+   ],
+   "warn_snippets": [
+    "\u2026ssium supplementation or increased intake of potassium rich foods. Dilutional hyponatremia is life-threatening and may occur in edematous patients in hot weather; appropriate therapy is water restriction rather than salt administration, except in rare instances when the hyponatremia is life-threatening. In act\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "0fc94bc2-fa38-439a-a609-1b4130cdacb1",
+    "effective_time": "20260929",
+    "brand": "Hydrochlorothiazide",
+    "manufacturer": "Westminster Pharmaceuticals, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0fc94bc2-fa38-439a-a609-1b4130cdacb1"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F)",
+     "[See USP controlled room temperature",
+     "] Protect from light, moisture, freezing, -20\u00b0C (-4\u00b0F)",
+     "Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F)",
+     "[See USP controlled room temperature",
+     "] Protect from light, moisture, freezing, -20\u00b0C (-4\u00b0F)"
+    ],
+    "temps_c": [
+     20,
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "spironolactone": {
+   "class": "Diuretics",
+   "generic": "spironolactone",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 48,
+   "heat_warning": 0.04,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.04,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.94,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026the dose or discontinue spironolactone and treat hyperkalemia. 5.2 Hypotension and Worsening Renal Function Excessive diuresis may cause symptomatic dehydration, hypotension and worsening renal function, particularly in salt-depleted patients or those taking angiotensin converting enzyme inhibitors and angiot\u2026"
+   ],
+   "rep": {
+    "set_id": "37066684-5b63-4d3e-ae6a-08c4b3edd7aa",
+    "effective_time": "20261109",
+    "brand": "Spironolactone",
+    "manufacturer": "QPharma, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=37066684-5b63-4d3e-ae6a-08c4b3edd7aa"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00baC to 25\u00baC (68\u00baF to 77\u00baF); excursions permitted to 15\u00baC to 30\u00baC (59\u00baF to 86\u00baF) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "lisinopril": {
+   "class": "ACE inhibitors / ARBs",
+   "generic": "lisinopril",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 34,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.5,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026angiotensin system (e.g., patients with renal artery stenosis, chronic kidney disease, severe congestive heart failure, post-myocardial infarction or volume depletion) may be at particular risk of developing acute renal failure on lisinopril. Consider withholding or discontinuing therapy in patients who develop a c\u2026"
+   ],
+   "rep": {
+    "set_id": "34ebeea1-6812-4697-84c4-b2ae4f39e55f",
+    "effective_time": "20261007",
+    "brand": "Lisinopril",
+    "manufacturer": "BluePoint Laboratories",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=34ebeea1-6812-4697-84c4-b2ae4f39e55f"
+   },
+   "storage": {
+    "sentences": [
+     "Pink Round No LUPIN/20 Bottles of 100: 68001-335-00 Bottles of 1000: 68001-335-08 30 mg Red Round No LUPIN/30 Bottles of 100: 68001-336-00 40 mg Yellow Round No LUPIN/40 Bottles of 100: 68001-486-00 Bottles of 1000: 68001-486-08 Store at controlled room temperature, 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP]",
+     "Protect from moisture, freezing and excessive heat"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "Protect from moisture, freezing and excessive heat"
+    ],
+    "excursion": false
+   }
+  },
+  "losartan potassium": {
+   "class": "ACE inhibitors / ARBs",
+   "generic": "losartan potassium",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 38,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.97,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026the activity of the renin-angiotensin system (e.g., patients with renal artery stenosis, chronic kidney disease, severe congestive heart failure, or volume depletion) may be at particular risk of developing acute renal failure on losartan potassium. Monitor renal function periodically in these patients. Consider w\u2026"
+   ],
+   "rep": {
+    "set_id": "16a6a582-eb4d-41bc-9d49-fc1d4117b29a",
+    "effective_time": "20261109",
+    "brand": "Losartan Potassium",
+    "manufacturer": "QPharma, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=16a6a582-eb4d-41bc-9d49-fc1d4117b29a"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 30 NDC 42708-125-30 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "sacubitril and valsartan": {
+   "class": "ACE inhibitors / ARBs",
+   "generic": "sacubitril and valsartan",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 40,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.97,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026If hypotension occurs, consider dose adjustment of diuretics, concomitant antihypertensive drugs, and treatment of other causes of hypotension (e.g., hypovolemia). If hypotension persists despite such measures, reduce the dosage or temporarily discontinue sacubitril and valsartan. Permanent discontinuation of\u2026"
+   ],
+   "rep": {
+    "set_id": "44db8114-622e-41f6-96a1-447d47b0267c",
+    "effective_time": "20261030",
+    "brand": "Sacubitril and Valsartan",
+    "manufacturer": "Novadoz Pharmaceuticals LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=44db8114-622e-41f6-96a1-447d47b0267c"
+   },
+   "storage": {
+    "sentences": [
+     "ril/Valsartan \u201dM\u201d and Bottle of 60 Bottle of 180 Bottle of 500 Bottle of 1000 24 mg/26 mg Purple S1 280-60 280-18 280-01 280-02 49 mg/51 mg Light yellow S2 281-60 281-18 281-01 281-02 97 mg/103 mg Light pink S3 282-60 282-18 282-01 282-02 Store at 25\u00b0C (77\u00b0F), excursions permitted between 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "metoprolol": {
+   "class": "Beta blockers",
+   "generic": "metoprolol",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.26,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "1ab032d6-db68-4108-85d1-56e828d0dc01",
+    "effective_time": "20261023",
+    "brand": "Metoprolol succinate",
+    "manufacturer": "Cardinal Health 107, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1ab032d6-db68-4108-85d1-56e828d0dc01"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0-25\u00b0C (68\u00b0-77\u00b0F); [See USP Controlled Room Temperature"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "atenolol": {
+   "class": "Beta blockers",
+   "generic": "atenolol",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 46,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "4c66bae7-407a-4b5a-9442-93424067ac74",
+    "effective_time": "20261019",
+    "brand": "Atenolol",
+    "manufacturer": "Bryant Ranch Prepack",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4c66bae7-407a-4b5a-9442-93424067ac74"
+   },
+   "storage": {
+    "sentences": [
+     "5-3192-3: 60 Tablets in a BOTTLE NDC 71335-3192-4: 90 Tablets in a BOTTLE NDC 71335-3192-5: 20 Tablets in a BOTTLE NDC 71335-3192-6: 180 Tablets in a BOTTLE NDC 71335-3192-7: 10 Tablets in a BOTTLE NDC 71335-3192-8: 120 Tablets in a BOTTLE Store a 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     20,
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "propranolol": {
+   "class": "Beta blockers",
+   "generic": "propranolol",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.02,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "03afbc5a-a9dc-e823-e063-6394a90a0cb2",
+    "effective_time": "20261016",
+    "brand": "Propranolol Hydrochloride",
+    "manufacturer": "Northwind Health Company, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=03afbc5a-a9dc-e823-e063-6394a90a0cb2"
+   },
+   "storage": {
+    "sentences": [
+     "They are available as follows: Bottles of 30: NDC 82868-003-30 Bottles of 90: NDC 82868-003-90 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "amlodipine": {
+   "class": "Calcium channel blockers",
+   "generic": "amlodipine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 28,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "204f27e9-5041-4677-b313-866ca69abad9",
+    "effective_time": "20261009",
+    "brand": "Amlodipine Besylate",
+    "manufacturer": "REMEDYREPACK INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=204f27e9-5041-4677-b313-866ca69abad9"
+   },
+   "storage": {
+    "sentences": [
+     "PACKAGING: 30 in 1 BLISTER PACK PACKAGING: 90 in 1 BOTTLE PLASTIC PACKAGING: 30 in 1 BOTTLE PLASTIC PACKAGING: 28 in 1 BLISTER PACK PACKAGING: 30 in 1 BOTTLE PLASTIC PACKAGING: 30 in 1 BLISTER PACK PACKAGING: 30 in 1 BLISTER PACK Storage Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F), excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) (see USP Controlled Room Temperature), and dispense in tight, light resistant container (USP)"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "diltiazem": {
+   "class": "Calcium channel blockers",
+   "generic": "diltiazem",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.08,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "2ef6b112-d3e9-4999-a8e0-46fb40d1ad81",
+    "effective_time": "20261001",
+    "brand": "Diltiazem Hydrochloride",
+    "manufacturer": "Cranbury Pharmaceuticals, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2ef6b112-d3e9-4999-a8e0-46fb40d1ad81"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 100 capsules with child-resistant closure, NDC 27808-324-01 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "verapamil": {
+   "class": "Calcium channel blockers",
+   "generic": "verapamil",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 49,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.02,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "4f6ae43f-c28a-4eac-9b19-8b5d0c12dfaa",
+    "effective_time": "20261012",
+    "brand": "Verapamil Hydrochloride",
+    "manufacturer": "Henry Schein, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f6ae43f-c28a-4eac-9b19-8b5d0c12dfaa"
+   },
+   "storage": {
+    "sentences": [
+     "5 mg/mL is supplied in single-dose containers as follows: Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "oxybutynin": {
+   "class": "Anticholinergics",
+   "generic": "oxybutynin",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.6,
+   "heat_patient": 0.96,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "decreased sweating",
+    "heat prostration",
+    "heat stroke",
+    "high environmental temperature"
+   ],
+   "warn_snippets": [
+    "\u2026iate medical attention if they experience edema of the tongue, edema of the laryngopharynx, or difficulty breathing. Patients should be informed that heat prostration (fever and heat stroke due to decreased sweating) can occur when anticholinergics such as oxybutynin chloride are administered in the presence of hig\u2026",
+    "\u2026ey experience edema of the tongue, edema of the laryngopharynx, or difficulty breathing. Patients should be informed that heat prostration (fever and heat stroke due to decreased sweating) can occur when anticholinergics such as oxybutynin chloride are administered in the presence of high environmental tempera\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "3a319017-4e25-402e-8ba0-63b9f1eb707e",
+    "effective_time": "20261104",
+    "brand": "OXYBUTYNIN CHLORIDE",
+    "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a319017-4e25-402e-8ba0-63b9f1eb707e"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursions permitted within 15\u00b0 C to 30\u00b0 C (59\u00b0 F to 86\u00b0 F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "benztropine": {
+   "class": "Anticholinergics",
+   "generic": "benztropine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 35,
+   "heat_warning": 1.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "anhidrosis",
+    "heat intolerance",
+    "heat stroke",
+    "hot environment",
+    "hot weather"
+   ],
+   "warn_snippets": [
+    "\u2026peridol, or other drugs with anticholinergic or antidopaminergic activity, patients should be advised to report gastrointestinal complaints, fever or heat intolerance promptly. Paralytic ileus, hyperthermia and heat stroke, all of which have sometimes been fatal, have occurred in patients taking anticholinergic-typ\u2026",
+    "\u2026gic activity, patients should be advised to report gastrointestinal complaints, fever or heat intolerance promptly. Paralytic ileus, hyperthermia and heat stroke, all of which have sometimes been fatal, have occurred in patients taking anticholinergic-type antiparkinsonism drugs, including benztropine mesylate\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "31bbcbfa-dc74-99e2-e063-6394a90aa608",
+    "effective_time": "20261026",
+    "brand": "BENZTROPINE MESYLATE",
+    "manufacturer": "Marlex PHARMACEUTICAL, INC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=31bbcbfa-dc74-99e2-e063-6394a90aa608"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "diphenhydramine": {
+   "class": "Anticholinergics",
+   "generic": "diphenhydramine",
+   "product_type": "HUMAN OTC DRUG",
+   "route": "ORAL",
+   "n_labels": 32,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.09,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "00fa0879-a086-4a92-b184-4c7c6821b15f",
+    "effective_time": "20261105",
+    "brand": "Diphenhydramine HCl",
+    "manufacturer": "ASCLEMED USA INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=00fa0879-a086-4a92-b184-4c7c6821b15f"
+   },
+   "storage": {
+    "sentences": [
+     "Other information each tablet contains: calcium 30 mg store at 25\u00b0C (77\u00b0F); excursions permitted between 15\u00b0-30\u00b0C (59\u00b0-86\u00b0F) protect from moisture use by expiration date on package"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "olanzapine": {
+   "class": "Antipsychotics",
+   "generic": "olanzapine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 47,
+   "heat_warning": 1.0,
+   "heat_patient": 0.96,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "body temperature regulation",
+    "exposure to extreme heat",
+    "overheating",
+    "reduce core body temperature"
+   ],
+   "warn_snippets": [
+    "\u2026mobiles, until they are reasonably certain that olanzapine therapy does not affect them adversely. [see Patient Counseling Information ( 17 ) ]. 5.13 Body Temperature Regulation Disruption of the body\u2019s ability to reduce core body temperature has been attributed to antipsychotic agents. Appropriate care is advised when prescr\u2026",
+    "\u2026py does not affect them adversely. [see Patient Counseling Information ( 17 ) ]. 5.13 Body Temperature Regulation Disruption of the body\u2019s ability to reduce core body temperature has been attributed to antipsychotic agents. Appropriate care is advised when prescribing olanzapine for patients who will be experiencing conditions\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "2a7300d3-95e3-427e-bf37-55fa654cc90a",
+    "effective_time": "20260921",
+    "brand": "Olanzapine",
+    "manufacturer": "REMEDYREPACK INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2a7300d3-95e3-427e-bf37-55fa654cc90a"
+   },
+   "storage": {
+    "sentences": [
+     "on other side and are supplied in NDC: 70518-1635-00 NDC: 70518-1635-01 NDC: 70518-1635-02 PACKAGING: 30 in 1 BLISTER PACK PACKAGING: 30 in 1 BOTTLE PLASTIC PACKAGING: 60 in 1 BLISTER PACK Storage and Handling Store olanzapine tablets at controlled room temperature, 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP]",
+     "The USP defines controlled room temperature as a temperature maintained thermostatically that encompasses the usual and customary working environment of 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); that results in a mean kinetic temperature calculated to be not more than 25\u00b0C; and that allows for excursions be",
+     "tween 15\u00b0 and 30\u00b0C (59\u00b0 and 86\u00b0F) that are experienced in pharmacies, hospitals, and warehouses"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "quetiapine": {
+   "class": "Antipsychotics",
+   "generic": "quetiapine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 1.0,
+   "heat_patient": 1.0,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "body temperature regulation",
+    "exposure to extreme heat",
+    "hot weather",
+    "overheated",
+    "overheating",
+    "reduce core body temperature"
+   ],
+   "warn_snippets": [
+    "\u2026ting hazardous machinery until they are reasonably certain that quetiapine therapy does not affect them adversely. Somnolence may lead to falls. 5.17 Body Temperature Regulation Although not reported with quetiapine, disruption of the body's ability to reduce core body temperature has been attributed to antipsychotic agents.\u2026",
+    "\u2026adversely. Somnolence may lead to falls. 5.17 Body Temperature Regulation Although not reported with quetiapine, disruption of the body's ability to reduce core body temperature has been attributed to antipsychotic agents. Appropriate care is advised when prescribing quetiapine for patients who will be experiencing conditions\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "01261008-5f42-4844-8a65-d4545a67a309",
+    "effective_time": "20261028",
+    "brand": "Quetiapine",
+    "manufacturer": "Bryant Ranch Prepack",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=01261008-5f42-4844-8a65-d4545a67a309"
+   },
+   "storage": {
+    "sentences": [
+     "-1462-1: 100 Tablets in a BOTTLE NDC 71335-1462-2: 30 Tablets in a BOTTLE NDC 71335-1462-3: 120 Tablets in a BOTTLE NDC 71335-1462-4: 60 Tablets in a BOTTLE NDC 71335-1462-5: 90 Tablets in a BOTTLE NDC 71335-1462-6: 15 Tablets in a BOTTLE Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "haloperidol": {
+   "class": "Antipsychotics",
+   "generic": "haloperidol",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.86,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.86,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.98,
+   "hyperthermia_only": 0.12,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "heat stroke"
+   ],
+   "warn_snippets": [
+    "\u2026drug therapy should be carefully considered. The patient should be carefully monitored, since recurrences of NMS have been reported. Hyperpyrexia and heat stroke, not associated with the above symptom complex, have also been reported with haloperidol. Neurological Adverse Reactions in Patients with Parkinson's\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "7a6331b5-1f3c-44b0-87e5-a5ef8102d150",
+    "effective_time": "20261027",
+    "brand": "haloperidol decanoate",
+    "manufacturer": "REMEDYREPACK INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7a6331b5-1f3c-44b0-87e5-a5ef8102d150"
+   },
+   "storage": {
+    "sentences": [
+     "04 mg per mL haloperidol decanoate is available as follows: 100 mg per mL* Single-Dose Vial (* As haloperidol) NDC: 70518-1281-00 PACKAGING: 10 in 1 CARTON, 1 mL VIAL TYPE 0 Storage Conditions Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F)",
+     "[See USP Controlled Room Temperature",
+     "] Do not refrigerate or freeze"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "clozapine": {
+   "class": "Antipsychotics",
+   "generic": "clozapine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 16,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026g VERSACLOZ can cause a potentially fatal symptom complex referred to as Neuroleptic Malignant Syndrome (NMS). Clinical manifestations of NMS include hyperpyrexia, muscle rigidity, altered mental status, and autonomic instability (irregular pulse or blood pressure, tachycardia, diaphoresis, and cardiac dysrhyth\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026o minimize risk. Use VERSACLOZ cautiously in patients with cardiovascular or cerebrovascular disease or conditions predisposing to hypotension (e.g., dehydration, use of antihypertensive medications) [see Dosage and Administration (2.2, 2.7), Warnings and Precautions (5.2)]. Seizures Seizures have occurred wit\u2026"
+   ],
+   "rep": {
+    "set_id": "2592c9a8-fd74-4e0d-a895-b07b014cf355",
+    "effective_time": "20260906",
+    "brand": "VERSACLOZ",
+    "manufacturer": "TruPharma LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2592c9a8-fd74-4e0d-a895-b07b014cf355"
+   },
+   "storage": {
+    "sentences": [
+     "2 Storage and Handling Store VERSACLOZ at room temperature between 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursion permitted between 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [see USP Controlled Room Temperature]",
+     "Do not refrigerate or freeze"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "lithium carbonate": {
+   "class": "Lithium",
+   "generic": "lithium carbonate",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.48,
+   "heat_anywhere": 0.48,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.96,
+   "hyperthermia_only": 0.44,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026tions by pharmacokinetic interactions or drugs affecting kidney function [see PRECAUTIONS-Drug Interactions ] Acute ingestion Impaired renal function Volume depletion or dehydration Significant cardiovascular disease Changes in electrolyte concentrations (especially sodium and potassium) Monitor for signs and sympt\u2026"
+   ],
+   "rep": {
+    "set_id": "039f188c-413a-6e64-e063-6294a90a2972",
+    "effective_time": "20261016",
+    "brand": "Lithium Carbonate",
+    "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=039f188c-413a-6e64-e063-6294a90a2972"
+   },
+   "storage": {
+    "sentences": [
+     "NDC 72789-171-82: Bottle of 500 Tablets NDC 72789-171-01: Bottle of 100 Tablets NDC 72789-171-30: Bottle of 30 Tablets Storage Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F)",
+     "[See USP Controlled Room Temperature"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "sertraline": {
+   "class": "Antidepressants",
+   "generic": "sertraline",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026., agitation, hallucinations, delirium, and coma), autonomic instability (e.g., tachycardia, labile blood pressure, dizziness, diaphoresis, flushing, hyperthermia), neuromuscular symptoms (e.g., tremor, rigidity, myoclonus, hyperreflexia, incoordination), seizures, and gastrointestinal symptoms (e.g., nausea, v\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "0e5a7b02-3972-47f0-9f49-e958d792beac",
+    "effective_time": "20261029",
+    "brand": "Sertraline Hydrochloride",
+    "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0e5a7b02-3972-47f0-9f49-e958d792beac"
+   },
+   "storage": {
+    "sentences": [
+     "NDC 72789-346-90 Bottles of 90 Store Sertraline Hydrochloride Tablets USP at 20\u00ba to 25\u00baC(68\u00ba to 77\u00baF); excursions permitted to 15\u00ba to 30\u00baC (59\u00b0 to 86\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "amitriptyline": {
+   "class": "Antidepressants",
+   "generic": "amitriptyline",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.68,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.98,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.12,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "hot weather"
+   ],
+   "warn_snippets": [
+    "\u2026pyrexia has been reported when amitriptyline hydrochloride is administered with anticholinergic agents or with neuroleptic drugs, particularly during hot weather. Paralytic ileus may occur in patients taking tricyclic antidepressants in combination with anticholinergic type drugs. Cimetidine is reported to red\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "00d11130-c9ae-4258-9746-9763bc5deb84",
+    "effective_time": "20261106",
+    "brand": "Amitriptyline Hydrochloride",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=00d11130-c9ae-4258-9746-9763bc5deb84"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "venlafaxine": {
+   "class": "Antidepressants",
+   "generic": "venlafaxine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 49,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.96,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026(e.g., agitation, hallucinations, delirium, coma), autonomic instability (e.g., tachycardia, labile blood pressure, dizziness, diaphoresis, flushing, hyperthermia), neuromuscular symptoms (e.g., tremor, rigidity, myoclonus, hyperreflexia, incoordination), seizures, and gastrointestinal symptoms (e.g., nausea, v\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "0c404290-2806-4756-bca3-2d639b400963",
+    "effective_time": "20261028",
+    "brand": "Venlafaxine Hydrochloride",
+    "manufacturer": "Preferred Pharmaceuticals Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0c404290-2806-4756-bca3-2d639b400963"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 30 NDC 68788-7919-3 Bottles of 60 NDC 68788-7919-6 Bottles of 90 NDC 68788-7919-9 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F)",
+     "[See USP Controlled Room Temperature"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "lorazepam": {
+   "class": "Benzodiazepines / sedatives",
+   "generic": "lorazepam",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.18,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "5140798d-8571-41fb-84a4-e182aac3f64c",
+    "effective_time": "20261109",
+    "brand": "Lorazepam",
+    "manufacturer": "Civica, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5140798d-8571-41fb-84a4-e182aac3f64c"
+   },
+   "storage": {
+    "sentences": [
+     "Store in a refrigerator"
+    ],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "diazepam": {
+   "class": "Benzodiazepines / sedatives",
+   "generic": "diazepam",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "2f799120-0d08-47cd-8183-a98f0267c845",
+    "effective_time": "20261014",
+    "brand": "DIAZEPAM",
+    "manufacturer": "Aurobindo Pharma Limited",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2f799120-0d08-47cd-8183-a98f0267c845"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 100 NDC 59651-654-01 Bottles of 500 NDC 59651-654-05 Bottles of 1,000 NDC 59651-654-99 Storage Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "zolpidem": {
+   "class": "Benzodiazepines / sedatives",
+   "generic": "zolpidem",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "38c838a4-9943-445a-8e80-e823d56eeaa5",
+    "effective_time": "20261102",
+    "brand": "Zolpidem Tartrate",
+    "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=38c838a4-9943-445a-8e80-e823d56eeaa5"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 21 NDC 72789-390-21 Bottles of 30 NDC 72789-390-30 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "fentanyl": {
+   "class": "Opioids",
+   "generic": "fentanyl",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": "TRANSDERMAL",
+   "n_labels": 5,
+   "heat_warning": 1.0,
+   "heat_patient": 1.0,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 1.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "electric blankets",
+    "exposure to heat",
+    "external heat",
+    "heated water beds",
+    "heated waterbeds",
+    "heating pads",
+    "hot baths",
+    "hot tubs",
+    "saunas",
+    "sunbathe",
+    "sunbathing"
+   ],
+   "warn_snippets": [
+    "\u2026inhibitor or inducer [see Warnings and Precautions (5.7) , Clinical Pharmacology (12.3) ]. Risk of Increased Fentanyl Absorption with Application of External Heat Exposure of the fentanyl transdermal system application site and surrounding area to direct external heat sources, such as heating pads or electric b\u2026",
+    "\u2026plication of External Heat Exposure of the fentanyl transdermal system application site and surrounding area to direct external heat sources, such as heating pads or electric blankets, heat or tanning lamps, sunbathing, hot baths, saunas, hot tubs, and heated water beds may increase fentanyl absorption and has\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "e15a7e9b-8025-49dd-9a6d-bafcccf1959f",
+    "effective_time": "20260430",
+    "brand": "FENTANYL TRANSDERMAL",
+    "manufacturer": "SpecGx LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e15a7e9b-8025-49dd-9a6d-bafcccf1959f"
+   },
+   "storage": {
+    "sentences": [
+     "Store up to 25\u00b0C (77\u00b0F); excursions permitted to 15 to 30\u00b0C (59 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "oxycodone": {
+   "class": "Opioids",
+   "generic": "oxycodone",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 29,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "338b5391-e5f7-40a2-8b15-57f47cbc4813",
+    "effective_time": "20260909",
+    "brand": "Oxycodone Hydrochloride",
+    "manufacturer": "KVK-TECH, INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=338b5391-e5f7-40a2-8b15-57f47cbc4813"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 25\u00b0C (77\u00b0F); excursions are permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "methadone": {
+   "class": "Opioids",
+   "generic": "methadone",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 36,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026symptoms may include mental status changes (e.g., agitation, hallucinations, coma), autonomic instability (e.g., tachycardia, labile blood pressure, hyperthermia), neuromuscular aberrations (e.g., hyperreflexia, incoordination, rigidity), and/or gastrointestinal symptoms (e.g., nausea, vomiting, diarrhea). The\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "540edd43-165d-4257-b989-3bccc8f54afb",
+    "effective_time": "20260909",
+    "brand": "Methadone Hydrochloride",
+    "manufacturer": "American Health Packaging",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=540edd43-165d-4257-b989-3bccc8f54afb"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00ba to 25\u00baC (68\u00ba to 77\u00baF)",
+     "[See USP Controlled Room Temperature"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "insulin glargine": {
+   "class": "Insulin",
+   "generic": "insulin glargine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 17,
+   "heat_warning": 0.0,
+   "heat_patient": 0.06,
+   "heat_anywhere": 0.06,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.76,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "5328761e-59d3-ca7a-e063-6394a90ae810",
+    "effective_time": "20261015",
+    "brand": "LANGLARA",
+    "manufacturer": "Lanexa Biologics, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5328761e-59d3-ca7a-e063-6394a90ae810"
+   },
+   "storage": {
+    "sentences": [
+     "Store unused LANGLARA in a refrigerator between 36\u00b0F and 46\u00b0F (2\u00b0C and 8\u00b0C)",
+     "Do not freeze",
+     "Protect LANGLARA from direct heat and light",
+     "Not in-use (unopened) Refrigerated (36\u00b0F-46\u00b0F [2\u00b0C-8\u00b0C]) Not in-use (unopened) Room Temperature (up to 86\u00b0F [30\u00b0C]) In-use (opened) (see temperature below) 3 mL single-patient-use prefilled pen Until expiration date 28 days 28 days Room temperature only (Do not refrigerate) 16 HOW",
+     "Store unused LANGLARA in a refrigerator between 36\u00b0F and 46\u00b0F (2\u00b0C and 8\u00b0C)",
+     "Do not freeze"
+    ],
+    "temps_c": [
+     2,
+     8,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [
+     28
+    ],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "\u00ba Keep your pen away from heat or light",
+     "Protect LANGLARA from direct heat and light"
+    ],
+    "excursion": false
+   }
+  },
+  "insulin lispro": {
+   "class": "Insulin",
+   "generic": "insulin lispro",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 13,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 1.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "2be14cbb-197a-4da8-82c8-2443594e7f6f",
+    "effective_time": "20260918",
+    "brand": "Insulin Lispro",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2be14cbb-197a-4da8-82c8-2443594e7f6f"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "Keep away from heat and out of direct light",
+     "Keep vials away from heat and out of direct light"
+    ],
+    "excursion": false
+   }
+  },
+  "insulin aspart": {
+   "class": "Insulin",
+   "generic": "insulin aspart",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 17,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 1.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "30c64769-d2f7-4604-ac9e-2a6bc09506c9",
+    "effective_time": "20260731",
+    "brand": "Garzulys",
+    "manufacturer": "Meitheal Pharmaceuticals Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=30c64769-d2f7-4604-ac9e-2a6bc09506c9"
+   },
+   "storage": {
+    "sentences": [
+     "Store unused Garzulys in a refrigerator between 2\u00b0C to 8\u00b0C (36\u00b0F to 46\u00b0F)",
+     "Do not freeze Garzulys and do not use Garzulys if it has been frozen",
+     "Do not expose Garzulys to excessive heat or light",
+     "Storage Conditions for Garzulys Vial and Prefilled Pen Garzulys presentation Not in-use (unopened) Room Temperature (up to 30\u00b0C [86\u00b0F]) Not in-use (unopened) Refrigerated (2\u00b0C to 8\u00b0C [36\u00b0F to 46\u00b0F]) In-use (opened) Room Temperature (up to 30\u00b0C [86\u00b0F]) 10 mL multiple-dose vial 28 days Until expiration date 28 days* (refrigerated/room temperature) 3 mL single-patie",
+     "nt-use prefilled pen 28 days Until expiration date 28 days (Do not refrigerate) *For insulin pump use, the total in-use time is 19 days, including 7 days pump in-use time",
+     "Storage in External Insulin Pump: Change Garzulys in the pump reservoir at least every 7 days or according to the pump user manual instructions for Garzulys or NOVOLOG, whichever is shorter, or after exposure to temperatures that exceed 37\u00b0C (98"
+    ],
+    "temps_c": [
+     2,
+     8,
+     30,
+     37
+    ],
+    "max_c": 37,
+    "days_unrefrigerated": [
+     28
+    ],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "Keep Garzulys away from heat or light",
+     "Keep Garzulys away from heat or light"
+    ],
+    "excursion": false
+   }
+  },
+  "empagliflozin": {
+   "class": "SGLT2 inhibitors",
+   "generic": "empagliflozin",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 8,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026ood glucose levels and discontinue JARDIANCE if ketoacidosis is suspected. Monitor patients for resolution of ketoacidosis before restarting. ( 5.1 ) Volume Depletion: Before initiating JARDIANCE, assess volume status and renal function in patients with impaired renal function, elderly patients, or patients on loop\u2026"
+   ],
+   "rep": {
+    "set_id": "59ed43d9-b4e0-72a2-e063-6394a90a327d",
+    "effective_time": "20260826",
+    "brand": "Jardiance",
+    "manufacturer": "Redpharm Drug",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=59ed43d9-b4e0-72a2-e063-6394a90a327d"
+   },
+   "storage": {
+    "sentences": [
+     "Storage Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [see USP Controlled Room Temperature]",
+     "Storage Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "dapagliflozin": {
+   "class": "SGLT2 inhibitors",
+   "generic": "dapagliflozin",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 30,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.97,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026glucose levels and discontinue dapagliflozin if ketoacidosis is suspected. Monitor patients for resolution of ketoacidosis before restarting. ( 5.1 ) Volume depletion: Before initiating dapagliflozin, assess volume status and renal function in the elderly, patients with renal impairment or low systolic blood pressu\u2026"
+   ],
+   "rep": {
+    "set_id": "5dc0e9df-3b45-4469-93fe-3d2eddbfe2b7",
+    "effective_time": "20261029",
+    "brand": "Dapagliflozin",
+    "manufacturer": "Micro Labs Limited",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5dc0e9df-3b45-4469-93fe-3d2eddbfe2b7"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 30 NDC 42571-318-30 Bottles of 90 NDC 42571-318-90 Bottles of 1000 NDC 42571-318-10 Storage and Handling Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursions permitted between 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "metformin": {
+   "class": "Metformin and sulfonylureas",
+   "generic": "metformin",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 43,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.95,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.09,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026renal function is stable. Surgery and other procedures \u2014 Withholding of food and fluids during surgical or other procedures may increase the risk for volume depletion, hypotension, and renal impairment. Metformin hydrochloride should be temporarily discontinued while patients have restricted food and fluid intake.\u2026"
+   ],
+   "rep": {
+    "set_id": "0230a3c3-34cf-478b-88c3-4d96e5300018",
+    "effective_time": "20261109",
+    "brand": "Metformin Hydrochloride",
+    "manufacturer": "PD-Rx Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0230a3c3-34cf-478b-88c3-4d96e5300018"
+   },
+   "storage": {
+    "sentences": [
+     "2 Storage Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted between 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "glipizide": {
+   "class": "Metformin and sulfonylureas",
+   "generic": "glipizide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 45,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "16fb8bc7-1db1-477e-a201-b3b678b8a84c",
+    "effective_time": "20261013",
+    "brand": "Glipizide",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=16fb8bc7-1db1-477e-a201-b3b678b8a84c"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "glyburide": {
+   "class": "Metformin and sulfonylureas",
+   "generic": "glyburide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 38,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.13,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "7e661288-2d24-4403-86a1-754afa1d04ff",
+    "effective_time": "20261105",
+    "brand": "GLYBURIDE",
+    "manufacturer": "Chartwell RX, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7e661288-2d24-4403-86a1-754afa1d04ff"
+   },
+   "storage": {
+    "sentences": [
+     "other side) Bottles of 30 NDC 62135-584-30 Glyburide tablets, USP 5 mg (Blue colored, slightly mottled, capsule shaped, biconvex tablets de-bossed with 'I37' on one side and scored on the other side) Bottles of 90 NDC 62135-585-90 Rx only Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [see USP controlled room temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "ibuprofen": {
+   "class": "NSAIDs",
+   "generic": "ibuprofen",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 42,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.02,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.64,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "1b1e1578-3ff5-47a4-a53b-c19512d0f953",
+    "effective_time": "20261028",
+    "brand": "Ibuprofen",
+    "manufacturer": "REMEDYREPACK INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b1e1578-3ff5-47a4-a53b-c19512d0f953"
+   },
+   "storage": {
+    "sentences": [
+     "HOW SUPPLIED Ibuprofen tablets, USP are available in the following strengths, colors and sizes: 400 mg (white, oval shaped, debossed BI 4) NDC: 70518-4786-00 PACKAGING: 15 in 1 BOTTLE PLASTIC Store at 20\u00b0C - 25\u00b0C (68\u00b0 - 77\u00b0F) [see USP Controlled Room Temperature]",
+     "Avoid excessive heat 40\u00b0C (104\u00b0F)"
+    ],
+    "temps_c": [
+     20,
+     25,
+     40
+    ],
+    "max_c": 40,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "Avoid excessive heat 40\u00b0C (104\u00b0F)"
+    ],
+    "excursion": false
+   }
+  },
+  "naproxen": {
+   "class": "NSAIDs",
+   "generic": "naproxen",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 45,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.98,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.04,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026o outweigh risk of worsening heart failure. (5.5) Renal Toxicity: Monitor renal function in patients with renal or hepatic impairment, heart failure, dehydration, or hypovolemia. Avoid use of naproxen sodium in patients with advanced renal disease unless benefits are expected to outweigh risk of worsening rena\u2026"
+   ],
+   "rep": {
+    "set_id": "181c2d5b-2c61-bf20-e063-6294a90a3f7f",
+    "effective_time": "20261103",
+    "brand": "Naproxen Sodium",
+    "manufacturer": "St. Mary's Medical Park Pharmacy",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=181c2d5b-2c61-bf20-e063-6294a90a3f7f"
+   },
+   "storage": {
+    "sentences": [
+     "Bottles of 14 NDC 60760-801-14 Bottles of 30 NDC 60760-801-30 Bottles of 60 NDC 60760-801-60 Bottles of 90 NDC 60760-801-90 Store at 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) in well-closed containers"
+    ],
+    "temps_c": [
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "diclofenac": {
+   "class": "NSAIDs",
+   "generic": "diclofenac",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": "ORAL",
+   "n_labels": 43,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026enal blood flow, which may precipitate overt renal decompensation. Patients at greatest risk of this reaction are those with impaired renal function, dehydration, hypovolemia, heart failure, liver dysfunction, those taking diuretics and ACE inhibitors or ARBs, and the elderly. Discontinuation of NSAID therapy\u2026"
+   ],
+   "rep": {
+    "set_id": "26e44aa5-cfcd-f10b-e063-6394a90a4dcf",
+    "effective_time": "20261105",
+    "brand": "Diclofenac Sodium",
+    "manufacturer": "NuCare Pharmaceuticals, LLC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=26e44aa5-cfcd-f10b-e063-6394a90a4dcf"
+   },
+   "storage": {
+    "sentences": [
+     "Bottle of 7 NDC 68071-3720-7 Bottle of 30 NDC 68071-3720-3 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "topiramate": {
+   "class": "Topiramate / zonisamide",
+   "generic": "topiramate",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 48,
+   "heat_warning": 1.0,
+   "heat_patient": 1.0,
+   "heat_anywhere": 1.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.04,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "decreased sweating",
+    "heat-related",
+    "hot weather",
+    "oligohidrosis"
+   ],
+   "warn_snippets": [
+    "\u2026visual loss; discontinue topiramate tablets as soon as possible ( 5.1 ) Visual field defects: consider discontinuation of topiramate tablets ( 5.2 ) Oligohidrosis and hyperthermia: monitor decreased sweating and increased body temperature, especially in pediatric patients ( 5.3 ) Metabolic acidosis: baseline an\u2026",
+    "\u2026lets as soon as possible ( 5.1 ) Visual field defects: consider discontinuation of topiramate tablets ( 5.2 ) Oligohidrosis and hyperthermia: monitor decreased sweating and increased body temperature, especially in pediatric patients ( 5.3 ) Metabolic acidosis: baseline and periodic measurement of serum bicarbonate i\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "3f99b26b-79b9-4efb-aa2c-2868e1e126c8",
+    "effective_time": "20261106",
+    "brand": "Topiramate",
+    "manufacturer": "REMEDYREPACK INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3f99b26b-79b9-4efb-aa2c-2868e1e126c8"
+   },
+   "storage": {
+    "sentences": [
+     "2 Storage and Handling Topiramate tablets should be stored in tightly-closed containers at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]",
+     "40-02 NDC: 70518-4340-03 NDC: 70518-4340-04 OUTER PACKAGING: 100 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 30 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 50 in 1 BOX Topiramate tablets should be stored in tightly-closed containers at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]",
+     "40-02 NDC: 70518-4340-03 NDC: 70518-4340-04 OUTER PACKAGING: 100 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 30 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 50 in 1 BOX Topiramate tablets should be stored in tightly-closed containers at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]",
+     "2 Storage and Handling Topiramate tablets should be stored in tightly-closed containers at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]",
+     "40-02 NDC: 70518-4340-03 NDC: 70518-4340-04 OUTER PACKAGING: 100 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 30 in 1 BOX PACKAGING: 1 in 1 POUCH OUTER PACKAGING: 50 in 1 BOX Topiramate tablets should be stored in tightly-closed containers at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     20,
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "zonisamide": {
+   "class": "Topiramate / zonisamide",
+   "generic": "zonisamide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 33,
+   "heat_warning": 0.97,
+   "heat_patient": 0.97,
+   "heat_anywhere": 0.97,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "decreased sweating",
+    "heat stroke",
+    "heat-related",
+    "hot weather",
+    "oligohidrosis",
+    "sweat less"
+   ],
+   "warn_snippets": [
+    "\u2026atient should be evaluated immediately. Zonisamide should be discontinued if an alternative etiology for the signs or symptoms cannot be established. Oligohidrosis and Hyperthermia in Pediatric Patients: Oligohidrosis, sometimes resulting in heat stroke and hospitalization, is seen in association with zonisamide\u2026",
+    "\u2026etiology for the signs or symptoms cannot be established. Oligohidrosis and Hyperthermia in Pediatric Patients: Oligohidrosis, sometimes resulting in heat stroke and hospitalization, is seen in association with zonisamide in pediatric patients. During the pre-approval development program in Japan, one case of\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "64bd9d6f-8cc0-4151-a78d-9f1437b36875",
+    "effective_time": "20261027",
+    "brand": "zonisamide",
+    "manufacturer": "Bryant Ranch Prepack",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=64bd9d6f-8cc0-4151-a78d-9f1437b36875"
+   },
+   "storage": {
+    "sentences": [
+     "NDC: 71335-0486-1: 100 Capsules in a BOTTLE NDC: 71335-0486-2: 90 Capsules in a BOTTLE NDC: 71335-0486-3: 30 Capsules in a BOTTLE NDC: 71335-0486-4: 60 Capsules in a BOTTLE NDC: 71335-0486-5: 120 Capsules in a BOTTLE Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature], in a dry place and protected from light"
+    ],
+    "temps_c": [
+     20,
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "methylphenidate": {
+   "class": "Stimulants",
+   "generic": "methylphenidate",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.06,
+   "heat_patient": 0.06,
+   "heat_anywhere": 0.06,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "29f06562-6b6a-4ca6-b62e-d08a45fb3dd4",
+    "effective_time": "20261021",
+    "brand": "METADATE CD",
+    "manufacturer": "Lannett Company, LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=29f06562-6b6a-4ca6-b62e-d08a45fb3dd4"
+   },
+   "storage": {
+    "sentences": [
+     "DC 0527-6582-30 50 mg purple/white \u201c LANNETT 4583\u201d in white letters \u201c50 mg\u201d in black letters 30 NDC 0527-6583-30 60 mg white/white capsules \u201c LANNETT 4584\u201d in black letters \u201c60 mg\u201d in black letters 30 NDC 0527-6584-30 Storage and Handling Store at 25\u00b0C (77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "amphetamine": {
+   "class": "Stimulants",
+   "generic": "amphetamine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 19,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026., agitation, hallucinations, delirium, and coma), autonomic instability (e.g., tachycardia, labile blood pressure, dizziness, diaphoresis, flushing, hyperthermia), neuromuscular symptoms (e.g., tremor, rigidity, myoclonus, hyperreflexia, incoordination), seizures, and/or gastrointestinal symptoms (e.g., nausea\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "48d0f55c-f847-4d26-b2ed-94b5a2770228",
+    "effective_time": "20261001",
+    "brand": "Amphetamine Extended-Release",
+    "manufacturer": "Neos Therapeutics, LP",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=48d0f55c-f847-4d26-b2ed-94b5a2770228"
+   },
+   "storage": {
+    "sentences": [
+     "8 mg extended-release orally disintegrating tablet: round, orange to light orange mottled (debossed A6 on one side), bottle containing 30 tablets each, for a total of 30 tablets, NDC 62542-030-31 Storage Store at 20\u00b0C to 25\u00ba C (68\u00b0F to 77\u00ba F)",
+     "Excursions permitted to 15-30\u00ba C (59-86\u00ba F) [see USP Controlled Room Temperature] Store amphetamine extended-release orally disintegrating tablets bottle packaging in a cool, dry place at 20\u00b0C to 25\u00ba C (68\u00b0F to 77\u00ba F)",
+     "Excursions permitted to 15-30\u00ba C (59-86\u00ba F) [see USP Controlled Room Temperature] Store amphetamine extended-release orally disintegrating tablets blister packages in the rigid, plastic travel case provided after removal from the carton"
+    ],
+    "temps_c": [
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "semaglutide": {
+   "class": "GLP-1 agonists",
+   "generic": "semaglutide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 5,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.6,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026hypoglycemia, including severe hypoglycemia. Reducing dose of insulin secretagogue or insulin may be necessary. ( 5.5 ) \u2022 Acute Kidney Injury Due to Volume Depletion: Monitor renal function in patients reporting adverse reactions that could lead to volume depletion. ( 5.6 ) \u2022 Severe Gastrointestinal Adverse Reacti\u2026"
+   ],
+   "rep": {
+    "set_id": "42bdd912-2393-44c4-b7e0-47672ca28991",
+    "effective_time": "20260730",
+    "brand": "Ozempic",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42bdd912-2393-44c4-b7e0-47672ca28991"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "\u2022 Keep OZEMPIC away from heat and out of the light",
+     "\u2022 Keep OZEMPIC away from heat and out of the light"
+    ],
+    "excursion": false
+   }
+  },
+  "liraglutide": {
+   "class": "GLP-1 agonists",
+   "generic": "liraglutide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 22,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.32,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026less of insulin and/or metformin use. Reduction in the dose of insulin secretagogues or insulin may be necessary. ( 5.4 ) A cute Kidney Injury Due to Volume Depletion : Monitor renal function in patients reporting adverse reactions that could lead to volume depletion. ( 5.5 ) S evere Gastrointestinal Adverse Reacti\u2026"
+   ],
+   "rep": {
+    "set_id": "0450d8a2-a88e-4849-9788-ed4f5246f223",
+    "effective_time": "20261030",
+    "brand": "Liraglutide",
+    "manufacturer": "Lupin Pharmaceuticals, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0450d8a2-a88e-4849-9788-ed4f5246f223"
+   },
+   "storage": {
+    "sentences": [
+     "8 mg is available in the following package sizes: 2 x Liraglutide Injection Pen NDC 70748-346-02 3 x Liraglutide Injection Pen NDC 70748-346-03 Recommended Storage Prior to first use, liraglutide injection should be stored in a refrigerator between 36\u00baF to 46\u00baF (2\u00baC to 8\u00baC)",
+     "Do not store in the freezer or directly adjacent to the refrigerator cooling element",
+     "Do not freeze liraglutide injection and do not use liraglutide injection if it has been frozen",
+     "After first use of the liraglutide injection pen, the pen can be stored for 30 days at controlled room temperature 59\u00b0F to 86\u00b0F (15\u00b0C to 30\u00b0C) or in a refrigerator 36\u00b0F to 46\u00b0F (2\u00b0C to 8\u00b0C)",
+     "Protect liraglutide injection from excessive heat and sunlight"
+    ],
+    "temps_c": [
+     2,
+     8,
+     15,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [
+     30
+    ],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "dulaglutide": {
+   "class": "GLP-1 agonists",
+   "generic": "dulaglutide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 7,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026.g., anaphylactic reactions and angioedema) have occurred. Discontinue TRULICITY and promptly seek medical advice ( 5.4 ). Acute Kidney Injury Due to Volume Depletion: Monitor renal function in patients reporting adverse reactions that could lead to volume depletion ( 5.5 ). Severe Gastrointestinal Adverse Reaction\u2026"
+   ],
+   "rep": {
+    "set_id": "463050bd-2b1c-40f5-b3c3-0a04bb433309",
+    "effective_time": "20260616",
+    "brand": "Trulicity",
+    "manufacturer": "Eli Lilly and Company",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=463050bd-2b1c-40f5-b3c3-0a04bb433309"
+   },
+   "storage": {
+    "sentences": [
+     "2 Storage and Handling Store TRULICITY in the refrigerator at 36\u00b0F to 46\u00b0F (2\u00b0C to 8\u00b0C)",
+     "If needed, each single-dose pen can be kept at room temperature, not to exceed 86\u00b0F (30\u00b0C) for a total of 14 days",
+     "Do not freeze TRULICITY",
+     "2 Storage and Handling Store TRULICITY in the refrigerator at 36\u00b0F to 46\u00b0F (2\u00b0C to 8\u00b0C)",
+     "If needed, each single-dose pen can be kept at room temperature, not to exceed 86\u00b0F (30\u00b0C) for a total of 14 days",
+     "Do not freeze TRULICITY"
+    ],
+    "temps_c": [
+     2,
+     8,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [
+     14
+    ],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "tirzepatide": {
+   "class": "GLP-1 agonists",
+   "generic": "tirzepatide",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 8,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 1.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 1.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [
+    "\u2026intestinal adverse reactions, sometimes severe. ZEPBOUND is not recommended in patients with severe gastroparesis. ( 5.2 ) Acute Kidney Injury Due to Volume Depletion: Monitor renal function in patients reporting adverse reactions that could lead to volume depletion. ( 5.3 ) Acute Gallbladder Disease: Has been repo\u2026"
+   ],
+   "rep": {
+    "set_id": "487cd7e7-434c-4925-99fa-aa80b1cc776b",
+    "effective_time": "20260828",
+    "brand": "Zepbound",
+    "manufacturer": "Eli Lilly and Company",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=487cd7e7-434c-4925-99fa-aa80b1cc776b"
+   },
+   "storage": {
+    "sentences": [
+     "2 Storage and Handling Do not freeze ZEPBOUND",
+     "Protect ZEPBOUND from heat and light",
+     "ZEPBOUND Single-dose Pen and Single-dose Vial Store ZEPBOUND single-dose pen and single-dose vial in a refrigerator at 2\u00b0C to 8\u00b0C (36\u00b0F to 46\u00b0F)",
+     "If needed, each single-dose pen or single-dose vial can be stored unrefrigerated at temperatures not to exceed 30\u00b0C (86\u00b0F) for up to a total of 21 days",
+     "Discard single-dose pen and single-dose vial after a total of 21 days at room temperature",
+     "ZEPBOUND Multi-dose Vial or Single-Patient-Use KwikPen Unopened vial or single-patient-use KwikPen: Store unopened multi-dose vial or single-patient-use KwikPen in the refrigerator at 2\u00b0C to 8\u00b0C (36\u00b0F to 46\u00b0F)"
+    ],
+    "temps_c": [
+     2,
+     8,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [
+     21,
+     30
+    ],
+    "refrigerate": true,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "Keep away from heat and light",
+     "Protect ZEPBOUND from heat and light"
+    ],
+    "excursion": false
+   }
+  },
+  "carbidopa and levodopa": {
+   "class": "Parkinson / dopaminergic",
+   "generic": "carbidopa and levodopa",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.02,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026e is insufficient information to establish that dose reduction will eliminate episodes of falling asleep while engaged in activities of daily living. Hyperpyrexia and Confusion Sporadic cases of a symptom complex resembling neuroleptic malignant syndrome (NMS) have been reported in association with dose reducti\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "5217a6ec-cc26-4acc-b2da-17f6545c3b60",
+    "effective_time": "20261106",
+    "brand": "CARBIDOPA AND LEVODOPA",
+    "manufacturer": "Accord Healthcare, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5217a6ec-cc26-4acc-b2da-17f6545c3b60"
+   },
+   "storage": {
+    "sentences": [
+     "Storage Store at 25\u00b0C (77\u00b0F); excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [See USP Controlled Room Temperature]",
+     "Storage Store at 25\u00b0C (77\u00b0F); excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     15,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "pramipexole": {
+   "class": "Parkinson / dopaminergic",
+   "generic": "pramipexole",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 37,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026nergic therapies, it would be unlikely that even a single case would have occurred in a cohort of the size exposed to pramipexole in studies to date. Hyperpyrexia and Confusion Although not reported with pramipexole in the clinical development program, a symptom complex resembling the neuroleptic malignant synd\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "29b639e3-25a5-4c2f-b4ea-a119db79fe0c",
+    "effective_time": "20260909",
+    "brand": "Pramipexole Dihydrochloride",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=29b639e3-25a5-4c2f-b4ea-a119db79fe0c"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "ropinirole": {
+   "class": "Parkinson / dopaminergic",
+   "generic": "ropinirole",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 50,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 1.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [
+    "\u2026hysicians should consider dose reduction or stopping the medication if a patient develops such urges while taking ropinirole. 5.7 Withdrawal-Emergent Hyperpyrexia and Confusion A symptom complex resembling the neuroleptic malignant syndrome (characterized by elevated temperature, muscular rigidity, altered cons\u2026"
+   ],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "245fc49d-609e-4431-b8fa-668b39d12ec2",
+    "effective_time": "20261104",
+    "brand": "Ropinirole",
+    "manufacturer": "Bryant Ranch Prepack",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=245fc49d-609e-4431-b8fa-668b39d12ec2"
+   },
+   "storage": {
+    "sentences": [
+     "NDC: 71335-2793-1: 30 Tablets in a BOTTLE NDC: 71335-2793-2: 60 Tablets in a BOTTLE NDC: 71335-2793-3: 28 Tablets in a BOTTLE NDC: 71335-2793-4: 100 Tablets in a BOTTLE Storage Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     20,
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "donepezil": {
+   "class": "Cholinesterase inhibitors",
+   "generic": "donepezil",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 44,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "603c07bb-61bf-410f-8abf-01ef09d61c14",
+    "effective_time": "20260910",
+    "brand": "donepezil hydrochloride",
+    "manufacturer": "ASCLEMED USA INC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=603c07bb-61bf-410f-8abf-01ef09d61c14"
+   },
+   "storage": {
+    "sentences": [
+     "Storage Store at controlled room temperature, 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F)",
+     "m NDC# 43547-276-03) Bottles of 60 NDC 87063-304-60 (repackaged from NDC# 43547-276-XX) Bottles of 90 NDC 87063-304-90 (relabeled from NDC# 43547-276-09) Bottles of 100 NDC 87063-304-01 (repackaged from NDC# 43547-276-XX) Storage Store at controlled room temperature, 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F)"
+    ],
+    "temps_c": [
+     15,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  },
+  "rivastigmine": {
+   "class": "Cholinesterase inhibitors",
+   "generic": "rivastigmine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 28,
+   "heat_warning": 0.0,
+   "heat_patient": 0.57,
+   "heat_anywhere": 0.57,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.96,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.57,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "exposure to heat",
+    "external heat",
+    "saunas"
+   ],
+   "warn_snippets": [
+    "\u2026Dosage and Administration ( 2.4 ), Warnings and Precautions ( 5.1 )] . Instruct patients or caregivers to avoid exposure of the transdermal system to external heat sources (excessive sunlight, saunas, solariums) for long periods of time. Instruct patients who have missed a dose to apply a new transdermal system\u2026",
+    "\u2026and Precautions ( 5.1 )] . Instruct patients or caregivers to avoid exposure of the transdermal system to external heat sources (excessive sunlight, saunas, solariums) for long periods of time. Instruct patients who have missed a dose to apply a new transdermal system immediately. They may apply the next\u2026"
+   ],
+   "dehyd_snippets": [
+    "\u2026tions : May include significant nausea, vomiting, diarrhea, anorexia/decreased appetite, and weight loss, and may necessitate treatment interruption. Dehydration may result from prolonged vomiting or diarrhea and can be associated with serious outcomes. ( 5.2 ) Application-site reactions may occur with the tra\u2026"
+   ],
+   "rep": {
+    "set_id": "8b809739-8381-4cc1-ab4a-5b17ab902a3d",
+    "effective_time": "20261030",
+    "brand": "Rivastigmine",
+    "manufacturer": "Northstar Rx LLC.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8b809739-8381-4cc1-ab4a-5b17ab902a3d"
+   },
+   "storage": {
+    "sentences": [
+     "NDC 16714-117-02 Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F) [See USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [
+     "\u25cf Avoid exposure to heat sources such as excessive sunlight, saunas, or sunrooms for long periods of time"
+    ],
+    "excursion": false
+   }
+  },
+  "galantamine": {
+   "class": "Cholinesterase inhibitors",
+   "generic": "galantamine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": null,
+   "n_labels": 17,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "261889d3-41c8-4655-98f7-41317778e7a1",
+    "effective_time": "20260702",
+    "brand": "Galantamine",
+    "manufacturer": "Bryant Ranch Prepack",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=261889d3-41c8-4655-98f7-41317778e7a1"
+   },
+   "storage": {
+    "sentences": [
+     "NDC: 71335-2766-1: 60 Tablets in a BOTTLE NDC: 71335-2766-2: 90 Tablets in a BOTTLE Store at 20\u00b0 to 25\u00b0C (68\u00b0 to 77\u00b0F); excursions permitted to 15\u00b0 to 30\u00b0C (59\u00b0 to 86\u00b0F) [see USP Controlled Room Temperature]"
+    ],
+    "temps_c": [
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "epinephrine": {
+   "class": "Heat-labile emergency products",
+   "generic": "epinephrine",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": "INTRAMUSCULAR",
+   "n_labels": 23,
+   "heat_warning": 0.0,
+   "heat_patient": 0.35,
+   "heat_anywhere": 0.35,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "a8e98483-9404-43bc-8800-b827c63c5134",
+    "effective_time": "20261012",
+    "brand": "Epinephrine",
+    "manufacturer": "Sportpharm LLC",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a8e98483-9404-43bc-8800-b827c63c5134"
+   },
+   "storage": {
+    "sentences": [
+     "Store at 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F); excursions permitted to 15\u00b0C to 30\u00b0C (59\u00b0F to 86\u00b0F) [See USP Controlled Room Temperature]",
+     "Do not refrigerate"
+    ],
+    "temps_c": [
+     15,
+     20,
+     25,
+     30
+    ],
+    "max_c": 30,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": true
+   }
+  },
+  "albuterol": {
+   "class": "Heat-labile emergency products",
+   "generic": "albuterol",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": "RESPIRATORY (INHALATION)",
+   "n_labels": 22,
+   "heat_warning": 0.0,
+   "heat_patient": 0.64,
+   "heat_anywhere": 0.64,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.95,
+   "heat_handling_share": 0.5,
+   "hyper_snippets": [],
+   "heat_terms": [
+    "exposure to extreme heat"
+   ],
+   "warn_snippets": [
+    "\u2026\u2022 Store albuterol sulfate inhalation aerosol at room temperature between 20\u00b0C to 25\u00b0C (68\u00b0F to 77\u00b0F). [See USP Controlled Room Temperature.] \u2022 Avoid exposure to extreme heat and cold. \u2022 Shake the albuterol sulfate inhalation aerosol canister well before use. \u2022 Do not puncture the albuterol sulfate inhalation aerosol canis\u2026"
+   ],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "52e209ac-7156-4496-ba5a-42ee59d45deb",
+    "effective_time": "20261001",
+    "brand": "Albuterol sulfate",
+    "manufacturer": "A-S Medication Solutions",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e209ac-7156-4496-ba5a-42ee59d45deb"
+   },
+   "storage": {
+    "sentences": [],
+    "temps_c": [],
+    "max_c": null,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": true,
+    "burst_text": [
+     "Temperatures above 120\u00b0 F may cause the canister to burst"
+    ],
+    "heat_handling": [
+     "] \u2022 Avoid exposure to extreme heat and cold"
+    ],
+    "excursion": false
+   }
+  },
+  "nitroglycerin": {
+   "class": "Heat-labile emergency products",
+   "generic": "nitroglycerin",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "route": "SUBLINGUAL",
+   "n_labels": 38,
+   "heat_warning": 0.0,
+   "heat_patient": 0.0,
+   "heat_anywhere": 0.0,
+   "heat_boxed": 0.0,
+   "dehyd_warning": 0.0,
+   "hyperthermia_only": 0.0,
+   "burst_share": 0.0,
+   "heat_handling_share": 0.0,
+   "hyper_snippets": [],
+   "heat_terms": [],
+   "warn_snippets": [],
+   "dehyd_snippets": [],
+   "rep": {
+    "set_id": "5265648f-3062-48a2-a4e3-fea1207807a8",
+    "effective_time": "20261105",
+    "brand": "NITROSTAT",
+    "manufacturer": "Henry Schein, Inc.",
+    "dailymed": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5265648f-3062-48a2-a4e3-fea1207807a8"
+   },
+   "storage": {
+    "sentences": [
+     "NDC 58151-311-01Bottle of 100 tablets Store at Controlled Room Temperature 20\u00b025\u00b0C (68\u00b077\u00b0F) [see USP]"
+    ],
+    "temps_c": [
+     25
+    ],
+    "max_c": 25,
+    "days_unrefrigerated": [],
+    "refrigerate": false,
+    "burst_warning": false,
+    "burst_text": [],
+    "heat_handling": [],
+    "excursion": false
+   }
+  }
+ }
+}

@@ -1,0 +1,111 @@
+class,mechanism,drug_mech_studies,heat_mech_studies
+ACE inhibitors / ARBs,Acute kidney injury,86,17
+ACE inhibitors / ARBs,Glucose,4,3
+ACE inhibitors / ARBs,Hospitalisation / ED / death,309,115
+ACE inhibitors / ARBs,Hyponatremia / electrolytes,33,6
+ACE inhibitors / ARBs,Hypotension / falls,27,6
+ACE inhibitors / ARBs,Impaired sweating / thermoregulation,1,19
+ACE inhibitors / ARBs,Rhabdomyolysis,1,2
+Anticholinergics,Acute kidney injury,1,17
+Anticholinergics,Hospitalisation / ED / death,29,115
+Anticholinergics,Hyponatremia / electrolytes,1,6
+Anticholinergics,Hypotension / falls,11,6
+Anticonvulsants,Hospitalisation / ED / death,11,115
+Anticonvulsants,Hyponatremia / electrolytes,1,6
+Anticonvulsants,Hypotension / falls,3,6
+Anticonvulsants,Impaired sweating / thermoregulation,1,19
+Antidepressants,Glucose,4,3
+Antidepressants,Hospitalisation / ED / death,104,115
+Antidepressants,Hyponatremia / electrolytes,13,6
+Antidepressants,Hypotension / falls,28,6
+Antidepressants,Impaired sweating / thermoregulation,2,19
+Antidepressants,Rhabdomyolysis,1,2
+Antihypertensives (any),Acute kidney injury,9,17
+Antihypertensives (any),Glucose,2,3
+Antihypertensives (any),Hospitalisation / ED / death,64,115
+Antihypertensives (any),Hyponatremia / electrolytes,4,6
+Antihypertensives (any),Hypotension / falls,24,6
+Antipsychotics,Acute kidney injury,4,17
+Antipsychotics,Glucose,9,3
+Antipsychotics,Hospitalisation / ED / death,158,115
+Antipsychotics,Hyponatremia / electrolytes,6,6
+Antipsychotics,Hypotension / falls,13,6
+Antipsychotics,Rhabdomyolysis,1,2
+Benzodiazepines / sedatives,Glucose,1,3
+Benzodiazepines / sedatives,Hospitalisation / ED / death,73,115
+Benzodiazepines / sedatives,Hyponatremia / electrolytes,1,6
+Benzodiazepines / sedatives,Hypotension / falls,28,6
+Benzodiazepines / sedatives,Lithium toxicity / drug levels,1,0
+Beta blockers,Acute kidney injury,10,17
+Beta blockers,Glucose,10,3
+Beta blockers,Hospitalisation / ED / death,297,115
+Beta blockers,Hyponatremia / electrolytes,3,6
+Beta blockers,Hypotension / falls,18,6
+Beta blockers,Impaired sweating / thermoregulation,1,19
+Beta blockers,Rhabdomyolysis,1,2
+Calcium channel blockers,Acute kidney injury,10,17
+Calcium channel blockers,Glucose,1,3
+Calcium channel blockers,Hospitalisation / ED / death,72,115
+Calcium channel blockers,Hyponatremia / electrolytes,3,6
+Calcium channel blockers,Hypotension / falls,17,6
+Cholinesterase inhibitors,Hospitalisation / ED / death,12,115
+Cholinesterase inhibitors,Hypotension / falls,4,6
+Diuretics,Acute kidney injury,82,17
+Diuretics,Dehydration / volume,1,4
+Diuretics,Glucose,2,3
+Diuretics,Hospitalisation / ED / death,136,115
+Diuretics,Hyponatremia / electrolytes,60,6
+Diuretics,Hypotension / falls,17,6
+Diuretics,Rhabdomyolysis,1,2
+GLP-1 agonists,Acute kidney injury,7,17
+GLP-1 agonists,Glucose,44,3
+GLP-1 agonists,Hospitalisation / ED / death,39,115
+GLP-1 agonists,Hyponatremia / electrolytes,1,6
+Insulin,Acute kidney injury,3,17
+Insulin,Glucose,135,3
+Insulin,Hospitalisation / ED / death,72,115
+Insulin,Hyponatremia / electrolytes,2,6
+Insulin,Hypotension / falls,3,6
+Lithium,Acute kidney injury,3,17
+Lithium,Hospitalisation / ED / death,13,115
+Lithium,Hyponatremia / electrolytes,1,6
+Lithium,Impaired sweating / thermoregulation,1,19
+Lithium,Lithium toxicity / drug levels,11,0
+Medication (unspecified),Acute kidney injury,38,17
+Medication (unspecified),Dehydration / volume,1,4
+Medication (unspecified),Glucose,24,3
+Medication (unspecified),Hospitalisation / ED / death,522,115
+Medication (unspecified),Hyponatremia / electrolytes,12,6
+Medication (unspecified),Hypotension / falls,56,6
+Medication (unspecified),Impaired sweating / thermoregulation,3,19
+Medication (unspecified),Rhabdomyolysis,3,2
+NSAIDs,Acute kidney injury,50,17
+NSAIDs,Dehydration / volume,1,4
+NSAIDs,Hospitalisation / ED / death,51,115
+NSAIDs,Hyponatremia / electrolytes,8,6
+NSAIDs,Hypotension / falls,1,6
+Opioids,Acute kidney injury,12,17
+Opioids,Dehydration / volume,1,4
+Opioids,Glucose,3,3
+Opioids,Hospitalisation / ED / death,135,115
+Opioids,Hyponatremia / electrolytes,1,6
+Opioids,Hypotension / falls,35,6
+Other diabetes drugs,Acute kidney injury,9,17
+Other diabetes drugs,Dehydration / volume,1,4
+Other diabetes drugs,Glucose,130,3
+Other diabetes drugs,Hospitalisation / ED / death,180,115
+Other diabetes drugs,Hyponatremia / electrolytes,1,6
+Other diabetes drugs,Hypotension / falls,1,6
+Parkinson / dopaminergic,Hospitalisation / ED / death,8,115
+Parkinson / dopaminergic,Hypotension / falls,6,6
+SGLT2 inhibitors,Acute kidney injury,53,17
+SGLT2 inhibitors,Dehydration / volume,3,4
+SGLT2 inhibitors,Glucose,55,3
+SGLT2 inhibitors,Hospitalisation / ED / death,166,115
+SGLT2 inhibitors,Hyponatremia / electrolytes,13,6
+SGLT2 inhibitors,Hypotension / falls,2,6
+SGLT2 inhibitors,Rhabdomyolysis,1,2
+Stimulants,Glucose,1,3
+Stimulants,Hospitalisation / ED / death,18,115
+Stimulants,Hyponatremia / electrolytes,1,6
+Stimulants,Lithium toxicity / drug levels,1,0

@@ -1,0 +1,15 @@
+# Raw API / download caches (1.3 GB; rebuild with the *_pull.py scripts)
+cache/
+cache_fda/
+cache_cms/
+cache_pubmed/
+dataverse/
+
+# OS / editor
+.DS_Store
+__pycache__/
+*.pyc
+
+# Secrets never live here (API key is in ~/.system_public_env), but just in case
+.env
+*.env
