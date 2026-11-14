@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How the System Public Graph works: one example path</title>
+<style>
+:root{color-scheme:light;--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;--border:rgba(11,11,11,.1);--drug:#2a78d6;--eff:#eb6834;--heat:#1baf7a}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--page:#0d0d0d;--surface:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--grid:#2c2c2a;--axis:#383835;--border:rgba(255,255,255,.1);--drug:#3987e5;--eff:#d95926;--heat:#199e70}}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:960px;margin:0 auto;padding:32px 20px 80px}h1{font-size:28px;line-height:1.2;margin:0 0 8px}h2{font-size:20px;margin:40px 0 6px}
+p{color:var(--ink2);max-width:72ch;margin:6px 0 12px}.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:12px 0}
+.sub{color:var(--muted);font-size:13px}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink2);margin-bottom:6px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+svg{width:100%;height:auto;display:block}text{font-family:inherit;fill:var(--ink)}
+.edge{cursor:pointer}.edge path.hit{stroke:transparent;stroke-width:22;fill:none}.edge path.line{fill:none;stroke:var(--muted);stroke-linecap:round;opacity:.75}
+.edge:hover path.line,.edge.sel path.line{stroke:var(--ink);opacity:1}.elab{font-size:12px;fill:var(--ink2);paint-order:stroke;stroke:var(--surface);stroke-width:4px}
+.nlab{font-size:13px;font-weight:600;paint-order:stroke;stroke:var(--surface);stroke-width:4px}.nq{font-size:11px;fill:var(--muted);paint-order:stroke;stroke:var(--surface);stroke-width:4px}
+.gap{stroke:var(--eff);stroke-width:2;stroke-dasharray:6 5;fill:none}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.step{border:1px solid var(--border);background:var(--surface);border-radius:10px;padding:12px 14px}.step b{display:block;margin-bottom:2px}
+.step code,.f code{font:12px ui-monospace,Menlo,monospace;color:var(--muted)}
+.f{border-top:1px solid var(--grid);padding:10px 0}.f:first-child{border-top:0}.f .w{font-weight:600}.f .s{font-variant-numeric:tabular-nums}
+.chip{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--grid);color:var(--ink2);margin-right:6px}
+a{color:var(--drug)}ul{color:var(--ink2);max-width:72ch;padding-left:20px}li{margin:4px 0}
+@media(max-width:720px){.steps{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Yes, it's a knowledge graph. Here's one real path through it.</h1>
+<p>Nodes are <b>concepts</b> (things like "diuretic" or "acute kidney injury", each with a Wikidata ID). Edges are <b>relationships</b>: "papers report a statistical link between these two concepts". Every edge is backed by individual findings you can click open. Everything below is real data from the public snapshot.</p>
+
+<h2>The example: why a diuretic might be dangerous in a heat wave</h2>
+<p>The graph has no edge from "diuretic" to "heat illness". But it does have edges that connect them through a shared effect, <b>acute kidney injury</b>. <b>Click any edge</b> to see the papers behind it.</p>
+<div class="card">
+  <div class="legend"><span><i style="background:var(--drug)"></i>Drug</span><span><i style="background:var(--eff)"></i>Physiological effect</span><span><i style="background:var(--heat)"></i>Heat exposure / heat illness</span><span>Line thickness = number of studies</span></div>
+  <svg id="g" viewBox="0 0 900 440" role="img" aria-label="Knowledge graph of diuretic, lithium, kidney injury and heat concepts"></svg>
+</div>
+<div class="card" id="panel"></div>
+
+<h2>One edge, three zoom levels</h2>
+<div class="steps">
+  <div class="step"><b>1. Edge (relationships table)</b>diuretic → acute kidney injury<br><code>35 findings · 31 studies · latest 2025-02</code><p class="sub">A summary. Nodes and edges are both concept-level.</p></div>
+  <div class="step"><b>2. Findings (associations table)</b>35 rows, each with its own wording, statistic and interval<br><code>"diuretic use" → "acute kidney injury", OR 2.06 (1.30–3.26)</code><p class="sub">The wording of each paper survives here.</p></div>
+  <div class="step"><b>3. Study (studies table)</b>DOI, PubMed ID, and who was studied<br><code>Orthopaedic surgery patients, Geelong 2008–2014</code><p class="sub">Context lives in free text, not in structured fields.</p></div>
+</div>
+
+<h2>What this path teaches</h2>
+<ul>
+<li><b>Edges are undirected evidence summaries with a direction label.</b> Diuretic → AKI has 35 findings; AKI → diuretic has 4 more (the extractor read the arrow the other way). Directions can be wrong, so treat them cautiously.</li>
+<li><b>The concept level loses context.</b> Heat → AKI looks like 3 findings here, yet name-matching on "heat wave" and similar wording finds about 14 studies, because many are filed under generic concepts like "mortality rate" or "emergency department".</li>
+<li><b>The AKI evidence comes from different worlds.</b> The diuretic studies are hospital patients (surgery, transplant, cancer therapy). The heat studies are population time-series and heat stroke admissions. Nothing says the two apply to the same person, which is exactly the inference you would be making and flagging.</li>
+<li><b>The gap is the finding.</b> The dashed line is not in the graph. Your map's job is to make "drug → effect ← heat" legible and mark where the direct link is missing.</li>
+<li><b>Self-loops exist</b> (e.g. "lithium → lithium", 34 findings): findings comparing two variables of the same concept, such as lithium dose vs lithium level. Ignore them when drawing.</li>
+</ul>
+</main>
+<script>
+const N={
+ diuretic:{x:110,y:70,t:'drug',l:'Diuretic',q:'Q200656'},
+ lithium:{x:110,y:340,t:'drug',l:'Lithium',q:'Q568'},
+ hypona:{x:300,y:340,t:'eff',l:'Hyponatremia',q:'Q824292'},
+ dehyd:{x:450,y:400,t:'eff',l:'Dehydration',q:'Q194290'},
+ hypot:{x:620,y:350,t:'eff',l:'Hypotension',q:'Q275419'},
+ aki:{x:450,y:215,t:'eff',l:'Acute kidney injury',q:'Q424337'},
+ stroke:{x:790,y:160,t:'heat',l:'Heat stroke',q:'Q69032838'},
+ xheat:{x:790,y:300,t:'heat',l:'Extreme heat',q:'Q69044113'},
+ illness:{x:790,y:40,t:'heat',l:'Heat illness',q:'Q1191065'}};
+const E=[
+ {id:'d_aki',a:'diuretic',b:'aki',f:35,s:31,lp:'2025-02',
+  rows:[['diuretic use','acute kidney injury','OR 2.06 (1.30–3.26)','Major orthopaedic surgery patients, Geelong 2008–2014','10.1111/nep.12942'],
+        ['diuretic use','risk of acute kidney injury','RR 1.33 (1.21–1.47)','Adults in post-cardiac-surgery ICU, 2001–2012','10.1016/j.ahj.2019.12.013'],
+        ['Use of diuretics','acute kidney injury','OR 4.3 (1.9–9.8)','309 patients on immune checkpoint inhibitors, 2010–2017','10.1136/jitc-2019-000467']]},
+ {id:'d_na',a:'diuretic',b:'hypona',f:5,s:3,lp:'2023-06',
+  rows:[['new diuretic users','30-day mortality among patients hospitalized with hyponatremia','RR 1.7 (1.5–2.0)','14,635 hospitalized patients, western Denmark','10.1097/mjt.0000000000000544'],
+        ['diuretic use','hyponatremia','OR 1.11 (0.86–1.45)','Hypertensive inpatients, Aga Khan University Hospital, Karachi','08.2014/jcpsp.606608']]},
+ {id:'li_na',a:'lithium',b:'hypona',f:4,s:1,lp:'2021-02',
+  rows:[['lithium therapy','hospitalization due to hyponatraemia','OR 1.07 (0.70–1.59)','Swedish adults hospitalized with hyponatraemia, 2005 onward','10.1177/0269881120937597'],
+        ['lithium therapy','hospitalization due to hyponatraemia','adj. OR 0.53 (0.31–0.87)','same study','10.1177/0269881120937597']]},
+ {id:'na_aki',a:'hypona',b:'aki',f:3,s:3,lp:'2019-01',rows:[]},
+ {id:'de_aki',a:'dehyd',b:'aki',f:9,s:6,lp:'2023-06',
+  rows:[['dehydration > 5%','acute kidney injury','OR 43.1 (5.4–344.1)','114 children hospitalized with gastroenteritis','10.1007/s00467-020-04834-7'],
+        ['dehydration','acute kidney injury','OR 2.3 (1.29–4.09)','Preterm neonates, Bahir Dar, Ethiopia, 2022','10.1186/s12887-023-04147-2']]},
+ {id:'hy_aki',a:'hypot',b:'aki',f:55,s:39,lp:'2025-04',rows:[]},
+ {id:'st_aki',a:'stroke',b:'aki',f:2,s:2,lp:'2020-07',
+  rows:[['Age 20–39 years (Heat stroke patients)','Acute kidney injury','OR 3.5 (2.45–5.01)','3,346 US hospital admissions with heat stroke, 2003–2014','10.3390/diseases8030028']]},
+ {id:'xh_aki',a:'xheat',b:'aki',f:1,s:1,lp:'2008-12',
+  rows:[['exposure to extreme high temperatures','acute renal failure','IRR 1.255 (1.037–1.519)','Adults in South Australia, 12-year period','10.1093/ije/dyn165']]},
+ {id:'st_il',a:'stroke',b:'illness',f:3,s:3,lp:'2019-01',rows:[]}];
+const GAP={a:'diuretic',b:'illness'};
+const svg=document.getElementById('g'),NS='http://www.w3.org/2000/svg';
+const C={drug:'var(--drug)',eff:'var(--eff)',heat:'var(--heat)'};
+const R=15,mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e};
+svg.appendChild(mk('defs',{})).innerHTML='<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#898781"/></marker>';
+function pts(e){const A=N[e.a],B=N[e.b],dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy),ux=dx/d,uy=dy/d;
+ return [A.x+ux*(R+3),A.y+uy*(R+3),B.x-ux*(R+9),B.y-uy*(R+9)]}
+// gap edge
+{const [x1,y1,x2,y2]=pts(GAP);svg.appendChild(mk('path',{d:`M${x1} ${y1}L${x2} ${y2}`,class:'gap'}));
+ const t=mk('text',{x:(x1+x2)/2,y:y1-12,'text-anchor':'middle',class:'elab'});t.style.fill='var(--eff)';t.style.fontWeight=600;t.textContent='no edge in the graph: diuretic → heat illness';svg.appendChild(t)}
+const panel=document.getElementById('panel');
+function show(e){document.querySelectorAll('.edge').forEach(x=>x.classList.toggle('sel',x.dataset.id===e.id));
+ const A=N[e.a],B=N[e.b];
+ panel.innerHTML=`<b>${A.l} → ${B.l}</b> <span class="chip">${e.f} findings</span><span class="chip">${e.s} studies</span><span class="chip">latest ${e.lp}</span>
+ <p class="sub">${e.rows.length?`Showing ${e.rows.length} of ${e.f} underlying findings. Each row is one row of the associations table plus its study.`:'Findings behind this edge are not shown here, but click-through works the same way: filter the associations table on the two concept IDs.'}</p>`+
+ e.rows.map(r=>`<div class="f"><div><span class="w">${r[0]}</span> → <span class="w">${r[1]}</span> <span class="s chip">${r[2]}</span></div><div class="sub">${r[3]} · <a href="https://doi.org/${r[4]}" target="_blank" rel="noopener"><code>${r[4]}</code></a></div></div>`).join('')}
+for(const e of E){const [x1,y1,x2,y2]=pts(e),g=mk('g',{class:'edge','data-id':e.id});
+ const d=`M${x1} ${y1}L${x2} ${y2}`;g.appendChild(mk('path',{d,class:'hit'}));
+ g.appendChild(mk('path',{d,class:'line','stroke-width':Math.min(9,1.2+Math.sqrt(e.s)*1.1),'marker-end':'url(#ar)'}));
+ const t=mk('text',{x:(x1+x2)/2,y:(y1+y2)/2-6,'text-anchor':'middle',class:'elab'});t.textContent=e.s+(e.s==1?' study':' studies');g.appendChild(t);
+ g.addEventListener('click',()=>show(e));svg.appendChild(g)}
+for(const k in N){const n=N[k],g=mk('g',{});g.appendChild(mk('circle',{cx:n.x,cy:n.y,r:R,fill:C[n.t]}));
+ const l=mk('text',{x:n.x,y:n.y+R+16,'text-anchor':'middle',class:'nlab'});l.textContent=n.l;g.appendChild(l);
+ const q=mk('text',{x:n.x,y:n.y+R+29,'text-anchor':'middle',class:'nq'});q.textContent=n.q;g.appendChild(q);svg.appendChild(g)}
+show(E[0]);
+</script></body></html>
