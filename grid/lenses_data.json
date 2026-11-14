@@ -2609,6 +2609,10 @@
    }
   ]
  },
+ "partd_source": {
+  "reach": "CMS Part D Prescribers by Geography and Drug, 2023",
+  "prescribers": "CMS Part D Prescribers by Provider and Drug, 2024, New York prescribers"
+ },
  "literature": {
   "candidates_note": "Hand-screened recall set + references of 5 reviews + papers citing 9 key studies; rule-screened, titles hand-reviewed",
   "reviews": {
@@ -3518,6 +3522,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 14994504,
+    "national_benes_65": 13414305,
+    "ny_benes": 893858,
+    "n_drugs": 9,
+    "top": [
+     "Furosemide",
+     "Hydrochlorothiazide",
+     "Spironolactone",
+     "Torsemide"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Furosemide",
+     "Hydrochlorothiazide"
+    ],
+    "prescriber_rows": 31908,
+    "claims": 2203498,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.353
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.195
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.158
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.127
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.078
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.019
+     },
+     {
+      "type": "Interventional Cardiology",
+      "share": 0.011
+     },
+     {
+      "type": "Geriatric Medicine",
+      "share": 0.007
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "action",
@@ -3874,6 +3932,60 @@
       "class_wide": false,
       "effect": "graph",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 21946214,
+    "national_benes_65": 19976610,
+    "ny_benes": 1357253,
+    "n_drugs": 17,
+    "top": [
+     "Losartan Potassium",
+     "Lisinopril",
+     "Valsartan",
+     "Enalapril Maleate"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Losartan Potassium",
+     "Lisinopril"
+    ],
+    "prescriber_rows": 37421,
+    "claims": 3857041,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.382
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.211
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.147
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.099
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.079
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.017
+     },
+     {
+      "type": "Interventional Cardiology",
+      "share": 0.009
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.008
      }
     ]
    },
@@ -4394,6 +4506,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 18081327,
+    "national_benes_65": 16263345,
+    "ny_benes": 1209455,
+    "n_drugs": 10,
+    "top": [
+     "Metoprolol Succinate",
+     "Metoprolol Tartrate",
+     "Carvedilol",
+     "Atenolol"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Metoprolol Succinate",
+     "Metoprolol Tartrate"
+    ],
+    "prescriber_rows": 33428,
+    "claims": 3283378,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.327
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.199
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.158
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.153
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.082
+     },
+     {
+      "type": "Interventional Cardiology",
+      "share": 0.02
+     },
+     {
+      "type": "Clinical Cardiac Electrophysiology",
+      "share": 0.009
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.008
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -4708,6 +4874,60 @@
       "class_wide": true,
       "effect": "graph",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 14693225,
+    "national_benes_65": 13397669,
+    "ny_benes": 1019568,
+    "n_drugs": 5,
+    "top": [
+     "Amlodipine Besylate",
+     "Diltiazem Hcl",
+     "Nifedipine",
+     "Verapamil Hcl"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Amlodipine Besylate",
+     "Diltiazem Hcl"
+    ],
+    "prescriber_rows": 31539,
+    "claims": 3670704,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.402
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.184
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.137
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.12
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.071
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.016
+     },
+     {
+      "type": "Interventional Cardiology",
+      "share": 0.01
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.01
      }
     ]
    },
@@ -5192,6 +5412,60 @@
       "class_wide": false,
       "effect": "graph",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 4742355,
+    "national_benes_65": 3427491,
+    "ny_benes": 238819,
+    "n_drugs": 12,
+    "top": [
+     "Oxybutynin Chloride",
+     "Hydroxyzine Hcl",
+     "Benztropine Mesylate",
+     "Promethazine Hcl"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Oxybutynin Chloride",
+     "Hydroxyzine Hcl"
+    ],
+    "prescriber_rows": 12701,
+    "claims": 401333,
+    "types": [
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.23
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.213
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.159
+     },
+     {
+      "type": "Urology",
+      "share": 0.137
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.105
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.069
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.011
+     },
+     {
+      "type": "Dermatology",
+      "share": 0.011
      }
     ]
    },
@@ -5700,6 +5974,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 3826751,
+    "national_benes_65": 2087922,
+    "ny_benes": 268869,
+    "n_drugs": 17,
+    "top": [
+     "Quetiapine Fumarate",
+     "Aripiprazole",
+     "Olanzapine",
+     "Risperidone"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Quetiapine Fumarate",
+     "Aripiprazole"
+    ],
+    "prescriber_rows": 16523,
+    "claims": 848429,
+    "types": [
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.306
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.275
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.145
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.077
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.055
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.046
+     },
+     {
+      "type": "Neurology",
+      "share": 0.041
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.01
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -6080,6 +6408,56 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 164846,
+    "national_benes_65": 61456,
+    "ny_benes": 12269,
+    "n_drugs": 1,
+    "top": [
+     "Lithium Carbonate"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Lithium Carbonate"
+    ],
+    "prescriber_rows": 2441,
+    "claims": 64338,
+    "types": [
+     {
+      "type": "Psychiatry",
+      "share": 0.406
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.347
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.117
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.04
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.023
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.021
+     },
+     {
+      "type": "Neuropsychiatry",
+      "share": 0.014
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.01
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -6439,6 +6817,60 @@
       "class_wide": false,
       "effect": "graph",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 21186382,
+    "national_benes_65": 16863487,
+    "ny_benes": 1132201,
+    "n_drugs": 15,
+    "top": [
+     "Sertraline Hcl",
+     "Trazodone Hcl",
+     "Escitalopram Oxalate",
+     "Duloxetine Hcl"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Sertraline Hcl",
+     "Trazodone Hcl"
+    ],
+    "prescriber_rows": 28651,
+    "claims": 1718454,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.256
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.243
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.17
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.15
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.07
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.028
+     },
+     {
+      "type": "Neurology",
+      "share": 0.021
+     },
+     {
+      "type": "Geriatric Medicine",
+      "share": 0.009
      }
     ]
    },
@@ -6821,6 +7253,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 8372487,
+    "national_benes_65": 6674603,
+    "ny_benes": 516652,
+    "n_drugs": 7,
+    "top": [
+     "Alprazolam",
+     "Zolpidem Tartrate",
+     "Lorazepam",
+     "Clonazepam"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Alprazolam",
+     "Zolpidem Tartrate"
+    ],
+    "prescriber_rows": 22947,
+    "claims": 1197480,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.328
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.185
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.166
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.129
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.066
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.023
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.022
+     },
+     {
+      "type": "Neurology",
+      "share": 0.017
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -7198,6 +7684,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 14927118,
+    "national_benes_65": 12141767,
+    "ny_benes": 647943,
+    "n_drugs": 12,
+    "top": [
+     "Oxycodone Hcl",
+     "Tramadol Hcl",
+     "Hydrocodone/Acetaminophen",
+     "Oxycodone Hcl/Acetaminophen"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Oxycodone Hcl",
+     "Tramadol Hcl"
+    ],
+    "prescriber_rows": 20054,
+    "claims": 861199,
+    "types": [
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.216
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.194
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.18
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.135
+     },
+     {
+      "type": "Physical Medicine and Rehabilitation",
+      "share": 0.047
+     },
+     {
+      "type": "Orthopedic Surgery",
+      "share": 0.032
+     },
+     {
+      "type": "Pain Management",
+      "share": 0.03
+     },
+     {
+      "type": "Anesthesiology",
+      "share": 0.025
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -7503,6 +8043,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 6087248,
+    "national_benes_65": 4830916,
+    "ny_benes": 378399,
+    "n_drugs": 25,
+    "top": [
+     "Insulin Glargine,hum.Rec.Anlog",
+     "Insulin Aspart",
+     "Insulin Lispro",
+     "Insulin Detemir"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Insulin Glargine,hum.Rec.Anlog",
+     "Insulin Aspart"
+    ],
+    "prescriber_rows": 18401,
+    "claims": 658176,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.358
+     },
+     {
+      "type": "Endocrinology",
+      "share": 0.184
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.172
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.167
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.07
+     },
+     {
+      "type": "Geriatric Medicine",
+      "share": 0.008
+     },
+     {
+      "type": "General Practice",
+      "share": 0.008
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.005
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "storage",
@@ -7695,6 +8289,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 2956436,
+    "national_benes_65": 2526645,
+    "ny_benes": 228187,
+    "n_drugs": 4,
+    "top": [
+     "Empagliflozin",
+     "Dapagliflozin Propanediol",
+     "Canagliflozin",
+     "Ertugliflozin Pidolate"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Empagliflozin",
+     "Dapagliflozin Propanediol"
+    ],
+    "prescriber_rows": 21917,
+    "claims": 1206146,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.357
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.157
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.145
+     },
+     {
+      "type": "Endocrinology",
+      "share": 0.096
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.082
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.069
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.04
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.011
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "absent",
@@ -7841,6 +8489,60 @@
       "class_wide": false,
       "effect": "risk",
       "finding": "US: higher daily max temperature raised serious hypoglycaemia among glimepiride and glyburide users (not glipizide); inverse DKA link for sitagliptin"
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 11728801,
+    "national_benes_65": 10334058,
+    "ny_benes": 737888,
+    "n_drugs": 4,
+    "top": [
+     "Metformin Hcl",
+     "Glipizide",
+     "Glimepiride",
+     "Glyburide"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Metformin Hcl",
+     "Glipizide"
+    ],
+    "prescriber_rows": 37889,
+    "claims": 2625258,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.427
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.218
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.141
+     },
+     {
+      "type": "Endocrinology",
+      "share": 0.077
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.072
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.014
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.007
+     },
+     {
+      "type": "General Practice",
+      "share": 0.007
      }
     ]
    },
@@ -8055,6 +8757,60 @@
       "class_wide": false,
       "effect": "graph",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 14286471,
+    "national_benes_65": 11764647,
+    "ny_benes": 1055053,
+    "n_drugs": 11,
+    "top": [
+     "Ibuprofen",
+     "Diclofenac Sodium",
+     "Meloxicam",
+     "Naproxen"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Ibuprofen",
+     "Diclofenac Sodium"
+    ],
+    "prescriber_rows": 22031,
+    "claims": 1069352,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.278
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.128
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.112
+     },
+     {
+      "type": "Dentist",
+      "share": 0.093
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.086
+     },
+     {
+      "type": "Podiatry",
+      "share": 0.061
+     },
+     {
+      "type": "Orthopedic Surgery",
+      "share": 0.035
+     },
+     {
+      "type": "Oral Surgery (Dentist only)",
+      "share": 0.031
      }
     ]
    },
@@ -8280,6 +9036,58 @@
       "class_wide": false,
       "effect": "harm_reported",
       "finding": ""
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 727493,
+    "national_benes_65": 396494,
+    "ny_benes": 37505,
+    "n_drugs": 2,
+    "top": [
+     "Topiramate",
+     "Zonisamide"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Topiramate",
+     "Zonisamide"
+    ],
+    "prescriber_rows": 4852,
+    "claims": 161527,
+    "types": [
+     {
+      "type": "Neurology",
+      "share": 0.33
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.22
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.111
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.096
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.091
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.079
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.02
+     },
+     {
+      "type": "Physical Medicine and Rehabilitation",
+      "share": 0.006
      }
     ]
    },
@@ -8652,6 +9460,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 721271,
+    "national_benes_65": 378415,
+    "ny_benes": 40615,
+    "n_drugs": 11,
+    "top": [
+     "Dextroamphetamine/Amphetamine",
+     "Methylphenidate Hcl",
+     "Lisdexamfetamine Dimesylate",
+     "Modafinil"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Dextroamphetamine/Amphetamine",
+     "Methylphenidate Hcl"
+    ],
+    "prescriber_rows": 5157,
+    "claims": 120803,
+    "types": [
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.3
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.29
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.099
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.095
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.063
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.051
+     },
+     {
+      "type": "Neurology",
+      "share": 0.051
+     },
+     {
+      "type": "Neuropsychiatry",
+      "share": 0.013
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -8765,6 +9627,60 @@
     "by_type": {},
     "effects": {},
     "studies": []
+   },
+   "reach": {
+    "national_benes": 3333022,
+    "national_benes_65": 2537988,
+    "ny_benes": 229516,
+    "n_drugs": 6,
+    "top": [
+     "Semaglutide",
+     "Dulaglutide",
+     "Tirzepatide",
+     "Liraglutide"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Semaglutide",
+     "Dulaglutide"
+    ],
+    "prescriber_rows": 20391,
+    "claims": 1042474,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.331
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.195
+     },
+     {
+      "type": "Endocrinology",
+      "share": 0.171
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.158
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.082
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.021
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.007
+     },
+     {
+      "type": "Nephrology",
+      "share": 0.006
+     }
+    ]
    },
    "guidance": {
     "cdc": {
@@ -9065,6 +9981,60 @@
      }
     ]
    },
+   "reach": {
+    "national_benes": 1868452,
+    "national_benes_65": 1628726,
+    "ny_benes": 95702,
+    "n_drugs": 5,
+    "top": [
+     "Carbidopa/Levodopa",
+     "Ropinirole Hcl",
+     "Pramipexole Di-Hcl",
+     "Amantadine Hcl"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Carbidopa/Levodopa",
+     "Ropinirole Hcl"
+    ],
+    "prescriber_rows": 6927,
+    "claims": 312440,
+    "types": [
+     {
+      "type": "Neurology",
+      "share": 0.42
+     },
+     {
+      "type": "Internal Medicine",
+      "share": 0.19
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.149
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.11
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.066
+     },
+     {
+      "type": "Psychiatry & Neurology",
+      "share": 0.009
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.007
+     },
+     {
+      "type": "Geriatric Medicine",
+      "share": 0.007
+     }
+    ]
+   },
    "guidance": {
     "cdc": {
      "level": "absent",
@@ -9218,6 +10188,60 @@
       "class_wide": false,
       "effect": "context",
       "finding": "Review of ADRs in heat waves: monitor psychotropics, atropinics, amphetamines, cholinesterase inhibitors, thyroid hormones, nephrotoxic drugs, beta blockers"
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 1660927,
+    "national_benes_65": 1609763,
+    "ny_benes": 112263,
+    "n_drugs": 4,
+    "top": [
+     "Donepezil Hcl",
+     "Rivastigmine",
+     "Galantamine Hbr",
+     "Rivastigmine Tartrate"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Donepezil Hcl",
+     "Rivastigmine"
+    ],
+    "prescriber_rows": 8172,
+    "claims": 520720,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.316
+     },
+     {
+      "type": "Neurology",
+      "share": 0.23
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.154
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.122
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.062
+     },
+     {
+      "type": "Psychiatry",
+      "share": 0.046
+     },
+     {
+      "type": "Geriatric Medicine",
+      "share": 0.017
+     },
+     {
+      "type": "General Practice",
+      "share": 0.007
      }
     ]
    },
@@ -9424,6 +10448,8 @@
      }
     ]
    },
+   "reach": null,
+   "prescribers": null,
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -9613,6 +10639,8 @@
      }
     ]
    },
+   "reach": null,
+   "prescribers": null,
    "guidance": {
     "cdc": {
      "level": "mention",
@@ -9793,6 +10821,59 @@
       "class_wide": false,
       "effect": "context",
       "finding": "Systematic review: effects of prescription and OTC drugs on core temperature in heat; calls for studies in older and chronically ill adults"
+     }
+    ]
+   },
+   "reach": {
+    "national_benes": 9112208,
+    "national_benes_65": 7423026,
+    "ny_benes": 560437,
+    "n_drugs": 3,
+    "top": [
+     "Albuterol Sulfate",
+     "Nitroglycerin",
+     "Epinephrine"
+    ]
+   },
+   "prescribers": {
+    "based_on": [
+     "Albuterol Sulfate",
+     "Nitroglycerin"
+    ],
+    "prescriber_rows": 23461,
+    "claims": 1462451,
+    "types": [
+     {
+      "type": "Internal Medicine",
+      "share": 0.324
+     },
+     {
+      "type": "Family Practice",
+      "share": 0.191
+     },
+     {
+      "type": "Nurse Practitioner",
+      "share": 0.158
+     },
+     {
+      "type": "Pulmonary Disease",
+      "share": 0.124
+     },
+     {
+      "type": "Physician Assistant",
+      "share": 0.092
+     },
+     {
+      "type": "Cardiology",
+      "share": 0.033
+     },
+     {
+      "type": "Student in an Organized Health Care Education/Training Program",
+      "share": 0.016
+     },
+     {
+      "type": "Critical Care (Intensivists)",
+      "share": 0.008
      }
     ]
    },
